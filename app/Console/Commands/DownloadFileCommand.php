@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
+use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
+use Storage;
 
 class DownloadFileCommand extends Command
 {
@@ -18,33 +19,44 @@ class DownloadFileCommand extends Command
      */
     public function handle(): void
     {
-        // Define the file URL and destination details
-        $url = 'https://files.fm/u/vjpcfe5spc';
-        $destinationPath = public_path('data');
-        $fileName = 'AmunSro.rar'; // Change "ext" to the appropriate extension if needed
-        $fullFilePath = $destinationPath . '/' . $fileName;
 
-        // Create the destination directory if it doesn't exist
-        if (!is_dir($destinationPath)) {
-            mkdir($destinationPath, 0755, true);
-            $this->info("Directory created: $destinationPath");
-        }
+//        $files = Storage::disk('s3')->allFiles();
+//
+//        dd($files);
+//        $downloadUrl = Storage::disk('s3')->temporaryUrl($files[0], Carbon::now()->addMinutes(5));
 
-        // Create a .gitignore file in the directory to ignore all files except the .gitignore itself
-        $gitignorePath = $destinationPath . '/.gitignore';
-        if (!file_exists($gitignorePath)) {
-            file_put_contents($gitignorePath, "*\n!.gitignore\n");
-            $this->info(".gitignore file created in $destinationPath");
-        }
 
-        // Download the file using Laravel's HTTP client
-        $response = Http::get($url);
+        $client = public_path('data/AmunSro.rar');
+//        $sBot = public_path('data/AmunSroSBotP.rar');
 
-        if ($response->successful()) {
-            file_put_contents($fullFilePath, $response->body());
-            $this->info("File downloaded successfully to: $fullFilePath");
-        } else {
-            $this->error("Failed to download the file from: $url");
-        }
+        // Check if files exist (optional but recommended)
+//        if (!file_exists($client) || !file_exists($sBot)) {
+//            dd('One or both files not found.');
+//        }
+
+        // Define the S3 directory (folder) where the files will be stored
+        $directory = 'downloads';
+
+        // Extract file names from the local paths
+        $fileName1 = basename($client);
+//        $fileName2 = basename($sBot);
+
+        // Define S3 paths
+        $s3Path1 = $directory . '/' . $fileName1;
+//        $s3Path2 = $directory . '/' . $fileName2;
+
+        // Upload the files to S3 with public visibility (files will be accessible via a permanent URL)
+        Storage::disk('s3')->put($s3Path1, fopen($client, 'r'), 'public');
+//        Storage::disk('s3')->put($s3Path2, fopen($sBot, 'r'), 'public');
+
+        // Generate permanent download URLs
+        $url1 = Storage::disk('s3')->url($s3Path1);
+//        $url2 = Storage::disk('s3')->url($s3Path2);
+        dd(
+            [
+                'file1' => $url1,
+//                'file2' => $url2,
+            ]
+        );
     }
 }

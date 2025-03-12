@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CaptureFbTracking;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\{Exceptions, Middleware};
@@ -19,6 +20,8 @@ return Application::configure(basePath: dirname(__DIR__))
         web: [
             __DIR__ . '/../routes/website/website_routes.php',
             __DIR__ . '/../routes/dashboard/dashboard_routes.php',
+        ],
+        api: [
             __DIR__ . '/../routes/api.php',
         ],
         commands: __DIR__ . '/../routes/console.php',
@@ -36,6 +39,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ConvertEmptyStringsToNull::class,
 //            CacheResponse::class,
 //            ThrottleRequests::class,
+            CaptureFbTracking::class,
             HandleInertiaRequests::class,
         ]);
     })

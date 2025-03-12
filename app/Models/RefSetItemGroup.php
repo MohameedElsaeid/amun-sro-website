@@ -1,0 +1,32 @@
+        <?php
+
+        namespace App\Models;
+
+        use Illuminate\Database\Eloquent\Model;
+
+        class RefSetItemGroup extends Model
+        {
+            protected $table = '_RefSetItemGroup';
+            public $timestamps = false;
+
+            protected $fillable = [
+                'Service', 'ID', 'CodeName128', 'ObjName128', 'NameStrID128', 'DescStrID128', 'SetEffectMask', 'SetMagicMask', '2SetMOptGroupID', '3SetMOptGroupID', '4SetMOptGroupID', '5SetMOptGroupID', '6SetMOptGroupID', '7SetMOptGroupID', '8SetMOptGroupID', '9SetMOptGroupID', '10SetMOptGroupID', '11SetMOptGroupID'
+            ];
+
+            protected $casts = [
+                'Service' => 'integer',
+        'ID' => 'integer',
+        'SetEffectMask' => 'integer',
+        'SetMagicMask' => 'integer',
+        '2SetMOptGroupID' => 'integer',
+        '3SetMOptGroupID' => 'integer',
+        '4SetMOptGroupID' => 'integer',
+        '5SetMOptGroupID' => 'integer',
+        '6SetMOptGroupID' => 'integer',
+        '7SetMOptGroupID' => 'integer',
+        '8SetMOptGroupID' => 'integer',
+        '9SetMOptGroupID' => 'integer',
+        '10SetMOptGroupID' => 'integer',
+        '11SetMOptGroupID' => 'integer',
+    ];
+        }

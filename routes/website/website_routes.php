@@ -23,6 +23,7 @@ use App\Http\Controllers\Website\{AccountController,
 Route::group(['as' => 'website.'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/downloads', [DownloadsController::class, 'index'])->name('downloads');
+    Route::get('/downloads/sbot', [DownloadsController::class, 'sbot'])->name('downloads.sbot');
     Route::get('/ranking', [RankingController::class, 'index'])->name('ranking');
     Route::get('/rules', [RulesController::class, 'index'])->name('rules');
     Route::get('/events', [EventsController::class, 'index'])->name('events');

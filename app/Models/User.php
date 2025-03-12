@@ -1,62 +1,20 @@
-<?php
+        <?php
 
-namespace App\Models;
+        namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+        use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
-{
+        class User extends Model
+        {
+            protected $table = '_User';
+            public $timestamps = false;
 
-    protected $table = 'TB_User';
+            protected $fillable = [
+                'UserJID', 'CharID'
+            ];
 
-    public $timestamps = false;
-
-    /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
-
-    protected $primaryKey = 'JID';
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-    protected $fillable = [
-        'JID',
-        'StrUserID',
-        'password',
-        'Status',
-        'GMrank',
-        'Name',
-        'Email',
-        'sex',
-        'certificate_num',
-        'address',
-        'postcode',
-        'phone',
-        'mobile',
-        'regtime',
-        'reg_ip',
-        'Time_log',
-        'freetime',
-        'sec_primary',
-        'sec_content',
-        'AccPlayTime',
-        'LatestUpdateTime_ToPlayTime',
-        'Play123Time',
+            protected $casts = [
+                'UserJID' => 'integer',
+        'CharID' => 'integer',
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-}
+        }

@@ -21,17 +21,9 @@
 @import 'components/server-status.css';
 @import 'components/community.css';
 
-
-
-
-
-
-
-/*!*@import 'tailwindcss';*!*/
-
 /*@tailwind base;*/
 /*@tailwind components;*/
-@tailwind utilities;
+/*@tailwind utilities;*/
 
 *:focus {
     outline: none !important;

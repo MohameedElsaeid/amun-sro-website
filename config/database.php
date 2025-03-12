@@ -30,7 +30,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
@@ -41,7 +40,6 @@ return [
             'journal_mode' => null,
             'synchronous' => null,
         ],
-
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
@@ -61,7 +59,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
@@ -81,7 +78,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DB_URL'),
@@ -96,36 +92,72 @@ return [
             'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
-
         'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'url' => env('DB_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => env('DB_CHARSET', 'utf8'),
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_ACCOUNT', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
         ],
-        'sqlsrvproxy' => [
+        'log' => [
             'driver' => 'sqlsrv',
-            'url' => env('DB_URL_PROXY'),
-            'host' => env('DB_HOST_PROXY', 'localhost'),
-            'port' => env('DB_PORT_PROXY', '1433'),
-            'database' => env('DB_DATABASE_PROXY', 'laravel'),
-            'username' => env('DB_USERNAME_PROXY', 'root'),
-            'password' => env('DB_PASSWORD_PROXY', ''),
-            'charset' => env('DB_CHARSET_PROXY', 'utf8'),
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_LOG', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
         ],
-
+        'shard' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_SHARD', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+        'custom' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_CUSTOM', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+        'event' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_EVENT', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+        'proxy' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_SQL_HOST', 'localhost'),
+            'port' => env('DB_SQL_PORT', '1433'),
+            'database' => env('DB_SQL_DATABASE_PROXY', 'forge'),
+            'username' => env('DB_SQL_USERNAME', 'forge'),
+            'password' => env('DB_SQL_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
     ],
 
     /*
