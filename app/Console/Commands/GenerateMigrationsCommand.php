@@ -21,7 +21,7 @@ class GenerateMigrationsCommand extends Command
      */
     public function handle(): int
     {
-        return 0;
+//        return 0;
 
         $event = config('database.connections.event');
         $custom = config('database.connections.custom');

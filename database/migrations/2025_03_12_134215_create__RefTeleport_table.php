@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefTeleportTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefTeleport', function (Blueprint $table) {
+class CreateRefTeleportTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefTeleport', function (Blueprint $table) {
             $table->integer('Service');
             $table->integer('ID');
             $table->string('CodeName128', 129);
@@ -26,10 +26,10 @@
             $table->smallInteger('BindInteractionMask');
             $table->smallInteger('FixedService');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefTeleport');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefTeleport');
+    }
+}

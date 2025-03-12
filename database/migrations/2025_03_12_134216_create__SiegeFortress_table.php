@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateSiegeFortressTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_SiegeFortress', function (Blueprint $table) {
+class CreateSiegeFortressTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_SiegeFortress', function (Blueprint $table) {
             $table->integer('FortressID');
             $table->integer('GuildID');
             $table->smallInteger('TaxRatio');
@@ -20,10 +20,10 @@
             $table->smallInteger('CreatedDungeonCount')->nullable();
             $table->smallInteger('IntroductionModificationPermission');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_SiegeFortress');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_SiegeFortress');
+    }
+}

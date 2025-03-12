@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateSrcmsPrivatemessagesTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('srcms_privatemessages', function (Blueprint $table) {
+class CreateSrcmsPrivatemessagesTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('srcms_privatemessages', function (Blueprint $table) {
             $table->integer('id');
             $table->bigInteger('sender')->nullable();
             $table->bigInteger('receiver')->nullable();
@@ -17,10 +17,10 @@
             $table->smallInteger('viewed')->nullable();
             $table->dateTime('time')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('srcms_privatemessages');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('srcms_privatemessages');
+    }
+}

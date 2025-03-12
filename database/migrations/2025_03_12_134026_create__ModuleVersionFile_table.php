@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateModuleVersionFileTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_ModuleVersionFile', function (Blueprint $table) {
+class CreateModuleVersionFileTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_ModuleVersionFile', function (Blueprint $table) {
             $table->integer('nID');
             $table->integer('nVersion');
             $table->smallInteger('nDivisionID');
@@ -23,10 +23,10 @@
             $table->dateTime('timeModified');
             $table->smallInteger('nValid');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_ModuleVersionFile');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_ModuleVersionFile');
+    }
+}

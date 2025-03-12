@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefGachaItemSetTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefGachaItemSet', function (Blueprint $table) {
+class CreateRefGachaItemSetTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefGachaItemSet', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('Set_ID');
             $table->integer('RefItemID');
@@ -25,10 +25,10 @@
             $table->integer('param4');
             $table->string('param4_Desc128', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefGachaItemSet');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefGachaItemSet');
+    }
+}

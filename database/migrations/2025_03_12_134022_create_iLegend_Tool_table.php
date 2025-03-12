@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateILegendToolTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('iLegend_Tool', function (Blueprint $table) {
+class CreateILegendToolTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('iLegend_Tool', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('Service');
             $table->string('Type', 50);
@@ -32,10 +32,10 @@
             $table->string('ItemPrice', 20)->nullable();
             $table->string('Date', 100);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('iLegend_Tool');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('iLegend_Tool');
+    }
+}

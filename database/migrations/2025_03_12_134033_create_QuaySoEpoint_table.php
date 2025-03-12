@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateQuaySoEpointTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('QuaySoEpoint', function (Blueprint $table) {
+class CreateQuaySoEpointTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('QuaySoEpoint', function (Blueprint $table) {
             $table->integer('ID');
             $table->string('UserCash', 20)->nullable();
             $table->integer('Server')->nullable();
@@ -20,10 +20,10 @@
             $table->dateTime('Regdate')->nullable();
             $table->string('SourcePoint', 2)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('QuaySoEpoint');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('QuaySoEpoint');
+    }
+}

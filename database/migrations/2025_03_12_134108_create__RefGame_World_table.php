@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefGameWorldTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefGame_World', function (Blueprint $table) {
+class CreateRefGameWorldTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefGame_World', function (Blueprint $table) {
             $table->integer('ID');
             $table->string('WorldCodeName128', 129);
             $table->smallInteger('Type');
@@ -21,10 +21,10 @@
             $table->integer('WorldEmptyRemainTime');
             $table->string('ConfigGroupCodeName128', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefGame_World');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefGame_World');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTBNet2eTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('TB_Net2e', function (Blueprint $table) {
+class CreateTBNet2eTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('TB_Net2e', function (Blueprint $table) {
             $table->integer('JID');
             $table->string('StrUserID', 25);
             $table->string('password', 50);
@@ -48,10 +48,10 @@
             $table->string('Sec_act', 50)->nullable();
             $table->dateTime('LastModification')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('TB_Net2e');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('TB_Net2e');
+    }
+}

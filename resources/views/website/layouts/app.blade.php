@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="@yield('og-image', asset('icons/cover.webp'))">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icons/favicon-32x32.webp') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icons/favicon-16x16.webp') }}">
-    <link rel="shortcut icon" href="{{ asset('icons/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('icons/favicon-32x32.webp') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/apple-touch-icon.webp') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('icons/android-chrome-192x192.webp') }}">
     <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('icons/android-chrome-512x512.webp') }}">

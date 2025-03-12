@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTabRefNestTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('Tab_RefNest', function (Blueprint $table) {
+class CreateTabRefNestTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('Tab_RefNest', function (Blueprint $table) {
             $table->integer('dwNestID');
             $table->integer('dwHiveID');
             $table->integer('dwTacticsID');
@@ -27,10 +27,10 @@
             $table->smallInteger('btRespawn');
             $table->smallInteger('btType');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('Tab_RefNest');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('Tab_RefNest');
+    }
+}

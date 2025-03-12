@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateItemsTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_Items', function (Blueprint $table) {
+class CreateItemsTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_Items', function (Blueprint $table) {
             $table->bigInteger('ID64');
             $table->integer('RefItemID');
             $table->smallInteger('OptLevel')->nullable();
@@ -30,10 +30,10 @@
             $table->bigInteger('MagParam12')->nullable();
             $table->bigInteger('Serial64');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_Items');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_Items');
+    }
+}

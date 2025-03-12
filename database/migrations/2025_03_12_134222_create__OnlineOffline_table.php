@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateOnlineOfflineTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_OnlineOffline', function (Blueprint $table) {
+class CreateOnlineOfflineTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_OnlineOffline', function (Blueprint $table) {
             $table->integer('No.');
             $table->integer('CharID');
             $table->string('Charname', 64);
@@ -21,10 +21,10 @@
             $table->integer('Silk/Hour');
             $table->dateTime('stillOnline@')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_OnlineOffline');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_OnlineOffline');
+    }
+}

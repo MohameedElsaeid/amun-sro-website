@@ -1,22 +1,22 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateBOXRANDOMTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_BOXRANDOM', function (Blueprint $table) {
+class CreateBOXRANDOMTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_BOXRANDOM', function (Blueprint $table) {
             $table->string('GiftItems', 129)->nullable();
             $table->string('SpecialItems', 129)->nullable();
             $table->string('PremItems', 129)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_BOXRANDOM');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_BOXRANDOM');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefRentItemTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefRentItem', function (Blueprint $table) {
+class CreateRefRentItemTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefRentItem', function (Blueprint $table) {
             $table->integer('service');
             $table->string('RentCodeName', 129);
             $table->integer('RefItemID');
@@ -24,10 +24,10 @@
             $table->integer('Time4')->nullable();
             $table->integer('Time5')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefRentItem');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefRentItem');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateStaticAvatarTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_StaticAvatar', function (Blueprint $table) {
+class CreateStaticAvatarTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_StaticAvatar', function (Blueprint $table) {
             $table->integer('CharID');
             $table->integer('Param1')->nullable();
             $table->integer('Param2')->nullable();
@@ -27,10 +27,10 @@
             $table->integer('Param15')->nullable();
             $table->integer('Param16')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_StaticAvatar');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_StaticAvatar');
+    }
+}

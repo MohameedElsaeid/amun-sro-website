@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateAlliedClansTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_AlliedClans', function (Blueprint $table) {
+class CreateAlliedClansTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_AlliedClans', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('Ally1')->nullable();
             $table->integer('Ally2')->nullable();
@@ -22,10 +22,10 @@
             $table->integer('LastCrestRev');
             $table->integer('CurCrestRev');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_AlliedClans');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_AlliedClans');
+    }
+}

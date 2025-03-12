@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefShopGroupTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefShopGroup', function (Blueprint $table) {
+class CreateRefShopGroupTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefShopGroup', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('Country');
             $table->smallInteger('ID');
@@ -23,10 +23,10 @@
             $table->integer('Param4');
             $table->string('Param4_Desc128', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefShopGroup');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefShopGroup');
+    }
+}

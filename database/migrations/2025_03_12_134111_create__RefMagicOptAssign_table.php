@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefMagicOptAssignTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefMagicOptAssign', function (Blueprint $table) {
+class CreateRefMagicOptAssignTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefMagicOptAssign', function (Blueprint $table) {
             $table->integer('Service');
             $table->smallInteger('Race');
             $table->smallInteger('TID3');
@@ -39,10 +39,10 @@
             $table->string('AvailMOpt24', 129);
             $table->string('AvailMOpt25', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefMagicOptAssign');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefMagicOptAssign');
+    }
+}

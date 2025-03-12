@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateScheduleTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_Schedule', function (Blueprint $table) {
+class CreateScheduleTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_Schedule', function (Blueprint $table) {
             $table->integer('ScheduleIdx');
             $table->integer('ScheduleDefineIdx');
             $table->dateTime('DateStart');
@@ -28,10 +28,10 @@
             $table->string('Param', 256)->nullable();
             $table->string('Description', 2000)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_Schedule');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_Schedule');
+    }
+}

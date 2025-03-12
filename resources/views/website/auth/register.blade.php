@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <div class="page-hero" style="background-image: url('{{ asset('icons/cover.png') }}');">
+    <div class="page-hero" style="background-image: url('{{ asset('icons/cover.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl font-cinzel font-bold text-white mb-4">Create Account</h1>
             <p class="text-xl text-sand-light max-w-3xl mx-auto">Join thousands of players in the ancient world of Amun
@@ -30,6 +30,7 @@
                         <div>
                             <label for="username" class="block text-sand-light font-medium mb-2">Username</label>
                             <input type="text" id="username" name="username"
+                                   value="{{ old('username') }}"
                                    class="w-full bg-midnight-light border border-gold-dark/20 focus:border-gold px-4 py-3 rounded-md text-sand-light"
                                    placeholder="Choose a username" required>
                             @error('username')
@@ -40,6 +41,7 @@
                         <div>
                             <label for="email" class="block text-sand-light font-medium mb-2">Email Address</label>
                             <input type="email" id="email" name="email"
+                                   value="{{ old('email') }}"
                                    class="w-full bg-midnight-light border border-gold-dark/20 focus:border-gold px-4 py-3 rounded-md text-sand-light"
                                    placeholder="Enter your email" required>
                             @error('email')
@@ -69,7 +71,8 @@
                     <div class="border-t border-gold-dark/20 pt-6">
                         <div class="flex items-start">
                             <input type="checkbox" id="terms" name="terms"
-                                   class="h-5 w-5 mt-1 border border-gold-dark/20 rounded accent-gold" required>
+                                   class="h-5 w-5 mt-1 border border-gold-dark/20 rounded accent-gold"
+                                   {{ old('terms') ? 'checked' : '' }} required>
                             <label for="terms" class="ml-2 text-sand-light">
                                 I agree to the <a href="{{ route('website.terms') }}"
                                                   class="text-gold hover:text-gold-light">Terms of Service</a> and

@@ -80,9 +80,25 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:TB_User,StrUserID'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:TB_User,Email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'username.required' => 'Please enter your username.',
+            'username.string' => 'Your username must be a valid string.',
+            'username.max' => 'Your username cannot exceed 255 characters.',
+            'username.unique' => 'This username is already in use. Please choose a different one.',
+
+            'email.required' => 'Please provide your email address.',
+            'email.string' => 'Your email address must be a valid string.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'Your email address cannot exceed 255 characters.',
+            'email.unique' => 'This email is already registered. Please use a different email.',
+
+            'password.required' => 'Please enter a password.',
+            'password.string' => 'Your password must be a valid string.',
+            'password.min' => 'Your password must be at least 8 characters long.',
+            'password.confirmed' => 'The password confirmation does not match.',
         ]);
     }
 

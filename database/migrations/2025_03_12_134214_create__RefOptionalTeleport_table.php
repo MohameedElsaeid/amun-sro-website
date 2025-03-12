@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefOptionalTeleportTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefOptionalTeleport', function (Blueprint $table) {
+class CreateRefOptionalTeleportTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefOptionalTeleport', function (Blueprint $table) {
             $table->integer('Service');
             $table->integer('ID');
             $table->string('ObjName128', 129);
@@ -29,10 +29,10 @@
             $table->integer('Param3')->nullable();
             $table->string('Param3_Desc_128', 129)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefOptionalTeleport');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefOptionalTeleport');
+    }
+}

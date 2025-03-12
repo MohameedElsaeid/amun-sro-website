@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRoyalItemPoolAutoEquipmentTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RoyalItemPoolAutoEquipment', function (Blueprint $table) {
+class CreateRoyalItemPoolAutoEquipmentTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RoyalItemPoolAutoEquipment', function (Blueprint $table) {
             $table->integer('service');
             $table->integer('ID');
             $table->string('CodeName128', 129);
@@ -31,10 +31,10 @@
             $table->bigInteger('Va')->nullable();
             $table->boolean('Race')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RoyalItemPoolAutoEquipment');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RoyalItemPoolAutoEquipment');
+    }
+}

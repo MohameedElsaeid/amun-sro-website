@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateCharInstanceWorldDataTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_CharInstanceWorldData', function (Blueprint $table) {
+class CreateCharInstanceWorldDataTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_CharInstanceWorldData', function (Blueprint $table) {
             $table->integer('CharID');
             $table->integer('DungeonKeyID');
             $table->integer('WorldID');
@@ -22,10 +22,10 @@
             $table->integer('EnterCount');
             $table->dateTime('LastEnterTime');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_CharInstanceWorldData');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_CharInstanceWorldData');
+    }
+}

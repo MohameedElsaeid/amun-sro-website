@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateGuildMemberTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_GuildMember', function (Blueprint $table) {
+class CreateGuildMemberTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_GuildMember', function (Blueprint $table) {
             $table->integer('GuildID');
             $table->integer('CharID');
             $table->string('CharName', 64);
@@ -24,10 +24,10 @@
             $table->integer('RefObjID')->nullable();
             $table->smallInteger('SiegeAuthority')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_GuildMember');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_GuildMember');
+    }
+}

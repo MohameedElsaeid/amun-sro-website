@@ -4,7 +4,6 @@
 @section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
 
 @section('content')
-
     <div class="hero min-h-screen bg-cover bg-center relative"
          style="background-image: url('{{ asset('icons/diff_conver.webp') }}');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -28,9 +27,6 @@
         </div>
     </div>
     <main>
-
-
-        <!-- Server Status Detailed Section -->
         <section class="relative py-12 z-20 bg-midnight/80">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-cinzel font-bold text-gold text-center mb-8">Server Information</h2>

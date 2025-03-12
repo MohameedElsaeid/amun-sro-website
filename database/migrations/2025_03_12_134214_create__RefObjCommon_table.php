@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefObjCommonTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefObjCommon', function (Blueprint $table) {
+class CreateRefObjCommonTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefObjCommon', function (Blueprint $table) {
             $table->integer('Service');
             $table->integer('ID');
             $table->string('CodeName128', 129);
@@ -69,10 +69,10 @@
             $table->integer('Link');
             $table->string('WebName', 255);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefObjCommon');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefObjCommon');
+    }
+}

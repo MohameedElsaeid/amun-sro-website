@@ -21,7 +21,7 @@
                     <!-- Account Header -->
                     <div class="p-6 border-b border-gold/30">
                         <div class="flex items-center space-x-4">
-                            <img src="{{ asset('public/lovable-uploads/a14721de-0d30-4d30-9d19-174707828ae4.png') }}"
+                            <img src="{{ asset('icons/feat_5.webp') }}"
                                  alt="Profile Avatar"
                                  class="w-20 h-20 rounded-full border-2 border-gold">
                             <div>

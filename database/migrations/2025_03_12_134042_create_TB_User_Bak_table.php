@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTBUserBakTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('TB_User_Bak', function (Blueprint $table) {
+class CreateTBUserBakTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('TB_User_Bak', function (Blueprint $table) {
             $table->integer('JID');
             $table->string('StrUserID', 25);
             $table->string('password', 50);
@@ -44,10 +44,10 @@
             $table->integer('AccPlayTime');
             $table->integer('LatestUpdateTime_ToPlayTime');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('TB_User_Bak');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('TB_User_Bak');
+    }
+}

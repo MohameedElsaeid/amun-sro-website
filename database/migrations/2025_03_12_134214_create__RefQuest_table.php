@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefQuestTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefQuest', function (Blueprint $table) {
+class CreateRefQuestTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefQuest', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('ID');
             $table->string('CodeName', 128);
@@ -21,10 +21,10 @@
             $table->string('NoticeNPC', 128);
             $table->string('NoticeCondition', 128);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefQuest');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefQuest');
+    }
+}

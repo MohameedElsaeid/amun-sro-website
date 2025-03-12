@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefServerEventTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefServerEvent', function (Blueprint $table) {
+class CreateRefServerEventTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefServerEvent', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('ID');
             $table->smallInteger('DetectingTargetType');
@@ -24,10 +24,10 @@
             $table->integer('GiveRewardDelayTime');
             $table->smallInteger('ActivateClientUI');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefServerEvent');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefServerEvent');
+    }
+}

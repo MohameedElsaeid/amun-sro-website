@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateSiegeFortressStatusTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('__SiegeFortressStatus__', function (Blueprint $table) {
+class CreateSiegeFortressStatusTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('__SiegeFortressStatus__', function (Blueprint $table) {
             $table->integer('ShardID');
             $table->string('FortressName', 129);
             $table->smallInteger('FortressScale');
@@ -25,10 +25,10 @@
             $table->string('OwnerAllianceGuildName8', 129)->nullable();
             $table->dateTime('OwnerUpdateDate')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('__SiegeFortressStatus__');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('__SiegeFortressStatus__');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefGameWorldNPCTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefGameWorldNPC', function (Blueprint $table) {
+class CreateRefGameWorldNPCTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefGameWorldNPC', function (Blueprint $table) {
             $table->integer('ID');
             $table->string('WorldCodeName128', 129);
             $table->string('NPCCodeName128', 129);
@@ -27,10 +27,10 @@
             $table->integer('Param9')->nullable();
             $table->integer('Param10')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefGameWorldNPC');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefGameWorldNPC');
+    }
+}

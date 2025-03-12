@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <div class="page-hero" style="background-image: url('{{ asset('icons/cover.png') }}');">
+    <div class="page-hero" style="background-image: url('{{ asset('icons/cover.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl font-cinzel font-bold text-white mb-4">Login</h1>
             <p class="text-xl text-sand-light max-w-3xl mx-auto">Access your account and continue your journey in the

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateLogEventItemTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_LogEventItem', function (Blueprint $table) {
+class CreateLogEventItemTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_LogEventItem', function (Blueprint $table) {
             $table->dateTime('EventTime');
             $table->integer('CharID');
             $table->integer('ItemRefID');
@@ -22,10 +22,10 @@
             $table->bigInteger('Serial64');
             $table->bigInteger('Gold')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_LogEventItem');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_LogEventItem');
+    }
+}

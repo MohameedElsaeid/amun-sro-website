@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefSetItemGroupTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefSetItemGroup', function (Blueprint $table) {
+class CreateRefSetItemGroupTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefSetItemGroup', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('ID');
             $table->string('CodeName128', 129);
@@ -28,10 +28,10 @@
             $table->integer('10SetMOptGroupID');
             $table->integer('11SetMOptGroupID');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefSetItemGroup');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefSetItemGroup');
+    }
+}

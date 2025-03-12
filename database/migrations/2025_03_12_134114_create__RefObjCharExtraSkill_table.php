@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefObjCharExtraSkillTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefObjCharExtraSkill', function (Blueprint $table) {
+class CreateRefObjCharExtraSkillTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefObjCharExtraSkill', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('CharID');
             $table->integer('ExtraSkill_1')->nullable();
@@ -32,10 +32,10 @@
             $table->integer('ExtraSkill_19')->nullable();
             $table->integer('ExtraSkill_20')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefObjCharExtraSkill');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefObjCharExtraSkill');
+    }
+}

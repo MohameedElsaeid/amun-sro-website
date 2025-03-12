@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefPricePolicyOfItemTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefPricePolicyOfItem', function (Blueprint $table) {
+class CreateRefPricePolicyOfItemTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefPricePolicyOfItem', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('Country');
             $table->string('RefPackageItemCodeName', 129);
@@ -25,10 +25,10 @@
             $table->string('Param4_Desc128', 129);
             $table->integer('index');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefPricePolicyOfItem');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefPricePolicyOfItem');
+    }
+}

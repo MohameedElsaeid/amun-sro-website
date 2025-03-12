@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateCasDataTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_CasData', function (Blueprint $table) {
+class CreateCasDataTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_CasData', function (Blueprint $table) {
             $table->integer('nSerial');
             $table->smallInteger('nCategory');
             $table->dateTime('dReportDate');
@@ -26,10 +26,10 @@
             $table->smallInteger('btUserChecked');
             $table->string('szChatLog', 4000);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_CasData');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_CasData');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefMagicOptTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefMagicOpt', function (Blueprint $table) {
+class CreateRefMagicOptTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefMagicOpt', function (Blueprint $table) {
             $table->integer('Service');
             $table->smallInteger('ID');
             $table->string('MOptName128', 129);
@@ -59,10 +59,10 @@
             $table->string('AvailItemGroup10', 129)->nullable();
             $table->integer('ReqClass10')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefMagicOpt');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefMagicOpt');
+    }
+}

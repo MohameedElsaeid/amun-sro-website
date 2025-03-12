@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTabRefHiveTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('Tab_RefHive', function (Blueprint $table) {
+class CreateTabRefHiveTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('Tab_RefHive', function (Blueprint $table) {
             $table->integer('dwHiveID');
             $table->smallInteger('btKeepMonsterCountType')->nullable();
             $table->integer('dwOverwriteMaxTotalCount')->nullable();
@@ -20,10 +20,10 @@
             $table->smallInteger('HatchObjType')->nullable();
             $table->string('szDescString128', 128)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('Tab_RefHive');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('Tab_RefHive');
+    }
+}

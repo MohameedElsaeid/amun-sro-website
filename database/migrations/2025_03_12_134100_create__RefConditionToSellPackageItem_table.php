@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefConditionToSellPackageItemTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefConditionToSellPackageItem', function (Blueprint $table) {
+class CreateRefConditionToSellPackageItemTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefConditionToSellPackageItem', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('Country');
             $table->string('RefPackageItemCodeName', 129);
@@ -23,10 +23,10 @@
             $table->integer('Param4');
             $table->string('Param4_Desc128', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefConditionToSellPackageItem');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefConditionToSellPackageItem');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTabRefTacticsTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('Tab_RefTactics', function (Blueprint $table) {
+class CreateTabRefTacticsTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('Tab_RefTactics', function (Blueprint $table) {
             $table->integer('dwTacticsID');
             $table->integer('dwObjID')->nullable();
             $table->smallInteger('btAIQoS')->nullable();
@@ -53,10 +53,10 @@
             $table->integer('AdditionOptionFlag')->nullable();
             $table->string('szDescString128', 129)->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('Tab_RefTactics');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('Tab_RefTactics');
+    }
+}

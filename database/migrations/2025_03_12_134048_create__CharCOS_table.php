@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateCharCOSTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_CharCOS', function (Blueprint $table) {
+class CreateCharCOSTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_CharCOS', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('OwnerCharID');
             $table->integer('RefCharID');
@@ -23,10 +23,10 @@
             $table->integer('PetOption');
             $table->dateTime('RentEndTime')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_CharCOS');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_CharCOS');
+    }
+}

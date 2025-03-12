@@ -1,21 +1,21 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefFmnTidGroupTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefFmnTidGroup', function (Blueprint $table) {
+class CreateRefFmnTidGroupTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefFmnTidGroup', function (Blueprint $table) {
             $table->integer('TidGroupID');
             $table->string('TidGroupName', 128);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefFmnTidGroup');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefFmnTidGroup');
+    }
+}

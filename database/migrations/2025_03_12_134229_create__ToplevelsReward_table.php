@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateToplevelsRewardTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_ToplevelsReward', function (Blueprint $table) {
+class CreateToplevelsRewardTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_ToplevelsReward', function (Blueprint $table) {
             $table->smallInteger('Silk1')->nullable();
             $table->smallInteger('Silk2')->nullable();
             $table->smallInteger('Silk3')->nullable();
@@ -35,10 +35,10 @@
             $table->string('RewardFemale', 50)->nullable();
             $table->smallInteger('RewardFemaleCount')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_ToplevelsReward');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_ToplevelsReward');
+    }
+}

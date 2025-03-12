@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefSiegeFortressTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefSiegeFortress', function (Blueprint $table) {
+class CreateRefSiegeFortressTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefSiegeFortress', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('FortressID');
             $table->string('CodeName128', 129);
@@ -24,10 +24,10 @@
             $table->string('CrestPath128', 129);
             $table->string('RequestNPCName128', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefSiegeFortress');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefSiegeFortress');
+    }
+}

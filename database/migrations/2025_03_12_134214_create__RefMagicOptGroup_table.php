@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefMagicOptGroupTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefMagicOptGroup', function (Blueprint $table) {
+class CreateRefMagicOptGroupTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefMagicOptGroup', function (Blueprint $table) {
             $table->smallInteger('Service');
             $table->integer('LinkID');
             $table->smallInteger('MagicType');
@@ -21,10 +21,10 @@
             $table->integer('Param2');
             $table->string('Param2_Desc', 129);
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefMagicOptGroup');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefMagicOptGroup');
+    }
+}

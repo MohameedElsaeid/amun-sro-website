@@ -71,9 +71,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.getElementById('mobile-menu-button').addEventListener('click', () => {
-    console.log('asd')
-    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+document.addEventListener("DOMContentLoaded", function() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    if (menuButton && menu) {
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            // Optional: Toggle aria-expanded for accessibility
+            menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.classList.contains('hidden') && !menu.contains(e.target)) {
+                menu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    } else {
+        console.error('Mobile menu elements not found');
+    }
 });
 
 window.dataLayer = window.dataLayer || [];

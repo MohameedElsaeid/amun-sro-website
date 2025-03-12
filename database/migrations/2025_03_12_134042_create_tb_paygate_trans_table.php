@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTbPaygateTransTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('tb_paygate_trans', function (Blueprint $table) {
+class CreateTbPaygateTransTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('tb_paygate_trans', function (Blueprint $table) {
             $table->integer('trans_ID');
             $table->dateTime('trans_date')->nullable();
             $table->string('trans_type', 25)->nullable();
@@ -20,10 +20,10 @@
             $table->integer('afterMoney')->nullable();
             $table->bigInteger('PG_TransID')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('tb_paygate_trans');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('tb_paygate_trans');
+    }
+}

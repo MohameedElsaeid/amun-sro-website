@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateCharTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_Char', function (Blueprint $table) {
+class CreateCharTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_Char', function (Blueprint $table) {
             $table->integer('CharID');
             $table->smallInteger('Deleted');
             $table->integer('RefObjID');
@@ -67,10 +67,10 @@
             $table->integer('Rarity');
             $table->integer('Support');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_Char');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_Char');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateSiegeFortressObjectTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_SiegeFortressObject', function (Blueprint $table) {
+class CreateSiegeFortressObjectTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_SiegeFortressObject', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('FortressID');
             $table->integer('OwnerGuildID');
@@ -21,10 +21,10 @@
             $table->float('Direction');
             $table->smallInteger('OwnerLevel');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_SiegeFortressObject');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_SiegeFortressObject');
+    }
+}

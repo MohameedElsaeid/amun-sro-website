@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateOpenMarketTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_OpenMarket', function (Blueprint $table) {
+class CreateOpenMarketTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_OpenMarket', function (Blueprint $table) {
             $table->integer('JID');
             $table->integer('PersnalID');
             $table->string('CharName16', 64);
@@ -26,10 +26,10 @@
             $table->integer('UseCash');
             $table->bigInteger('Serial64');
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_OpenMarket');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_OpenMarket');
+    }
+}

@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateTimedJobTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_TimedJob', function (Blueprint $table) {
+class CreateTimedJobTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_TimedJob', function (Blueprint $table) {
             $table->integer('ID');
             $table->integer('CharID');
             $table->smallInteger('Category');
@@ -25,10 +25,10 @@
             $table->bigInteger('Serial64');
             $table->integer('JID')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_TimedJob');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_TimedJob');
+    }
+}

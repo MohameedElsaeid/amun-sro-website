@@ -1,14 +1,14 @@
-        <?php
+<?php
 
-        use Illuminate\Database\Migrations\Migration;
-        use Illuminate\Database\Schema\Blueprint;
-        use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-        class CreateRefRegionTable extends Migration
-        {
-            public function up(): void
-            {
-                Schema::create('_RefRegion', function (Blueprint $table) {
+class CreateRefRegionTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('_RefRegion', function (Blueprint $table) {
             $table->smallInteger('wRegionID');
             $table->smallInteger('X');
             $table->smallInteger('Z');
@@ -31,10 +31,10 @@
             $table->integer('LinkedRegion_9')->nullable();
             $table->integer('LinkedRegion_10')->nullable();
         });
-            }
+    }
 
-            public function down(): void
-            {
-                Schema::dropIfExists('_RefRegion');
-            }
-        }
+    public function down(): void
+    {
+        Schema::dropIfExists('_RefRegion');
+    }
+}
