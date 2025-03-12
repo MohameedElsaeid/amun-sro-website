@@ -18,7 +18,7 @@
                    class="nav-link {{ request()->routeIs('website.rules') ? 'active' : '' }}">Rules</a>
                 <a href="{{ route('website.events') }}"
                    class="nav-link {{ request()->routeIs('website.events') ? 'active' : '' }}">Events</a>
-                <a href="{{ route('website.system') }}"
+                <a href="{{ route('website.donate') }}"
                    class="nav-link {{ request()->routeIs('website.donate') ? 'active' : '' }}">Donation</a>
                 @guest
                     <a href="{{ route('website.login') }}"
@@ -55,7 +55,7 @@
                    class="mobile-nav-link {{ request()->routeIs('website.rules') ? 'active' : '' }}">Rules</a>
                 <a href="{{ route('website.events') }}"
                    class="mobile-nav-link {{ request()->routeIs('website.events') ? 'active' : '' }}">Events</a>
-                <a href="{{ route('website.system') }}"
+                <a href="{{ route('website.donate') }}"
                    class="nav-link {{ request()->routeIs('website.donate') ? 'active' : '' }}">Donation</a>
                 @guest
                     <div class="flex space-x-2 pt-2 border-t border-gold-dark">

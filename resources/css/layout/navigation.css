@@ -1,0 +1,75 @@
+
+/* Navigation styles */
+.nav-link {
+    color: var(--color-dark-gold);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-link:hover {
+    color: var(--color-gold);
+}
+
+.nav-link.active {
+    color: var(--color-gold);
+    border-bottom: 2px solid var(--color-gold);
+}
+
+/* Mobile navigation */
+.mobile-nav-link {
+    color: var(--color-dark-gold);
+    font-weight: 500;
+    padding: var(--spacing-sm) 0;
+    transition: color var(--transition-speed);
+    display: block;
+}
+
+.mobile-nav-link:hover {
+    color: var(--color-gold);
+}
+
+.mobile-nav-link.active {
+    color: var(--color-gold);
+}
+
+/* Login and register buttons for mobile */
+.mobile-login-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-dark-gold);
+    border: 1px solid var(--color-dark-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+    text-align: center;
+    flex: 1;
+}
+
+.mobile-login-btn:hover {
+    background-color: var(--color-dark-gold);
+    color: var(--color-midnight-dark);
+}
+
+.mobile-register-btn {
+    display: inline-block;
+    background-color: var(--color-dark-gold);
+    color: var(--color-midnight-dark);
+    border: 1px solid var(--color-dark-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+    text-align: center;
+    flex: 1;
+}
+
+.mobile-register-btn:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+#mobile-menu {
+    transition: all 0.3s ease;
+}

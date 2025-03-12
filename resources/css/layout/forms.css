@@ -1,0 +1,57 @@
+
+/* Form styles for login and register */
+.login-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    color: var(--color-dark);
+    font-weight: 500;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem var(--spacing-md);
+    border: 1px solid #c4b092;
+    border-radius: var(--border-radius);
+    background-color: var(--color-light);
+    transition: border-color var(--transition-speed);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-dark-gold);
+    box-shadow: 0 0 0 2px rgba(167, 126, 12, 0.2);
+}
+
+.form-checkbox {
+    accent-color: var(--color-dark-gold);
+}
+
+.login-submit-btn {
+    width: 100%;
+    background-color: var(--color-dark-gold);
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+.login-submit-btn:hover {
+    background-color: var(--color-gold);
+}
+
+.security-info {
+    color: #a4b0be;
+}

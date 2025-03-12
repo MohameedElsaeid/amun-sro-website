@@ -1,0 +1,112 @@
+
+.page-hero {
+    position: relative;
+    padding: 8rem 0 6rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: -1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Additional hero variations */
+.page-hero-tall {
+    padding: 10rem 0 8rem;
+}
+
+.page-hero-short {
+    padding: 6rem 0 4rem;
+}
+
+/* Gold accent for hero sections */
+.page-hero-accent {
+    position: relative;
+}
+
+.page-hero-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+    z-index: 2;
+}
+
+/* Animation for hero elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-animate {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.hero-animate-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.hero-animate-delay-2 {
+    animation-delay: 0.4s;
+}
+
+/* Hero CTA button */
+.hero-cta {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-dark-gold) 100%);
+    color: var(--color-midnight-dark);
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(212, 175, 55, 0.4);
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-light-gold) 0%, var(--color-gold) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-cta:hover::before {
+    opacity: 1;
+}

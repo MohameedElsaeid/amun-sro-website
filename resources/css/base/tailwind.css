@@ -1,0 +1,30 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add CSS variables and other base styles */
+:root {
+  --color-gold: #d4af37;
+  --color-dark-gold: #a77e0c;
+  --color-light-gold: #f5d77f;
+  
+  --color-sand: #e6d2b5;
+  --color-light-sand: #f8f0e3;
+  --color-dark-sand: #c4b092;
+  
+  --color-midnight: #1e272e;
+  --color-midnight-light: #303952;
+  --color-midnight-dark: #0a0f14;
+  
+  --font-cinzel: 'Cinzel', serif;
+  --font-body: 'Roboto', sans-serif;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  --transition-speed: 0.3s ease;
+}

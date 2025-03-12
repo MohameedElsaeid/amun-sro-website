@@ -1,0 +1,20 @@
+
+.play-now-btn {
+    @apply px-8 py-4 bg-gold hover:bg-gold-dark text-midnight-dark text-lg font-bold rounded-lg transform hover:scale-105 transition-all;
+}
+
+.download-btn {
+    @apply px-8 py-4 border-2 border-gold text-gold hover:bg-gold hover:text-midnight-dark text-lg font-bold rounded-lg transform hover:scale-105 transition-all;
+}
+
+.nav-button {
+    @apply px-6 py-2 font-bold rounded transition-colors;
+}
+
+.login-btn {
+    @apply nav-button bg-gold hover:bg-gold-dark text-midnight-dark;
+}
+
+.register-btn {
+    @apply nav-button border-2 border-gold text-gold hover:bg-gold hover:text-midnight-dark;
+}

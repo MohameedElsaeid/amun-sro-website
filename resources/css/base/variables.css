@@ -1,0 +1,24 @@
+
+:root {
+    /* Color variables */
+    --color-gold: #d4af37;
+    --color-light-gold: #f5d77f;
+    --color-dark-gold: #a77e0c;
+    --color-dark: #1e272e;
+    --color-darker: #0a0f14;
+    --color-light: #f8f0e3;
+    --color-off-white: #e6d2b5;
+    
+    /* Spacing variables */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border radius */
+    --border-radius: 0.25rem;
+    
+    /* Transitions */
+    --transition-speed: 0.3s;
+}

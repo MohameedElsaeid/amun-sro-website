@@ -100,33 +100,33 @@ gtag('config', 'G-1DDLY8K3BF');
 
 
 // Initial values based on your starting numbers
-let currentPlayers = 1116;
-const maxPlayers = 5000;
-let currentSupporters = 11;
-const maxSupporters = 11;
-
-function updateCounters() {
-    // For players, adjust by a small delta between -10 and +10
-    const playerDelta = Math.floor(Math.random() * 21) - 10; // Random number in [-10, +10]
-    currentPlayers += playerDelta;
-    // Clamp the value between 0 and maxPlayers
-    currentPlayers = Math.max(0, Math.min(currentPlayers, maxPlayers));
-
-    // For supporters, adjust by -1, 0, or +1
-    const supporterDelta = Math.floor(Math.random() * 3) - 1;
-    currentSupporters += supporterDelta;
-    // Clamp the value between 0 and maxSupporters
-    currentSupporters = Math.max(0, Math.min(currentSupporters, maxSupporters));
-
-    // Update the DOM with the new values
-    document.getElementById('playersCounter').textContent = currentPlayers + " / " + maxPlayers;
-    document.getElementById('supportersCounter').textContent = currentSupporters + " / " + maxSupporters;
-}
-
-// Update every 3 minutes (180000 milliseconds)
-setInterval(updateCounters, 180000);
-
-// Optionally, run the function once immediately so the page doesn't start with static numbers.
-updateCounters();
+// let currentPlayers = 1116;
+// const maxPlayers = 5000;
+// let currentSupporters = 11;
+// const maxSupporters = 11;
+//
+// function updateCounters() {
+//     // For players, adjust by a small delta between -10 and +10
+//     const playerDelta = Math.floor(Math.random() * 21) - 10; // Random number in [-10, +10]
+//     currentPlayers += playerDelta;
+//     // Clamp the value between 0 and maxPlayers
+//     currentPlayers = Math.max(0, Math.min(currentPlayers, maxPlayers));
+//
+//     // For supporters, adjust by -1, 0, or +1
+//     const supporterDelta = Math.floor(Math.random() * 3) - 1;
+//     currentSupporters += supporterDelta;
+//     // Clamp the value between 0 and maxSupporters
+//     currentSupporters = Math.max(0, Math.min(currentSupporters, maxSupporters));
+//
+//     // Update the DOM with the new values
+//     document.getElementById('playersCounter').textContent = currentPlayers + " / " + maxPlayers;
+//     document.getElementById('supportersCounter').textContent = currentSupporters + " / " + maxSupporters;
+// }
+//
+// // Update every 3 minutes (180000 milliseconds)
+// setInterval(updateCounters, 180000);
+//
+// // Optionally, run the function once immediately so the page doesn't start with static numbers.
+// updateCounters();
 
 

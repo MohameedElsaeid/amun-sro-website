@@ -1,0 +1,126 @@
+
+/* Feature cards */
+.feature-card {
+    background-color: var(--color-dark);
+    border-radius: 0.5rem;
+    padding: var(--spacing-xl);
+    transition: transform var(--transition-speed);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    background-color: #303952;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Server status */
+.server-card {
+    background-color: #303952;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+}
+
+.server-card h3 {
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: var(--spacing-sm);
+}
+
+.online .status-dot {
+    background-color: #4CAF50;
+}
+
+.maintenance .status-dot {
+    background-color: #FFC107;
+}
+
+.offline .status-dot {
+    background-color: #F44336;
+}
+
+.online .status-text {
+    color: #4CAF50;
+}
+
+.maintenance .status-text {
+    color: #FFC107;
+}
+
+.offline .status-text {
+    color: #F44336;
+}
+
+.players {
+    color: var(--color-off-white);
+    font-size: 0.875rem;
+}
+
+/* Community cards */
+.community-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.media-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.media-wrapper img {
+    transition: transform var(--transition-speed);
+}
+
+.community-card:hover .media-wrapper img {
+    transform: scale(1.05);
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.player-name {
+    color: var(--color-dark-gold);
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.description {
+    color: var(--color-dark);
+}
