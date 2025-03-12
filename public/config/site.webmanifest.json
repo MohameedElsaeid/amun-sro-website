@@ -1,0 +1,20 @@
+{
+    "name": "Amun Sro",
+    "short_name": "Amun Sro",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f8f0e3",
+    "theme_color": "#d4af37",
+    "icons": [
+        {
+            "src": "/icons/android-chrome-192x192.webp",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/android-chrome-512x512.webp",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

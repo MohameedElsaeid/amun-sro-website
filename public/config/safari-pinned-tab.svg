@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <title>Amun Sro Icon</title>
+    <!-- Use a simplified version of your logo -->
+    <path fill="currentColor" d="M32 4C17.64 4 6 15.64 6 30s11.64 26 26 26 26-11.64 26-26S46.36 4 32 4zm0 48C19.215 52 10 42.785 10 30S19.215 8 32 8s22 9.215 22 22-9.215 22-22 22z"/>
+    <path fill="currentColor" d="M32 14a16 16 0 100 32 16 16 0 000-32z"/>
+</svg>
