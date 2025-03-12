@@ -66,13 +66,13 @@
 </div>
 
 
-@include('Website.partials.header')
+@include('website.partials.header')
 
 <main>
     @yield('content')
 </main>
 
-@include('Website.partials.footer')
+@include('website.partials.footer')
 @stack('scripts')
 </body>
 </html>
