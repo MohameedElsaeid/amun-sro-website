@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefTeleLink extends Model
-        {
-            protected $table = '_RefTeleLink';
-            public $timestamps = false;
+class RefTeleLink extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefTeleLink';
+    protected $fillable = [
+        'Service', 'OwnerTeleport', 'TargetTeleport', 'Fee', 'RestrictBindMethod', 'RunTimeTeleportMethod', 'CheckResult', 'Restrict1', 'Data1_1', 'Data1_2', 'Restrict2', 'Data2_1', 'Data2_2', 'Restrict3', 'Data3_1', 'Data3_2', 'Restrict4', 'Data4_1', 'Data4_2', 'Restrict5', 'Data5_1', 'Data5_2'
+    ];
 
-            protected $fillable = [
-                'Service', 'OwnerTeleport', 'TargetTeleport', 'Fee', 'RestrictBindMethod', 'RunTimeTeleportMethod', 'CheckResult', 'Restrict1', 'Data1_1', 'Data1_2', 'Restrict2', 'Data2_1', 'Data2_2', 'Restrict3', 'Data3_1', 'Data3_2', 'Restrict4', 'Data4_1', 'Data4_2', 'Restrict5', 'Data5_1', 'Data5_2'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'OwnerTeleport' => 'integer',
         'TargetTeleport' => 'integer',
         'Fee' => 'integer',
@@ -37,4 +36,4 @@
         'Data5_1' => 'integer',
         'Data5_2' => 'integer',
     ];
-        }
+}

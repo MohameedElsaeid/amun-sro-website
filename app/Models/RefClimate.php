@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefClimate extends Model
-        {
-            protected $table = '_RefClimate';
-            public $timestamps = false;
+class RefClimate extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefClimate';
+    protected $fillable = [
+        'ID', 'InitialWeather', 'InitialAmount', 'ChangeWeather', 'Division', 'Duration', 'DurationVariance', 'Snowfall', 'SnowfallVariance', 'ProbSnow', 'Rainfall', 'RainfallVariance', 'ProbRain'
+    ];
 
-            protected $fillable = [
-                'ID', 'InitialWeather', 'InitialAmount', 'ChangeWeather', 'Division', 'Duration', 'DurationVariance', 'Snowfall', 'SnowfallVariance', 'ProbSnow', 'Rainfall', 'RainfallVariance', 'ProbRain'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'InitialWeather' => 'integer',
         'InitialAmount' => 'integer',
         'ChangeWeather' => 'integer',
@@ -28,4 +27,4 @@
         'RainfallVariance' => 'integer',
         'ProbRain' => 'integer',
     ];
-        }
+}

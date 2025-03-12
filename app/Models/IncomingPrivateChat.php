@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class IncomingPrivateChat extends Model
-        {
-            protected $table = '_IncomingPrivateChat';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'ID', 'CharName', 'Chat', 'Date'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+class IncomingPrivateChat extends Model
+{
+    public $timestamps = false;
+    protected $table = '_IncomingPrivateChat';
+    protected $fillable = [
+        'ID', 'CharName', 'Chat', 'Date'
     ];
-        }
+
+    protected $casts = [
+        'ID' => 'integer',
+    ];
+}

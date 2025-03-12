@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SokarJobCoin extends Model
-        {
-            protected $table = 'SokarJobCoin';
-            public $timestamps = false;
+class SokarJobCoin extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SokarJobCoin';
+    protected $fillable = [
+        'CharID', 'Amount', 'EventTime'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Amount', 'EventTime'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Amount' => 'integer',
         'EventTime' => 'datetime',
     ];
-        }
+}

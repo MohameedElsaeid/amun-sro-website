@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class BindingOptionWithItem extends Model
-        {
-            protected $table = '_BindingOptionWithItem';
-            public $timestamps = false;
+class BindingOptionWithItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_BindingOptionWithItem';
+    protected $fillable = [
+        'nItemDBID', 'bOptType', 'nSlot', 'nOptID', 'nOptLvl', 'nOptValue', 'nParam1', 'nParam2'
+    ];
 
-            protected $fillable = [
-                'nItemDBID', 'bOptType', 'nSlot', 'nOptID', 'nOptLvl', 'nOptValue', 'nParam1', 'nParam2'
-            ];
-
-            protected $casts = [
-                'nItemDBID' => 'integer',
+    protected $casts = [
+        'nItemDBID' => 'integer',
         'bOptType' => 'integer',
         'nSlot' => 'integer',
         'nOptID' => 'integer',
@@ -23,4 +22,4 @@
         'nParam1' => 'integer',
         'nParam2' => 'integer',
     ];
-        }
+}

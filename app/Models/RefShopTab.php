@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefShopTab extends Model
-        {
-            protected $table = '_RefShopTab';
-            public $timestamps = false;
+class RefShopTab extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefShopTab';
+    protected $fillable = [
+        'Service', 'Country', 'ID', 'CodeName128', 'RefTabGroupCodeName', 'StrID128_Tab'
+    ];
 
-            protected $fillable = [
-                'Service', 'Country', 'ID', 'CodeName128', 'RefTabGroupCodeName', 'StrID128_Tab'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Country' => 'integer',
         'ID' => 'integer',
     ];
-        }
+}

@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class GPHistory extends Model
-        {
-            protected $table = '_GPHistory';
-            public $timestamps = false;
+class GPHistory extends Model
+{
+    public $timestamps = false;
+    protected $table = '_GPHistory';
+    protected $fillable = [
+        'ID', 'GuildID', 'UsedTime', 'CharName', 'UsedGP', 'Reason'
+    ];
 
-            protected $fillable = [
-                'ID', 'GuildID', 'UsedTime', 'CharName', 'UsedGP', 'Reason'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'GuildID' => 'integer',
         'UsedTime' => 'datetime',
         'UsedGP' => 'integer',
         'Reason' => 'integer',
     ];
-        }
+}

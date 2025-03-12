@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefScheduleDefine extends Model
-        {
-            protected $table = '_RefScheduleDefine';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'ScheduleDefineIdx', 'ScheduleName', 'Description'
-            ];
-
-            protected $casts = [
-                'ScheduleDefineIdx' => 'integer',
+class RefScheduleDefine extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefScheduleDefine';
+    protected $fillable = [
+        'ScheduleDefineIdx', 'ScheduleName', 'Description'
     ];
-        }
+
+    protected $casts = [
+        'ScheduleDefineIdx' => 'integer',
+    ];
+}

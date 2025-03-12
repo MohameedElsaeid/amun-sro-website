@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsNews extends Model
-        {
-            protected $table = 'srcms_news';
-            public $timestamps = false;
+class SrcmsNews extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_news';
+    protected $fillable = [
+        'title', 'content', 'author', 'time'
+    ];
 
-            protected $fillable = [
-                'title', 'content', 'author', 'time'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

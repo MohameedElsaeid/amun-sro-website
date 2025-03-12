@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsRefferal extends Model
-        {
-            protected $table = 'srcms_refferals';
-            public $timestamps = false;
+class SrcmsRefferal extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_refferals';
+    protected $fillable = [
+        'reffererJID', 'invitedUserJID', 'time', 'ip', 'bonusAdded'
+    ];
 
-            protected $fillable = [
-                'reffererJID', 'invitedUserJID', 'time', 'ip', 'bonusAdded'
-            ];
-
-            protected $casts = [
-                'reffererJID' => 'integer',
+    protected $casts = [
+        'reffererJID' => 'integer',
         'invitedUserJID' => 'integer',
         'bonusAdded' => 'integer',
     ];
-        }
+}

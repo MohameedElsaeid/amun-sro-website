@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class OnlineOffline extends Model
-        {
-            protected $table = '_OnlineOffline';
-            public $timestamps = false;
+class OnlineOffline extends Model
+{
+    public $timestamps = false;
+    protected $table = '_OnlineOffline';
+    protected $fillable = [
+        'No.', 'CharID', 'Charname', 'Status', 'Date', 'Minutes', 'tMinutes', 'eSilk', 'mOnline', 'Silk/Hour', 'stillOnline@'
+    ];
 
-            protected $fillable = [
-                'No.', 'CharID', 'Charname', 'Status', 'Date', 'Minutes', 'tMinutes', 'eSilk', 'mOnline', 'Silk/Hour', 'stillOnline@'
-            ];
-
-            protected $casts = [
-                'No.' => 'integer',
+    protected $casts = [
+        'No.' => 'integer',
         'CharID' => 'integer',
         'Date' => 'datetime',
         'Minutes' => 'integer',
@@ -23,4 +22,4 @@
         'Silk/Hour' => 'integer',
         'stillOnline@' => 'datetime',
     ];
-        }
+}

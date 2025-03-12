@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ShopItemStockQuantity extends Model
-        {
-            protected $table = '_ShopItemStockQuantity';
-            public $timestamps = false;
+class ShopItemStockQuantity extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ShopItemStockQuantity';
+    protected $fillable = [
+        'Service', 'Country', 'RefShopGroupCodeName', 'RefPackageItemCodeName', 'ConstStockQuantity', 'StockQuantity'
+    ];
 
-            protected $fillable = [
-                'Service', 'Country', 'RefShopGroupCodeName', 'RefPackageItemCodeName', 'ConstStockQuantity', 'StockQuantity'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Country' => 'integer',
         'ConstStockQuantity' => 'integer',
         'StockQuantity' => 'integer',
     ];
-        }
+}

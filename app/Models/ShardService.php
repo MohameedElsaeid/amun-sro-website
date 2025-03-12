@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ShardService extends Model
-        {
-            protected $table = '_ShardService';
-            public $timestamps = false;
+class ShardService extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ShardService';
+    protected $fillable = [
+        'ShardID', 'ServiceType'
+    ];
 
-            protected $fillable = [
-                'ShardID', 'ServiceType'
-            ];
-
-            protected $casts = [
-                'ShardID' => 'integer',
+    protected $casts = [
+        'ShardID' => 'integer',
         'ServiceType' => 'integer',
     ];
-        }
+}

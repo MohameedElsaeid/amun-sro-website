@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TestItemTNET extends Model
-        {
-            protected $table = 'test_item_TNET';
-            public $timestamps = false;
+class TestItemTNET extends Model
+{
+    public $timestamps = false;
+    protected $table = 'test_item_TNET';
+    protected $fillable = [
+        'CodeName'
+    ];
 
-            protected $fillable = [
-                'CodeName'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ExecQuery extends Model
-        {
-            protected $table = 'ExecQuery';
-            public $timestamps = false;
+class ExecQuery extends Model
+{
+    public $timestamps = false;
+    protected $table = 'ExecQuery';
+    protected $fillable = [
+        'ID', 'Day', 'Time', 'DatabaseIndex', 'Query'
+    ];
 
-            protected $fillable = [
-                'ID', 'Day', 'Time', 'DatabaseIndex', 'Query'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'DatabaseIndex' => 'integer',
     ];
-        }
+}

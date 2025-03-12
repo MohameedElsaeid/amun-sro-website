@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class BOOK extends Model
-        {
-            protected $table = 'BOOKS';
-            public $timestamps = false;
+class BOOK extends Model
+{
+    public $timestamps = false;
+    protected $table = 'BOOKS';
+    protected $fillable = [
+        'title', 'pubdate', 'synopsis', 'inprint', 'salesCount'
+    ];
 
-            protected $fillable = [
-                'title', 'pubdate', 'synopsis', 'inprint', 'salesCount'
-            ];
-
-            protected $casts = [
-                'pubdate' => 'datetime',
+    protected $casts = [
+        'pubdate' => 'datetime',
         'inprint' => 'boolean',
         'salesCount' => 'integer',
     ];
-        }
+}

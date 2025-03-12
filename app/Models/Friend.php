@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Friend extends Model
-        {
-            protected $table = '_Friend';
-            public $timestamps = false;
+class Friend extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Friend';
+    protected $fillable = [
+        'CharID', 'FriendCharID', 'FriendCharName', 'RefObjID'
+    ];
 
-            protected $fillable = [
-                'CharID', 'FriendCharID', 'FriendCharName', 'RefObjID'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'FriendCharID' => 'integer',
         'RefObjID' => 'integer',
     ];
-        }
+}

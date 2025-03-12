@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefDropItemGroup extends Model
-        {
-            protected $table = '_RefDropItemGroup';
-            public $timestamps = false;
+class RefDropItemGroup extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefDropItemGroup';
+    protected $fillable = [
+        'Service', 'RefItemGroupID', 'CodeName128', 'RefItemID', 'SelectRatio', 'RefMagicGroupID'
+    ];
 
-            protected $fillable = [
-                'Service', 'RefItemGroupID', 'CodeName128', 'RefItemID', 'SelectRatio', 'RefMagicGroupID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RefItemGroupID' => 'integer',
         'RefItemID' => 'integer',
         'SelectRatio' => 'float',
         'RefMagicGroupID' => 'integer',
     ];
-        }
+}

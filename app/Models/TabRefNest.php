@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TabRefNest extends Model
-        {
-            protected $table = 'Tab_RefNest';
-            public $timestamps = false;
+class TabRefNest extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Tab_RefNest';
+    protected $fillable = [
+        'dwNestID', 'dwHiveID', 'dwTacticsID', 'nRegionDBID', 'fLocalPosX', 'fLocalPosY', 'fLocalPosZ', 'wInitialDir', 'nRadius', 'nGenerateRadius', 'nChampionGenPercentage', 'dwDelayTimeMin', 'dwDelayTimeMax', 'dwMaxTotalCount', 'btFlag', 'btRespawn', 'btType'
+    ];
 
-            protected $fillable = [
-                'dwNestID', 'dwHiveID', 'dwTacticsID', 'nRegionDBID', 'fLocalPosX', 'fLocalPosY', 'fLocalPosZ', 'wInitialDir', 'nRadius', 'nGenerateRadius', 'nChampionGenPercentage', 'dwDelayTimeMin', 'dwDelayTimeMax', 'dwMaxTotalCount', 'btFlag', 'btRespawn', 'btType'
-            ];
-
-            protected $casts = [
-                'dwNestID' => 'integer',
+    protected $casts = [
+        'dwNestID' => 'integer',
         'dwHiveID' => 'integer',
         'dwTacticsID' => 'integer',
         'nRegionDBID' => 'integer',
@@ -32,4 +31,4 @@
         'btRespawn' => 'integer',
         'btType' => 'integer',
     ];
-        }
+}

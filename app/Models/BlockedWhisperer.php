@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class BlockedWhisperer extends Model
-        {
-            protected $table = '_BlockedWhisperers';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'OwnerID', 'TargetName'
-            ];
-
-            protected $casts = [
-                'OwnerID' => 'integer',
+class BlockedWhisperer extends Model
+{
+    public $timestamps = false;
+    protected $table = '_BlockedWhisperers';
+    protected $fillable = [
+        'OwnerID', 'TargetName'
     ];
-        }
+
+    protected $casts = [
+        'OwnerID' => 'integer',
+    ];
+}

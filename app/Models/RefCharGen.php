@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCharGen extends Model
-        {
-            protected $table = '_RefCharGen';
-            public $timestamps = false;
+class RefCharGen extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCharGen';
+    protected $fillable = [
+        'Service', 'RefObjID'
+    ];
 
-            protected $fillable = [
-                'Service', 'RefObjID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RefObjID' => 'integer',
     ];
-        }
+}

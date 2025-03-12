@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class BlockedUserBak extends Model
-        {
-            protected $table = '_BlockedUser_bak';
-            public $timestamps = false;
+class BlockedUserBak extends Model
+{
+    public $timestamps = false;
+    protected $table = '_BlockedUser_bak';
+    protected $fillable = [
+        'UserJID', 'UserID', 'Type', 'SerialNo', 'timeBegin', 'timeEnd'
+    ];
 
-            protected $fillable = [
-                'UserJID', 'UserID', 'Type', 'SerialNo', 'timeBegin', 'timeEnd'
-            ];
-
-            protected $casts = [
-                'UserJID' => 'integer',
+    protected $casts = [
+        'UserJID' => 'integer',
         'Type' => 'integer',
         'SerialNo' => 'integer',
         'timeBegin' => 'datetime',
         'timeEnd' => 'datetime',
     ];
-        }
+}

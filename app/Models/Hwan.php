@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Hwan extends Model
-        {
-            protected $table = 'Hwan';
-            public $timestamps = false;
+class Hwan extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Hwan';
+    protected $fillable = [
+        'Hwan_Level', 'Title', 'Race', 'lvl'
+    ];
 
-            protected $fillable = [
-                'Hwan_Level', 'Title', 'Race', 'lvl'
-            ];
-
-            protected $casts = [
-                'Hwan_Level' => 'integer',
+    protected $casts = [
+        'Hwan_Level' => 'integer',
         'lvl' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefServerEvent extends Model
-        {
-            protected $table = '_RefServerEvent';
-            public $timestamps = false;
+class RefServerEvent extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefServerEvent';
+    protected $fillable = [
+        'Service', 'ID', 'DetectingTargetType', 'DetectingTargetID', 'Name', 'BeginDate', 'EndDate', 'NotificationTypeDetectingTarget', 'AchievementConditionType', 'AchievementConditionLevel', 'AchievementCondition', 'RewardTarget', 'GiveRewardDelayTime', 'ActivateClientUI'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'DetectingTargetType', 'DetectingTargetID', 'Name', 'BeginDate', 'EndDate', 'NotificationTypeDetectingTarget', 'AchievementConditionType', 'AchievementConditionLevel', 'AchievementCondition', 'RewardTarget', 'GiveRewardDelayTime', 'ActivateClientUI'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'DetectingTargetType' => 'integer',
         'DetectingTargetID' => 'integer',
@@ -28,4 +27,4 @@
         'GiveRewardDelayTime' => 'integer',
         'ActivateClientUI' => 'integer',
     ];
-        }
+}

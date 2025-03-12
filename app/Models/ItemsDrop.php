@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ItemsDrop extends Model
-        {
-            protected $table = '_ItemsDrop';
-            public $timestamps = false;
+class ItemsDrop extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ItemsDrop';
+    protected $fillable = [
+        'CharID', 'Serial64'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Serial64'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Serial64' => 'integer',
     ];
-        }
+}

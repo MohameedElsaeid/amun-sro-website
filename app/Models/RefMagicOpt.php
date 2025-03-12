@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefMagicOpt extends Model
-        {
-            protected $table = '_RefMagicOpt';
-            public $timestamps = false;
+class RefMagicOpt extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefMagicOpt';
+    protected $fillable = [
+        'Service', 'ID', 'MOptName128', 'AttrType', 'MLevel', 'Prob', 'Weight', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16', 'ExcFunc1', 'ExcFunc2', 'ExcFunc3', 'ExcFunc4', 'ExcFunc5', 'ExcFunc6', 'AvailItemGroup1', 'ReqClass1', 'AvailItemGroup2', 'ReqClass2', 'AvailItemGroup3', 'ReqClass3', 'AvailItemGroup4', 'ReqClass4', 'AvailItemGroup5', 'ReqClass5', 'AvailItemGroup6', 'ReqClass6', 'AvailItemGroup7', 'ReqClass7', 'AvailItemGroup8', 'ReqClass8', 'AvailItemGroup9', 'ReqClass9', 'AvailItemGroup10', 'ReqClass10'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'MOptName128', 'AttrType', 'MLevel', 'Prob', 'Weight', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16', 'ExcFunc1', 'ExcFunc2', 'ExcFunc3', 'ExcFunc4', 'ExcFunc5', 'ExcFunc6', 'AvailItemGroup1', 'ReqClass1', 'AvailItemGroup2', 'ReqClass2', 'AvailItemGroup3', 'ReqClass3', 'AvailItemGroup4', 'ReqClass4', 'AvailItemGroup5', 'ReqClass5', 'AvailItemGroup6', 'ReqClass6', 'AvailItemGroup7', 'ReqClass7', 'AvailItemGroup8', 'ReqClass8', 'AvailItemGroup9', 'ReqClass9', 'AvailItemGroup10', 'ReqClass10'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'MLevel' => 'integer',
         'Prob' => 'float',
@@ -52,4 +51,4 @@
         'ReqClass9' => 'integer',
         'ReqClass10' => 'integer',
     ];
-        }
+}

@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TabRefAISkill extends Model
-        {
-            protected $table = 'Tab_RefAISkill';
-            public $timestamps = false;
+class TabRefAISkill extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Tab_RefAISkill';
+    protected $fillable = [
+        'TacticsID', 'SkillCodeName', 'ExcuteConditionType', 'ExcuteConditionData', 'Option'
+    ];
 
-            protected $fillable = [
-                'TacticsID', 'SkillCodeName', 'ExcuteConditionType', 'ExcuteConditionData', 'Option'
-            ];
-
-            protected $casts = [
-                'TacticsID' => 'integer',
+    protected $casts = [
+        'TacticsID' => 'integer',
         'ExcuteConditionType' => 'integer',
         'ExcuteConditionData' => 'integer',
         'Option' => 'integer',
     ];
-        }
+}

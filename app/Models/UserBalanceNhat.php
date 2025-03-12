@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class UserBalanceNhat extends Model
-        {
-            protected $table = '_UserBalance_Nhat';
-            public $timestamps = false;
+class UserBalanceNhat extends Model
+{
+    public $timestamps = false;
+    protected $table = '_UserBalance_Nhat';
+    protected $fillable = [
+        'JID', 'Balance'
+    ];
 
-            protected $fillable = [
-                'JID', 'Balance'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'Balance' => 'float',
     ];
-        }
+}

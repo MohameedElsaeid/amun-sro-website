@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefGameWorldGroup extends Model
-        {
-            protected $table = '_RefGameWorldGroup';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'ID', 'CodeName128', 'ObjName128', 'ConfigGroupCodeName128'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+class RefGameWorldGroup extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefGameWorldGroup';
+    protected $fillable = [
+        'ID', 'CodeName128', 'ObjName128', 'ConfigGroupCodeName128'
     ];
-        }
+
+    protected $casts = [
+        'ID' => 'integer',
+    ];
+}

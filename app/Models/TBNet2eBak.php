@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TBNet2eBak extends Model
-        {
-            protected $table = 'TB_Net2e_Bak';
-            public $timestamps = false;
+class TBNet2eBak extends Model
+{
+    public $timestamps = false;
+    protected $table = 'TB_Net2e_Bak';
+    protected $fillable = [
+        'JID', 'StrUserID', 'password', 'SecondPassword', 'question', 'answer', 'Status', 'GMrank', 'Name', 'MDK', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'cid', 'cidType', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'Birthday', 'Province', 'District', 'WherePlay', 'WhereKnow', 'Reference', 'Games', 'strLevel', 'Class', 'HowPlay', 'Inviter', 'Sec_act', 'LastModification'
+    ];
 
-            protected $fillable = [
-                'JID', 'StrUserID', 'password', 'SecondPassword', 'question', 'answer', 'Status', 'GMrank', 'Name', 'MDK', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'cid', 'cidType', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'Birthday', 'Province', 'District', 'WherePlay', 'WhereKnow', 'Reference', 'Games', 'strLevel', 'Class', 'HowPlay', 'Inviter', 'Sec_act', 'LastModification'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'Status' => 'integer',
         'GMrank' => 'integer',
         'cidType' => 'integer',
@@ -27,4 +26,4 @@
         'HowPlay' => 'integer',
         'LastModification' => 'datetime',
     ];
-        }
+}

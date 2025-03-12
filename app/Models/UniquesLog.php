@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class UniquesLog extends Model
-        {
-            protected $table = '_UniquesLog';
-            public $timestamps = false;
+class UniquesLog extends Model
+{
+    public $timestamps = false;
+    protected $table = '_UniquesLog';
+    protected $fillable = [
+        'ID', 'Type', 'CodeName128', 'Killer', 'Date'
+    ];
 
-            protected $fillable = [
-                'ID', 'Type', 'CodeName128', 'Killer', 'Date'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Type' => 'integer',
     ];
-        }
+}

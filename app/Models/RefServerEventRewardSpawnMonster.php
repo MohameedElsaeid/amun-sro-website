@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefServerEventRewardSpawnMonster extends Model
-        {
-            protected $table = '_RefServerEventReward_SpawnMonster';
-            public $timestamps = false;
+class RefServerEventRewardSpawnMonster extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefServerEventReward_SpawnMonster';
+    protected $fillable = [
+        'OwnerRewardID', 'RegionID', 'PosX', 'PosY', 'PosZ'
+    ];
 
-            protected $fillable = [
-                'OwnerRewardID', 'RegionID', 'PosX', 'PosY', 'PosZ'
-            ];
-
-            protected $casts = [
-                'OwnerRewardID' => 'integer',
+    protected $casts = [
+        'OwnerRewardID' => 'integer',
         'RegionID' => 'integer',
         'PosX' => 'float',
         'PosY' => 'float',
         'PosZ' => 'float',
     ];
-        }
+}

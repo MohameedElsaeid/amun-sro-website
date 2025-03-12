@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SecurityDescriptionGroupAssign extends Model
-        {
-            protected $table = '_SecurityDescriptionGroupAssign';
-            public $timestamps = false;
+class SecurityDescriptionGroupAssign extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SecurityDescriptionGroupAssign';
+    protected $fillable = [
+        'nGroupID', 'nDescriptionID'
+    ];
 
-            protected $fillable = [
-                'nGroupID', 'nDescriptionID'
-            ];
-
-            protected $casts = [
-                'nGroupID' => 'integer',
+    protected $casts = [
+        'nGroupID' => 'integer',
         'nDescriptionID' => 'integer',
     ];
-        }
+}

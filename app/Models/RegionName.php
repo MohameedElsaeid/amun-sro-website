@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RegionName extends Model
-        {
-            protected $table = '_RegionNames';
-            public $timestamps = false;
+class RegionName extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RegionNames';
+    protected $fillable = [
+        'ID', 'RegionID', 'TownName', 'SafeZone', 'TownNumber'
+    ];
 
-            protected $fillable = [
-                'ID', 'RegionID', 'TownName', 'SafeZone', 'TownNumber'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'RegionID' => 'integer',
         'TownNumber' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKSilkGood extends Model
-        {
-            protected $table = 'SK_SilkGoods';
-            public $timestamps = false;
+class SKSilkGood extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_SilkGoods';
+    protected $fillable = [
+        'Service', 'ID', 'GoodsCode', 'GoodsName', 'SilkQuantity', 'PointQuantity', 'SilkPrice', 'Category', 'CPName', 'RegDate'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'GoodsCode', 'GoodsName', 'SilkQuantity', 'PointQuantity', 'SilkPrice', 'Category', 'CPName', 'RegDate'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'SilkQuantity' => 'integer',
         'PointQuantity' => 'integer',
@@ -22,4 +21,4 @@
         'Category' => 'integer',
         'RegDate' => 'datetime',
     ];
-        }
+}

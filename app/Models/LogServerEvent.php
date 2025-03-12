@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class LogServerEvent extends Model
-        {
-            protected $table = '_LogServerEvent';
-            public $timestamps = false;
+class LogServerEvent extends Model
+{
+    public $timestamps = false;
+    protected $table = '_LogServerEvent';
+    protected $fillable = [
+        'ID', 'EventTime', 'ServerEventID', 'LogType', 'strDesc'
+    ];
 
-            protected $fillable = [
-                'ID', 'EventTime', 'ServerEventID', 'LogType', 'strDesc'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'EventTime' => 'datetime',
         'ServerEventID' => 'integer',
         'LogType' => 'integer',
     ];
-        }
+}

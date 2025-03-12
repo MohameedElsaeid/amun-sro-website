@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Inventory extends Model
-        {
-            protected $table = '_Inventory';
-            public $timestamps = false;
+class Inventory extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Inventory';
+    protected $fillable = [
+        'CharID', 'Slot', 'ItemID'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Slot', 'ItemID'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-        }
+}

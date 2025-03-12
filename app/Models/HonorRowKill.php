@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class HonorRowKill extends Model
-        {
-            protected $table = '_HonorRowKills';
-            public $timestamps = false;
+class HonorRowKill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_HonorRowKills';
+    protected $fillable = [
+        'ID', 'Kesen', 'Kesilen', 'DescType'
+    ];
 
-            protected $fillable = [
-                'ID', 'Kesen', 'Kesilen', 'DescType'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Kesen' => 'integer',
         'Kesilen' => 'integer',
         'DescType' => 'integer',
     ];
-        }
+}

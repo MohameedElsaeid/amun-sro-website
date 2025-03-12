@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Item extends Model
-        {
-            protected $table = 'Items';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'ID'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+class Item extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Items';
+    protected $fillable = [
+        'ID'
     ];
-        }
+
+    protected $casts = [
+        'ID' => 'integer',
+    ];
+}

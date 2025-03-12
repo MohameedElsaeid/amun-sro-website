@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class VoteRewardLog extends Model
-        {
-            protected $table = 'vote_reward_log';
-            public $timestamps = false;
+class VoteRewardLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'vote_reward_log';
+    protected $fillable = [
+        'username', 'ip', 'date'
+    ];
 
-            protected $fillable = [
-                'username', 'ip', 'date'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

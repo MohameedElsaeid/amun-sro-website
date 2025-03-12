@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKSHL extends Model
-        {
-            protected $table = 'SK_SHL';
-            public $timestamps = false;
+class SKSHL extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_SHL';
+    protected $fillable = [
+        'idx', 'JID', 'COS', 'CGS', 'HOS', 'HGS', 'event_time'
+    ];
 
-            protected $fillable = [
-                'idx', 'JID', 'COS', 'CGS', 'HOS', 'HGS', 'event_time'
-            ];
-
-            protected $casts = [
-                'idx' => 'integer',
+    protected $casts = [
+        'idx' => 'integer',
         'JID' => 'integer',
         'COS' => 'integer',
         'CGS' => 'integer',
@@ -22,4 +21,4 @@
         'HGS' => 'integer',
         'event_time' => 'datetime',
     ];
-        }
+}

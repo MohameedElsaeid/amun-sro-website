@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ItemQuayTNET extends Model
-        {
-            protected $table = 'Item_Quay_TNET';
-            public $timestamps = false;
+class ItemQuayTNET extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Item_Quay_TNET';
+    protected $fillable = [
+        'CodeName'
+    ];
 
-            protected $fillable = [
-                'CodeName'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

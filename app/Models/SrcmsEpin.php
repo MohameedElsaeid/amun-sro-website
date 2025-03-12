@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsEpin extends Model
-        {
-            protected $table = 'srcms_epin';
-            public $timestamps = false;
+class SrcmsEpin extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_epin';
+    protected $fillable = [
+        'code', 'silkAmount'
+    ];
 
-            protected $fillable = [
-                'code', 'silkAmount'
-            ];
-
-            protected $casts = [
-                'code' => 'integer',
+    protected $casts = [
+        'code' => 'integer',
         'silkAmount' => 'integer',
     ];
-        }
+}

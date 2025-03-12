@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SiegeFortress extends Model
-        {
-            protected $table = '_SiegeFortress';
-            public $timestamps = false;
+class SiegeFortress extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SiegeFortress';
+    protected $fillable = [
+        'FortressID', 'GuildID', 'TaxRatio', 'Tax', 'NPCHired', 'TempGuildID', 'Introduction', 'CreatedDungeonTime', 'CreatedDungeonCount', 'IntroductionModificationPermission'
+    ];
 
-            protected $fillable = [
-                'FortressID', 'GuildID', 'TaxRatio', 'Tax', 'NPCHired', 'TempGuildID', 'Introduction', 'CreatedDungeonTime', 'CreatedDungeonCount', 'IntroductionModificationPermission'
-            ];
-
-            protected $casts = [
-                'FortressID' => 'integer',
+    protected $casts = [
+        'FortressID' => 'integer',
         'GuildID' => 'integer',
         'TaxRatio' => 'integer',
         'Tax' => 'integer',
@@ -24,4 +23,4 @@
         'CreatedDungeonCount' => 'integer',
         'IntroductionModificationPermission' => 'integer',
     ];
-        }
+}

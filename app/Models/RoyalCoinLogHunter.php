@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RoyalCoinLogHunter extends Model
-        {
-            protected $table = 'RoyalCoinLogHunters';
-            public $timestamps = false;
+class RoyalCoinLogHunter extends Model
+{
+    public $timestamps = false;
+    protected $table = 'RoyalCoinLogHunters';
+    protected $fillable = [
+        'CharID', 'Amount', 'EventTime'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Amount', 'EventTime'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Amount' => 'integer',
         'EventTime' => 'datetime',
     ];
-        }
+}

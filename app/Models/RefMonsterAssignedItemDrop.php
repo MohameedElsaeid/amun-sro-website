@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefMonsterAssignedItemDrop extends Model
-        {
-            protected $table = '_RefMonster_AssignedItemDrop';
-            public $timestamps = false;
+class RefMonsterAssignedItemDrop extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefMonster_AssignedItemDrop';
+    protected $fillable = [
+        'RefMonsterID', 'RefItemID', 'DropGroupType', 'OptLevel', 'DropAmountMin', 'DropAmountMax', 'DropRatio', 'RefMagicOptionID1', 'CustomValue1', 'RefMagicOptionID2', 'CustomValue2', 'RefMagicOptionID3', 'CustomValue3', 'RefMagicOptionID4', 'CustomValue4', 'RefMagicOptionID5', 'CustomValue5', 'RefMagicOptionID6', 'CustomValue6', 'RefMagicOptionID7', 'CustomValue7', 'RefMagicOptionID8', 'CustomValue8', 'RefMagicOptionID9', 'CustomValue9', 'RentCodeName'
+    ];
 
-            protected $fillable = [
-                'RefMonsterID', 'RefItemID', 'DropGroupType', 'OptLevel', 'DropAmountMin', 'DropAmountMax', 'DropRatio', 'RefMagicOptionID1', 'CustomValue1', 'RefMagicOptionID2', 'CustomValue2', 'RefMagicOptionID3', 'CustomValue3', 'RefMagicOptionID4', 'CustomValue4', 'RefMagicOptionID5', 'CustomValue5', 'RefMagicOptionID6', 'CustomValue6', 'RefMagicOptionID7', 'CustomValue7', 'RefMagicOptionID8', 'CustomValue8', 'RefMagicOptionID9', 'CustomValue9', 'RentCodeName'
-            ];
-
-            protected $casts = [
-                'RefMonsterID' => 'integer',
+    protected $casts = [
+        'RefMonsterID' => 'integer',
         'RefItemID' => 'integer',
         'DropGroupType' => 'integer',
         'OptLevel' => 'integer',
@@ -40,4 +39,4 @@
         'RefMagicOptionID9' => 'integer',
         'CustomValue9' => 'integer',
     ];
-        }
+}

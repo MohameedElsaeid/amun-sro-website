@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class AlliedClan extends Model
-        {
-            protected $table = '_AlliedClans';
-            public $timestamps = false;
+class AlliedClan extends Model
+{
+    public $timestamps = false;
+    protected $table = '_AlliedClans';
+    protected $fillable = [
+        'ID', 'Ally1', 'Ally2', 'Ally3', 'Ally4', 'Ally5', 'Ally6', 'Ally7', 'Ally8', 'FoundationDate', 'LastCrestRev', 'CurCrestRev'
+    ];
 
-            protected $fillable = [
-                'ID', 'Ally1', 'Ally2', 'Ally3', 'Ally4', 'Ally5', 'Ally6', 'Ally7', 'Ally8', 'FoundationDate', 'LastCrestRev', 'CurCrestRev'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Ally1' => 'integer',
         'Ally2' => 'integer',
         'Ally3' => 'integer',
@@ -27,4 +26,4 @@
         'LastCrestRev' => 'integer',
         'CurCrestRev' => 'integer',
     ];
-        }
+}

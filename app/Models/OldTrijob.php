@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class OldTrijob extends Model
-        {
-            protected $table = '_OldTrijob';
-            public $timestamps = false;
+class OldTrijob extends Model
+{
+    public $timestamps = false;
+    protected $table = '_OldTrijob';
+    protected $fillable = [
+        'CharID', 'JobLvl_Trader', 'Trader_Exp', 'JobLvl_Robber', 'Robber_Exp', 'JobLvl_Hunter', 'Hunter_Exp'
+    ];
 
-            protected $fillable = [
-                'CharID', 'JobLvl_Trader', 'Trader_Exp', 'JobLvl_Robber', 'Robber_Exp', 'JobLvl_Hunter', 'Hunter_Exp'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'JobLvl_Trader' => 'integer',
         'Trader_Exp' => 'integer',
         'JobLvl_Robber' => 'integer',
@@ -22,4 +21,4 @@
         'JobLvl_Hunter' => 'integer',
         'Hunter_Exp' => 'integer',
     ];
-        }
+}

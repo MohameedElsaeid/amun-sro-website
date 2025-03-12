@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ClientConfig extends Model
-        {
-            protected $table = '_ClientConfig';
-            public $timestamps = false;
+class ClientConfig extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ClientConfig';
+    protected $fillable = [
+        'CharID', 'ConfigType', 'SlotSeq', 'SlotType', 'Data'
+    ];
 
-            protected $fillable = [
-                'CharID', 'ConfigType', 'SlotSeq', 'SlotType', 'Data'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'ConfigType' => 'integer',
         'SlotSeq' => 'integer',
         'SlotType' => 'integer',
         'Data' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSetItemGroup extends Model
-        {
-            protected $table = '_RefSetItemGroup';
-            public $timestamps = false;
+class RefSetItemGroup extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSetItemGroup';
+    protected $fillable = [
+        'Service', 'ID', 'CodeName128', 'ObjName128', 'NameStrID128', 'DescStrID128', 'SetEffectMask', 'SetMagicMask', '2SetMOptGroupID', '3SetMOptGroupID', '4SetMOptGroupID', '5SetMOptGroupID', '6SetMOptGroupID', '7SetMOptGroupID', '8SetMOptGroupID', '9SetMOptGroupID', '10SetMOptGroupID', '11SetMOptGroupID'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'CodeName128', 'ObjName128', 'NameStrID128', 'DescStrID128', 'SetEffectMask', 'SetMagicMask', '2SetMOptGroupID', '3SetMOptGroupID', '4SetMOptGroupID', '5SetMOptGroupID', '6SetMOptGroupID', '7SetMOptGroupID', '8SetMOptGroupID', '9SetMOptGroupID', '10SetMOptGroupID', '11SetMOptGroupID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'SetEffectMask' => 'integer',
         'SetMagicMask' => 'integer',
@@ -29,4 +28,4 @@
         '10SetMOptGroupID' => 'integer',
         '11SetMOptGroupID' => 'integer',
     ];
-        }
+}

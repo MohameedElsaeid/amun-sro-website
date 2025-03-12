@@ -1,21 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
-
-        class RandomPlayer&Date extends Model
+class RandomPlayer&Date extends Model
         {
-            protected $table = '_RandomPlayer&Date';
-            public $timestamps = false;
+            protected
+            $table = '_RandomPlayer&Date';
+            public
+            $timestamps = false;
 
-            protected $fillable = [
+            protected
+            $fillable = [
                 'NextDate', 'RefreshedDate', 'CharID', 'Charname', 'Desc'
             ];
 
-            protected $casts = [
+            protected
+            $casts = [
                 'NextDate' => 'datetime',
-        'RefreshedDate' => 'datetime',
-        'CharID' => 'integer',
-    ];
+                'RefreshedDate' => 'datetime',
+                'CharID' => 'integer',
+            ];
         }

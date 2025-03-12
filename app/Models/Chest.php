@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Chest extends Model
-        {
-            protected $table = '_Chest';
-            public $timestamps = false;
+class Chest extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Chest';
+    protected $fillable = [
+        'UserJID', 'Slot', 'ItemID'
+    ];
 
-            protected $fillable = [
-                'UserJID', 'Slot', 'ItemID'
-            ];
-
-            protected $casts = [
-                'UserJID' => 'integer',
+    protected $casts = [
+        'UserJID' => 'integer',
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-        }
+}

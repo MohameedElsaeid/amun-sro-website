@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSiegeDungeon extends Model
-        {
-            protected $table = '_RefSiegeDungeon';
-            public $timestamps = false;
+class RefSiegeDungeon extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSiegeDungeon';
+    protected $fillable = [
+        'Service', 'FortressID', 'WorldID', 'MaxCreateCount', 'EntryGold', 'EntryGP'
+    ];
 
-            protected $fillable = [
-                'Service', 'FortressID', 'WorldID', 'MaxCreateCount', 'EntryGold', 'EntryGP'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'FortressID' => 'integer',
         'WorldID' => 'integer',
         'MaxCreateCount' => 'integer',
         'EntryGold' => 'integer',
         'EntryGP' => 'integer',
     ];
-        }
+}

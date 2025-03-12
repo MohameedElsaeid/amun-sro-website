@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefLatestItemSerial extends Model
-        {
-            protected $table = '_RefLatestItemSerial';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'LatestItemSerial'
-            ];
-
-            protected $casts = [
-                'LatestItemSerial' => 'integer',
+class RefLatestItemSerial extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefLatestItemSerial';
+    protected $fillable = [
+        'LatestItemSerial'
     ];
-        }
+
+    protected $casts = [
+        'LatestItemSerial' => 'integer',
+    ];
+}

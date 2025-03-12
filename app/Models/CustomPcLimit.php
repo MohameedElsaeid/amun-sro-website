@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CustomPcLimit extends Model
-        {
-            protected $table = 'CustomPcLimit';
-            public $timestamps = false;
+class CustomPcLimit extends Model
+{
+    public $timestamps = false;
+    protected $table = 'CustomPcLimit';
+    protected $fillable = [
+        'RegionID', 'IPCount', 'HWIDCount'
+    ];
 
-            protected $fillable = [
-                'RegionID', 'IPCount', 'HWIDCount'
-            ];
-
-            protected $casts = [
-                'RegionID' => 'integer',
+    protected $casts = [
+        'RegionID' => 'integer',
         'IPCount' => 'integer',
         'HWIDCount' => 'integer',
     ];
-        }
+}

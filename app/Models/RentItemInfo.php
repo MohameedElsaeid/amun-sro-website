@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RentItemInfo extends Model
-        {
-            protected $table = '_RentItemInfo';
-            public $timestamps = false;
+class RentItemInfo extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RentItemInfo';
+    protected $fillable = [
+        'nItemDBID', 'nRentType', 'nCanDelete', 'nCanRecharge', 'PeriodBeginTime', 'PeriodEndTime', 'MeterRateTime', 'nPackingState', 'nPackingTime'
+    ];
 
-            protected $fillable = [
-                'nItemDBID', 'nRentType', 'nCanDelete', 'nCanRecharge', 'PeriodBeginTime', 'PeriodEndTime', 'MeterRateTime', 'nPackingState', 'nPackingTime'
-            ];
-
-            protected $casts = [
-                'nItemDBID' => 'integer',
+    protected $casts = [
+        'nItemDBID' => 'integer',
         'nRentType' => 'integer',
         'nCanDelete' => 'integer',
         'nCanRecharge' => 'integer',
@@ -24,4 +23,4 @@
         'nPackingState' => 'integer',
         'nPackingTime' => 'integer',
     ];
-        }
+}

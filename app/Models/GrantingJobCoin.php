@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class GrantingJobCoin extends Model
-        {
-            protected $table = 'GrantingJobCoin';
-            public $timestamps = false;
+class GrantingJobCoin extends Model
+{
+    public $timestamps = false;
+    protected $table = 'GrantingJobCoin';
+    protected $fillable = [
+        'CharID', 'Amount', 'EventTime'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Amount', 'EventTime'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Amount' => 'integer',
         'EventTime' => 'datetime',
     ];
-        }
+}

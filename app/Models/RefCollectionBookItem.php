@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCollectionBookItem extends Model
-        {
-            protected $table = '_RefCollectionBook_Item';
-            public $timestamps = false;
+class RefCollectionBookItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCollectionBook_Item';
+    protected $fillable = [
+        'Service', 'CodeName128', 'ObjName128', 'ThemeCodeName128', 'SlotIndex', 'Story128', 'DDJFile128'
+    ];
 
-            protected $fillable = [
-                'Service', 'CodeName128', 'ObjName128', 'ThemeCodeName128', 'SlotIndex', 'Story128', 'DDJFile128'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'SlotIndex' => 'integer',
     ];
-        }
+}

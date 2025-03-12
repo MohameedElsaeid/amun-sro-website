@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TBUser extends Model
-        {
-            protected $table = 'TB_User';
-            public $timestamps = false;
+class TBUser extends Model
+{
+    public $timestamps = false;
+    protected $table = 'TB_User';
+    protected $fillable = [
+        'JID', 'StrUserID', 'password', 'Status', 'GMrank', 'Name', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'AccPlayTime', 'LatestUpdateTime_ToPlayTime', 'Play123Time'
+    ];
 
-            protected $fillable = [
-                'JID', 'StrUserID', 'password', 'Status', 'GMrank', 'Name', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'AccPlayTime', 'LatestUpdateTime_ToPlayTime', 'Play123Time'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'Status' => 'integer',
         'GMrank' => 'integer',
         'regtime' => 'datetime',
@@ -26,4 +25,4 @@
         'LatestUpdateTime_ToPlayTime' => 'integer',
         'Play123Time' => 'integer',
     ];
-        }
+}

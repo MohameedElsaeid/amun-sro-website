@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKITEMGuardLog extends Model
-        {
-            protected $table = 'SK_ITEM_GuardLog';
-            public $timestamps = false;
+class SKITEMGuardLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_ITEM_GuardLog';
+    protected $fillable = [
+        'autoID', 'serial64', 'gremain', 'shardID', 'optionLvl', 'LastGuard'
+    ];
 
-            protected $fillable = [
-                'autoID', 'serial64', 'gremain', 'shardID', 'optionLvl', 'LastGuard'
-            ];
-
-            protected $casts = [
-                'autoID' => 'integer',
+    protected $casts = [
+        'autoID' => 'integer',
         'serial64' => 'integer',
         'gremain' => 'integer',
         'shardID' => 'integer',
         'optionLvl' => 'integer',
         'LastGuard' => 'datetime',
     ];
-        }
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SiegeFortressRequest extends Model
-        {
-            protected $table = '_SiegeFortressRequest';
-            public $timestamps = false;
+class SiegeFortressRequest extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SiegeFortressRequest';
+    protected $fillable = [
+        'FortressID', 'GuildID', 'RequestType'
+    ];
 
-            protected $fillable = [
-                'FortressID', 'GuildID', 'RequestType'
-            ];
-
-            protected $casts = [
-                'FortressID' => 'integer',
+    protected $casts = [
+        'FortressID' => 'integer',
         'GuildID' => 'integer',
         'RequestType' => 'integer',
     ];
-        }
+}

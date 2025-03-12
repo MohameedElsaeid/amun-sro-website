@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SiegeFortressObject extends Model
-        {
-            protected $table = '_SiegeFortressObject';
-            public $timestamps = false;
+class SiegeFortressObject extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SiegeFortressObject';
+    protected $fillable = [
+        'ID', 'FortressID', 'OwnerGuildID', 'RefObjID', 'HP', 'Region', 'PosX', 'PosY', 'PosZ', 'Direction', 'OwnerLevel'
+    ];
 
-            protected $fillable = [
-                'ID', 'FortressID', 'OwnerGuildID', 'RefObjID', 'HP', 'Region', 'PosX', 'PosY', 'PosZ', 'Direction', 'OwnerLevel'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'FortressID' => 'integer',
         'OwnerGuildID' => 'integer',
         'RefObjID' => 'integer',
@@ -26,4 +25,4 @@
         'Direction' => 'float',
         'OwnerLevel' => 'integer',
     ];
-        }
+}

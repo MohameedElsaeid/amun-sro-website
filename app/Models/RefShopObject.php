@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefShopObject extends Model
-        {
-            protected $table = '_RefShopObject';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'ID', 'CodeName128'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+class RefShopObject extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefShopObject';
+    protected $fillable = [
+        'ID', 'CodeName128'
     ];
-        }
+
+    protected $casts = [
+        'ID' => 'integer',
+    ];
+}

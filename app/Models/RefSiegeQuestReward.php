@@ -1,23 +1,22 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSiegeQuestReward extends Model
-        {
-            protected $table = '_RefSiegeQuestReward';
-            public $timestamps = false;
+class RefSiegeQuestReward extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSiegeQuestReward';
+    protected $fillable = [
+        'Service', 'QuestID', 'RewardType', 'RewardRefID', 'RewardValue'
+    ];
 
-            protected $fillable = [
-                'Service', 'QuestID', 'RewardType', 'RewardRefID', 'RewardValue'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'QuestID' => 'integer',
         'RewardType' => 'integer',
         'RewardRefID' => 'integer',
         'RewardValue' => 'integer',
     ];
-        }
+}

@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefGachaNpcMap extends Model
-        {
-            protected $table = '_RefGachaNpcMap';
-            public $timestamps = false;
+class RefGachaNpcMap extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefGachaNpcMap';
+    protected $fillable = [
+        'Service', 'NPC_ID', 'SelectionGachaID', 'WasteGachaID'
+    ];
 
-            protected $fillable = [
-                'Service', 'NPC_ID', 'SelectionGachaID', 'WasteGachaID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'NPC_ID' => 'integer',
         'SelectionGachaID' => 'integer',
         'WasteGachaID' => 'integer',
     ];
-        }
+}

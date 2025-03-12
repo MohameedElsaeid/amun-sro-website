@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharQuest extends Model
-        {
-            protected $table = '_CharQuest';
-            public $timestamps = false;
+class CharQuest extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharQuest';
+    protected $fillable = [
+        'CharID', 'QuestID', 'Status', 'AchievementCount', 'StartTime', 'EndTime', 'QuestData1', 'QuestData2'
+    ];
 
-            protected $fillable = [
-                'CharID', 'QuestID', 'Status', 'AchievementCount', 'StartTime', 'EndTime', 'QuestData1', 'QuestData2'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'QuestID' => 'integer',
         'Status' => 'integer',
         'AchievementCount' => 'integer',
@@ -23,4 +22,4 @@
         'QuestData1' => 'integer',
         'QuestData2' => 'integer',
     ];
-        }
+}

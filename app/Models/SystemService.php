@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SystemService extends Model
-        {
-            protected $table = 'SystemService';
-            public $timestamps = false;
+class SystemService extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SystemService';
+    protected $fillable = [
+        'ID', 'Service', 'Run', 'Type', 'SystemName'
+    ];
 
-            protected $fillable = [
-                'ID', 'Service', 'Run', 'Type', 'SystemName'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Service' => 'integer',
     ];
-        }
+}

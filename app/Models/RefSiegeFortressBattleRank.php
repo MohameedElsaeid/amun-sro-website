@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSiegeFortressBattleRank extends Model
-        {
-            protected $table = '_RefSiegeFortressBattleRank';
-            public $timestamps = false;
+class RefSiegeFortressBattleRank extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSiegeFortressBattleRank';
+    protected $fillable = [
+        'Service', 'RankLvl', 'RankName', 'ReqPKCount', 'BindedSkillID', 'CrestPath128'
+    ];
 
-            protected $fillable = [
-                'Service', 'RankLvl', 'RankName', 'ReqPKCount', 'BindedSkillID', 'CrestPath128'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RankLvl' => 'integer',
         'ReqPKCount' => 'integer',
         'BindedSkillID' => 'integer',
     ];
-        }
+}

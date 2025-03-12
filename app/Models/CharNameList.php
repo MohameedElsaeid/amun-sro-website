@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharNameList extends Model
-        {
-            protected $table = '_CharNameList';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'CharName16', 'CharID'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+class CharNameList extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharNameList';
+    protected $fillable = [
+        'CharName16', 'CharID'
     ];
-        }
+
+    protected $casts = [
+        'CharID' => 'integer',
+    ];
+}

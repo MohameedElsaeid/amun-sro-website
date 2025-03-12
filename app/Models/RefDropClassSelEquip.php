@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefDropClassSelEquip extends Model
-        {
-            protected $table = '_RefDropClassSel_Equip';
-            public $timestamps = false;
+class RefDropClassSelEquip extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefDropClassSel_Equip';
+    protected $fillable = [
+        'MonLevel', 'ProbGroup1', 'ProbGroup2', 'ProbGroup3', 'ProbGroup4', 'ProbGroup5', 'ProbGroup6', 'ProbGroup7', 'ProbGroup8', 'ProbGroup9', 'ProbGroup10', 'ProbGroup11', 'ProbGroup12', 'ProbGroup13', 'ProbGroup14', 'ProbGroup15', 'ProbGroup16', 'ProbGroup17', 'ProbGroup18', 'ProbGroup19', 'ProbGroup20', 'ProbGroup21', 'ProbGroup22', 'ProbGroup23', 'ProbGroup24', 'ProbGroup25', 'ProbGroup26', 'ProbGroup27', 'ProbGroup28', 'ProbGroup29', 'ProbGroup30', 'ProbGroup31', 'ProbGroup32', 'ProbGroup33', 'ProbGroup34', 'ProbGroup35', 'ProbGroup36'
+    ];
 
-            protected $fillable = [
-                'MonLevel', 'ProbGroup1', 'ProbGroup2', 'ProbGroup3', 'ProbGroup4', 'ProbGroup5', 'ProbGroup6', 'ProbGroup7', 'ProbGroup8', 'ProbGroup9', 'ProbGroup10', 'ProbGroup11', 'ProbGroup12', 'ProbGroup13', 'ProbGroup14', 'ProbGroup15', 'ProbGroup16', 'ProbGroup17', 'ProbGroup18', 'ProbGroup19', 'ProbGroup20', 'ProbGroup21', 'ProbGroup22', 'ProbGroup23', 'ProbGroup24', 'ProbGroup25', 'ProbGroup26', 'ProbGroup27', 'ProbGroup28', 'ProbGroup29', 'ProbGroup30', 'ProbGroup31', 'ProbGroup32', 'ProbGroup33', 'ProbGroup34', 'ProbGroup35', 'ProbGroup36'
-            ];
-
-            protected $casts = [
-                'MonLevel' => 'integer',
+    protected $casts = [
+        'MonLevel' => 'integer',
         'ProbGroup1' => 'float',
         'ProbGroup2' => 'float',
         'ProbGroup3' => 'float',
@@ -52,4 +51,4 @@
         'ProbGroup35' => 'float',
         'ProbGroup36' => 'float',
     ];
-        }
+}

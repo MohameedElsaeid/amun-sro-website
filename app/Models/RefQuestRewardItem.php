@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefQuestRewardItem extends Model
-        {
-            protected $table = '_RefQuestRewardItems';
-            public $timestamps = false;
+class RefQuestRewardItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefQuestRewardItems';
+    protected $fillable = [
+        'Service', 'QuestID', 'QuestCodeName', 'RewardType', 'ItemCodeName', 'OptionalItemCode', 'OptionalItemCnt', 'AchieveQuantity', 'RentItemCodeName', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc'
+    ];
 
-            protected $fillable = [
-                'Service', 'QuestID', 'QuestCodeName', 'RewardType', 'ItemCodeName', 'OptionalItemCode', 'OptionalItemCnt', 'AchieveQuantity', 'RentItemCodeName', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'QuestID' => 'integer',
         'RewardType' => 'integer',
         'OptionalItemCnt' => 'integer',
@@ -22,4 +21,4 @@
         'Param1' => 'integer',
         'Param2' => 'integer',
     ];
-        }
+}

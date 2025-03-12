@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class LogEventSiegeFortress extends Model
-        {
-            protected $table = '_LogEventSiegeFortress';
-            public $timestamps = false;
+class LogEventSiegeFortress extends Model
+{
+    public $timestamps = false;
+    protected $table = '_LogEventSiegeFortress';
+    protected $fillable = [
+        'ID', 'FortressID', 'EventTime', 'EventID', 'CharID', 'Data1', 'Data2', 'strDesc'
+    ];
 
-            protected $fillable = [
-                'ID', 'FortressID', 'EventTime', 'EventID', 'CharID', 'Data1', 'Data2', 'strDesc'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'FortressID' => 'integer',
         'EventTime' => 'datetime',
         'EventID' => 'integer',
@@ -22,4 +21,4 @@
         'Data1' => 'integer',
         'Data2' => 'integer',
     ];
-        }
+}

@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefGachaCode extends Model
-        {
-            protected $table = '_RefGachaCode';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'CodeName128', 'GachaSetID'
-            ];
-
-            protected $casts = [
-                'GachaSetID' => 'integer',
+class RefGachaCode extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefGachaCode';
+    protected $fillable = [
+        'CodeName128', 'GachaSetID'
     ];
-        }
+
+    protected $casts = [
+        'GachaSetID' => 'integer',
+    ];
+}

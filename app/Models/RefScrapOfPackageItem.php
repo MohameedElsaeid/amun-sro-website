@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefScrapOfPackageItem extends Model
-        {
-            protected $table = '_RefScrapOfPackageItem';
-            public $timestamps = false;
+class RefScrapOfPackageItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefScrapOfPackageItem';
+    protected $fillable = [
+        'Service', 'Country', 'RefPackageItemCodeName', 'RefItemCodeName', 'OptLevel', 'Variance', 'Data', 'MagParamNum', 'MagParam1', 'MagParam2', 'MagParam3', 'MagParam4', 'MagParam5', 'MagParam6', 'MagParam7', 'MagParam8', 'MagParam9', 'MagParam10', 'MagParam11', 'MagParam12', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128', 'Index'
+    ];
 
-            protected $fillable = [
-                'Service', 'Country', 'RefPackageItemCodeName', 'RefItemCodeName', 'OptLevel', 'Variance', 'Data', 'MagParamNum', 'MagParam1', 'MagParam2', 'MagParam3', 'MagParam4', 'MagParam5', 'MagParam6', 'MagParam7', 'MagParam8', 'MagParam9', 'MagParam10', 'MagParam11', 'MagParam12', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128', 'Index'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Country' => 'integer',
         'OptLevel' => 'integer',
         'Variance' => 'integer',
@@ -38,4 +37,4 @@
         'Param4' => 'integer',
         'Index' => 'integer',
     ];
-        }
+}

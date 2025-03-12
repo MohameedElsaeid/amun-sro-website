@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RoyalItemPoolAutoEquipment extends Model
-        {
-            protected $table = '_RoyalItemPoolAutoEquipment';
-            public $timestamps = false;
+class RoyalItemPoolAutoEquipment extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RoyalItemPoolAutoEquipment';
+    protected $fillable = [
+        'service', 'ID', 'CodeName128', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'ReqLevel1', 'Gender', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'MagParamNum', 'Va', 'Race'
+    ];
 
-            protected $fillable = [
-                'service', 'ID', 'CodeName128', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'ReqLevel1', 'Gender', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'MagParamNum', 'Va', 'Race'
-            ];
-
-            protected $casts = [
-                'service' => 'integer',
+    protected $casts = [
+        'service' => 'integer',
         'ID' => 'integer',
         'TypeID1' => 'integer',
         'TypeID2' => 'integer',
@@ -35,4 +34,4 @@
         'Va' => 'integer',
         'Race' => 'boolean',
     ];
-        }
+}

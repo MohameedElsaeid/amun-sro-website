@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ModuleVersion extends Model
-        {
-            protected $table = '_ModuleVersion';
-            public $timestamps = false;
+class ModuleVersion extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ModuleVersion';
+    protected $fillable = [
+        'nID', 'nDivisionID', 'nContentID', 'nModuleID', 'nVersion', 'szVersion', 'szDesc', 'nValid'
+    ];
 
-            protected $fillable = [
-                'nID', 'nDivisionID', 'nContentID', 'nModuleID', 'nVersion', 'szVersion', 'szDesc', 'nValid'
-            ];
-
-            protected $casts = [
-                'nID' => 'integer',
+    protected $casts = [
+        'nID' => 'integer',
         'nDivisionID' => 'integer',
         'nContentID' => 'integer',
         'nModuleID' => 'integer',
         'nVersion' => 'integer',
         'nValid' => 'integer',
     ];
-        }
+}

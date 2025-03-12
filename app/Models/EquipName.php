@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class EquipName extends Model
-        {
-            protected $table = '_EquipName';
-            public $timestamps = false;
+class EquipName extends Model
+{
+    public $timestamps = false;
+    protected $table = '_EquipName';
+    protected $fillable = [
+        'Service', 'TextString', 'EndTextString'
+    ];
 
-            protected $fillable = [
-                'Service', 'TextString', 'EndTextString'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

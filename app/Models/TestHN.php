@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TestHN extends Model
-        {
-            protected $table = 'Test_HN';
-            public $timestamps = false;
+class TestHN extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Test_HN';
+    protected $fillable = [
+        'STT', 'Username', 'CodeCB', 'H?', 'Tï¿½n', 'Email', 'password', 'F_ONLINE'
+    ];
 
-            protected $fillable = [
-                'STT', 'Username', 'CodeCB', 'H?', 'Tên', 'Email', 'password', 'F_ONLINE'
-            ];
-
-            protected $casts = [
-                'STT' => 'float',
+    protected $casts = [
+        'STT' => 'float',
         'F_ONLINE' => 'float',
     ];
-        }
+}

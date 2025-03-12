@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefMonsterAssignedItemRndDrop extends Model
-        {
-            protected $table = '_RefMonster_AssignedItemRndDrop';
-            public $timestamps = false;
+class RefMonsterAssignedItemRndDrop extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefMonster_AssignedItemRndDrop';
+    protected $fillable = [
+        'Service', 'RefMonsterID', 'RefItemGroupID', 'ItemGroupCodeName128', 'Overlap', 'DropAmountMin', 'DropAmountMax', 'DropRatio', 'param1', 'param2'
+    ];
 
-            protected $fillable = [
-                'Service', 'RefMonsterID', 'RefItemGroupID', 'ItemGroupCodeName128', 'Overlap', 'DropAmountMin', 'DropAmountMax', 'DropRatio', 'param1', 'param2'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RefMonsterID' => 'integer',
         'RefItemGroupID' => 'integer',
         'Overlap' => 'integer',
@@ -24,4 +23,4 @@
         'param1' => 'integer',
         'param2' => 'integer',
     ];
-        }
+}

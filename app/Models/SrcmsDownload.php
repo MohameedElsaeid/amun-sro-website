@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsDownload extends Model
-        {
-            protected $table = 'srcms_downloads';
-            public $timestamps = false;
+class SrcmsDownload extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_downloads';
+    protected $fillable = [
+        'link', 'name', 'description'
+    ];
 
-            protected $fillable = [
-                'link', 'name', 'description'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

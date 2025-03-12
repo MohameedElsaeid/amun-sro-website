@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefRegion extends Model
-        {
-            protected $table = '_RefRegion';
-            public $timestamps = false;
+class RefRegion extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefRegion';
+    protected $fillable = [
+        'wRegionID', 'X', 'Z', 'ContinentName', 'AreaName', 'IsBattleField', 'Climate', 'MaxCapacity', 'AssocObjID', 'AssocServer', 'AssocFile256', 'LinkedRegion_1', 'LinkedRegion_2', 'LinkedRegion_3', 'LinkedRegion_4', 'LinkedRegion_5', 'LinkedRegion_6', 'LinkedRegion_7', 'LinkedRegion_8', 'LinkedRegion_9', 'LinkedRegion_10'
+    ];
 
-            protected $fillable = [
-                'wRegionID', 'X', 'Z', 'ContinentName', 'AreaName', 'IsBattleField', 'Climate', 'MaxCapacity', 'AssocObjID', 'AssocServer', 'AssocFile256', 'LinkedRegion_1', 'LinkedRegion_2', 'LinkedRegion_3', 'LinkedRegion_4', 'LinkedRegion_5', 'LinkedRegion_6', 'LinkedRegion_7', 'LinkedRegion_8', 'LinkedRegion_9', 'LinkedRegion_10'
-            ];
-
-            protected $casts = [
-                'wRegionID' => 'integer',
+    protected $casts = [
+        'wRegionID' => 'integer',
         'X' => 'integer',
         'Z' => 'integer',
         'IsBattleField' => 'integer',
@@ -33,4 +32,4 @@
         'LinkedRegion_9' => 'integer',
         'LinkedRegion_10' => 'integer',
     ];
-        }
+}

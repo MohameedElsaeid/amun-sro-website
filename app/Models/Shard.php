@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Shard extends Model
-        {
-            protected $table = '_Shard';
-            public $timestamps = false;
+class Shard extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Shard';
+    protected $fillable = [
+        'nID', 'nFarmID', 'nContentID', 'szName', 'szDesc', 'szDBConfig', 'nMaxUser', 'nStartupServerID', 'nStatus', 'nCurrentUserRatio'
+    ];
 
-            protected $fillable = [
-                'nID', 'nFarmID', 'nContentID', 'szName', 'szDesc', 'szDBConfig', 'nMaxUser', 'nStartupServerID', 'nStatus', 'nCurrentUserRatio'
-            ];
-
-            protected $casts = [
-                'nID' => 'integer',
+    protected $casts = [
+        'nID' => 'integer',
         'nFarmID' => 'integer',
         'nContentID' => 'integer',
         'nMaxUser' => 'integer',
@@ -22,4 +21,4 @@
         'nStatus' => 'integer',
         'nCurrentUserRatio' => 'integer',
     ];
-        }
+}

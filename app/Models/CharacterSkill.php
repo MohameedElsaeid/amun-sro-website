@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharacterSkill extends Model
-        {
-            protected $table = '_CharacterSkills';
-            public $timestamps = false;
+class CharacterSkill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharacterSkills';
+    protected $fillable = [
+        'SkillID', 'Build', 'Race', 'MasteryID'
+    ];
 
-            protected $fillable = [
-                'SkillID', 'Build', 'Race', 'MasteryID'
-            ];
-
-            protected $casts = [
-                'SkillID' => 'integer',
+    protected $casts = [
+        'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
-        }
+}

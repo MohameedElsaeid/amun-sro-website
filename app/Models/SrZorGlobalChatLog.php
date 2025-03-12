@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrZorGlobalChatLog extends Model
-        {
-            protected $table = 'srZor_globalChatLog';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'sender', 'msg', 'time'
-            ];
-
-            protected $casts = [
-                'time' => 'datetime',
+class SrZorGlobalChatLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srZor_globalChatLog';
+    protected $fillable = [
+        'sender', 'msg', 'time'
     ];
-        }
+
+    protected $casts = [
+        'time' => 'datetime',
+    ];
+}

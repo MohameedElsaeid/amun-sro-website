@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ItemPool extends Model
-        {
-            protected $table = '_ItemPool';
-            public $timestamps = false;
+class ItemPool extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ItemPool';
+    protected $fillable = [
+        'ItemID', 'InUse'
+    ];
 
-            protected $fillable = [
-                'ItemID', 'InUse'
-            ];
-
-            protected $casts = [
-                'ItemID' => 'integer',
+    protected $casts = [
+        'ItemID' => 'integer',
         'InUse' => 'integer',
     ];
-        }
+}

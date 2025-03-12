@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class User extends Model
-        {
-            protected $table = '_User';
-            public $timestamps = false;
+class User extends Model
+{
+    public $timestamps = false;
+    protected $table = '_User';
+    protected $fillable = [
+        'UserJID', 'CharID'
+    ];
 
-            protected $fillable = [
-                'UserJID', 'CharID'
-            ];
-
-            protected $casts = [
-                'UserJID' => 'integer',
+    protected $casts = [
+        'UserJID' => 'integer',
         'CharID' => 'integer',
     ];
-        }
+}

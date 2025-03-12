@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SkillsBicheon extends Model
-        {
-            protected $table = '_SkillsBicheon';
-            public $timestamps = false;
+class SkillsBicheon extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SkillsBicheon';
+    protected $fillable = [
+        'Service', 'SkillID', 'SkillName', 'MasteryID'
+    ];
 
-            protected $fillable = [
-                'Service', 'SkillID', 'SkillName', 'MasteryID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
-        }
+}

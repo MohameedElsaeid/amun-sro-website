@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefRewardPolicyToSellPackageItem extends Model
-        {
-            protected $table = '_RefRewardPolicyToSellPackageItem';
-            public $timestamps = false;
+class RefRewardPolicyToSellPackageItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefRewardPolicyToSellPackageItem';
+    protected $fillable = [
+        'Service', 'Country', 'RefPackageItemCodeName', 'AcceptOrReject', 'FourCC', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128'
+    ];
 
-            protected $fillable = [
-                'Service', 'Country', 'RefPackageItemCodeName', 'AcceptOrReject', 'FourCC', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Country' => 'integer',
         'AcceptOrReject' => 'integer',
         'FourCC' => 'integer',
@@ -23,4 +22,4 @@
         'Param3' => 'integer',
         'Param4' => 'integer',
     ];
-        }
+}

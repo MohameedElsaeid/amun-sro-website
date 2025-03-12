@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SkillsLightning extends Model
-        {
-            protected $table = '_SkillsLightning';
-            public $timestamps = false;
+class SkillsLightning extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SkillsLightning';
+    protected $fillable = [
+        'Service', 'SkillID', 'SkillName', 'MasteryID'
+    ];
 
-            protected $fillable = [
-                'Service', 'SkillID', 'SkillName', 'MasteryID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
-        }
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class GuildChest extends Model
-        {
-            protected $table = '_GuildChest';
-            public $timestamps = false;
+class GuildChest extends Model
+{
+    public $timestamps = false;
+    protected $table = '_GuildChest';
+    protected $fillable = [
+        'GuildID', 'Slot', 'ItemID'
+    ];
 
-            protected $fillable = [
-                'GuildID', 'Slot', 'ItemID'
-            ];
-
-            protected $casts = [
-                'GuildID' => 'integer',
+    protected $casts = [
+        'GuildID' => 'integer',
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-        }
+}

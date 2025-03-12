@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SiegeFortressItemForge extends Model
-        {
-            protected $table = '_SiegeFortressItemForge';
-            public $timestamps = false;
+class SiegeFortressItemForge extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SiegeFortressItemForge';
+    protected $fillable = [
+        'FortressID', 'ItemRefID', 'Amount', 'Finished', 'StartDate', 'FinishDate'
+    ];
 
-            protected $fillable = [
-                'FortressID', 'ItemRefID', 'Amount', 'Finished', 'StartDate', 'FinishDate'
-            ];
-
-            protected $casts = [
-                'FortressID' => 'integer',
+    protected $casts = [
+        'FortressID' => 'integer',
         'ItemRefID' => 'integer',
         'Amount' => 'integer',
         'Finished' => 'integer',
         'StartDate' => 'datetime',
         'FinishDate' => 'datetime',
     ];
-        }
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Paymentwall extends Model
-        {
-            protected $table = '_paymentwall';
-            public $timestamps = false;
+class Paymentwall extends Model
+{
+    public $timestamps = false;
+    protected $table = '_paymentwall';
+    protected $fillable = [
+        'JID', 'credits', 'date'
+    ];
 
-            protected $fillable = [
-                'JID', 'credits', 'date'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'credits' => 'integer',
         'date' => 'datetime',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class AssociationReputation extends Model
-        {
-            protected $table = '_AssociationReputation';
-            public $timestamps = false;
+class AssociationReputation extends Model
+{
+    public $timestamps = false;
+    protected $table = '_AssociationReputation';
+    protected $fillable = [
+        'AssociationCodeName', 'AssociationTypeName', 'Reputation', 'PriorOccupation'
+    ];
 
-            protected $fillable = [
-                'AssociationCodeName', 'AssociationTypeName', 'Reputation', 'PriorOccupation'
-            ];
-
-            protected $casts = [
-                'Reputation' => 'integer',
+    protected $casts = [
+        'Reputation' => 'integer',
         'PriorOccupation' => 'integer',
     ];
-        }
+}

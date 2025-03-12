@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSiegeStructUpgrade extends Model
-        {
-            protected $table = '_RefSiegeStructUpgrade';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'Service', 'Structname', 'BaseStructcodename', 'UpgradeStructname1', 'UpgradeStructname2', 'UpgradeStructname3', 'UpgradeStructname4'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+class RefSiegeStructUpgrade extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSiegeStructUpgrade';
+    protected $fillable = [
+        'Service', 'Structname', 'BaseStructcodename', 'UpgradeStructname1', 'UpgradeStructname2', 'UpgradeStructname3', 'UpgradeStructname4'
     ];
-        }
+
+    protected $casts = [
+        'Service' => 'integer',
+    ];
+}

@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class VoteRewardHacking extends Model
-        {
-            protected $table = 'vote_reward_hacking';
-            public $timestamps = false;
+class VoteRewardHacking extends Model
+{
+    public $timestamps = false;
+    protected $table = 'vote_reward_hacking';
+    protected $fillable = [
+        'ip', 'data'
+    ];
 
-            protected $fillable = [
-                'ip', 'data'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

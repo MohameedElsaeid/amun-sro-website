@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKSilkBuyList extends Model
-        {
-            protected $table = 'SK_SilkBuyList';
-            public $timestamps = false;
+class SKSilkBuyList extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_SilkBuyList';
+    protected $fillable = [
+        'BuyNo', 'UserJID', 'Silk_Type', 'Silk_Reason', 'Silk_Offset', 'Silk_Remain', 'ID', 'BuyQuantity', 'OrderNumber', 'PGCompany', 'PayMethod', 'PGUniqueNo', 'AuthNumber', 'AuthDate', 'SubJID', 'srID', 'SlipPaper', 'MngID', 'IP', 'RegDate'
+    ];
 
-            protected $fillable = [
-                'BuyNo', 'UserJID', 'Silk_Type', 'Silk_Reason', 'Silk_Offset', 'Silk_Remain', 'ID', 'BuyQuantity', 'OrderNumber', 'PGCompany', 'PayMethod', 'PGUniqueNo', 'AuthNumber', 'AuthDate', 'SubJID', 'srID', 'SlipPaper', 'MngID', 'IP', 'RegDate'
-            ];
-
-            protected $casts = [
-                'BuyNo' => 'integer',
+    protected $casts = [
+        'BuyNo' => 'integer',
         'UserJID' => 'integer',
         'Silk_Type' => 'integer',
         'Silk_Reason' => 'integer',
@@ -29,4 +28,4 @@
         'MngID' => 'integer',
         'RegDate' => 'datetime',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharInstanceWorldDatum extends Model
-        {
-            protected $table = '_CharInstanceWorldData';
-            public $timestamps = false;
+class CharInstanceWorldDatum extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharInstanceWorldData';
+    protected $fillable = [
+        'CharID', 'DungeonKeyID', 'WorldID', 'LayerID', 'OpenedTime', 'RegionID', 'PosX', 'PosY', 'PosZ', 'IsActivated', 'EnterCount', 'LastEnterTime'
+    ];
 
-            protected $fillable = [
-                'CharID', 'DungeonKeyID', 'WorldID', 'LayerID', 'OpenedTime', 'RegionID', 'PosX', 'PosY', 'PosZ', 'IsActivated', 'EnterCount', 'LastEnterTime'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'DungeonKeyID' => 'integer',
         'WorldID' => 'integer',
         'LayerID' => 'integer',
@@ -27,4 +26,4 @@
         'EnterCount' => 'integer',
         'LastEnterTime' => 'datetime',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSkill extends Model
-        {
-            protected $table = '_RefSkill';
-            public $timestamps = false;
+class RefSkill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSkill';
+    protected $fillable = [
+        'Service', 'ID', 'GroupID', 'Basic_Code', 'Basic_Name', 'Basic_Group', 'Basic_Original', 'Basic_Level', 'Basic_Activity', 'Basic_ChainCode', 'Basic_RecycleCost', 'Action_PreparingTime', 'Action_CastingTime', 'Action_ActionDuration', 'Action_ReuseDelay', 'Action_CoolTime', 'Action_FlyingSpeed', 'Action_Interruptable', 'Action_Overlap', 'Action_AutoAttackType', 'Action_InTown', 'Action_Range', 'Target_Required', 'TargetType_Animal', 'TargetType_Land', 'TargetType_Building', 'TargetGroup_Self', 'TargetGroup_Ally', 'TargetGroup_Party', 'TargetGroup_Enemy_M', 'TargetGroup_Enemy_P', 'TargetGroup_Neutral', 'TargetGroup_DontCare', 'TargetEtc_SelectDeadBody', 'ReqCommon_Mastery1', 'ReqCommon_Mastery2', 'ReqCommon_MasteryLevel1', 'ReqCommon_MasteryLevel2', 'ReqCommon_Str', 'ReqCommon_Int', 'ReqLearn_Skill1', 'ReqLearn_Skill2', 'ReqLearn_Skill3', 'ReqLearn_SkillLevel1', 'ReqLearn_SkillLevel2', 'ReqLearn_SkillLevel3', 'ReqLearn_SP', 'ReqLearn_Race', 'Req_Restriction1', 'Req_Restriction2', 'ReqCast_Weapon1', 'ReqCast_Weapon2', 'Consume_HP', 'Consume_MP', 'Consume_HPRatio', 'Consume_MPRatio', 'Consume_WHAN', 'UI_SkillTab', 'UI_SkillPage', 'UI_SkillColumn', 'UI_SkillRow', 'UI_IconFile', 'UI_SkillName', 'UI_SkillToolTip', 'UI_SkillToolTip_Desc', 'UI_SkillStudy_Desc', 'AI_AttackChance', 'AI_SkillType', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16', 'Param17', 'Param18', 'Param19', 'Param20', 'Param21', 'Param22', 'Param23', 'Param24', 'Param25', 'Param26', 'Param27', 'Param28', 'Param29', 'Param30', 'Param31', 'Param32', 'Param33', 'Param34', 'Param35', 'Param36', 'Param37', 'Param38', 'Param39', 'Param40', 'Param41', 'Param42', 'Param43', 'Param44', 'Param45', 'Param46', 'Param47', 'Param48', 'Param49', 'Param50'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'GroupID', 'Basic_Code', 'Basic_Name', 'Basic_Group', 'Basic_Original', 'Basic_Level', 'Basic_Activity', 'Basic_ChainCode', 'Basic_RecycleCost', 'Action_PreparingTime', 'Action_CastingTime', 'Action_ActionDuration', 'Action_ReuseDelay', 'Action_CoolTime', 'Action_FlyingSpeed', 'Action_Interruptable', 'Action_Overlap', 'Action_AutoAttackType', 'Action_InTown', 'Action_Range', 'Target_Required', 'TargetType_Animal', 'TargetType_Land', 'TargetType_Building', 'TargetGroup_Self', 'TargetGroup_Ally', 'TargetGroup_Party', 'TargetGroup_Enemy_M', 'TargetGroup_Enemy_P', 'TargetGroup_Neutral', 'TargetGroup_DontCare', 'TargetEtc_SelectDeadBody', 'ReqCommon_Mastery1', 'ReqCommon_Mastery2', 'ReqCommon_MasteryLevel1', 'ReqCommon_MasteryLevel2', 'ReqCommon_Str', 'ReqCommon_Int', 'ReqLearn_Skill1', 'ReqLearn_Skill2', 'ReqLearn_Skill3', 'ReqLearn_SkillLevel1', 'ReqLearn_SkillLevel2', 'ReqLearn_SkillLevel3', 'ReqLearn_SP', 'ReqLearn_Race', 'Req_Restriction1', 'Req_Restriction2', 'ReqCast_Weapon1', 'ReqCast_Weapon2', 'Consume_HP', 'Consume_MP', 'Consume_HPRatio', 'Consume_MPRatio', 'Consume_WHAN', 'UI_SkillTab', 'UI_SkillPage', 'UI_SkillColumn', 'UI_SkillRow', 'UI_IconFile', 'UI_SkillName', 'UI_SkillToolTip', 'UI_SkillToolTip_Desc', 'UI_SkillStudy_Desc', 'AI_AttackChance', 'AI_SkillType', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16', 'Param17', 'Param18', 'Param19', 'Param20', 'Param21', 'Param22', 'Param23', 'Param24', 'Param25', 'Param26', 'Param27', 'Param28', 'Param29', 'Param30', 'Param31', 'Param32', 'Param33', 'Param34', 'Param35', 'Param36', 'Param37', 'Param38', 'Param39', 'Param40', 'Param41', 'Param42', 'Param43', 'Param44', 'Param45', 'Param46', 'Param47', 'Param48', 'Param49', 'Param50'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'GroupID' => 'integer',
         'Basic_Original' => 'integer',
@@ -125,4 +124,4 @@
         'Param49' => 'integer',
         'Param50' => 'integer',
     ];
-        }
+}

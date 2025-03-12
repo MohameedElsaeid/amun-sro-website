@@ -1,23 +1,25 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
-
-        class SroServersVt.StatisticsGoldIncrementData extends Model
+class SroServersVt.StatisticsGoldIncrementData extends Model
         {
-            protected $table = 'sro_servers_vt.__StatisticsGoldIncrementData__';
-            public $timestamps = false;
+            protected
+            $table = 'sro_servers_vt.__StatisticsGoldIncrementData__';
+            public
+            $timestamps = false;
 
-            protected $fillable = [
+            protected
+            $fillable = [
                 'BeginDate', 'EndDate', 'Paid', 'Income', 'HunterProfit'
             ];
 
-            protected $casts = [
+            protected
+            $casts = [
                 'BeginDate' => 'datetime',
-        'EndDate' => 'datetime',
-        'Paid' => 'integer',
-        'Income' => 'integer',
-        'HunterProfit' => 'integer',
-    ];
+                'EndDate' => 'datetime',
+                'Paid' => 'integer',
+                'Income' => 'integer',
+                'HunterProfit' => 'integer',
+            ];
         }

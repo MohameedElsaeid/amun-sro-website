@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TOPLOG extends Model
-        {
-            protected $table = 'TOPLOG';
-            public $timestamps = false;
+class TOPLOG extends Model
+{
+    public $timestamps = false;
+    protected $table = 'TOPLOG';
+    protected $fillable = [
+        'No.', 'CharID', 'Charname', 'Date'
+    ];
 
-            protected $fillable = [
-                'No.', 'CharID', 'Charname', 'Date'
-            ];
-
-            protected $casts = [
-                'No.' => 'integer',
+    protected $casts = [
+        'No.' => 'integer',
         'CharID' => 'integer',
         'Date' => 'datetime',
     ];
-        }
+}

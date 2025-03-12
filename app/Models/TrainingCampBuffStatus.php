@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TrainingCampBuffStatus extends Model
-        {
-            protected $table = '_TrainingCampBuffStatus';
-            public $timestamps = false;
+class TrainingCampBuffStatus extends Model
+{
+    public $timestamps = false;
+    protected $table = '_TrainingCampBuffStatus';
+    protected $fillable = [
+        'CampID', 'RecipientCharID', 'BuffSlotIdx', 'DonorCharID', 'StartingTime', 'RemainBuffPoint', 'BuffType'
+    ];
 
-            protected $fillable = [
-                'CampID', 'RecipientCharID', 'BuffSlotIdx', 'DonorCharID', 'StartingTime', 'RemainBuffPoint', 'BuffType'
-            ];
-
-            protected $casts = [
-                'CampID' => 'integer',
+    protected $casts = [
+        'CampID' => 'integer',
         'RecipientCharID' => 'integer',
         'BuffSlotIdx' => 'integer',
         'DonorCharID' => 'integer',
@@ -22,4 +21,4 @@
         'RemainBuffPoint' => 'integer',
         'BuffType' => 'integer',
     ];
-        }
+}

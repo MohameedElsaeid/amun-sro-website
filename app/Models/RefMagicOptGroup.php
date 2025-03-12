@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefMagicOptGroup extends Model
-        {
-            protected $table = '_RefMagicOptGroup';
-            public $timestamps = false;
+class RefMagicOptGroup extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefMagicOptGroup';
+    protected $fillable = [
+        'Service', 'LinkID', 'MagicType', 'CodeName128', 'MOptID', 'MOptLevel', 'Value', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc'
+    ];
 
-            protected $fillable = [
-                'Service', 'LinkID', 'MagicType', 'CodeName128', 'MOptID', 'MOptLevel', 'Value', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'LinkID' => 'integer',
         'MagicType' => 'integer',
         'MOptID' => 'integer',
@@ -23,4 +22,4 @@
         'Param1' => 'integer',
         'Param2' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefRentItem extends Model
-        {
-            protected $table = '_RefRentItem';
-            public $timestamps = false;
+class RefRentItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefRentItem';
+    protected $fillable = [
+        'service', 'RentCodeName', 'RefItemID', 'CanDelete', 'CnaRecharge', 'RentType', 'StartTime', 'EndTime', 'TimeCnt', 'Time1', 'Time2', 'Time3', 'Time4', 'Time5'
+    ];
 
-            protected $fillable = [
-                'service', 'RentCodeName', 'RefItemID', 'CanDelete', 'CnaRecharge', 'RentType', 'StartTime', 'EndTime', 'TimeCnt', 'Time1', 'Time2', 'Time3', 'Time4', 'Time5'
-            ];
-
-            protected $casts = [
-                'service' => 'integer',
+    protected $casts = [
+        'service' => 'integer',
         'RefItemID' => 'integer',
         'CanDelete' => 'integer',
         'CnaRecharge' => 'integer',
@@ -28,4 +27,4 @@
         'Time4' => 'integer',
         'Time5' => 'integer',
     ];
-        }
+}

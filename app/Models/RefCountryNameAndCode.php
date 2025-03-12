@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCountryNameAndCode extends Model
-        {
-            protected $table = '_RefCountryNameAndCode';
-            public $timestamps = false;
+class RefCountryNameAndCode extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCountryNameAndCode';
+    protected $fillable = [
+        'code', 'szCountryName'
+    ];
 
-            protected $fillable = [
-                'code', 'szCountryName'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

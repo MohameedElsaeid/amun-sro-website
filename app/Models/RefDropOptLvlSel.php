@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefDropOptLvlSel extends Model
-        {
-            protected $table = '_RefDropOptLvlSel';
-            public $timestamps = false;
+class RefDropOptLvlSel extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefDropOptLvlSel';
+    protected $fillable = [
+        'OptLevel', 'Prob', 'ReqOnlineTime'
+    ];
 
-            protected $fillable = [
-                'OptLevel', 'Prob', 'ReqOnlineTime'
-            ];
-
-            protected $casts = [
-                'OptLevel' => 'integer',
+    protected $casts = [
+        'OptLevel' => 'integer',
         'Prob' => 'float',
         'ReqOnlineTime' => 'integer',
     ];
-        }
+}

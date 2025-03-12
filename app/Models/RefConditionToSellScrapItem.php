@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefConditionToSellScrapItem extends Model
-        {
-            protected $table = '_RefConditionToSellScrapItem';
-            public $timestamps = false;
+class RefConditionToSellScrapItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefConditionToSellScrapItem';
+    protected $fillable = [
+        'Service', 'Country', 'Cash', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'RefItemCodeName', 'AcceptOrReject', 'FourCC', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128'
+    ];
 
-            protected $fillable = [
-                'Service', 'Country', 'Cash', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'RefItemCodeName', 'AcceptOrReject', 'FourCC', 'Param1', 'Param1_Desc128', 'Param2', 'Param2_Desc128', 'Param3', 'Param3_Desc128', 'Param4', 'Param4_Desc128'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Country' => 'integer',
         'Cash' => 'integer',
         'TypeID1' => 'integer',
@@ -28,4 +27,4 @@
         'Param3' => 'integer',
         'Param4' => 'integer',
     ];
-        }
+}

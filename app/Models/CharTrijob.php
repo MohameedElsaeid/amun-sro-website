@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharTrijob extends Model
-        {
-            protected $table = '_CharTrijob';
-            public $timestamps = false;
+class CharTrijob extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharTrijob';
+    protected $fillable = [
+        'CharID', 'JobType', 'Level', 'Exp', 'Contribution', 'Reward'
+    ];
 
-            protected $fillable = [
-                'CharID', 'JobType', 'Level', 'Exp', 'Contribution', 'Reward'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'JobType' => 'integer',
         'Level' => 'integer',
         'Exp' => 'integer',
         'Contribution' => 'integer',
         'Reward' => 'integer',
     ];
-        }
+}

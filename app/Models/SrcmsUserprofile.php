@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsUserprofile extends Model
-        {
-            protected $table = 'srcms_userprofiles';
-            public $timestamps = false;
+class SrcmsUserprofile extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_userprofiles';
+    protected $fillable = [
+        'JID', 'gender', 'skype', 'msn', 'avatar', 'whois', 'ispublic'
+    ];
 
-            protected $fillable = [
-                'JID', 'gender', 'skype', 'msn', 'avatar', 'whois', 'ispublic'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'gender' => 'integer',
         'ispublic' => 'integer',
     ];
-        }
+}

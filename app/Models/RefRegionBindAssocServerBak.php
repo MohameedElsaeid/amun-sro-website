@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefRegionBindAssocServerBak extends Model
-        {
-            protected $table = '_RefRegionBindAssocServer_bak';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'AreaName', 'AssocServer'
-            ];
-
-            protected $casts = [
-                'AssocServer' => 'integer',
+class RefRegionBindAssocServerBak extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefRegionBindAssocServer_bak';
+    protected $fillable = [
+        'AreaName', 'AssocServer'
     ];
-        }
+
+    protected $casts = [
+        'AssocServer' => 'integer',
+    ];
+}

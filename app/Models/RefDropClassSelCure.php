@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefDropClassSelCure extends Model
-        {
-            protected $table = '_RefDropClassSel_Cure';
-            public $timestamps = false;
+class RefDropClassSelCure extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefDropClassSel_Cure';
+    protected $fillable = [
+        'MonLevel', 'ProbGroup1', 'ProbGroup2', 'ProbGroup3', 'ProbGroup4', 'ProbGroup5', 'ProbGroup6', 'ProbGroup7', 'ProbGroup8', 'ProbGroup9', 'ProbGroup10', 'ProbGroup11', 'ProbGroup12', 'ProbGroup13', 'ProbGroup14'
+    ];
 
-            protected $fillable = [
-                'MonLevel', 'ProbGroup1', 'ProbGroup2', 'ProbGroup3', 'ProbGroup4', 'ProbGroup5', 'ProbGroup6', 'ProbGroup7', 'ProbGroup8', 'ProbGroup9', 'ProbGroup10', 'ProbGroup11', 'ProbGroup12', 'ProbGroup13', 'ProbGroup14'
-            ];
-
-            protected $casts = [
-                'MonLevel' => 'integer',
+    protected $casts = [
+        'MonLevel' => 'integer',
         'ProbGroup1' => 'float',
         'ProbGroup2' => 'float',
         'ProbGroup3' => 'float',
@@ -30,4 +29,4 @@
         'ProbGroup13' => 'float',
         'ProbGroup14' => 'float',
     ];
-        }
+}

@@ -1,24 +1,23 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefTriggerCommon extends Model
-        {
-            protected $table = '_RefTriggerCommon';
-            public $timestamps = false;
+class RefTriggerCommon extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefTriggerCommon';
+    protected $fillable = [
+        'Service', 'ID', 'CodeName128', 'ObjName128', 'TID1', 'TID2', 'TID3', 'TID4'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'CodeName128', 'ObjName128', 'TID1', 'TID2', 'TID3', 'TID4'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'TID1' => 'integer',
         'TID2' => 'integer',
         'TID3' => 'integer',
         'TID4' => 'integer',
     ];
-        }
+}

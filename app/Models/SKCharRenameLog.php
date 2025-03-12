@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKCharRenameLog extends Model
-        {
-            protected $table = 'SK_CharRenameLog';
-            public $timestamps = false;
+class SKCharRenameLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_CharRenameLog';
+    protected $fillable = [
+        'JID', 'struserid', 'old_char', 'new_char', 'server', 'timechange'
+    ];
 
-            protected $fillable = [
-                'JID', 'struserid', 'old_char', 'new_char', 'server', 'timechange'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'timechange' => 'datetime',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ServiceManagerLog extends Model
-        {
-            protected $table = '_ServiceManagerLog';
-            public $timestamps = false;
+class ServiceManagerLog extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ServiceManagerLog';
+    protected $fillable = [
+        'nUserID', 'EventTime', 'szLog'
+    ];
 
-            protected $fillable = [
-                'nUserID', 'EventTime', 'szLog'
-            ];
-
-            protected $casts = [
-                'nUserID' => 'integer',
+    protected $casts = [
+        'nUserID' => 'integer',
         'EventTime' => 'datetime',
     ];
-        }
+}

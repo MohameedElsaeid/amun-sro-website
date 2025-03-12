@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharCO extends Model
-        {
-            protected $table = '_CharCOS';
-            public $timestamps = false;
+class CharCO extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharCOS';
+    protected $fillable = [
+        'ID', 'OwnerCharID', 'RefCharID', 'HP', 'MP', 'KeeperNPC', 'State', 'CharName', 'Lvl', 'ExpOffset', 'HGP', 'PetOption', 'RentEndTime'
+    ];
 
-            protected $fillable = [
-                'ID', 'OwnerCharID', 'RefCharID', 'HP', 'MP', 'KeeperNPC', 'State', 'CharName', 'Lvl', 'ExpOffset', 'HGP', 'PetOption', 'RentEndTime'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'OwnerCharID' => 'integer',
         'RefCharID' => 'integer',
         'HP' => 'integer',
@@ -27,4 +26,4 @@
         'PetOption' => 'integer',
         'RentEndTime' => 'datetime',
     ];
-        }
+}

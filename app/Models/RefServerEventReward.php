@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefServerEventReward extends Model
-        {
-            protected $table = '_RefServerEventReward';
-            public $timestamps = false;
+class RefServerEventReward extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefServerEventReward';
+    protected $fillable = [
+        'Service', 'RewardID', 'OwnerServerEventID', 'RefRewardID', 'Quantity', 'RewardClass', 'MasterReward'
+    ];
 
-            protected $fillable = [
-                'Service', 'RewardID', 'OwnerServerEventID', 'RefRewardID', 'Quantity', 'RewardClass', 'MasterReward'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RewardID' => 'integer',
         'OwnerServerEventID' => 'integer',
         'RefRewardID' => 'integer',
@@ -22,4 +21,4 @@
         'RewardClass' => 'integer',
         'MasterReward' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefObjStruct extends Model
-        {
-            protected $table = '_RefObjStruct';
-            public $timestamps = false;
+class RefObjStruct extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefObjStruct';
+    protected $fillable = [
+        'ID', 'Dummy_Data'
+    ];
 
-            protected $fillable = [
-                'ID', 'Dummy_Data'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Dummy_Data' => 'integer',
     ];
-        }
+}

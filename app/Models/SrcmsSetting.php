@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SrcmsSetting extends Model
-        {
-            protected $table = 'srcms_settings';
-            public $timestamps = false;
+class SrcmsSetting extends Model
+{
+    public $timestamps = false;
+    protected $table = 'srcms_settings';
+    protected $fillable = [
+        'value', 'valueName'
+    ];
 
-            protected $fillable = [
-                'value', 'valueName'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

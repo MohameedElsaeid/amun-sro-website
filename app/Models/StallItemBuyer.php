@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class StallItemBuyer extends Model
-        {
-            protected $table = 'StallItemBuyers';
-            public $timestamps = false;
+class StallItemBuyer extends Model
+{
+    public $timestamps = false;
+    protected $table = 'StallItemBuyers';
+    protected $fillable = [
+        'ID', 'BuyerName', 'StallSlot', 'Date'
+    ];
 
-            protected $fillable = [
-                'ID', 'BuyerName', 'StallSlot', 'Date'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'StallSlot' => 'integer',
     ];
-        }
+}

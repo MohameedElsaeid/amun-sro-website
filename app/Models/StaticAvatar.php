@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class StaticAvatar extends Model
-        {
-            protected $table = '_StaticAvatar';
-            public $timestamps = false;
+class StaticAvatar extends Model
+{
+    public $timestamps = false;
+    protected $table = '_StaticAvatar';
+    protected $fillable = [
+        'CharID', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10', 'Param11', 'Param12', 'Param13', 'Param14', 'Param15', 'Param16'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Param1' => 'integer',
         'Param2' => 'integer',
         'Param3' => 'integer',
@@ -32,4 +31,4 @@
         'Param15' => 'integer',
         'Param16' => 'integer',
     ];
-        }
+}

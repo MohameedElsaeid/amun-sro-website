@@ -207,6 +207,7 @@ class GenerateMigrationsCommand extends Command
         file_put_contents($fileName, $content);
         $this->info("Created migration file: {$fileName}");
     }
+
     /**
      * Generate a model file content for a given table.
      * It creates a model with fillable columns and casts based on Doctrine type.

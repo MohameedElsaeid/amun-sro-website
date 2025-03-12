@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefObjChar extends Model
-        {
-            protected $table = '_RefObjChar';
-            public $timestamps = false;
+class RefObjChar extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefObjChar';
+    protected $fillable = [
+        'ID', 'Lvl', 'CharGender', 'MaxHP', 'MaxMP', 'ResistFrozen', 'ResistFrostbite', 'ResistBurn', 'ResistEShock', 'ResistPoison', 'ResistZombie', 'ResistSleep', 'ResistRoot', 'ResistSlow', 'ResistFear', 'ResistMyopia', 'ResistBlood', 'ResistStone', 'ResistDark', 'ResistStun', 'ResistDisea', 'ResistChaos', 'ResistCsePD', 'ResistCseMD', 'ResistCseSTR', 'ResistCseINT', 'ResistCseHP', 'ResistCseMP', 'Resist24', 'ResistBomb', 'Resist26', 'Resist27', 'Resist28', 'Resist29', 'Resist30', 'Resist31', 'Resist32', 'InventorySize', 'CanStore_TID1', 'CanStore_TID2', 'CanStore_TID3', 'CanStore_TID4', 'CanBeVehicle', 'CanControl', 'DamagePortion', 'MaxPassenger', 'AssocTactics', 'PD', 'MD', 'PAR', 'MAR', 'ER', 'BR', 'HR', 'CHR', 'ExpToGive', 'CreepType', 'Knockdown', 'KO_RecoverTime', 'DefaultSkill_1', 'DefaultSkill_2', 'DefaultSkill_3', 'DefaultSkill_4', 'DefaultSkill_5', 'DefaultSkill_6', 'DefaultSkill_7', 'DefaultSkill_8', 'DefaultSkill_9', 'DefaultSkill_10', 'TextureType', 'Except_1', 'Except_2', 'Except_3', 'Except_4', 'Except_5', 'Except_6', 'Except_7', 'Except_8', 'Except_9', 'Except_10', 'Link'
+    ];
 
-            protected $fillable = [
-                'ID', 'Lvl', 'CharGender', 'MaxHP', 'MaxMP', 'ResistFrozen', 'ResistFrostbite', 'ResistBurn', 'ResistEShock', 'ResistPoison', 'ResistZombie', 'ResistSleep', 'ResistRoot', 'ResistSlow', 'ResistFear', 'ResistMyopia', 'ResistBlood', 'ResistStone', 'ResistDark', 'ResistStun', 'ResistDisea', 'ResistChaos', 'ResistCsePD', 'ResistCseMD', 'ResistCseSTR', 'ResistCseINT', 'ResistCseHP', 'ResistCseMP', 'Resist24', 'ResistBomb', 'Resist26', 'Resist27', 'Resist28', 'Resist29', 'Resist30', 'Resist31', 'Resist32', 'InventorySize', 'CanStore_TID1', 'CanStore_TID2', 'CanStore_TID3', 'CanStore_TID4', 'CanBeVehicle', 'CanControl', 'DamagePortion', 'MaxPassenger', 'AssocTactics', 'PD', 'MD', 'PAR', 'MAR', 'ER', 'BR', 'HR', 'CHR', 'ExpToGive', 'CreepType', 'Knockdown', 'KO_RecoverTime', 'DefaultSkill_1', 'DefaultSkill_2', 'DefaultSkill_3', 'DefaultSkill_4', 'DefaultSkill_5', 'DefaultSkill_6', 'DefaultSkill_7', 'DefaultSkill_8', 'DefaultSkill_9', 'DefaultSkill_10', 'TextureType', 'Except_1', 'Except_2', 'Except_3', 'Except_4', 'Except_5', 'Except_6', 'Except_7', 'Except_8', 'Except_9', 'Except_10', 'Link'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Lvl' => 'integer',
         'CharGender' => 'integer',
         'MaxHP' => 'integer',
@@ -96,4 +95,4 @@
         'Except_10' => 'integer',
         'Link' => 'integer',
     ];
-        }
+}

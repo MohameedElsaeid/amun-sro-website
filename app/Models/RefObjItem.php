@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefObjItem extends Model
-        {
-            protected $table = '_RefObjItem';
-            public $timestamps = false;
+class RefObjItem extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefObjItem';
+    protected $fillable = [
+        'ID', 'MaxStack', 'ReqGender', 'ReqStr', 'ReqInt', 'ItemClass', 'SetID', 'Dur_L', 'Dur_U', 'PD_L', 'PD_U', 'PDInc', 'ER_L', 'ER_U', 'ERInc', 'PAR_L', 'PAR_U', 'PARInc', 'BR_L', 'BR_U', 'MD_L', 'MD_U', 'MDInc', 'MAR_L', 'MAR_U', 'MARInc', 'PDStr_L', 'PDStr_U', 'MDInt_L', 'MDInt_U', 'Quivered', 'Ammo1_TID4', 'Ammo2_TID4', 'Ammo3_TID4', 'Ammo4_TID4', 'Ammo5_TID4', 'SpeedClass', 'TwoHanded', 'Range', 'PAttackMin_L', 'PAttackMin_U', 'PAttackMax_L', 'PAttackMax_U', 'PAttackInc', 'MAttackMin_L', 'MAttackMin_U', 'MAttackMax_L', 'MAttackMax_U', 'MAttackInc', 'PAStrMin_L', 'PAStrMin_U', 'PAStrMax_L', 'PAStrMax_U', 'MAInt_Min_L', 'MAInt_Min_U', 'MAInt_Max_L', 'MAInt_Max_U', 'HR_L', 'HR_U', 'HRInc', 'CHR_L', 'CHR_U', 'Param1', 'Desc1_128', 'Param2', 'Desc2_128', 'Param3', 'Desc3_128', 'Param4', 'Desc4_128', 'Param5', 'Desc5_128', 'Param6', 'Desc6_128', 'Param7', 'Desc7_128', 'Param8', 'Desc8_128', 'Param9', 'Desc9_128', 'Param10', 'Desc10_128', 'Param11', 'Desc11_128', 'Param12', 'Desc12_128', 'Param13', 'Desc13_128', 'Param14', 'Desc14_128', 'Param15', 'Desc15_128', 'Param16', 'Desc16_128', 'Param17', 'Desc17_128', 'Param18', 'Desc18_128', 'Param19', 'Desc19_128', 'Param20', 'Desc20_128', 'MaxMagicOptCount', 'ChildItemCount', 'Link'
+    ];
 
-            protected $fillable = [
-                'ID', 'MaxStack', 'ReqGender', 'ReqStr', 'ReqInt', 'ItemClass', 'SetID', 'Dur_L', 'Dur_U', 'PD_L', 'PD_U', 'PDInc', 'ER_L', 'ER_U', 'ERInc', 'PAR_L', 'PAR_U', 'PARInc', 'BR_L', 'BR_U', 'MD_L', 'MD_U', 'MDInc', 'MAR_L', 'MAR_U', 'MARInc', 'PDStr_L', 'PDStr_U', 'MDInt_L', 'MDInt_U', 'Quivered', 'Ammo1_TID4', 'Ammo2_TID4', 'Ammo3_TID4', 'Ammo4_TID4', 'Ammo5_TID4', 'SpeedClass', 'TwoHanded', 'Range', 'PAttackMin_L', 'PAttackMin_U', 'PAttackMax_L', 'PAttackMax_U', 'PAttackInc', 'MAttackMin_L', 'MAttackMin_U', 'MAttackMax_L', 'MAttackMax_U', 'MAttackInc', 'PAStrMin_L', 'PAStrMin_U', 'PAStrMax_L', 'PAStrMax_U', 'MAInt_Min_L', 'MAInt_Min_U', 'MAInt_Max_L', 'MAInt_Max_U', 'HR_L', 'HR_U', 'HRInc', 'CHR_L', 'CHR_U', 'Param1', 'Desc1_128', 'Param2', 'Desc2_128', 'Param3', 'Desc3_128', 'Param4', 'Desc4_128', 'Param5', 'Desc5_128', 'Param6', 'Desc6_128', 'Param7', 'Desc7_128', 'Param8', 'Desc8_128', 'Param9', 'Desc9_128', 'Param10', 'Desc10_128', 'Param11', 'Desc11_128', 'Param12', 'Desc12_128', 'Param13', 'Desc13_128', 'Param14', 'Desc14_128', 'Param15', 'Desc15_128', 'Param16', 'Desc16_128', 'Param17', 'Desc17_128', 'Param18', 'Desc18_128', 'Param19', 'Desc19_128', 'Param20', 'Desc20_128', 'MaxMagicOptCount', 'ChildItemCount', 'Link'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'MaxStack' => 'integer',
         'ReqGender' => 'integer',
         'ReqStr' => 'integer',
@@ -100,4 +99,4 @@
         'ChildItemCount' => 'integer',
         'Link' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SMCLog extends Model
-        {
-            protected $table = '_SMCLog';
-            public $timestamps = false;
+class SMCLog extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SMCLog';
+    protected $fillable = [
+        'szUserID', 'Catagory', 'szLog', 'dLogDate'
+    ];
 
-            protected $fillable = [
-                'szUserID', 'Catagory', 'szLog', 'dLogDate'
-            ];
-
-            protected $casts = [
-                'Catagory' => 'integer',
+    protected $casts = [
+        'Catagory' => 'integer',
         'dLogDate' => 'datetime',
     ];
-        }
+}

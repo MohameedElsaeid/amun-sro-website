@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class FlagWorldEventParticipant extends Model
-        {
-            protected $table = '_FlagWorld_EventParticipants';
-            public $timestamps = false;
+class FlagWorldEventParticipant extends Model
+{
+    public $timestamps = false;
+    protected $table = '_FlagWorld_EventParticipants';
+    protected $fillable = [
+        'JID', 'LatestAttempt', 'Count'
+    ];
 
-            protected $fillable = [
-                'JID', 'LatestAttempt', 'Count'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'LatestAttempt' => 'datetime',
         'Count' => 'integer',
     ];
-        }
+}

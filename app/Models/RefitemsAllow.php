@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefitemsAllow extends Model
-        {
-            protected $table = '_RefitemsAllow';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'RefItemID'
-            ];
-
-            protected $casts = [
-                'RefItemID' => 'integer',
+class RefitemsAllow extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefitemsAllow';
+    protected $fillable = [
+        'RefItemID'
     ];
-        }
+
+    protected $casts = [
+        'RefItemID' => 'integer',
+    ];
+}

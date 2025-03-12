@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefAlchemyMerit extends Model
-        {
-            protected $table = '_RefAlchemyMerit';
-            public $timestamps = false;
+class RefAlchemyMerit extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefAlchemyMerit';
+    protected $fillable = [
+        'Service', 'Group', 'OptName128', 'Level', 'Weapon', 'Armor', 'Accessory', 'Shield', 'FreeParam1', 'FreeParamDesc1', 'FreeParam2', 'FreeParamDesc2', 'FreeParam3', 'FreeParamDesc3'
+    ];
 
-            protected $fillable = [
-                'Service', 'Group', 'OptName128', 'Level', 'Weapon', 'Armor', 'Accessory', 'Shield', 'FreeParam1', 'FreeParamDesc1', 'FreeParam2', 'FreeParamDesc2', 'FreeParam3', 'FreeParamDesc3'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'Group' => 'integer',
         'Level' => 'integer',
         'Weapon' => 'float',
@@ -25,4 +24,4 @@
         'FreeParam2' => 'integer',
         'FreeParam3' => 'integer',
     ];
-        }
+}

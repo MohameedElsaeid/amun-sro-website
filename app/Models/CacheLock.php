@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CacheLock extends Model
-        {
-            protected $table = 'cache_locks';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'key', 'owner', 'expiration'
-            ];
-
-            protected $casts = [
-                'expiration' => 'integer',
+class CacheLock extends Model
+{
+    public $timestamps = false;
+    protected $table = 'cache_locks';
+    protected $fillable = [
+        'key', 'owner', 'expiration'
     ];
-        }
+
+    protected $casts = [
+        'expiration' => 'integer',
+    ];
+}

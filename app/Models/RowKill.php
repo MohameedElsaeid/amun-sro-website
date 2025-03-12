@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RowKill extends Model
-        {
-            protected $table = '_RowKills';
-            public $timestamps = false;
+class RowKill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RowKills';
+    protected $fillable = [
+        'ID', 'KillerID', 'KilledID', 'Kills'
+    ];
 
-            protected $fillable = [
-                'ID', 'KillerID', 'KilledID', 'Kills'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'KillerID' => 'integer',
         'Kills' => 'integer',
     ];
-        }
+}

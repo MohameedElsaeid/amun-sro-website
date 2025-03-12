@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefGameWorldNPC extends Model
-        {
-            protected $table = '_RefGameWorldNPC';
-            public $timestamps = false;
+class RefGameWorldNPC extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefGameWorldNPC';
+    protected $fillable = [
+        'ID', 'WorldCodeName128', 'NPCCodeName128', 'RegionID', 'PosX', 'PosY', 'PosZ', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10'
+    ];
 
-            protected $fillable = [
-                'ID', 'WorldCodeName128', 'NPCCodeName128', 'RegionID', 'PosX', 'PosY', 'PosZ', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8', 'Param9', 'Param10'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'RegionID' => 'integer',
         'PosX' => 'integer',
         'PosY' => 'integer',
@@ -30,4 +29,4 @@
         'Param9' => 'integer',
         'Param10' => 'integer',
     ];
-        }
+}

@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SiegeFortressStatus extends Model
-        {
-            protected $table = '__SiegeFortressStatus__';
-            public $timestamps = false;
+class SiegeFortressStatus extends Model
+{
+    public $timestamps = false;
+    protected $table = '__SiegeFortressStatus__';
+    protected $fillable = [
+        'ShardID', 'FortressName', 'FortressScale', 'TaxRatio', 'OwnerGuildName', 'OwnerGuildMaster', 'OwnerAllianceGuildName1', 'OwnerAllianceGuildName2', 'OwnerAllianceGuildName3', 'OwnerAllianceGuildName4', 'OwnerAllianceGuildName5', 'OwnerAllianceGuildName6', 'OwnerAllianceGuildName7', 'OwnerAllianceGuildName8', 'OwnerUpdateDate'
+    ];
 
-            protected $fillable = [
-                'ShardID', 'FortressName', 'FortressScale', 'TaxRatio', 'OwnerGuildName', 'OwnerGuildMaster', 'OwnerAllianceGuildName1', 'OwnerAllianceGuildName2', 'OwnerAllianceGuildName3', 'OwnerAllianceGuildName4', 'OwnerAllianceGuildName5', 'OwnerAllianceGuildName6', 'OwnerAllianceGuildName7', 'OwnerAllianceGuildName8', 'OwnerUpdateDate'
-            ];
-
-            protected $casts = [
-                'ShardID' => 'integer',
+    protected $casts = [
+        'ShardID' => 'integer',
         'FortressScale' => 'integer',
         'TaxRatio' => 'integer',
         'OwnerUpdateDate' => 'datetime',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefQuestReward extends Model
-        {
-            protected $table = '_RefQuestReward';
-            public $timestamps = false;
+class RefQuestReward extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefQuestReward';
+    protected $fillable = [
+        'Service', 'QuestID', 'QuestCodeName', 'IsView', 'IsBasicReward', 'IsItemReward', 'IsCheckCondition', 'IsCheckCountry', 'IsCheckClass', 'IsCheckGender', 'Gold', 'Exp', 'SPExp', 'SP', 'AP', 'APType', 'Hwan', 'Inventory', 'ItemRewardType', 'SelectionCnt', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc', 'Param3', 'Param3_Desc'
+    ];
 
-            protected $fillable = [
-                'Service', 'QuestID', 'QuestCodeName', 'IsView', 'IsBasicReward', 'IsItemReward', 'IsCheckCondition', 'IsCheckCountry', 'IsCheckClass', 'IsCheckGender', 'Gold', 'Exp', 'SPExp', 'SP', 'AP', 'APType', 'Hwan', 'Inventory', 'ItemRewardType', 'SelectionCnt', 'Param1', 'Param1_Desc', 'Param2', 'Param2_Desc', 'Param3', 'Param3_Desc'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'QuestID' => 'integer',
         'IsView' => 'integer',
         'IsBasicReward' => 'integer',
@@ -36,4 +35,4 @@
         'Param2' => 'integer',
         'Param3' => 'integer',
     ];
-        }
+}

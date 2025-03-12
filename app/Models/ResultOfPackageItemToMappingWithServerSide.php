@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ResultOfPackageItemToMappingWithServerSide extends Model
-        {
-            protected $table = '_ResultOfPackageItemToMappingWithServerSide';
-            public $timestamps = false;
+class ResultOfPackageItemToMappingWithServerSide extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ResultOfPackageItemToMappingWithServerSide';
+    protected $fillable = [
+        'Operation', 'CharID', 'Slot', 'RefItemSerial64', 'RefItemDBID', 'RefItemID', 'Type', 'SubType'
+    ];
 
-            protected $fillable = [
-                'Operation', 'CharID', 'Slot', 'RefItemSerial64', 'RefItemDBID', 'RefItemID', 'Type', 'SubType'
-            ];
-
-            protected $casts = [
-                'Operation' => 'integer',
+    protected $casts = [
+        'Operation' => 'integer',
         'CharID' => 'integer',
         'Slot' => 'integer',
         'RefItemSerial64' => 'integer',
@@ -23,4 +22,4 @@
         'Type' => 'integer',
         'SubType' => 'integer',
     ];
-        }
+}

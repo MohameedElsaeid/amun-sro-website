@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class VoteAction extends Model
-        {
-            protected $table = 'vote_actions';
-            public $timestamps = false;
+class VoteAction extends Model
+{
+    public $timestamps = false;
+    protected $table = 'vote_actions';
+    protected $fillable = [
+        'Username', 'Status', 'VoteID', 'Date'
+    ];
 
-            protected $fillable = [
-                'Username', 'Status', 'VoteID', 'Date'
-            ];
-
-            protected $casts = [
-                'Status' => 'integer',
+    protected $casts = [
+        'Status' => 'integer',
         'VoteID' => 'integer',
         'Date' => 'integer',
     ];
-        }
+}

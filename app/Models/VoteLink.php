@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class VoteLink extends Model
-        {
-            protected $table = 'vote_links';
-            public $timestamps = false;
+class VoteLink extends Model
+{
+    public $timestamps = false;
+    protected $table = 'vote_links';
+    protected $fillable = [
+        'ID', 'Link', 'Img', 'Time', 'Reward'
+    ];
 
-            protected $fillable = [
-                'ID', 'Link', 'Img', 'Time', 'Reward'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Time' => 'integer',
         'Reward' => 'integer',
     ];
-        }
+}

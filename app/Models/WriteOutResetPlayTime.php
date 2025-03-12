@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class WriteOutResetPlayTime extends Model
-        {
-            protected $table = '_WriteOutResetPlayTime';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'LatestResetTime'
-            ];
-
-            protected $casts = [
-                'LatestResetTime' => 'integer',
+class WriteOutResetPlayTime extends Model
+{
+    public $timestamps = false;
+    protected $table = '_WriteOutResetPlayTime';
+    protected $fillable = [
+        'LatestResetTime'
     ];
-        }
+
+    protected $casts = [
+        'LatestResetTime' => 'integer',
+    ];
+}

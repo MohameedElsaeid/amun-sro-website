@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SecurityDescriptionGroup extends Model
-        {
-            protected $table = '_SecurityDescriptionGroup';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'nID', 'szName', 'szDesc'
-            ];
-
-            protected $casts = [
-                'nID' => 'integer',
+class SecurityDescriptionGroup extends Model
+{
+    public $timestamps = false;
+    protected $table = '_SecurityDescriptionGroup';
+    protected $fillable = [
+        'nID', 'szName', 'szDesc'
     ];
-        }
+
+    protected $casts = [
+        'nID' => 'integer',
+    ];
+}

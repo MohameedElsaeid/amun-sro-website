@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TrainingCampMember extends Model
-        {
-            protected $table = '_TrainingCampMember';
-            public $timestamps = false;
+class TrainingCampMember extends Model
+{
+    public $timestamps = false;
+    protected $table = '_TrainingCampMember';
+    protected $fillable = [
+        'CampID', 'CharID', 'RefObjID', 'CharName', 'JoinDate', 'MemberClass', 'CharJoinedLevel', 'CharCurLevel', 'CharMaxLevel', 'HonorPoint'
+    ];
 
-            protected $fillable = [
-                'CampID', 'CharID', 'RefObjID', 'CharName', 'JoinDate', 'MemberClass', 'CharJoinedLevel', 'CharCurLevel', 'CharMaxLevel', 'HonorPoint'
-            ];
-
-            protected $casts = [
-                'CampID' => 'integer',
+    protected $casts = [
+        'CampID' => 'integer',
         'CharID' => 'integer',
         'RefObjID' => 'integer',
         'JoinDate' => 'datetime',
@@ -24,4 +23,4 @@
         'CharMaxLevel' => 'integer',
         'HonorPoint' => 'integer',
     ];
-        }
+}

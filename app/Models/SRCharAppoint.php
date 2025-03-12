@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SRCharAppoint extends Model
-        {
-            protected $table = 'SR_CharAppoint';
-            public $timestamps = false;
+class SRCharAppoint extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SR_CharAppoint';
+    protected $fillable = [
+        'UserJID', 'ShardID', 'CharID'
+    ];
 
-            protected $fillable = [
-                'UserJID', 'ShardID', 'CharID'
-            ];
-
-            protected $casts = [
-                'UserJID' => 'integer',
+    protected $casts = [
+        'UserJID' => 'integer',
         'ShardID' => 'integer',
     ];
-        }
+}

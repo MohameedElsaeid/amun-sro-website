@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class InvCO extends Model
-        {
-            protected $table = '_InvCOS';
-            public $timestamps = false;
+class InvCO extends Model
+{
+    public $timestamps = false;
+    protected $table = '_InvCOS';
+    protected $fillable = [
+        'COSID', 'Slot', 'ItemID'
+    ];
 
-            protected $fillable = [
-                'COSID', 'Slot', 'ItemID'
-            ];
-
-            protected $casts = [
-                'COSID' => 'integer',
+    protected $casts = [
+        'COSID' => 'integer',
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TrijobReward extends Model
-        {
-            protected $table = '_TrijobRewards';
-            public $timestamps = false;
+class TrijobReward extends Model
+{
+    public $timestamps = false;
+    protected $table = '_TrijobRewards';
+    protected $fillable = [
+        'JobType', 'Reward'
+    ];
 
-            protected $fillable = [
-                'JobType', 'Reward'
-            ];
-
-            protected $casts = [
-                'JobType' => 'integer',
+    protected $casts = [
+        'JobType' => 'integer',
         'Reward' => 'integer',
     ];
-        }
+}

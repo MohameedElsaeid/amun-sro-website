@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefObjCommon extends Model
-        {
-            protected $table = '_RefObjCommon';
-            public $timestamps = false;
+class RefObjCommon extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefObjCommon';
+    protected $fillable = [
+        'Service', 'ID', 'CodeName128', 'ObjName128', 'OrgObjCodeName128', 'NameStrID128', 'DescStrID128', 'CashItem', 'Bionic', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'DecayTime', 'Country', 'Rarity', 'CanTrade', 'CanSell', 'CanBuy', 'CanBorrow', 'CanDrop', 'CanPick', 'CanRepair', 'CanRevive', 'CanUse', 'CanThrow', 'Price', 'CostRepair', 'CostRevive', 'CostBorrow', 'KeepingFee', 'SellPrice', 'ReqLevelType1', 'ReqLevel1', 'ReqLevelType2', 'ReqLevel2', 'ReqLevelType3', 'ReqLevel3', 'ReqLevelType4', 'ReqLevel4', 'MaxContain', 'RegionID', 'Dir', 'OffsetX', 'OffsetY', 'OffsetZ', 'Speed1', 'Speed2', 'Scale', 'BCHeight', 'BCRadius', 'EventID', 'AssocFileObj128', 'AssocFileDrop128', 'AssocFileIcon128', 'AssocFile1_128', 'AssocFile2_128', 'Link', 'WebName'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'CodeName128', 'ObjName128', 'OrgObjCodeName128', 'NameStrID128', 'DescStrID128', 'CashItem', 'Bionic', 'TypeID1', 'TypeID2', 'TypeID3', 'TypeID4', 'DecayTime', 'Country', 'Rarity', 'CanTrade', 'CanSell', 'CanBuy', 'CanBorrow', 'CanDrop', 'CanPick', 'CanRepair', 'CanRevive', 'CanUse', 'CanThrow', 'Price', 'CostRepair', 'CostRevive', 'CostBorrow', 'KeepingFee', 'SellPrice', 'ReqLevelType1', 'ReqLevel1', 'ReqLevelType2', 'ReqLevel2', 'ReqLevelType3', 'ReqLevel3', 'ReqLevelType4', 'ReqLevel4', 'MaxContain', 'RegionID', 'Dir', 'OffsetX', 'OffsetY', 'OffsetZ', 'Speed1', 'Speed2', 'Scale', 'BCHeight', 'BCRadius', 'EventID', 'AssocFileObj128', 'AssocFileDrop128', 'AssocFileIcon128', 'AssocFile1_128', 'AssocFile2_128', 'Link', 'WebName'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'CashItem' => 'integer',
         'Bionic' => 'integer',
@@ -63,4 +62,4 @@
         'EventID' => 'integer',
         'Link' => 'integer',
     ];
-        }
+}

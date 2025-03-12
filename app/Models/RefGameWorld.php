@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefGameWorld extends Model
-        {
-            protected $table = '_RefGame_World';
-            public $timestamps = false;
+class RefGameWorld extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefGame_World';
+    protected $fillable = [
+        'ID', 'WorldCodeName128', 'Type', 'WorldMaxCount', 'WorldMaxUserCount', 'WorldEntryType', 'WorldEntranceType', 'WorldLeaveType', 'WorldDurationTime', 'WorldEmptyRemainTime', 'ConfigGroupCodeName128'
+    ];
 
-            protected $fillable = [
-                'ID', 'WorldCodeName128', 'Type', 'WorldMaxCount', 'WorldMaxUserCount', 'WorldEntryType', 'WorldEntranceType', 'WorldLeaveType', 'WorldDurationTime', 'WorldEmptyRemainTime', 'ConfigGroupCodeName128'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Type' => 'integer',
         'WorldMaxCount' => 'integer',
         'WorldMaxUserCount' => 'integer',
@@ -24,4 +23,4 @@
         'WorldDurationTime' => 'integer',
         'WorldEmptyRemainTime' => 'integer',
     ];
-        }
+}

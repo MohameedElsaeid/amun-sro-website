@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TrijobRanking extends Model
-        {
-            protected $table = '__TrijobRanking__';
-            public $timestamps = false;
+class TrijobRanking extends Model
+{
+    public $timestamps = false;
+    protected $table = '__TrijobRanking__';
+    protected $fillable = [
+        'ShardID', 'TrijobType', 'RankType', 'Rank', 'NickName', 'JobLevel', 'JobData', 'IsNewEntry', 'RankDelta', 'Country'
+    ];
 
-            protected $fillable = [
-                'ShardID', 'TrijobType', 'RankType', 'Rank', 'NickName', 'JobLevel', 'JobData', 'IsNewEntry', 'RankDelta', 'Country'
-            ];
-
-            protected $casts = [
-                'ShardID' => 'integer',
+    protected $casts = [
+        'ShardID' => 'integer',
         'TrijobType' => 'integer',
         'RankType' => 'integer',
         'Rank' => 'integer',
@@ -24,4 +23,4 @@
         'RankDelta' => 'integer',
         'Country' => 'integer',
     ];
-        }
+}

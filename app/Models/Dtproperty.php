@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Dtproperty extends Model
-        {
-            protected $table = 'dtproperties';
-            public $timestamps = false;
+class Dtproperty extends Model
+{
+    public $timestamps = false;
+    protected $table = 'dtproperties';
+    protected $fillable = [
+        'objectid', 'property', 'value', 'uvalue', 'lvalue', 'version'
+    ];
 
-            protected $fillable = [
-                'objectid', 'property', 'value', 'uvalue', 'lvalue', 'version'
-            ];
-
-            protected $casts = [
-                'objectid' => 'integer',
+    protected $casts = [
+        'objectid' => 'integer',
         'version' => 'integer',
     ];
-        }
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefDropClassSelReinforce extends Model
-        {
-            protected $table = '_RefDropClassSel_Reinforce';
-            public $timestamps = false;
+class RefDropClassSelReinforce extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefDropClassSel_Reinforce';
+    protected $fillable = [
+        'MonLevel', 'ProbGroup1', 'ProbGroup2'
+    ];
 
-            protected $fillable = [
-                'MonLevel', 'ProbGroup1', 'ProbGroup2'
-            ];
-
-            protected $casts = [
-                'MonLevel' => 'integer',
+    protected $casts = [
+        'MonLevel' => 'integer',
         'ProbGroup1' => 'float',
         'ProbGroup2' => 'float',
     ];
-        }
+}

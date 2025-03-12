@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Char extends Model
-        {
-            protected $table = '_Char';
-            public $timestamps = false;
+class Char extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Char';
+    protected $fillable = [
+        'CharID', 'Deleted', 'RefObjID', 'CharName16', 'NickName16', 'Scale', 'CurLevel', 'MaxLevel', 'ExpOffset', 'SExpOffset', 'Strength', 'Intellect', 'RemainGold', 'RemainSkillPoint', 'RemainStatPoint', 'RemainHwanCount', 'GatheredExpPoint', 'HP', 'MP', 'LatestRegion', 'PosX', 'PosY', 'PosZ', 'AppointedTeleport', 'AutoInvestExp', 'InventorySize', 'DailyPK', 'TotalPK', 'PKPenaltyPoint', 'TPP', 'PenaltyForfeit', 'JobPenaltyTime', 'JobLvl_Trader', 'Trader_Exp', 'JobLvl_Hunter', 'Hunter_Exp', 'JobLvl_Robber', 'Robber_Exp', 'GuildID', 'LastLogout', 'TelRegion', 'TelPosX', 'TelPosY', 'TelPosZ', 'DiedRegion', 'DiedPosX', 'DiedPosY', 'DiedPosZ', 'WorldID', 'TelWorldID', 'DiedWorldID', 'HwanLevel', 'ItemPoints', 'PVPPoints', 'JOBPoints', 'Rarity', 'Support'
+    ];
 
-            protected $fillable = [
-                'CharID', 'Deleted', 'RefObjID', 'CharName16', 'NickName16', 'Scale', 'CurLevel', 'MaxLevel', 'ExpOffset', 'SExpOffset', 'Strength', 'Intellect', 'RemainGold', 'RemainSkillPoint', 'RemainStatPoint', 'RemainHwanCount', 'GatheredExpPoint', 'HP', 'MP', 'LatestRegion', 'PosX', 'PosY', 'PosZ', 'AppointedTeleport', 'AutoInvestExp', 'InventorySize', 'DailyPK', 'TotalPK', 'PKPenaltyPoint', 'TPP', 'PenaltyForfeit', 'JobPenaltyTime', 'JobLvl_Trader', 'Trader_Exp', 'JobLvl_Hunter', 'Hunter_Exp', 'JobLvl_Robber', 'Robber_Exp', 'GuildID', 'LastLogout', 'TelRegion', 'TelPosX', 'TelPosY', 'TelPosZ', 'DiedRegion', 'DiedPosX', 'DiedPosY', 'DiedPosZ', 'WorldID', 'TelWorldID', 'DiedWorldID', 'HwanLevel', 'ItemPoints', 'PVPPoints', 'JOBPoints', 'Rarity', 'Support'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'Deleted' => 'integer',
         'RefObjID' => 'integer',
         'Scale' => 'integer',
@@ -70,4 +69,4 @@
         'Rarity' => 'integer',
         'Support' => 'integer',
     ];
-        }
+}

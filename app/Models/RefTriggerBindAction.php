@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefTriggerBindAction extends Model
-        {
-            protected $table = '_RefTriggerBindAction';
-            public $timestamps = false;
+class RefTriggerBindAction extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefTriggerBindAction';
+    protected $fillable = [
+        'Service', 'ID', 'TriggerID', 'TriggerActionID'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'TriggerID', 'TriggerActionID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'TriggerID' => 'integer',
         'TriggerActionID' => 'integer',
     ];
-        }
+}

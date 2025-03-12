@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefTriggerCondition extends Model
-        {
-            protected $table = '_RefTriggerCondition';
-            public $timestamps = false;
+class RefTriggerCondition extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefTriggerCondition';
+    protected $fillable = [
+        'Service', 'ID', 'RefTriggerCommonID', 'OnTrue', 'OnFalse', 'Sequence', 'ParamGroupCodeName128'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'RefTriggerCommonID', 'OnTrue', 'OnFalse', 'Sequence', 'ParamGroupCodeName128'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'RefTriggerCommonID' => 'integer',
         'Sequence' => 'integer',
     ];
-        }
+}

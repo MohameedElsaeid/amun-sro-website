@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class PWRestore extends Model
-        {
-            protected $table = 'PW_Restore';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'UserID', 'RandomPASS', 'createtime', 'ipaddr'
-            ];
-
-            protected $casts = [
-                'createtime' => 'datetime',
+class PWRestore extends Model
+{
+    public $timestamps = false;
+    protected $table = 'PW_Restore';
+    protected $fillable = [
+        'UserID', 'RandomPASS', 'createtime', 'ipaddr'
     ];
-        }
+
+    protected $casts = [
+        'createtime' => 'datetime',
+    ];
+}

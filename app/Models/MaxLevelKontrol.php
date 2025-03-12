@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class MaxLevelKontrol extends Model
-        {
-            protected $table = '_MaxLevelKontrol';
-            public $timestamps = false;
+class MaxLevelKontrol extends Model
+{
+    public $timestamps = false;
+    protected $table = '_MaxLevelKontrol';
+    protected $fillable = [
+        'CharName', 'Zaman', 'index'
+    ];
 
-            protected $fillable = [
-                'CharName', 'Zaman', 'index'
-            ];
-
-            protected $casts = [
-                'Zaman' => 'datetime',
+    protected $casts = [
+        'Zaman' => 'datetime',
         'index' => 'integer',
     ];
-        }
+}

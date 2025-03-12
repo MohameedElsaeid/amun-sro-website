@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class GuildMember extends Model
-        {
-            protected $table = '_GuildMember';
-            public $timestamps = false;
+class GuildMember extends Model
+{
+    public $timestamps = false;
+    protected $table = '_GuildMember';
+    protected $fillable = [
+        'GuildID', 'CharID', 'CharName', 'MemberClass', 'CharLevel', 'GP_Donation', 'JoinDate', 'Permission', 'Contribution', 'GuildWarKill', 'GuildWarKilled', 'Nickname', 'RefObjID', 'SiegeAuthority'
+    ];
 
-            protected $fillable = [
-                'GuildID', 'CharID', 'CharName', 'MemberClass', 'CharLevel', 'GP_Donation', 'JoinDate', 'Permission', 'Contribution', 'GuildWarKill', 'GuildWarKilled', 'Nickname', 'RefObjID', 'SiegeAuthority'
-            ];
-
-            protected $casts = [
-                'GuildID' => 'integer',
+    protected $casts = [
+        'GuildID' => 'integer',
         'CharID' => 'integer',
         'MemberClass' => 'integer',
         'CharLevel' => 'integer',
@@ -27,4 +26,4 @@
         'RefObjID' => 'integer',
         'SiegeAuthority' => 'integer',
     ];
-        }
+}

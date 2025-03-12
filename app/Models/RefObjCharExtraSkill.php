@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefObjCharExtraSkill extends Model
-        {
-            protected $table = '_RefObjCharExtraSkill';
-            public $timestamps = false;
+class RefObjCharExtraSkill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefObjCharExtraSkill';
+    protected $fillable = [
+        'ID', 'CharID', 'ExtraSkill_1', 'ExtraSkill_2', 'ExtraSkill_3', 'ExtraSkill_4', 'ExtraSkill_5', 'ExtraSkill_6', 'ExtraSkill_7', 'ExtraSkill_8', 'ExtraSkill_9', 'ExtraSkill_10', 'ExtraSkill_11', 'ExtraSkill_12', 'ExtraSkill_13', 'ExtraSkill_14', 'ExtraSkill_15', 'ExtraSkill_16', 'ExtraSkill_17', 'ExtraSkill_18', 'ExtraSkill_19', 'ExtraSkill_20'
+    ];
 
-            protected $fillable = [
-                'ID', 'CharID', 'ExtraSkill_1', 'ExtraSkill_2', 'ExtraSkill_3', 'ExtraSkill_4', 'ExtraSkill_5', 'ExtraSkill_6', 'ExtraSkill_7', 'ExtraSkill_8', 'ExtraSkill_9', 'ExtraSkill_10', 'ExtraSkill_11', 'ExtraSkill_12', 'ExtraSkill_13', 'ExtraSkill_14', 'ExtraSkill_15', 'ExtraSkill_16', 'ExtraSkill_17', 'ExtraSkill_18', 'ExtraSkill_19', 'ExtraSkill_20'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'CharID' => 'integer',
         'ExtraSkill_1' => 'integer',
         'ExtraSkill_2' => 'integer',
@@ -37,4 +36,4 @@
         'ExtraSkill_19' => 'integer',
         'ExtraSkill_20' => 'integer',
     ];
-        }
+}

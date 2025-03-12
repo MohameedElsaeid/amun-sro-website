@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TimedJob extends Model
-        {
-            protected $table = '_TimedJob';
-            public $timestamps = false;
+class TimedJob extends Model
+{
+    public $timestamps = false;
+    protected $table = '_TimedJob';
+    protected $fillable = [
+        'ID', 'CharID', 'Category', 'JobID', 'TimeToKeep', 'Data1', 'Data2', 'Data3', 'Data4', 'Data5', 'Data6', 'Data7', 'Data8', 'Serial64', 'JID'
+    ];
 
-            protected $fillable = [
-                'ID', 'CharID', 'Category', 'JobID', 'TimeToKeep', 'Data1', 'Data2', 'Data3', 'Data4', 'Data5', 'Data6', 'Data7', 'Data8', 'Serial64', 'JID'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'CharID' => 'integer',
         'Category' => 'integer',
         'JobID' => 'integer',
@@ -30,4 +29,4 @@
         'Serial64' => 'integer',
         'JID' => 'integer',
     ];
-        }
+}

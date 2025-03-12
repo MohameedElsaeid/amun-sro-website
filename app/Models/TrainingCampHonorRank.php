@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TrainingCampHonorRank extends Model
-        {
-            protected $table = '_TrainingCampHonorRank';
-            public $timestamps = false;
+class TrainingCampHonorRank extends Model
+{
+    public $timestamps = false;
+    protected $table = '_TrainingCampHonorRank';
+    protected $fillable = [
+        'Ranking', 'CampID', 'Rank'
+    ];
 
-            protected $fillable = [
-                'Ranking', 'CampID', 'Rank'
-            ];
-
-            protected $casts = [
-                'Ranking' => 'integer',
+    protected $casts = [
+        'Ranking' => 'integer',
         'CampID' => 'integer',
         'Rank' => 'integer',
     ];
-        }
+}

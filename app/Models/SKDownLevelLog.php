@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKDownLevelLog extends Model
-        {
-            protected $table = 'SK_DownLevelLog';
-            public $timestamps = false;
+class SKDownLevelLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_DownLevelLog';
+    protected $fillable = [
+        'JID', 'struserid', 'charname', 'package', 'newlevel', 'server', 'timedown'
+    ];
 
-            protected $fillable = [
-                'JID', 'struserid', 'charname', 'package', 'newlevel', 'server', 'timedown'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'timedown' => 'datetime',
     ];
-        }
+}

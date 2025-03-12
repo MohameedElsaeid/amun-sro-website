@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefEvent extends Model
-        {
-            protected $table = '_RefEvent';
-            public $timestamps = false;
+class RefEvent extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefEvent';
+    protected $fillable = [
+        'Service', 'ID', 'CodeName', 'DescName', 'ScheduleName', 'ScheduleCount'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'CodeName', 'DescName', 'ScheduleName', 'ScheduleCount'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'ScheduleCount' => 'integer',
     ];
-        }
+}

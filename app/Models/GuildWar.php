@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class GuildWar extends Model
-        {
-            protected $table = '_GuildWar';
-            public $timestamps = false;
+class GuildWar extends Model
+{
+    public $timestamps = false;
+    protected $table = '_GuildWar';
+    protected $fillable = [
+        'ID', 'WarType', 'VictoryPointIndex', 'LodgedGold', 'WarEndTime', 'Guild1', 'Guild2', 'PointGain1', 'PointGain2', 'Data1', 'Data2'
+    ];
 
-            protected $fillable = [
-                'ID', 'WarType', 'VictoryPointIndex', 'LodgedGold', 'WarEndTime', 'Guild1', 'Guild2', 'PointGain1', 'PointGain2', 'Data1', 'Data2'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'WarType' => 'integer',
         'VictoryPointIndex' => 'integer',
         'LodgedGold' => 'integer',
@@ -26,4 +25,4 @@
         'Data1' => 'integer',
         'Data2' => 'integer',
     ];
-        }
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefTriggerCategory extends Model
-        {
-            protected $table = '_RefTriggerCategory';
-            public $timestamps = false;
+class RefTriggerCategory extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefTriggerCategory';
+    protected $fillable = [
+        'Service', 'ID', 'CodeName128', 'ObjName128', 'IndexNumber'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'CodeName128', 'ObjName128', 'IndexNumber'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'IndexNumber' => 'integer',
     ];
-        }
+}

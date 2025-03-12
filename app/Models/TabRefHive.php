@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class TabRefHive extends Model
-        {
-            protected $table = 'Tab_RefHive';
-            public $timestamps = false;
+class TabRefHive extends Model
+{
+    public $timestamps = false;
+    protected $table = 'Tab_RefHive';
+    protected $fillable = [
+        'dwHiveID', 'btKeepMonsterCountType', 'dwOverwriteMaxTotalCount', 'fMonsterCountPerPC', 'dwSpawnSpeedIncreaseRate', 'dwMaxIncreaseRate', 'btFlag', 'GameWorldID', 'HatchObjType', 'szDescString128'
+    ];
 
-            protected $fillable = [
-                'dwHiveID', 'btKeepMonsterCountType', 'dwOverwriteMaxTotalCount', 'fMonsterCountPerPC', 'dwSpawnSpeedIncreaseRate', 'dwMaxIncreaseRate', 'btFlag', 'GameWorldID', 'HatchObjType', 'szDescString128'
-            ];
-
-            protected $casts = [
-                'dwHiveID' => 'integer',
+    protected $casts = [
+        'dwHiveID' => 'integer',
         'btKeepMonsterCountType' => 'integer',
         'dwOverwriteMaxTotalCount' => 'integer',
         'fMonsterCountPerPC' => 'float',
@@ -24,4 +23,4 @@
         'GameWorldID' => 'integer',
         'HatchObjType' => 'integer',
     ];
-        }
+}

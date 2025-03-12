@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ItemQuotation extends Model
-        {
-            protected $table = '_ItemQuotation';
-            public $timestamps = false;
+class ItemQuotation extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ItemQuotation';
+    protected $fillable = [
+        'ID', 'Service', 'AssocNPC', 'RefItemID', 'BaseQuot', 'Quot_LB', 'Quot_UB', 'BaseStockAmount', 'FluctuateAmount', 'CurStockAmount'
+    ];
 
-            protected $fillable = [
-                'ID', 'Service', 'AssocNPC', 'RefItemID', 'BaseQuot', 'Quot_LB', 'Quot_UB', 'BaseStockAmount', 'FluctuateAmount', 'CurStockAmount'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'Service' => 'integer',
         'AssocNPC' => 'integer',
         'RefItemID' => 'integer',
@@ -25,4 +24,4 @@
         'FluctuateAmount' => 'integer',
         'CurStockAmount' => 'integer',
     ];
-        }
+}

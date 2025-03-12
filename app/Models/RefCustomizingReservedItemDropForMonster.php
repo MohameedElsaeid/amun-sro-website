@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCustomizingReservedItemDropForMonster extends Model
-        {
-            protected $table = '_RefCustomizingReservedItemDropForMonster';
-            public $timestamps = false;
+class RefCustomizingReservedItemDropForMonster extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCustomizingReservedItemDropForMonster';
+    protected $fillable = [
+        'RefMonsterID', 'Rarity', 'Command', 'DropGroupType', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5'
+    ];
 
-            protected $fillable = [
-                'RefMonsterID', 'Rarity', 'Command', 'DropGroupType', 'Param1', 'Param2', 'Param3', 'Param4', 'Param5'
-            ];
-
-            protected $casts = [
-                'RefMonsterID' => 'integer',
+    protected $casts = [
+        'RefMonsterID' => 'integer',
         'Rarity' => 'integer',
         'Command' => 'integer',
         'DropGroupType' => 'integer',
@@ -24,4 +23,4 @@
         'Param4' => 'integer',
         'Param5' => 'integer',
     ];
-        }
+}

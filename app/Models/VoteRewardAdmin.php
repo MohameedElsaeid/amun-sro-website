@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class VoteRewardAdmin extends Model
-        {
-            protected $table = 'vote_reward_admins';
-            public $timestamps = false;
+class VoteRewardAdmin extends Model
+{
+    public $timestamps = false;
+    protected $table = 'vote_reward_admins';
+    protected $fillable = [
+        'name'
+    ];
 
-            protected $fillable = [
-                'name'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class DeletedChar extends Model
-        {
-            protected $table = '_DeletedChar';
-            public $timestamps = false;
+class DeletedChar extends Model
+{
+    public $timestamps = false;
+    protected $table = '_DeletedChar';
+    protected $fillable = [
+        'CharID', 'UserJID', 'DeletedDate'
+    ];
 
-            protected $fillable = [
-                'CharID', 'UserJID', 'DeletedDate'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'UserJID' => 'integer',
         'DeletedDate' => 'datetime',
     ];
-        }
+}

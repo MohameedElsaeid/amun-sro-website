@@ -1,18 +1,17 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class LoginIpsLog extends Model
-        {
-            protected $table = '_Login_Ips_Log';
-            public $timestamps = false;
+class LoginIpsLog extends Model
+{
+    public $timestamps = false;
+    protected $table = '_Login_Ips_Log';
+    protected $fillable = [
+        'Charname', 'IP'
+    ];
 
-            protected $fillable = [
-                'Charname', 'IP'
-            ];
-
-            protected $casts = [
-            ];
-        }
+    protected $casts = [
+    ];
+}

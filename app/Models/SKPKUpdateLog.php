@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKPKUpdateLog extends Model
-        {
-            protected $table = 'SK_PK_UpdateLog';
-            public $timestamps = false;
+class SKPKUpdateLog extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_PK_UpdateLog';
+    protected $fillable = [
+        'ID', 'JID', 'UserName', 'CharID', 'CharName', 'PackageItemID', 'Silk_Own', 'Silk_Before', 'Silk_After', 'Gold_Remain', 'Gold_Before', 'Gold_After', 'IP', 'RegDate', 'Serial64', 'ShardID', 'ServiceCode', '_Strength', '_Intellect', '_CurLevel', '_Statpoint', '_NewName', '_OldPetName', '_NewPetName', '_NewStatPoint', '_NewLevel', '_NewStrength', '_NewIntellect', '_Skill_Own', '_Skill_Before', '_Skill_After', '_Item_BH'
+    ];
 
-            protected $fillable = [
-                'ID', 'JID', 'UserName', 'CharID', 'CharName', 'PackageItemID', 'Silk_Own', 'Silk_Before', 'Silk_After', 'Gold_Remain', 'Gold_Before', 'Gold_After', 'IP', 'RegDate', 'Serial64', 'ShardID', 'ServiceCode', '_Strength', '_Intellect', '_CurLevel', '_Statpoint', '_NewName', '_OldPetName', '_NewPetName', '_NewStatPoint', '_NewLevel', '_NewStrength', '_NewIntellect', '_Skill_Own', '_Skill_Before', '_Skill_After', '_Item_BH'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'JID' => 'integer',
         'CharID' => 'integer',
         'PackageItemID' => 'integer',
@@ -40,4 +39,4 @@
         '_Skill_Before' => 'integer',
         '_Skill_After' => 'integer',
     ];
-        }
+}

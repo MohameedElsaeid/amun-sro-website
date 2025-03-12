@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CasDatum extends Model
-        {
-            protected $table = '_CasData';
-            public $timestamps = false;
+class CasDatum extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CasData';
+    protected $fillable = [
+        'nSerial', 'nCategory', 'dReportDate', 'wShardID', 'dwUserJID', 'szCharName', 'szTgtCharName', 'szMailAddress', 'szStatement', 'nStatus', 'dProcessDate', 'szProcessedGM', 'szMemo', 'szAnswer', 'btUserChecked', 'szChatLog'
+    ];
 
-            protected $fillable = [
-                'nSerial', 'nCategory', 'dReportDate', 'wShardID', 'dwUserJID', 'szCharName', 'szTgtCharName', 'szMailAddress', 'szStatement', 'nStatus', 'dProcessDate', 'szProcessedGM', 'szMemo', 'szAnswer', 'btUserChecked', 'szChatLog'
-            ];
-
-            protected $casts = [
-                'nSerial' => 'integer',
+    protected $casts = [
+        'nSerial' => 'integer',
         'nCategory' => 'integer',
         'dReportDate' => 'datetime',
         'wShardID' => 'integer',
@@ -23,4 +22,4 @@
         'dProcessDate' => 'datetime',
         'btUserChecked' => 'integer',
     ];
-        }
+}

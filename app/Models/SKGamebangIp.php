@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class SKGamebangIp extends Model
-        {
-            protected $table = 'SK_gamebang_ip';
-            public $timestamps = false;
+class SKGamebangIp extends Model
+{
+    public $timestamps = false;
+    protected $table = 'SK_gamebang_ip';
+    protected $fillable = [
+        'nID', 'ip', 'capacity'
+    ];
 
-            protected $fillable = [
-                'nID', 'ip', 'capacity'
-            ];
-
-            protected $casts = [
-                'nID' => 'integer',
+    protected $casts = [
+        'nID' => 'integer',
         'ip' => 'integer',
         'capacity' => 'integer',
     ];
-        }
+}

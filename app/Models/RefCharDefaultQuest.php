@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCharDefaultQuest extends Model
-        {
-            protected $table = '_RefCharDefault_Quest';
-            public $timestamps = false;
+class RefCharDefaultQuest extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCharDefault_Quest';
+    protected $fillable = [
+        'Service', 'ID', 'Race', 'CodeName', 'RequiredLevel'
+    ];
 
-            protected $fillable = [
-                'Service', 'ID', 'Race', 'CodeName', 'RequiredLevel'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'ID' => 'integer',
         'Race' => 'integer',
         'RequiredLevel' => 'integer',
     ];
-        }
+}

@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ServerEvent extends Model
-        {
-            protected $table = '_ServerEvent';
-            public $timestamps = false;
+class ServerEvent extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ServerEvent';
+    protected $fillable = [
+        'ID', 'CompletionValue', 'AchievementCondition', 'ProgressCount'
+    ];
 
-            protected $fillable = [
-                'ID', 'CompletionValue', 'AchievementCondition', 'ProgressCount'
-            ];
-
-            protected $casts = [
-                'ID' => 'integer',
+    protected $casts = [
+        'ID' => 'integer',
         'CompletionValue' => 'integer',
         'AchievementCondition' => 'integer',
         'ProgressCount' => 'integer',
     ];
-        }
+}

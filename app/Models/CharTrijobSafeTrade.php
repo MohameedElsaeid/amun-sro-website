@@ -1,22 +1,21 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class CharTrijobSafeTrade extends Model
-        {
-            protected $table = '_CharTrijobSafeTrade';
-            public $timestamps = false;
+class CharTrijobSafeTrade extends Model
+{
+    public $timestamps = false;
+    protected $table = '_CharTrijobSafeTrade';
+    protected $fillable = [
+        'CharID', 'AbleCount', 'Status', 'LastSafeTrade'
+    ];
 
-            protected $fillable = [
-                'CharID', 'AbleCount', 'Status', 'LastSafeTrade'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'AbleCount' => 'integer',
         'Status' => 'integer',
         'LastSafeTrade' => 'datetime',
     ];
-        }
+}

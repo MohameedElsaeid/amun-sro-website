@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class ModuleVersionFile extends Model
-        {
-            protected $table = '_ModuleVersionFile';
-            public $timestamps = false;
+class ModuleVersionFile extends Model
+{
+    public $timestamps = false;
+    protected $table = '_ModuleVersionFile';
+    protected $fillable = [
+        'nID', 'nVersion', 'nDivisionID', 'nContentID', 'nModuleID', 'szFilename', 'szPath', 'nFileSize', 'nFileType', 'nFileTypeVersion', 'nToBePacked', 'timeModified', 'nValid'
+    ];
 
-            protected $fillable = [
-                'nID', 'nVersion', 'nDivisionID', 'nContentID', 'nModuleID', 'szFilename', 'szPath', 'nFileSize', 'nFileType', 'nFileTypeVersion', 'nToBePacked', 'timeModified', 'nValid'
-            ];
-
-            protected $casts = [
-                'nID' => 'integer',
+    protected $casts = [
+        'nID' => 'integer',
         'nVersion' => 'integer',
         'nDivisionID' => 'integer',
         'nContentID' => 'integer',
@@ -26,4 +25,4 @@
         'timeModified' => 'datetime',
         'nValid' => 'integer',
     ];
-        }
+}

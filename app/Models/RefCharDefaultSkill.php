@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefCharDefaultSkill extends Model
-        {
-            protected $table = '_RefCharDefault_Skill';
-            public $timestamps = false;
+class RefCharDefaultSkill extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefCharDefault_Skill';
+    protected $fillable = [
+        'Race', 'SkillID'
+    ];
 
-            protected $fillable = [
-                'Race', 'SkillID'
-            ];
-
-            protected $casts = [
-                'Race' => 'integer',
+    protected $casts = [
+        'Race' => 'integer',
         'SkillID' => 'integer',
     ];
-        }
+}

@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class UniqueRanking extends Model
-        {
-            protected $table = '_UniqueRanking';
-            public $timestamps = false;
+class UniqueRanking extends Model
+{
+    public $timestamps = false;
+    protected $table = '_UniqueRanking';
+    protected $fillable = [
+        'CharID', 'CodeName128', 'points'
+    ];
 
-            protected $fillable = [
-                'CharID', 'CodeName128', 'points'
-            ];
-
-            protected $casts = [
-                'CharID' => 'integer',
+    protected $casts = [
+        'CharID' => 'integer',
         'points' => 'integer',
     ];
-        }
+}

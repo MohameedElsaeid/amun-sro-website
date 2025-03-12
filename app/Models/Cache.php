@@ -1,19 +1,18 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class Cache extends Model
-        {
-            protected $table = 'cache';
-            public $timestamps = false;
-
-            protected $fillable = [
-                'key', 'value', 'expiration'
-            ];
-
-            protected $casts = [
-                'expiration' => 'integer',
+class Cache extends Model
+{
+    public $timestamps = false;
+    protected $table = 'cache';
+    protected $fillable = [
+        'key', 'value', 'expiration'
     ];
-        }
+
+    protected $casts = [
+        'expiration' => 'integer',
+    ];
+}

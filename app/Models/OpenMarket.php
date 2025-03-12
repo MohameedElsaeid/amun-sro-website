@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class OpenMarket extends Model
-        {
-            protected $table = '_OpenMarket';
-            public $timestamps = false;
+class OpenMarket extends Model
+{
+    public $timestamps = false;
+    protected $table = '_OpenMarket';
+    protected $fillable = [
+        'JID', 'PersnalID', 'CharName16', 'Status', 'RefItemID', 'TidGroupID', 'ItemClass', 'ItemID', 'SellCnt', 'RegDate', 'EndDate', 'Price', 'Deposit', 'SellFee', 'UseCash', 'Serial64'
+    ];
 
-            protected $fillable = [
-                'JID', 'PersnalID', 'CharName16', 'Status', 'RefItemID', 'TidGroupID', 'ItemClass', 'ItemID', 'SellCnt', 'RegDate', 'EndDate', 'Price', 'Deposit', 'SellFee', 'UseCash', 'Serial64'
-            ];
-
-            protected $casts = [
-                'JID' => 'integer',
+    protected $casts = [
+        'JID' => 'integer',
         'PersnalID' => 'integer',
         'Status' => 'integer',
         'RefItemID' => 'integer',
@@ -30,4 +29,4 @@
         'UseCash' => 'integer',
         'Serial64' => 'integer',
     ];
-        }
+}

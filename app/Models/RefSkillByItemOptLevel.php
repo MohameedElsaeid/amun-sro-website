@@ -1,20 +1,19 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSkillByItemOptLevel extends Model
-        {
-            protected $table = '_RefSkillByItemOptLevel';
-            public $timestamps = false;
+class RefSkillByItemOptLevel extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSkillByItemOptLevel';
+    protected $fillable = [
+        'Link', 'RefSkillID'
+    ];
 
-            protected $fillable = [
-                'Link', 'RefSkillID'
-            ];
-
-            protected $casts = [
-                'Link' => 'integer',
+    protected $casts = [
+        'Link' => 'integer',
         'RefSkillID' => 'integer',
     ];
-        }
+}

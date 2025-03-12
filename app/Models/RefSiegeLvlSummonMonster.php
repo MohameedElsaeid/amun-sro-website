@@ -1,21 +1,20 @@
-        <?php
+<?php
 
-        namespace App\Models;
+namespace App\Models;
 
-        use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-        class RefSiegeLvlSummonMonster extends Model
-        {
-            protected $table = '_RefSiegeLvlSummonMonster';
-            public $timestamps = false;
+class RefSiegeLvlSummonMonster extends Model
+{
+    public $timestamps = false;
+    protected $table = '_RefSiegeLvlSummonMonster';
+    protected $fillable = [
+        'Service', 'RefObjID', 'RefOrgObjID'
+    ];
 
-            protected $fillable = [
-                'Service', 'RefObjID', 'RefOrgObjID'
-            ];
-
-            protected $casts = [
-                'Service' => 'integer',
+    protected $casts = [
+        'Service' => 'integer',
         'RefObjID' => 'integer',
         'RefOrgObjID' => 'integer',
     ];
-        }
+}
