@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampBuffStatus newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampBuffStatus newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampBuffStatus query()
+ * @mixin \Eloquent
+ */
 class TrainingCampBuffStatus extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventItem query()
+ * @mixin \Eloquent
+ */
 class LogEventItem extends Model
 {
     public $timestamps = false;

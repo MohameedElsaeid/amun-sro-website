@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward query()
+ * @mixin \Eloquent
+ */
 class RefEventReward extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem query()
+ * @mixin \Eloquent
+ */
 class LogCashItem extends Model
 {
     public $timestamps = false;

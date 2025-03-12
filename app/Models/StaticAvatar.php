@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar query()
+ * @mixin \Eloquent
+ */
 class StaticAvatar extends Model
 {
     public $timestamps = false;

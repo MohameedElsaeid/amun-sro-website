@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPackageItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPackageItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPackageItem query()
+ * @mixin \Eloquent
+ */
 class RefPackageItem extends Model
 {
     public $timestamps = false;

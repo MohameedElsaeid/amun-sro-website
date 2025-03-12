@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefQuestRewardItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefQuestRewardItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefQuestRewardItem query()
+ * @mixin \Eloquent
+ */
 class RefQuestRewardItem extends Model
 {
     public $timestamps = false;

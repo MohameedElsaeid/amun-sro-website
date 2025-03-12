@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCO newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCO newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCO query()
+ * @mixin \Eloquent
+ */
 class CharCO extends Model
 {
     public $timestamps = false;

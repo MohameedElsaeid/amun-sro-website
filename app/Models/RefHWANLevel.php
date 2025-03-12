@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefHWANLevel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefHWANLevel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefHWANLevel query()
+ * @mixin \Eloquent
+ */
 class RefHWANLevel extends Model
 {
     public $timestamps = false;

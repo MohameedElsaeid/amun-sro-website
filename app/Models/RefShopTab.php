@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopTab newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopTab newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopTab query()
+ * @mixin \Eloquent
+ */
 class RefShopTab extends Model
 {
     public $timestamps = false;

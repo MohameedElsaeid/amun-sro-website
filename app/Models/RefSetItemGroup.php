@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup query()
+ * @mixin \Eloquent
+ */
 class RefSetItemGroup extends Model
 {
     public $timestamps = false;

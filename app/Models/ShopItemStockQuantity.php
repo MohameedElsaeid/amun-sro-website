@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity query()
+ * @mixin \Eloquent
+ */
 class ShopItemStockQuantity extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Memo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Memo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Memo query()
+ * @mixin \Eloquent
+ */
 class Memo extends Model
 {
     public $timestamps = false;

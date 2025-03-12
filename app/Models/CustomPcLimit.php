@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit query()
+ * @mixin \Eloquent
+ */
 class CustomPcLimit extends Model
 {
     public $timestamps = false;

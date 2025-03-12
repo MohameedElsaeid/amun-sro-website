@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank query()
+ * @mixin \Eloquent
+ */
 class RefSiegeFortressBattleRank extends Model
 {
     public $timestamps = false;

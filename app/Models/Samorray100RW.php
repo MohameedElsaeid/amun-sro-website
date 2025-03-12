@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW query()
+ * @mixin \Eloquent
+ */
 class Samorray100RW extends Model
 {
     public $timestamps = false;

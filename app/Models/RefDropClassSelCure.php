@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure query()
+ * @mixin \Eloquent
+ */
 class RefDropClassSelCure extends Model
 {
     public $timestamps = false;

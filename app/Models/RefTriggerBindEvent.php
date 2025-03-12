@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindEvent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindEvent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindEvent query()
+ * @mixin \Eloquent
+ */
 class RefTriggerBindEvent extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG query()
+ * @mixin \Eloquent
+ */
 class TEMPADDITEMEXTERNCHESTLOG extends Model
 {
     public $timestamps = false;

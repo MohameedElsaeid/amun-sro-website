@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog query()
+ * @mixin \Eloquent
+ */
 class WebShopSROLog extends Model
 {
     public $timestamps = false;

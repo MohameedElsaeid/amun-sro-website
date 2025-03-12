@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob query()
+ * @mixin \Eloquent
+ */
 class OldTrijob extends Model
 {
     public $timestamps = false;

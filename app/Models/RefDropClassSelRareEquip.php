@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRareEquip newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRareEquip newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRareEquip query()
+ * @mixin \Eloquent
+ */
 class RefDropClassSelRareEquip extends Model
 {
     public $timestamps = false;

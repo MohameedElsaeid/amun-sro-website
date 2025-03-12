@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld query()
+ * @mixin \Eloquent
+ */
 class UserOld extends Model
 {
     public $timestamps = false;

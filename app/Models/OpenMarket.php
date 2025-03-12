@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OpenMarket newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OpenMarket newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OpenMarket query()
+ * @mixin \Eloquent
+ */
 class OpenMarket extends Model
 {
     public $timestamps = false;

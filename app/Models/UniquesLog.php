@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog query()
+ * @mixin \Eloquent
+ */
 class UniquesLog extends Model
 {
     public $timestamps = false;

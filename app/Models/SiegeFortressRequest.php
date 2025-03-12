@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressRequest newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressRequest newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressRequest query()
+ * @mixin \Eloquent
+ */
 class SiegeFortressRequest extends Model
 {
     public $timestamps = false;

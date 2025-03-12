@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution query()
+ * @mixin \Eloquent
+ */
 class TabRefRankingRobberContribution extends Model
 {
     public $timestamps = false;

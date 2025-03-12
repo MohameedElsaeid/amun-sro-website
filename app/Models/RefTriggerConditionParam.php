@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam query()
+ * @mixin \Eloquent
+ */
 class RefTriggerConditionParam extends Model
 {
     public $timestamps = false;

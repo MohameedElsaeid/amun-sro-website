@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleLink newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleLink newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleLink query()
+ * @mixin \Eloquent
+ */
 class RefTeleLink extends Model
 {
     public $timestamps = false;

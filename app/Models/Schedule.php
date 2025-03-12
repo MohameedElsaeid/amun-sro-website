@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Schedule newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Schedule newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Schedule query()
+ * @mixin \Eloquent
+ */
 class Schedule extends Model
 {
     public $timestamps = false;

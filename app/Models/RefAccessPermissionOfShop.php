@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop query()
+ * @mixin \Eloquent
+ */
 class RefAccessPermissionOfShop extends Model
 {
     public $timestamps = false;

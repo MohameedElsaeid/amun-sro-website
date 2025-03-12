@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter query()
+ * @mixin \Eloquent
+ */
 class RoyalCoinLogHunter extends Model
 {
     public $timestamps = false;

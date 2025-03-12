@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOpt newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOpt newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOpt query()
+ * @mixin \Eloquent
+ */
 class RefMagicOpt extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OnlineOffline newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OnlineOffline newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OnlineOffline query()
+ * @mixin \Eloquent
+ */
 class OnlineOffline extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemQuotation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemQuotation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemQuotation query()
+ * @mixin \Eloquent
+ */
 class ItemQuotation extends Model
 {
     public $timestamps = false;

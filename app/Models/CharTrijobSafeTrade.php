@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade query()
+ * @mixin \Eloquent
+ */
 class CharTrijobSafeTrade extends Model
 {
     public $timestamps = false;

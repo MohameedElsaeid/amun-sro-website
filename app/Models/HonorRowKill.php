@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|HonorRowKill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|HonorRowKill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|HonorRowKill query()
+ * @mixin \Eloquent
+ */
 class HonorRowKill extends Model
 {
     public $timestamps = false;

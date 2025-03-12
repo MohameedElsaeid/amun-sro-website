@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST query()
+ * @mixin \Eloquent
+ */
 class LogSEEKNDESTROYITEMFAST extends Model
 {
     public $timestamps = false;

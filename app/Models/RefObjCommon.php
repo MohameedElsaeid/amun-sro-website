@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefObjCommon newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefObjCommon newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefObjCommon query()
+ * @mixin \Eloquent
+ */
 class RefObjCommon extends Model
 {
     public $timestamps = false;

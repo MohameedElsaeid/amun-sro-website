@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GPHistory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GPHistory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GPHistory query()
+ * @mixin \Eloquent
+ */
 class GPHistory extends Model
 {
     public $timestamps = false;

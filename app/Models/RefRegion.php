@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion query()
+ * @mixin \Eloquent
+ */
 class RefRegion extends Model
 {
     public $timestamps = false;

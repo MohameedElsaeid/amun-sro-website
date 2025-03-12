@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel query()
+ * @mixin \Eloquent
+ */
 class RefSkillByItemOptLevel extends Model
 {
     public $timestamps = false;

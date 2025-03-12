@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG query()
+ * @mixin \Eloquent
+ */
 class TOPLOG extends Model
 {
     public $timestamps = false;

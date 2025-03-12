@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SystemService newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SystemService newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SystemService query()
+ * @mixin \Eloquent
+ */
 class SystemService extends Model
 {
     public $timestamps = false;

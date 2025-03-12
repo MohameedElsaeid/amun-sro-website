@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCustomizingReservedItemDropForMonster newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCustomizingReservedItemDropForMonster newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCustomizingReservedItemDropForMonster query()
+ * @mixin \Eloquent
+ */
 class RefCustomizingReservedItemDropForMonster extends Model
 {
     public $timestamps = false;

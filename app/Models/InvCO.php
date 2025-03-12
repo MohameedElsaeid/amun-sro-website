@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO query()
+ * @mixin \Eloquent
+ */
 class InvCO extends Model
 {
     public $timestamps = false;

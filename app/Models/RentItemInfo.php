@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RentItemInfo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RentItemInfo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RentItemInfo query()
+ * @mixin \Eloquent
+ */
 class RentItemInfo extends Model
 {
     public $timestamps = false;

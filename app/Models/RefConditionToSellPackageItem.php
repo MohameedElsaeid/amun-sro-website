@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToSellPackageItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToSellPackageItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToSellPackageItem query()
+ * @mixin \Eloquent
+ */
 class RefConditionToSellPackageItem extends Model
 {
     public $timestamps = false;

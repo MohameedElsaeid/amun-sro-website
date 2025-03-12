@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuest newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuest newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuest query()
+ * @mixin \Eloquent
+ */
 class RefSiegeQuest extends Model
 {
     public $timestamps = false;

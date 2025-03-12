@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme query()
+ * @mixin \Eloquent
+ */
 class RefCollectionBookTheme extends Model
 {
     public $timestamps = false;

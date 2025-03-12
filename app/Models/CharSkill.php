@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharSkill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharSkill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|CharSkill query()
+ * @mixin \Eloquent
+ */
 class CharSkill extends Model
 {
     public $timestamps = false;

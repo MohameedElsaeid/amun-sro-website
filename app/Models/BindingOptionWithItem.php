@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem query()
+ * @mixin \Eloquent
+ */
 class BindingOptionWithItem extends Model
 {
     public $timestamps = false;

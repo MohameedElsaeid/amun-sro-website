@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ILegendTool newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ILegendTool newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ILegendTool query()
+ * @mixin \Eloquent
+ */
 class ILegendTool extends Model
 {
     public $timestamps = false;

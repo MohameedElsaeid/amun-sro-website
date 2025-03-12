@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress query()
+ * @mixin \Eloquent
+ */
 class LogEventSiegeFortress extends Model
 {
     public $timestamps = false;

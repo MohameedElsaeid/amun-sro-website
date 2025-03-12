@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefTactic newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefTactic newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefTactic query()
+ * @mixin \Eloquent
+ */
 class TabRefTactic extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar query()
+ * @mixin \Eloquent
+ */
 class GuildWar extends Model
 {
     public $timestamps = false;

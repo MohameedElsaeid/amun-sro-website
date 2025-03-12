@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GrantingJobCoin newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GrantingJobCoin newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GrantingJobCoin query()
+ * @mixin \Eloquent
+ */
 class GrantingJobCoin extends Model
 {
     public $timestamps = false;

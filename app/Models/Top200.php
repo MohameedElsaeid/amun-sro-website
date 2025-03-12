@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 query()
+ * @mixin \Eloquent
+ */
 class Top200 extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade query()
+ * @mixin \Eloquent
+ */
 class RefSiegeStructUpgrade extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaItemSet newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaItemSet newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaItemSet query()
+ * @mixin \Eloquent
+ */
 class RefGachaItemSet extends Model
 {
     public $timestamps = false;

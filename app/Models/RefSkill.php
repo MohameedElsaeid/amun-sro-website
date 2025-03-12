@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkill query()
+ * @mixin \Eloquent
+ */
 class RefSkill extends Model
 {
     public $timestamps = false;

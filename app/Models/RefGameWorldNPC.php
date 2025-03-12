@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC query()
+ * @mixin \Eloquent
+ */
 class RefGameWorldNPC extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RenameLogChar newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RenameLogChar newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RenameLogChar query()
+ * @mixin \Eloquent
+ */
 class RenameLogChar extends Model
 {
     public $timestamps = false;

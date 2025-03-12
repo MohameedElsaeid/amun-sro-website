@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressStoneState newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressStoneState newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressStoneState query()
+ * @mixin \Eloquent
+ */
 class SiegeFortressStoneState extends Model
 {
     public $timestamps = false;

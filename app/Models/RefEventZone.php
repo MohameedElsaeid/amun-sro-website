@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventZone newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventZone newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventZone query()
+ * @mixin \Eloquent
+ */
 class RefEventZone extends Model
 {
     public $timestamps = false;

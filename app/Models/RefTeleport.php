@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport query()
+ * @mixin \Eloquent
+ */
 class RefTeleport extends Model
 {
     public $timestamps = false;

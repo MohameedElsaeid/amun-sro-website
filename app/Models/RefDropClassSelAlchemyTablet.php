@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet query()
+ * @mixin \Eloquent
+ */
 class RefDropClassSelAlchemyTablet extends Model
 {
     public $timestamps = false;

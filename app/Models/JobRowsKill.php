@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill query()
+ * @mixin \Eloquent
+ */
 class JobRowsKill extends Model
 {
     public $timestamps = false;

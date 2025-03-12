@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem query()
+ * @mixin \Eloquent
+ */
 class RefRewardPolicyToBuyScrapItem extends Model
 {
     public $timestamps = false;

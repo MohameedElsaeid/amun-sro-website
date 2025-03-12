@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate query()
+ * @mixin \Eloquent
+ */
 class RefClimate extends Model
 {
     public $timestamps = false;

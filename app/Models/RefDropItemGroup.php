@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropItemGroup newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropItemGroup newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropItemGroup query()
+ * @mixin \Eloquent
+ */
 class RefDropItemGroup extends Model
 {
     public $timestamps = false;

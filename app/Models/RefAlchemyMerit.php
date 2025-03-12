@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit query()
+ * @mixin \Eloquent
+ */
 class RefAlchemyMerit extends Model
 {
     public $timestamps = false;

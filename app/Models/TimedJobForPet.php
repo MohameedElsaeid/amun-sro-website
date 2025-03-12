@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet query()
+ * @mixin \Eloquent
+ */
 class TimedJobForPet extends Model
 {
     public $timestamps = false;

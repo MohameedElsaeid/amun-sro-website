@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyMagicStone newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyMagicStone newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyMagicStone query()
+ * @mixin \Eloquent
+ */
 class RefDropClassSelAlchemyMagicStone extends Model
 {
     public $timestamps = false;

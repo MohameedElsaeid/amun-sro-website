@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment query()
+ * @mixin \Eloquent
+ */
 class RoyalItemPoolAutoEquipment extends Model
 {
     public $timestamps = false;

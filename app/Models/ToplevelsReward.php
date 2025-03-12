@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward query()
+ * @mixin \Eloquent
+ */
 class ToplevelsReward extends Model
 {
     public $timestamps = false;

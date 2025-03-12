@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork query()
+ * @mixin \Eloquent
+ */
 class FleaMarketNetwork extends Model
 {
     public $timestamps = false;

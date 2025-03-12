@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Hwan newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Hwan newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Hwan query()
+ * @mixin \Eloquent
+ */
 class Hwan extends Model
 {
     public $timestamps = false;

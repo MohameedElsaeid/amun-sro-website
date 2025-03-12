@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRecover newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRecover newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelRecover query()
+ * @mixin \Eloquent
+ */
 class RefDropClassSelRecover extends Model
 {
     public $timestamps = false;

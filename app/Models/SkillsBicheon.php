@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon query()
+ * @mixin \Eloquent
+ */
 class SkillsBicheon extends Model
 {
     public $timestamps = false;

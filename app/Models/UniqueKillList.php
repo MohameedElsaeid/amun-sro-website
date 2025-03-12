@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList query()
+ * @mixin \Eloquent
+ */
 class UniqueKillList extends Model
 {
     public $timestamps = false;

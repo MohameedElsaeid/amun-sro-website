@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top300 newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top300 newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Top300 query()
+ * @mixin \Eloquent
+ */
 class Top300 extends Model
 {
     public $timestamps = false;

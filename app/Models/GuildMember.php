@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember query()
+ * @mixin \Eloquent
+ */
 class GuildMember extends Model
 {
     public $timestamps = false;

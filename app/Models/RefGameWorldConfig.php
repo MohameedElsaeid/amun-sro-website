@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldConfig newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldConfig newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldConfig query()
+ * @mixin \Eloquent
+ */
 class RefGameWorldConfig extends Model
 {
     public $timestamps = false;

@@ -4,6 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank query()
+ * @mixin \Eloquent
+ */
 class TrainingCampHonorRank extends Model
 {
     public $timestamps = false;
