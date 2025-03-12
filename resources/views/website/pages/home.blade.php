@@ -1,4 +1,4 @@
-@extends('Website.layouts.app')
+@extends('website.layouts.app')
 
 @section('title', 'Home - ASRO Game')
 @section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
