@@ -12,7 +12,7 @@ return [
      * to learn how to get this file. You can also pass the credentials as an array
      * instead of a file path.
      */
-    'service_account_credentials_json' => storage_path('app/analytics/amunsro-0148c86e2431.json'),
+    'service_account_credentials_json' => storage_path('analytics/amunsro-0148c86e2431.json'),
 
     /*
      * The amount of minutes the Google API responses will be cached.
