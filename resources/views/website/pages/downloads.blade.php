@@ -48,7 +48,7 @@
                                             Windows
                                         </div>
                                     </div>
-                                    <a href="{{asset('data/Amun Sro.rar')}}"
+                                    <a href="{{asset('data/AmunSro.rar')}}"
                                        class="inline-flex items-center justify-center bg-gold hover:bg-gold-dark text-midnight-dark font-bold px-6 py-3 rounded-lg transition-colors w-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor">
