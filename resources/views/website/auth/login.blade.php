@@ -18,7 +18,7 @@
         <div class="container mx-auto px-4">
             <div class="content-section p-8 max-w-md mx-auto">
                 <div class="mb-8 text-center">
-                    <img src="{{ asset('icons/logo.png') }}" alt="Amun Sro Logo" class="h-20 mx-auto mb-4"
+                    <img src="{{ asset('icons/logo.webp') }}" alt="Amun Sro Logo" class="h-20 mx-auto mb-4"
                          loading="lazy">
                     <h2 class="text-3xl font-cinzel font-bold gold-gradient-text">Welcome Back</h2>
                     <p class="text-sand-light mt-2">Enter your credentials to continue</p>

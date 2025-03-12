@@ -6,7 +6,7 @@
 @section('content')
     <!-- Hero Section -->
     <div class="page-hero page-hero-accent relative"
-         style="background-image: url('{{ asset('public/lovable-uploads/7499e1eb-7ca5-42dd-8414-75d7d21a379e.png') }}');">
+         style="background-image: url('{{ asset('icons/feat_6.webp') }}');">
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4 hero-animate">Player Rankings</h1>
             <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8 hero-animate hero-animate-delay-1">

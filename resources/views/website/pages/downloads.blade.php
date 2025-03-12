@@ -6,7 +6,7 @@
 @section('content')
     <!-- Hero Section with Background Image -->
     <section class="page-hero"
-             style="background-image: url('{{ asset('public/lovable-uploads/7c8740e7-41d7-4bd9-8050-af2f261d732c.png') }}');">
+             style="background-image: url('{{ asset('icons/feat_2.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4">Game Downloads</h1>
             <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">Begin your journey on the legendary

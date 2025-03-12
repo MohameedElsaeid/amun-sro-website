@@ -30,8 +30,8 @@ export default {
                 'body': ['Roboto', 'sans-serif'],
             },
             backgroundImage: {
-                'hero-pattern': "url('/lovable-uploads/3b729535-d36b-49f8-bdcc-e9679626c1e2.png')",
-                'logo': "url('/lovable-uploads/34a87cac-fe82-4900-b479-a9dc520012b8.png')",
+                'hero-pattern': "url('https://amun-sro.online/icons/feat_5.webp')",
+                'logo': "url('https://amun-sro.online/icons/logo.webp')",
             }
         }
     },

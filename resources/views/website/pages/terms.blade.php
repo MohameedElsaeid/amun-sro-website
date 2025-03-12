@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <div class="page-hero relative" style="background-image: url('{{ asset('public/lovable-uploads/42271246-1e84-4bfd-b0f3-9fb95bfb7992.png') }}');">
+    <div class="page-hero relative" style="background-image: url('{{ asset('icons/feat_2.webp') }}');">
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4">Terms of Service</h1>
             <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">Our user agreement and guidelines</p>
