@@ -18,8 +18,7 @@
                    class="nav-link {{ request()->routeIs('website.events') ? 'active' : '' }}">Events</a>
                 <a href="{{ route('website.donate') }}"
                    class="nav-link {{ request()->routeIs('website.donate') ? 'active' : '' }}">Donation</a>
-                <a href="{{ route('website.account') }}"
-                   class="nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
+
                 @guest
                     <a href="{{ route('website.login') }}"
                        class="login-btn {{ request()->routeIs('website.login') ? 'active' : '' }}">Login</a>
@@ -27,6 +26,8 @@
                        class="register-btn {{ request()->routeIs('website.register') ? 'active' : '' }}">Register</a>
                 @endguest
                 @auth
+                    <a href="{{ route('website.account') }}"
+                       class="nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
                         <a class="logout-btn" href="{{ route('website.logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -68,6 +69,8 @@
                     </div>
                 @endguest
                 @auth
+                    <a href="{{ route('website.account') }}"
+                       class="mobile-nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
                     <div class="flex space-x-2 pt-2 border-t border-gold-dark">
                         <a class="mobile-logout-btn" href="{{ route('website.logout') }}"
                            onclick="event.preventDefault();
@@ -78,9 +81,6 @@
                     <form id="logout-form" action="{{ route('website.logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-
-                    <a href="{{ route('website.account') }}"
-                       class="mobile-nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
                 @endauth
             </div>
         </div>

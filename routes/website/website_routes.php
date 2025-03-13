@@ -54,6 +54,4 @@ Route::group(['as' => 'website.'], function () {
 
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-
-
 });

@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\CaptureFbTracking;
 use App\Http\Middleware\HandleInertiaRequests;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\{Exceptions, Middleware};
 use Illuminate\Foundation\Http\Middleware\{ConvertEmptyStringsToNull,
@@ -30,6 +31,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+
+
         $middleware->use([
             InvokeDeferredCallbacks::class,
             TrustHosts::class,
@@ -44,13 +47,17 @@ return Application::configure(basePath: dirname(__DIR__))
             CaptureFbTracking::class,
             HandleInertiaRequests::class,
         ]);
+
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        if (app()->environment('local')) {
-            $exceptions->renderable(function (Throwable $exception, Request $request) {
-                dd($exception);
-            });
-        }
+
+
+//        if (app()->environment('local')) {
+//            $exceptions->renderable(function (Throwable $exception, Request $request) {
+//                dd($exception);
+//            });
+//        }
 
         // Handle 404 errors
         $exceptions->renderable(function (NotFoundHttpException $exception, Request $request) {
@@ -63,6 +70,14 @@ return Application::configure(basePath: dirname(__DIR__))
                 return response()->json(['errors' => $exception->errors()], 422);
             }
             return redirect()->back()->withErrors($exception->errors())->withInput();
+        });
+
+        // Handle validation errors
+        $exceptions->renderable(function (AuthenticationException $exception, Request $request) {
+            if ($request->expectsJson()) {
+                return response()->json(['errors' => []], 422);
+            }
+            return redirect()->route('website.login');
         });
 
         // Handle all other exceptions
