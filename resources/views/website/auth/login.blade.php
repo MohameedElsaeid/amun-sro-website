@@ -28,7 +28,7 @@
                     @csrf
                     <div>
                         <label for="username" class="block text-sand-light font-medium mb-2">Username</label>
-                        <input type="text" id="username" name="username"
+                        <input type="text" id="username" name="StrUserID"
                                class="w-full bg-midnight-light border border-gold-dark/20 focus:border-gold px-4 py-3 rounded-md text-sand-light"
                                placeholder="Enter your username" required>
                         @error('username')

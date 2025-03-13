@@ -30,11 +30,8 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/system', [SystemController::class, 'index'])->name('system');
     Route::get('/character', [CharacterController::class, 'index'])->name('character');
     Route::get('/account', [AccountController::class, 'index'])->name('account');
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
-    Route::post('/forgot', [LoginController::class, 'login'])->name('forgotPassword');
-    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+
+
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/help', [HelpController::class, 'index'])->name('help');
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
@@ -44,4 +41,19 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/careers', [CareersController::class, 'index'])->name('careers');
     Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
     Route::get('/donate', [DonationController::class, 'index'])->name('donate');
+
+
+
+    //AUTH
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::post('/forgot', [LoginController::class, 'login'])->name('forgotPassword');
+
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+
+
 });

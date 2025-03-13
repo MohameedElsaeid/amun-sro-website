@@ -4,11 +4,19 @@
 @section('meta-description', 'Review the game rules and guidelines for Amun Sro. Learn about general conduct, account policies, gameplay rules, and more on our Silkroad private server.')
 
 @section('content')
-    <main>
+    <!-- Hero Section -->
+    <div class="page-hero page-hero-accent relative"
+         style="background-image: url('{{ asset('icons/feat_6.webp') }}');">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4 hero-animate">Game Rules</h1>
+            <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8 hero-animate hero-animate-delay-1">
+                Please familiarize yourself with our rules to ensure a fair and enjoyable gaming experience for all players.</p>
+        </div>
+    </div>
         <section class="py-12 bg-sand">
             <div class="container mx-auto px-4">
-                <h1 class="text-4xl font-cinzel font-bold text-midnight-dark mb-6 text-center">Game Rules</h1>
-                <p class="text-xl text-midnight text-center mb-12 max-w-3xl mx-auto">Please familiarize yourself with our rules to ensure a fair and enjoyable gaming experience for all players.</p>
+                <h1 class="text-4xl font-cinzel font-bold text-midnight-dark mb-6 text-center"></h1>
+                <p class="text-xl text-midnight text-center mb-12 max-w-3xl mx-auto"></p>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="p-6 flex flex-col md:flex-row gap-8">
                         <aside class="md:w-1/4">
@@ -68,5 +76,4 @@
                 </div>
             </div>
         </section>
-    </main>
 @endsection

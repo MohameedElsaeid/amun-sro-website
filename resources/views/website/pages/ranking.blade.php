@@ -16,7 +16,7 @@
     </div>
 
     <!-- Main Content -->
-    <section id="rankings-table" class="py-16 bg-sand-light relative z-20">
+    <section id="rankings-table" class="py-16 bg-sand-light relative z-20"  style="background-image: url('{{ asset('icons/feat_2_opacity_30.webp') }}');">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-lg shadow-xl overflow-hidden relative z-10">
                 <div class="p-6 bg-midnight text-sand">

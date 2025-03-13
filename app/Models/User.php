@@ -51,4 +51,15 @@ class User extends Authenticatable
         'UserJID' => 'integer',
         'CharID' => 'integer',
     ];
+
+    /**
+     * Get the password for the user.
+     * This should return the MD5 hash stored in the database
+     *
+     * @return string
+     */
+    public function getAuthPassword(): string
+    {
+        return $this->password;
+    }
 }

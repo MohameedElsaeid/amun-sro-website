@@ -15,11 +15,8 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="py-16 bg-sand-light relative z-20">
+    <section class="py-16 bg-sand-light relative z-20" style="background-image: url('{{ asset('icons/feat_5_opacity_30.webp') }}');">
         <div class="container mx-auto px-4">
-
-            <!-- Why Recharge Section -->
             <div class="mb-16 text-center">
                 <h2 class="text-3xl font-cinzel font-bold text-midnight mb-6">Why Recharge Silk?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
@@ -528,5 +525,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 @endsection

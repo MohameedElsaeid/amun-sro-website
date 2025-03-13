@@ -1,61 +1,56 @@
 
-// Blog specific JavaScript
+// Blog JavaScript file
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Blog JS loaded successfully!');
-    
     // Mobile menu toggle for blog
-    const blogMobileMenuButton = document.querySelector('.blog-mobile-menu-button');
-    const blogMobileMenu = document.querySelector('.blog-mobile-menu');
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
     
-    if (blogMobileMenuButton && blogMobileMenu) {
-        blogMobileMenuButton.addEventListener('click', function() {
-            blogMobileMenu.classList.toggle('hidden');
+    if(mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle aria-expanded for accessibility
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            this.setAttribute('aria-expanded', isExpanded);
             
-            // Update aria-expanded attribute for accessibility
-            const expanded = blogMobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-            blogMobileMenuButton.setAttribute('aria-expanded', !expanded);
+            // Toggle active state for mobile menu button
+            this.classList.toggle('active');
         });
-    }
-    
-    // Search functionality
-    const searchForm = document.querySelector('.search-form');
-    if (searchForm) {
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchInput = this.querySelector('.search-input');
-            if (searchInput && searchInput.value.trim()) {
-                console.log('Search query:', searchInput.value.trim());
-                // Here you would typically redirect to search results or fetch results via AJAX
-                // For now, we'll just log the search term
-                alert('Searching for: ' + searchInput.value.trim());
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                mobileMenuButton.classList.remove('active');
             }
         });
     }
     
-    // Newsletter sign-up validation
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('.newsletter-input');
-            if (emailInput && emailInput.value.trim()) {
-                if (isValidEmail(emailInput.value.trim())) {
-                    console.log('Newsletter sign-up:', emailInput.value.trim());
-                    alert('Thank you for subscribing to our newsletter!');
-                    this.reset();
-                } else {
-                    alert('Please enter a valid email address.');
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if(this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        if(mobileMenuButton) {
+                            mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            mobileMenuButton.classList.remove('active');
+                        }
+                    }
                 }
             }
         });
-    }
-    
-    // Email validation helper function
-    function isValidEmail(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    }
-    
-    // Initialize any other blog-specific functionality here
+    });
 });

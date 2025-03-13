@@ -33,6 +33,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     enabledTransports: ['ws', 'wss'],
 // });
 
+character
+account
+rules
+downloads
+
+
 
 // Main JavaScript file for ASRO Game website
 

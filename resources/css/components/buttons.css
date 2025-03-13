@@ -18,3 +18,7 @@
 .register-btn {
     @apply nav-button border-2 border-gold text-gold hover:bg-gold hover:text-midnight-dark;
 }
+
+.logout-btn {
+    @apply nav-button border-2 border-gold text-gold hover:bg-gold hover:text-midnight-dark;
+}

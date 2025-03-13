@@ -1,21 +1,15 @@
 @extends('website.layouts.app')
-
 @section('title', 'Downloads - Amun Sro')
 @section('meta-description', 'Download the Amun Sro game client and patches. Get the latest version, system requirements, and installation guides for your Silkroad private server experience.')
-
 @section('content')
-    <!-- Hero Section with Background Image -->
-    <section class="page-hero"
-             style="background-image: url('{{ asset('icons/feat_2.webp') }}');">
+    <section class="page-hero" style="background-image: url('{{ asset('icons/feat_2.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4">Game Downloads</h1>
             <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">Begin your journey on the legendary
                 Silk Road. Download everything you need to start your adventure.</p>
         </div>
     </section>
-
-    <!-- Main Content -->
-    <section class="py-16">
+    <section class="py-16 object-cover" style="background-image: url('{{ asset('icons/feat_5_opacity_30.webp') }}');">
         <div class="container mx-auto px-4">
             <div class="content-section p-8">
                 <!-- Client Downloads -->

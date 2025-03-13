@@ -57,13 +57,9 @@
     <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-midnight-dark text-sand-light overflow-x-hidden">
-<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50 to-midnight-dark/90 pointer-events-none z-10"></div>
+<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50  pointer-events-none z-10"></div>
 
 
-<!-- Dynamic Background -->
-<div class="fixed top-0 left-0 w-full h-full">
-    <img src="{{asset('icons/feat_5.webp')}}" alt="" class="w-full h-full object-cover opacity-30">
-</div>
 
 
 @include('website.partials.header')
