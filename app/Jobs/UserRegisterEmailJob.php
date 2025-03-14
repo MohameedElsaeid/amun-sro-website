@@ -11,8 +11,6 @@ class UserRegisterEmailJob implements ShouldQueue
 {
     use Queueable;
 
-    public $queue = 'emails';
-
 
     /**
      * Create a new job instance.
