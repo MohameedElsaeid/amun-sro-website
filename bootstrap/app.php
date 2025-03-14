@@ -31,8 +31,6 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-
-
         $middleware->use([
             InvokeDeferredCallbacks::class,
             TrustHosts::class,
@@ -47,47 +45,32 @@ return Application::configure(basePath: dirname(__DIR__))
             CaptureFbTracking::class,
             HandleInertiaRequests::class,
         ]);
-
-
     })
     ->withExceptions(function (Exceptions $exceptions) {
-
-
-//        if (app()->environment('local')) {
-//            $exceptions->renderable(function (Throwable $exception, Request $request) {
-//                dd($exception);
-//            });
-//        }
-
-        // Handle 404 errors
+        if (app()->environment('local')) {
+            $exceptions->renderable(function (Throwable $exception, Request $request) {
+                dd($exception);
+            });
+        }
         $exceptions->renderable(function (NotFoundHttpException $exception, Request $request) {
             return response()->view('website.errors.404', [], 404);
         });
-
-        // Handle validation errors
         $exceptions->renderable(function (ValidationException $exception, Request $request) {
             if ($request->expectsJson()) {
                 return response()->json(['errors' => $exception->errors()], 422);
             }
             return redirect()->back()->withErrors($exception->errors())->withInput();
         });
-
-        // Handle validation errors
         $exceptions->renderable(function (AuthenticationException $exception, Request $request) {
             if ($request->expectsJson()) {
                 return response()->json(['errors' => []], 422);
             }
             return redirect()->route('website.login');
         });
-
-        // Handle all other exceptions
         $exceptions->renderable(function (Throwable $exception, Request $request) {
-            // Use exception status if available; otherwise default to 500
             $status = ($exception instanceof HttpExceptionInterface)
                 ? $exception->getStatusCode()
                 : 500;
-
-            // Check if a custom view exists for the status code
             if (view()->exists("website.errors.{$status}")) {
                 return response()->view("website.errors.{$status}", [], $status);
             }

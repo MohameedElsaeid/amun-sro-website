@@ -8,7 +8,7 @@ class DonationController extends Controller
 {
     public function index()
     {
-        return view('website.pages.donation');
+        return view('website.pages.donation.index');
     }
 
 }

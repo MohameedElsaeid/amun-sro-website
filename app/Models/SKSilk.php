@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SKSilk extends Model
 {
     public $timestamps = false;
-    protected $table = 'SK_Silk';
+    protected $table = 'dbo.SK_Silk';
     protected $fillable = [
         'JID', 'silk_own', 'silk_gift', 'silk_point'
     ];

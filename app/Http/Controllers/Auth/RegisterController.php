@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\Facebook\ConversionEventService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class RegisterController extends Controller
 {
@@ -43,7 +47,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm()
+    public function showRegistrationForm(ConversionEventService $conversionService)
     {
         return view('website.auth.register');
     }
@@ -52,21 +56,30 @@ class RegisterController extends Controller
      * Handle a registration request for the application.
      *
      * @param Request $request
+     * @param ConversionEventService $conversionService
      * @return RedirectResponse|JsonResponse
+     * @throws ConnectionException
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
-    public function register(Request $request)
+    public function register(Request $request, ConversionEventService $conversionService)
     {
         $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
+        $registerIp = $request->ip();
+        event(new Registered($user = $this->create($request->all(), $registerIp)));
 
         $this->guard()->login($user);
-
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
 
-
+        $conversionService->trackRegister(
+            userData: [
+                'em' => $user->Email,
+                'fn' => $user->StrUserID,
+            ],
+        );
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
@@ -108,14 +121,16 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param array $data
+     * @param string $registerIp
      * @return User
      */
-    protected function create(array $data)
+    protected function create(array $data, string $registerIp)
     {
         return User::create([
             'StrUserID' => $data['username'],
             'Email' => $data['email'],
             'password' => md5($data['password']),
+            'reg_ip' => $registerIp,
         ]);
     }
 }

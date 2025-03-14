@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
-use Exception;
-use Log;
-use Storage;
+use App\Services\Facebook\ConversionEventService;
+use Illuminate\Http\Client\ConnectionException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class DownloadsController extends Controller
 {
@@ -15,14 +15,51 @@ class DownloadsController extends Controller
         return view('website.pages.downloads');
     }
 
-    public function sbot()
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     * @throws ConnectionException
+     */
+    public function sbot(ConversionEventService $conversionEventService)
     {
-        try {
-            $downloadUrl = Storage::disk('s3')->temporaryUrl('downloads/AmunSroSBotP.rar', Carbon::now()->addMinutes(5));
-            return redirect($downloadUrl);
-        } catch (Exception $e) {
-            Log::error('Download failed: ' . $e->getMessage());
-            abort(500, 'Download error. Please try again later.');
+        $user = auth()->user();
+        $userData = [];
+        if ($user) {
+            $userData['em'] = $user->Email;
+            $userData['fn'] = $user->StrUserID;
         }
+        $customData = [
+            'event_source_url' => request()->fullUrl(),
+            'referrer_url' => request()->headers->get('referer') ?? '',
+            'source' => 'sbot'
+        ];
+
+        $conversionEventService->trackDownload($userData, $customData);
+
+        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     * @throws ConnectionException
+     */
+    public function client(ConversionEventService $conversionEventService)
+    {
+        $user = auth()->user();
+        $userData = [];
+        if ($user) {
+            $userData['em'] = $user->Email;
+            $userData['fn'] = $user->StrUserID;
+        }
+        $customData = [
+            'event_source_url' => request()->fullUrl(),
+            'referrer_url' => request()->headers->get('referer') ?? '',
+            'source' => 'client'
+        ];
+
+        $conversionEventService->trackDownload($userData, $customData);
+
+        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
     }
 }
