@@ -13,6 +13,8 @@ class CompleteRegistrationJob implements ShouldQueue
 {
     use Queueable;
 
+    public $queue = 'pixel-event';
+
     /**
      * Create a new job instance.
      */
@@ -30,5 +32,16 @@ class CompleteRegistrationJob implements ShouldQueue
     public function handle(ConversionEventService $conversionService): void
     {
         $conversionService->trackRegister(userData: $this->userData, customData: $this->customData);
+    }
+
+
+    /**
+     * Get the tags that should be assigned to the job.
+     *
+     * @return array<int, string>
+     */
+    public function tags(): array
+    {
+        return ['CompleteRegistrationJob'];
     }
 }
