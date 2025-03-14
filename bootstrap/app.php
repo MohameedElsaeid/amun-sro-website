@@ -47,11 +47,11 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        if (app()->environment('local')) {
+//        if (app()->environment('local')) {
             $exceptions->renderable(function (Throwable $exception, Request $request) {
                 dd($exception);
             });
-        }
+//        }
         $exceptions->renderable(function (NotFoundHttpException $exception, Request $request) {
             return response()->view('website.errors.404', [], 404);
         });
