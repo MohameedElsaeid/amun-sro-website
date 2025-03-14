@@ -64,7 +64,7 @@
                                 </svg>
                                 <div>
                                     <h3 class="text-gold font-bold">Email</h3>
-                                    <p class="text-sand">amunsro@gmail.com</p>
+                                    <p class="text-sand">support@amun-sro.online</p>
                                 </div>
                             </div>
 

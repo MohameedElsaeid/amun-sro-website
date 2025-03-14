@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
 use App\Jobs\CompleteRejestraiobJob;
+use App\Mail\UserRegisterEmail;
 use App\Models\User;
 use App\Services\Facebook\ConversionEventService;
 use Illuminate\Auth\Events\Registered;
@@ -13,6 +14,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -69,6 +71,10 @@ class RegisterController extends Controller
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
+
+        Mail::to($user->Email)
+            ->queue((new UserRegisterEmail())
+                ->onQueue('emails'));
 
         CompleteRegistrationJob::dispatch([
             'em' => $user->Email,
