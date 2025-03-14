@@ -13,7 +13,6 @@ class CompleteRegistrationJob implements ShouldQueue
 {
     use Queueable;
 
-    public $queue = 'pixel-event';
 
     /**
      * Create a new job instance.

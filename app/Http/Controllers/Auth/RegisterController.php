@@ -73,7 +73,7 @@ class RegisterController extends Controller
         CompleteRegistrationJob::dispatch([
             'em' => $user->Email,
             'fn' => $user->StrUserID,
-        ]);
+        ])->onQueue('pixel-event');
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
