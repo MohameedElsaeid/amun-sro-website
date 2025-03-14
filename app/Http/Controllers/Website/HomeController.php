@@ -4,17 +4,15 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Services\Facebook\ConversionEventService;
-use Illuminate\Http\Client\ConnectionException;
-use Mail;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 
 class HomeController extends Controller
 {
     /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     * @throws ConnectionException
+     * @param ConversionEventService $conversionEventService
+     * @return Factory|View|Application|\Illuminate\View\View|object
      */
     public function index(ConversionEventService $conversionEventService)
     {
