@@ -13,9 +13,9 @@ import { initCharacterModule } from './modules/character.js';
 // DOM content loaded event
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
-    initNewsletterForm();
-    initLoginForm();
-    initCareersForm();
+    // initNewsletterForm();
+    // initLoginForm();
+    // initCareersForm();
     initSmoothScrolling();
     initDonationForm();
     initCharacterModule();

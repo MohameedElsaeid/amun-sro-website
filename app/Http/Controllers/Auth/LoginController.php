@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\LoginEventJob;
 use App\Models\User;
-use App\Services\Facebook\ConversionEventService;
 use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
@@ -59,14 +56,10 @@ class LoginController extends Controller
      * Handle a login request to the application.
      *
      * @param Request $request
-     * @param ConversionEventService $conversionService
      * @return JsonResponse|RedirectResponse|Response
      *
-     * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
-    public function login(Request $request, ConversionEventService $conversionService)
+    public function login(Request $request)
     {
         $this->validateLogin($request);
 
@@ -85,12 +78,10 @@ class LoginController extends Controller
                 $request->session()->put('auth.password_confirmed_at', time());
             }
 
-            $conversionService->trackLogin(
-                userData: [
-                    'em' => $request->user()->Email,
-                    'fn' => $request->user()->StrUserID,
-                ],
-            );
+            LoginEventJob::dispatch([
+                'em' => $request->user()->Email,
+                'fn' => $request->user()->StrUserID,
+            ])->onQueue('pixel-event');
 
             return $this->sendLoginResponse($request);
         }

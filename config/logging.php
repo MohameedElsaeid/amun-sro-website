@@ -127,6 +127,13 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
+        'facebook' => [
+            'driver' => 'single',
+            'level' => env('LOG_LEVEL', 'debug'),
+            'path' => storage_path('logs/facebook.log'),
+            'replace_placeholders' => true,
+        ],
+
     ],
 
 ];

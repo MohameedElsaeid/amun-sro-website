@@ -70,10 +70,12 @@
 <body class="bg-midnight-dark text-sand-light overflow-x-hidden">
 <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50  pointer-events-none z-10"></div>
 
-
-
-
 @include('website.partials.header')
+
+
+<!-- Add the notifications component at the top level -->
+@include('website.partials.notifications')
+
 
 <main>
     @yield('content')

@@ -65,8 +65,12 @@
             <div>
                 <h3 class="footer-heading">Newsletter</h3>
                 <p class="mb-4">Subscribe to our newsletter to get the latest news and updates.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" class="newsletter-input" style="margin-bottom: 20px">
+                <form class="newsletter-form" method="POST" action="{{route('website.newsLetter.subscribe')}}">
+                    @csrf
+                    <input type="email" name="email" placeholder="Your email address" class="newsletter-input" style="margin-bottom: 20px">
+                    @error('email')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>

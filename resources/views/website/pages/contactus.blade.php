@@ -4,45 +4,62 @@
 @section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
 
 @section('content')
+
+    <!-- Hero Section -->
+    <div class="page-hero page-hero-accent relative"
+         style="background-image: url('{{ asset('icons/feat_5.webp') }}');">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4 hero-animate">Contact Us</h1>
+        </div>
+    </div>
+
     <div class="relative py-16 z-20">
-
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-cinzel font-bold text-gold text-center mb-12">Contact Us</h1>
-
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Contact Form -->
                 <div class="md:col-span-2">
                     <div class="bg-midnight-light p-6 rounded-lg">
                         <h2 class="text-2xl font-cinzel text-gold mb-6">Send us a Message</h2>
-                        <form action="#" method="POST" class="space-y-6">
+                        <form action="{{ route('website.contact-us.submit') }}" method="POST" class="space-y-6">
                             @csrf
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-gold font-bold mb-2">Name</label>
                                     <input type="text" id="name" name="name"
+                                           value="{{ old('name') }}"
                                            class="w-full bg-midnight border border-gold/30 rounded-lg px-4 py-2 text-sand">
+                                    @error('name')
+                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                    @enderror
                                 </div>
-
                                 <div>
                                     <label for="email" class="block text-gold font-bold mb-2">Email</label>
                                     <input type="email" id="email" name="email"
+                                           value="{{ old('email') }}"
                                            class="w-full bg-midnight border border-gold/30 rounded-lg px-4 py-2 text-sand">
+                                    @error('email')
+                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
-
                             <div>
                                 <label for="subject" class="block text-gold font-bold mb-2">Subject</label>
                                 <input type="text" id="subject" name="subject"
+                                       value="{{ old('subject') }}"
                                        class="w-full bg-midnight border border-gold/30 rounded-lg px-4 py-2 text-sand">
+                                @error('subject')
+                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
-
                             <div>
                                 <label for="message" class="block text-gold font-bold mb-2">Message</label>
                                 <textarea id="message" name="message" rows="6"
-                                          class="w-full bg-midnight border border-gold/30 rounded-lg px-4 py-2 text-sand"></textarea>
+                                          class="w-full bg-midnight border border-gold/30 rounded-lg px-4 py-2 text-sand">{{ old('message') }}</textarea>
+                                @error('message')
+                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
-
                             <button type="submit"
                                     class="w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-3 rounded-lg transition-colors">
                                 Send Message
