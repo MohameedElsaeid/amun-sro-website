@@ -10,8 +10,6 @@ use Doctrine\DBAL\Schema\Column;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Mail;
-use Spatie\Analytics\Facades\Analytics;
-use Spatie\Analytics\Period;
 
 class GenerateMigrationsCommand extends Command
 {
@@ -23,13 +21,7 @@ class GenerateMigrationsCommand extends Command
      */
     public function handle(): int
     {
-
-
-        Mail::to('m.ashraf.saed@gmail.com')->send(new UserRegisterEmail());
-dd('4');
-
         return 0;
-
         $event = config('database.connections.event');
         $custom = config('database.connections.custom');
         $account = config('database.connections.account');

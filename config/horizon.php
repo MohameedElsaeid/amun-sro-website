@@ -146,16 +146,51 @@ return [
     'defaults' => [
         'supervisor-1' => [
             'connection' => 'redis',
-            'queue' => ['default'],
+            'queue' => ['default', 'emails'],
+            'maxProcesses' => 2,
+            'maxTime' => 0,
+            'maxJobs' => 5,
+            'memory' => 128,
+            'tries' => 5,
+            'timeout' => 90,
+            'nice' => 0,
             'balance' => 'auto',
             'autoScalingStrategy' => 'time',
-            'maxProcesses' => 10, // Increase the number of worker processes.
+            'minProcesses' => 1,
+            'balanceMaxShift' => 1,
+            'balanceCooldown' => 3,
+        ],
+        'supervisor-2' => [
+            'connection' => 'redis',
+            'queue' => ['pixel-event'],
+            'maxProcesses' => 15,
             'maxTime' => 0,
-            'maxJobs' => 0,
-            'memory' => 256,      // Allow more memory per process.
-            'tries' => 3,         // Retry jobs a few times in case of failures.
-            'timeout' => 90,      // Increase timeout for long-running tasks.
+            'maxJobs' => 5,
+            'memory' => 512,
+            'tries' => 5,
+            'timeout' => 90,
             'nice' => 0,
+            'balance' => 'auto',
+            'autoScalingStrategy' => 'time',
+            'minProcesses' => 1,
+            'balanceMaxShift' => 1,
+            'balanceCooldown' => 3,
+        ],
+        'supervisor-3' => [
+            'connection' => 'redis',
+            'queue' => ['notification'],
+            'maxProcesses' => 5,
+            'maxTime' => 0,
+            'maxJobs' => 5,
+            'memory' => 128,
+            'tries' => 5,
+            'timeout' => 90,
+            'nice' => 0,
+            'balance' => 'auto',
+            'autoScalingStrategy' => 'time',
+            'minProcesses' => 1,
+            'balanceMaxShift' => 1,
+            'balanceCooldown' => 3,
         ],
     ],
 
@@ -171,12 +206,20 @@ return [
         'production' => [
             'supervisor-1' => [
                 'maxProcesses' => 10,
-                'balanceMaxShift' => 2,   // Allow more dynamic balancing shifts.
+                'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
-                'minProcesses' => 5,      // Ensure a minimum number of processes remain running.
+            ],
+            'supervisor-2' => [
+                'maxProcesses' => 50,
+                'balanceMaxShift' => 5,
+                'balanceCooldown' => 3,
+            ],
+            'supervisor-3' => [
+                'maxProcesses' => 10,
+                'balanceMaxShift' => 1,
+                'balanceCooldown' => 3,
             ],
         ],
-
         'local' => [
             'supervisor-1' => [
                 'maxProcesses' => 3,
