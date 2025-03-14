@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
 use App\Jobs\CompleteRejestraiobJob;
+use App\Jobs\UserRegisterEmailJob;
 use App\Mail\UserRegisterEmail;
 use App\Models\User;
 use App\Services\Facebook\ConversionEventService;
@@ -72,9 +73,8 @@ class RegisterController extends Controller
             return $response;
         }
 
-        Mail::to($user->Email)
-            ->queue((new UserRegisterEmail())
-                ->onQueue('emails'));
+
+        UserRegisterEmailJob::dispatch($user->Email);
 
         CompleteRegistrationJob::dispatch([
             'em' => $user->Email,
