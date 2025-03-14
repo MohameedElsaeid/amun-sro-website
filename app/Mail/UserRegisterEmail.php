@@ -14,8 +14,6 @@ class UserRegisterEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public $queue = 'emails';
-
     /**
      * Create a new message instance.
      */
