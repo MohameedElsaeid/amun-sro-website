@@ -83,7 +83,7 @@ class RegisterController extends Controller
             ],
         );
 
-        Mail::to($user->email)->send(new UserRegisterEmail());
+        Mail::to($user->Email)->send(new UserRegisterEmail());
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
