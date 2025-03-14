@@ -27,7 +27,7 @@
                 @endguest
                 @auth
                     <a href="{{ route('website.account') }}"
-                       class="nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
+                       class="nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">{{auth()->user()->StrUserID}}</a>
                         <a class="logout-btn" href="{{ route('website.logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
