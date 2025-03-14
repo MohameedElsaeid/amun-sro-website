@@ -29,20 +29,16 @@ class NewsLetterController extends Controller
                 'Email' => $request->email,
                 'JID' => $user?->JID
             ]);
-
             $userData = [];
             if ($user) {
                 $userData['em'] = $user->Email;
                 $userData['fn'] = $user->StrUserID;
             }
-
             $conversionEventService->trackSubscribe($userData);
-
             return response()->json(['message' => 'success'], 201);
 
         } catch (Exception) {
             return response()->json(['message' => 'error'], 400);
         }
-
     }
 }

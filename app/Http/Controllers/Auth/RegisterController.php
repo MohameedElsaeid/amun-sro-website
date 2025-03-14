@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserRegisterEmail;
 use App\Models\User;
 use App\Services\Facebook\ConversionEventService;
 use Illuminate\Auth\Events\Registered;
@@ -12,6 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Mail;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
@@ -80,6 +82,8 @@ class RegisterController extends Controller
                 'fn' => $user->StrUserID,
             ],
         );
+
+        Mail::to($user->email)->send(new UserRegisterEmail());
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)

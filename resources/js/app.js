@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initDonationForm();
     initCharacterModule();
 
-
     // // Mobile menu toggle
     // const mobileMenuButton = document.querySelector('.mobile-menu-button');
     // const mobileMenu = document.querySelector('.mobile-menu');
