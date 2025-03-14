@@ -70,7 +70,7 @@
                 @endguest
                 @auth
                     <a href="{{ route('website.account') }}"
-                       class="mobile-nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">Account</a>
+                       class="mobile-nav-link {{ request()->routeIs('website.account') ? 'active' : '' }}">{{auth()->StrUserID}}</a>
                     <div class="flex space-x-2 pt-2 border-t border-gold-dark">
                         <a class="mobile-logout-btn" href="{{ route('website.logout') }}"
                            onclick="event.preventDefault();

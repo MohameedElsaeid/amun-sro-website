@@ -54,4 +54,5 @@ Route::group(['as' => 'website.'], function () {
     Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
     Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter');
+
 });
