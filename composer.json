@@ -23,7 +23,6 @@
         "spatie/laravel-image-optimizer": "^1.8",
         "spatie/laravel-responsecache": "^7.6",
         "spatie/laravel-server-monitor": "^1.10",
-        "spatie/laravel-sitemap": "^7.3",
         "stripe/stripe-php": "^16.6"
     },
     "require-dev": {
