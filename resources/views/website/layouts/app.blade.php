@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description"
           content="@yield('meta-description', 'Amun Sro – The ultimate SilkRoad private server experience for ASRO fans')">
@@ -35,6 +36,13 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DDLY8K3BF"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- Styles -->
     <script>
         !function (w, d, t) {
             w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
@@ -46,9 +54,6 @@
             ttq.page();
         }(window, document, 'ttq');
     </script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @stack('head') {{-- For page-specific head content --}}
-
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -66,6 +71,11 @@
                    src="https://www.facebook.com/tr?id=1308306323731554&ev=PageView&noscript=1"
         /></noscript>
     <!-- End Meta Pixel Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('head') {{-- For page-specific head content --}}
+
+
 </head>
 <body class="bg-midnight-dark text-sand-light overflow-x-hidden">
 <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50  pointer-events-none z-10"></div>
@@ -74,8 +84,11 @@
 
 
 <!-- Add the notifications component at the top level -->
-@include('website.partials.notifications')
+@include('website.partials.flash-notifications')
 
+@if(Route::is('website.donate'))
+    @include('Website.partials.login-modal')
+@endif
 
 <main>
     @yield('content')

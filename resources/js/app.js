@@ -5,11 +5,12 @@ import {initMobileMenu} from './modules/mobile-menu.js';
 import { initSmoothScrolling } from './modules/navigation.js';
 import { initDonationForm } from './modules/donation/index.js';
 import { initCharacterModule } from './modules/character.js';
+import { initNotifications } from './modules/notifications.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSmoothScrolling();
     initDonationForm();
     initCharacterModule();
-
+    initNotifications();
 });

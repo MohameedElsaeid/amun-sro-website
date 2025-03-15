@@ -23,6 +23,7 @@
                     with Silk units.</p>
 
                 <form id="donation-form">
+                    @csrf
                     @include('website.pages.donation.components.package-cards')
 
                     @include('website.pages.donation.components.mobile-summary')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\CaptureFbTracking;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Auth\AuthenticationException;
@@ -14,9 +15,6 @@ use Illuminate\Http\Middleware\TrustHosts;
 use Illuminate\Http\Middleware\TrustProxies;
 use Illuminate\Http\Middleware\ValidatePostSize;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -31,6 +29,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'auth' => Authenticate::class,
+        ]);
         $middleware->use([
             InvokeDeferredCallbacks::class,
             TrustHosts::class,
@@ -47,10 +48,20 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+
+
+        $exceptions->renderable(function (AuthenticationException $exception, Request $request) {
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Unauthenticated.'], 401);
+            }
+            return redirect()->route('website.login');
+        });
+
+
 //        if (app()->environment('local')) {
-            $exceptions->renderable(function (Throwable $exception, Request $request) {
-                dd($exception);
-            });
+        $exceptions->renderable(function (Throwable $exception, Request $request) {
+            dd($exception);
+        });
 //        }
 //        $exceptions->renderable(function (NotFoundHttpException $exception, Request $request) {
 //            return response()->view('website.errors.404', [], 404);

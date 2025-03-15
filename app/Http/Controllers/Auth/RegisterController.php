@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
-use App\Jobs\CompleteRejestraiobJob;
 use App\Jobs\UserRegisterEmailJob;
 use App\Models\User;
 use App\Services\Facebook\ConversionEventService;
@@ -77,6 +76,14 @@ class RegisterController extends Controller
             'em' => $user->Email,
             'fn' => $user->StrUserID,
         ])->onQueue('pixel-event');
+
+        // Determine the redirect URL
+        $redirectTo = $request->input('redirect_to');
+        if ($redirectTo && filter_var($redirectTo, FILTER_VALIDATE_URL)) {
+            return $request->wantsJson()
+                ? new JsonResponse([], 201)
+                : redirect($redirectTo);
+        }
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)

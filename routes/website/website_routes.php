@@ -53,4 +53,10 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
     Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter.subscribe');
+
+
+    Route::middleware(['auth:web'])->group(function () {
+        Route::post('/donation/process', [PaymentController::class, 'processDonation']);
+    });
+
 });
