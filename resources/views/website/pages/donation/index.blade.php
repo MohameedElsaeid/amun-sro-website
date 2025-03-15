@@ -32,13 +32,12 @@
                 </form>
             </div>
 
-            @include('website.pages.donation.components.payment-modal')
-
             @include('website.pages.donation.components.how-to-recharge')
 
             @include('website.pages.donation.components.customer-reviews')
 
             @include('website.pages.donation.components.faq-section')
+
         </div>
     </main>
 @endsection
