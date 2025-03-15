@@ -3,8 +3,8 @@
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
     <!-- Package 1: 750 Silk -->
     <div class="package-card bg-white border border-sand rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-        <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
-            <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+2% BONUS</div>
+    <div class="package-header bg-gradient-to-r from-gold to-light-gold p-4 text-center">
+    <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+2% BONUS</div>
             <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">750 Silk</h3>
         </div>
         <div class="package-content p-6">
@@ -43,7 +43,8 @@
     
     <!-- Package 3: 3000 Silk -->
     <div class="package-card bg-white border border-sand rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-        <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
+                <div class="package-header bg-gradient-to-r from-gold to-light-gold p-4 text-center">
+
             <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+9% BONUS</div>
             <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">3,000 Silk</h3>
         </div>
@@ -86,7 +87,8 @@
         <div class="absolute top-0 right-0 w-24 h-24 overflow-hidden">
             <div class="popular-tag bg-gold font-bold text-midnight-dark text-xs py-1 px-4 absolute top-6 right-[-24px] transform rotate-45 shadow-md">POPULAR</div>
         </div>
-        <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
+                <div class="package-header bg-gradient-to-r from-gold to-light-gold p-4 text-center">
+
             <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+11% BONUS</div>
             <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">12,000 Silk</h3>
         </div>
@@ -100,7 +102,7 @@
                 <div class="price-item flex justify-between hidden"><span class="text-midnight-light">Price (EGP):</span><span class="font-bold text-midnight">1,768</span></div>
                 <div class="price-item flex justify-between hidden"><span class="text-midnight-light">Price (USDT):</span><span class="font-bold text-midnight">2,465</span></div>
             </div>
-            <button type="button" class="select-package w-full bg-midnight hover:bg-midnight-dark text-gold font-bold py-2 px-4 rounded-lg transition-colors">Select Package</button>
+            <button type="button" class="select-package w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors">Select Package</button>
         </div>
     </div>
     
@@ -126,7 +128,8 @@
     
     <!-- Package 7: 50,000 Silk -->
     <div class="package-card bg-white border border-sand rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-        <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
+                <div class="package-header bg-gradient-to-r from-gold to-light-gold p-4 text-center">
+
             <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+15% BONUS</div>
             <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">50,000 Silk</h3>
         </div>
@@ -169,7 +172,8 @@
         <div class="absolute top-0 right-0 w-24 h-24 overflow-hidden">
             <div class="popular-tag bg-gold font-bold text-midnight-dark text-xs py-1 px-4 absolute top-6 right-[-24px] transform rotate-45 shadow-md">BEST DEAL</div>
         </div>
-        <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
+                <div class="package-header bg-gradient-to-r from-gold to-light-gold p-4 text-center">
+
             <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">+20% BONUS</div>
             <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">250,000 Silk</h3>
         </div>
@@ -183,7 +187,7 @@
                 <div class="price-item flex justify-between hidden"><span class="text-midnight-light">Price (EGP):</span><span class="font-bold text-midnight">28,184</span></div>
                 <div class="price-item flex justify-between hidden"><span class="text-midnight-light">Price (USDT):</span><span class="font-bold text-midnight">34,688</span></div>
             </div>
-            <button type="button" class="select-package w-full bg-midnight hover:bg-midnight-dark text-gold font-bold py-2 px-4 rounded-lg transition-colors">Select Package</button>
+            <button type="button" class="select-package w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors">Select Package</button>
         </div>
     </div>
     

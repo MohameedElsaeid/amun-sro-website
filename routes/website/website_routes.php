@@ -33,6 +33,13 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/system', [SystemController::class, 'index'])->name('system');
     Route::get('/account', [AccountController::class, 'index'])->name('account');
     Route::get('/character', [CharacterController::class, 'index'])->name('character');
+    Route::get('/change-password', [AccountController::class, 'viewChangePassword'])->name('view.change.password');
+    Route::post('/change/password', [AccountController::class, 'changePassword'])->name('change.password');
+    Route::get('/update/profile', [AccountController::class, 'viewProfile'])->name('view.profile');
+    Route::post('/update', [AccountController::class, 'update'])->name('update.profile');
+
+
+
 //    Route::get('/character', [CharacterController::class, 'index'])->name('character');
 
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
