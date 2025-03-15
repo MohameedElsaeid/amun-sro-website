@@ -15,6 +15,7 @@ use Illuminate\Http\Middleware\TrustHosts;
 use Illuminate\Http\Middleware\TrustProxies;
 use Illuminate\Http\Middleware\ValidatePostSize;
 use Illuminate\Http\Request;
+use Spatie\ResponseCache\Middlewares\CacheResponse;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -41,7 +42,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ValidatePostSize::class,
             TrimStrings::class,
             ConvertEmptyStringsToNull::class,
-            // CacheResponse::class,
+             CacheResponse::class,
             // ThrottleRequests::class,
             CaptureFbTracking::class,
             HandleInertiaRequests::class,
