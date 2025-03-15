@@ -42,7 +42,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ValidatePostSize::class,
             TrimStrings::class,
             ConvertEmptyStringsToNull::class,
-             CacheResponse::class,
+//             CacheResponse::class,
             // ThrottleRequests::class,
             CaptureFbTracking::class,
             HandleInertiaRequests::class,

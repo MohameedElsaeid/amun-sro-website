@@ -87,7 +87,7 @@
 @include('website.partials.flash-notifications')
 
 @if(Route::is('website.donate'))
-    @include('Website.partials.login-modal')
+    @include('website.partials.login-modal')
 @endif
 
 <main>

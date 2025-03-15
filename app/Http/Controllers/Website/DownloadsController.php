@@ -48,6 +48,6 @@ class DownloadsController extends Controller
             'referrer_url' => request()->headers->get('referer') ?? '',
             'source' => 'client'
         ])->onQueue('pixel-event');
-        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
+        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunClient.rar');
     }
 }
