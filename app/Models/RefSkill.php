@@ -132,4 +132,5 @@ class RefSkill extends Model
         'Param49' => 'integer',
         'Param50' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

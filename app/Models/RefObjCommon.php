@@ -70,4 +70,5 @@ class RefObjCommon extends Model
         'EventID' => 'integer',
         'Link' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

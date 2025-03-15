@@ -27,4 +27,5 @@ class PICKCommon extends Model
         'ItemPlus' => 'integer',
         'Ratio' => 'float',
     ];
+    protected $connection = 'log';
 }

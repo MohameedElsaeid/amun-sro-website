@@ -23,4 +23,5 @@ class TabRefSpawnToolVersion extends Model
     protected $casts = [
         'dwRefDataVersion' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -23,4 +23,5 @@ class TabDBSafeCheckState extends Model
     protected $casts = [
         'btCheckIn' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

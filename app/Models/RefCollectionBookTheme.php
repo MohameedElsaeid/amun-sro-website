@@ -25,4 +25,5 @@ class RefCollectionBookTheme extends Model
         'ID' => 'integer',
         'CompleteNum' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -24,4 +24,5 @@ class RefTriggerConditionParam extends Model
         'Service' => 'integer',
         'ID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

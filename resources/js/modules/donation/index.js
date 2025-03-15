@@ -12,14 +12,10 @@ import { initPaymentModal } from './payment-modal.js';
 import { resetForm } from './form-utils.js';
 
 export function initDonationForm() {
-    console.log('Initializing donation form...');
     const donationForm = document.getElementById('donation-form');
     if(!donationForm) {
-        console.log('Donation form not found');
         return;
     }
-
-    console.log('Donation form found, setting up state...');
 
     // Create state object to share between modules
     const state = {
@@ -34,16 +30,10 @@ export function initDonationForm() {
             resetForm(this);
         }
     };
-
-    console.log('Initializing donation modules...');
-
-    // Initialize all modules
     initPackageSelection(state);
     initPaymentMethodSelection(state);
     initCurrencySelection(state);
     initFormSubmission(state);
     initCancelButton(state);
     initPaymentModal();
-
-    console.log('Donation form initialization complete');
 }

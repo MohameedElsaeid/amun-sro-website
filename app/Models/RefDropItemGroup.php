@@ -27,4 +27,5 @@ class RefDropItemGroup extends Model
         'SelectRatio' => 'float',
         'RefMagicGroupID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

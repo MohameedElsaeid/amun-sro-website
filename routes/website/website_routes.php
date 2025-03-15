@@ -8,7 +8,7 @@ use App\Http\Controllers\Website\{AccountController,
     CareersController,
     CharacterController,
     ContactUsController,
-    DonationController,
+    PaymentController,
     DownloadsController,
     EventsController,
     FaqController,
@@ -44,8 +44,7 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/terms', [TermsController::class, 'index'])->name('terms');
     Route::get('/careers', [CareersController::class, 'index'])->name('careers');
     Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
-    Route::get('/donate', [DonationController::class, 'index'])->name('donate');
-
+    Route::get('/recharge', [PaymentController::class, 'index'])->name('donate');
     //AUTH
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
@@ -53,6 +52,5 @@ Route::group(['as' => 'website.'], function () {
     Route::post('/forgot', [LoginController::class, 'login'])->name('forgotPassword');
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-
     Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter.subscribe');
 });

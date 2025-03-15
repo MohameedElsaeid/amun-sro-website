@@ -14,4 +14,5 @@ class VoteRewardHacking extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'sqlsrv';
 }

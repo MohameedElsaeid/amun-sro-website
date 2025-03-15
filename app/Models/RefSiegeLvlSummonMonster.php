@@ -25,4 +25,5 @@ class RefSiegeLvlSummonMonster extends Model
         'RefObjID' => 'integer',
         'RefOrgObjID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -16,4 +16,5 @@ class SecurityDescriptionGroupAssign extends Model
         'nGroupID' => 'integer',
         'nDescriptionID' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

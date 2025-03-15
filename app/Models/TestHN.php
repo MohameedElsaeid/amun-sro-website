@@ -16,4 +16,5 @@ class TestHN extends Model
         'STT' => 'float',
         'F_ONLINE' => 'float',
     ];
+    protected $connection = 'sqlsrv';
 }

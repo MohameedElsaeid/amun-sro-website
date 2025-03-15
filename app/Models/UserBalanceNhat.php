@@ -24,4 +24,5 @@ class UserBalanceNhat extends Model
         'JID' => 'integer',
         'Balance' => 'float',
     ];
+    protected $connection = 'proxy';
 }

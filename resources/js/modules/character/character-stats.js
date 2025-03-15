@@ -6,15 +6,13 @@
 export function initCharacterStats(state) {
     const statsContainer = document.querySelector('.character-stats');
     if (!statsContainer) {
-        console.log('Character stats container not found');
         return;
     }
-    
-    console.log('Initializing character stats');
-    
+
+
     // Initialize elemental resistances with visual indicators
     updateElementalResistances();
-    
+
     // Listen for character updates
     document.addEventListener('character:updated', function(e) {
         const characterId = e.detail.characterId;
@@ -24,11 +22,11 @@ export function initCharacterStats(state) {
 
 function updateElementalResistances() {
     const resistanceElements = document.querySelectorAll('.resistance-element');
-    
+
     if (resistanceElements.length > 0) {
         resistanceElements.forEach(element => {
             const value = parseInt(element.textContent.replace('%', ''));
-            
+
             // Add visual indicator based on resistance value
             if (value >= 40) {
                 element.classList.add('text-green-500');
@@ -105,16 +103,16 @@ function updateCharacterStatsDisplay(characterId) {
             }
         }
     };
-    
+
     // Get the data for the selected character
     const charData = mockCharData[characterId] || mockCharData['char1'];
-    
+
     // Update primary stats
     document.querySelector('.char-strength').textContent = charData.strength;
     document.querySelector('.char-agility').textContent = charData.agility;
     document.querySelector('.char-intellect').textContent = charData.intellect;
     document.querySelector('.char-vitality').textContent = charData.vitality;
-    
+
     // Update combat stats
     document.querySelector('.char-attack-power').textContent = charData.attackPower;
     document.querySelector('.char-defense').textContent = charData.defense;
@@ -124,17 +122,17 @@ function updateCharacterStatsDisplay(characterId) {
     document.querySelector('.char-crit-damage').textContent = charData.critDamage;
     document.querySelector('.char-attack-speed').textContent = charData.attackSpeed;
     document.querySelector('.char-movement-speed').textContent = charData.movementSpeed;
-    
+
     // Update resistances
     const resistances = document.querySelectorAll('.resistance-element');
     resistances.forEach(element => {
         const type = element.getAttribute('data-resistance');
         if (type && charData.resistances[type]) {
             element.textContent = charData.resistances[type];
-            
+
             // Clear existing color classes
             element.classList.remove('text-green-500', 'text-yellow-400', 'text-red-400');
-            
+
             // Add appropriate color class
             const value = parseInt(charData.resistances[type].replace('%', '').replace('+', ''));
             if (value >= 40) {

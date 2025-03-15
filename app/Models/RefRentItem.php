@@ -35,4 +35,5 @@ class RefRentItem extends Model
         'Time4' => 'integer',
         'Time5' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

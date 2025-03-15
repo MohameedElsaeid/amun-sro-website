@@ -28,4 +28,5 @@ class CharFreePVP extends Model
         'Date' => 'datetime',
         'CurChamp' => 'integer',
     ];
+    protected $connection = 'log';
 }

@@ -29,4 +29,5 @@ class RefServerEventReward extends Model
         'RewardClass' => 'integer',
         'MasterReward' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

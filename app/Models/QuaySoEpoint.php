@@ -21,4 +21,5 @@ class QuaySoEpoint extends Model
         'SP_After' => 'integer',
         'Regdate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

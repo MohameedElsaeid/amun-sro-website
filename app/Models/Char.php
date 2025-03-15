@@ -77,4 +77,5 @@ class Char extends Model
         'Rarity' => 'integer',
         'Support' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

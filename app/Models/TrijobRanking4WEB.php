@@ -30,4 +30,5 @@ class TrijobRanking4WEB extends Model
         'RankDelta' => 'integer',
         'Country' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

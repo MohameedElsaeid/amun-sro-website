@@ -15,4 +15,5 @@ class EmailChange extends Model
     protected $casts = [
         'createtime' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

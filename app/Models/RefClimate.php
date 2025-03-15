@@ -35,4 +35,5 @@ class RefClimate extends Model
         'RainfallVariance' => 'integer',
         'ProbRain' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

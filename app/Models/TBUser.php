@@ -25,4 +25,5 @@ class TBUser extends Model
         'LatestUpdateTime_ToPlayTime' => 'integer',
         'Play123Time' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

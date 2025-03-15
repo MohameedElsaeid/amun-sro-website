@@ -15,4 +15,5 @@ class VoteIp extends Model
     protected $casts = [
         'VoteID' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

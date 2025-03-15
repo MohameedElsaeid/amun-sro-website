@@ -25,4 +25,5 @@ class DeletedChar extends Model
         'UserJID' => 'integer',
         'DeletedDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

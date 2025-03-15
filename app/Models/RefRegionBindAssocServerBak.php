@@ -23,4 +23,5 @@ class RefRegionBindAssocServerBak extends Model
     protected $casts = [
         'AssocServer' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

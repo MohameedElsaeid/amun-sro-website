@@ -16,4 +16,5 @@ class Session extends Model
         'user_id' => 'integer',
         'last_activity' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

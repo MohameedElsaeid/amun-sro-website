@@ -23,4 +23,5 @@ class RefSkillGroup extends Model
     protected $casts = [
         'ID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

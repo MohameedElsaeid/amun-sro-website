@@ -26,4 +26,5 @@ class RefMagicOptAssign extends Model
         'TID3' => 'integer',
         'TID4' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

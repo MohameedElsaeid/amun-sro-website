@@ -25,4 +25,5 @@ class SokarJobCoin extends Model
         'Amount' => 'integer',
         'EventTime' => 'datetime',
     ];
+    protected $connection = 'log';
 }

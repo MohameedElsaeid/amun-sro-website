@@ -25,4 +25,5 @@ class CharSkill extends Model
         'SkillID' => 'integer',
         'Enable' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

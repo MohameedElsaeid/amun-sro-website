@@ -31,4 +31,5 @@ class TrainingCampMember extends Model
         'CharMaxLevel' => 'integer',
         'HonorPoint' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

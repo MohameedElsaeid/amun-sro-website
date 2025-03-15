@@ -17,4 +17,5 @@ class BOOK extends Model
         'inprint' => 'boolean',
         'salesCount' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -26,4 +26,5 @@ class WebShopSROLog extends Model
         'Balance_Before_Buy' => 'float',
         'Balance_After_Buy' => 'float',
     ];
+    protected $connection = 'proxy';
 }

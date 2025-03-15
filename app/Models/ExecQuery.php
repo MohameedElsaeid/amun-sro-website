@@ -24,4 +24,5 @@ class ExecQuery extends Model
         'ID' => 'integer',
         'DatabaseIndex' => 'integer',
     ];
+    protected $connection = 'event';
 }

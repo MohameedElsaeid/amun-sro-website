@@ -25,4 +25,5 @@ class Inventory extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

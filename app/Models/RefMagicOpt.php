@@ -59,4 +59,5 @@ class RefMagicOpt extends Model
         'ReqClass9' => 'integer',
         'ReqClass10' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

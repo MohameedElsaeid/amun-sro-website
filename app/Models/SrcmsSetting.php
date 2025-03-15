@@ -14,4 +14,5 @@ class SrcmsSetting extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'sqlsrv';
 }

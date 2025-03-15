@@ -22,4 +22,5 @@ class LoginIpsLog extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'log';
 }

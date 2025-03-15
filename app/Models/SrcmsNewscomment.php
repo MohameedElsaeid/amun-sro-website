@@ -16,4 +16,5 @@ class SrcmsNewscomment extends Model
         'newsID' => 'integer',
         'time' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

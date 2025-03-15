@@ -27,4 +27,5 @@ class LogEventChar extends Model
         'Data1' => 'integer',
         'Data2' => 'integer',
     ];
+    protected $connection = 'log';
 }

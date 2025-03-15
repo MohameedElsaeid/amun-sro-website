@@ -22,4 +22,5 @@ class Silk/HourConfig extends Model
                 'Step3Silk' => 'integer',
                 'RewardSilk' => 'integer',
             ];
-        }
+            protected $connection = 'log';
+}

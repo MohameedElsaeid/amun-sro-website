@@ -25,4 +25,5 @@ class CustomPcLimit extends Model
         'IPCount' => 'integer',
         'HWIDCount' => 'integer',
     ];
+    protected $connection = 'custom';
 }

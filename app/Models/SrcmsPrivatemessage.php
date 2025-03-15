@@ -18,4 +18,5 @@ class SrcmsPrivatemessage extends Model
         'viewed' => 'integer',
         'time' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

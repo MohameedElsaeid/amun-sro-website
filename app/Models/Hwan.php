@@ -24,4 +24,5 @@ class Hwan extends Model
         'Hwan_Level' => 'integer',
         'lvl' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

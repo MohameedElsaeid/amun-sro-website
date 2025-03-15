@@ -16,4 +16,5 @@ class TbPartnerInfo extends Model
         'balance' => 'integer',
         'udate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

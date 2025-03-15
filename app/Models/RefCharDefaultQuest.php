@@ -26,4 +26,5 @@ class RefCharDefaultQuest extends Model
         'Race' => 'integer',
         'RequiredLevel' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

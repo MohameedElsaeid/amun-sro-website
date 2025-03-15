@@ -22,4 +22,5 @@ class EquipName extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'proxy';
 }

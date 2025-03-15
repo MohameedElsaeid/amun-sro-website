@@ -26,4 +26,5 @@ class TabRefAISkill extends Model
         'ExcuteConditionData' => 'integer',
         'Option' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

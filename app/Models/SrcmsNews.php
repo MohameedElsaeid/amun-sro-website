@@ -14,4 +14,5 @@ class SrcmsNews extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'sqlsrv';
 }

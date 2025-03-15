@@ -30,4 +30,5 @@ class OnlineOffline extends Model
         'Silk/Hour' => 'integer',
         'stillOnline@' => 'datetime',
     ];
+    protected $connection = 'log';
 }

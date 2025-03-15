@@ -44,4 +44,5 @@ class RefObjCharExtraSkill extends Model
         'ExtraSkill_19' => 'integer',
         'ExtraSkill_20' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

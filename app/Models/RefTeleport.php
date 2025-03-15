@@ -35,4 +35,5 @@ class RefTeleport extends Model
         'BindInteractionMask' => 'integer',
         'FixedService' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -44,4 +44,5 @@ class RefTeleLink extends Model
         'Data5_1' => 'integer',
         'Data5_2' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

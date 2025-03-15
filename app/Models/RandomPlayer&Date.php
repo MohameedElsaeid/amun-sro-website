@@ -20,4 +20,5 @@ class RandomPlayer&Date extends Model
                 'RefreshedDate' => 'datetime',
                 'CharID' => 'integer',
             ];
-        }
+            protected $connection = 'log';
+}

@@ -26,4 +26,5 @@ class TabRefRankingHunterActivity extends Model
         'JobExp' => 'integer',
         'Country' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

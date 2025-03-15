@@ -25,4 +25,5 @@ class SkillsRogue extends Model
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
+    protected $connection = 'log';
 }

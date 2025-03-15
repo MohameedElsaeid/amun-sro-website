@@ -30,4 +30,5 @@ class RefConditionToSellPackageItem extends Model
         'Param3' => 'integer',
         'Param4' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

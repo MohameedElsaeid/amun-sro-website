@@ -31,4 +31,5 @@ class RefGameWorld extends Model
         'WorldDurationTime' => 'integer',
         'WorldEmptyRemainTime' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

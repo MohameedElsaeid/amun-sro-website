@@ -30,4 +30,5 @@ class ResultOfPackageItemToMappingWithServerSide extends Model
         'Type' => 'integer',
         'SubType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

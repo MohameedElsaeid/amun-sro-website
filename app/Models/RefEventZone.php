@@ -29,4 +29,5 @@ class RefEventZone extends Model
         'Param4' => 'integer',
         'Param5' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

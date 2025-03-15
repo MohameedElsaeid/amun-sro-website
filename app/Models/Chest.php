@@ -25,4 +25,5 @@ class Chest extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

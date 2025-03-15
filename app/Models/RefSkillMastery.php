@@ -24,4 +24,5 @@ class RefSkillMastery extends Model
         'ID' => 'integer',
         'Weapon' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

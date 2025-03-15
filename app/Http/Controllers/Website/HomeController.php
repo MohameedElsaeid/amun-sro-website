@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\OnlineOffline;
 use App\Services\Facebook\ConversionEventService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,6 +17,7 @@ class HomeController extends Controller
      */
     public function index(ConversionEventService $conversionEventService)
     {
-        return view('website.pages.home');
+        $onlinePlayersCount = OnlineOffline::query()->where('Status', 'Online')->count();
+        return view('website.pages.home', compact('onlinePlayersCount'));
     }
 }

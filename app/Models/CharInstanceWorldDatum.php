@@ -34,4 +34,5 @@ class CharInstanceWorldDatum extends Model
         'EnterCount' => 'integer',
         'LastEnterTime' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

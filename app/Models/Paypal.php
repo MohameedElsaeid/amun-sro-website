@@ -15,4 +15,5 @@ class Paypal extends Model
     protected $casts = [
         'mc_gross' => 'float',
     ];
+    protected $connection = 'sqlsrv';
 }

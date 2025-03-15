@@ -16,4 +16,5 @@ class SKCharRenameLog extends Model
         'JID' => 'integer',
         'timechange' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

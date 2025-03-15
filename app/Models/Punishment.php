@@ -23,4 +23,5 @@ class Punishment extends Model
         'PunishTime' => 'datetime',
         'Status' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

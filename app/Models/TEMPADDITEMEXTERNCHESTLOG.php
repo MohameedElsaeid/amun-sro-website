@@ -24,4 +24,5 @@ class TEMPADDITEMEXTERNCHESTLOG extends Model
         'ID' => 'integer',
         'LogDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

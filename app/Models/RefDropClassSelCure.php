@@ -37,4 +37,5 @@ class RefDropClassSelCure extends Model
         'ProbGroup13' => 'float',
         'ProbGroup14' => 'float',
     ];
+    protected $connection = 'proxy';
 }

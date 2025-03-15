@@ -26,4 +26,5 @@ class RefMagicOptByItemOptLevel extends Model
         'MagicOptValue' => 'integer',
         'TooltipType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

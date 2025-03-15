@@ -26,4 +26,5 @@ class RefTriggerCondition extends Model
         'RefTriggerCommonID' => 'integer',
         'Sequence' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

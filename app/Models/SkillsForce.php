@@ -25,4 +25,5 @@ class SkillsForce extends Model
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
+    protected $connection = 'log';
 }

@@ -20,4 +20,5 @@ class JobBatch extends Model
         'created_at' => 'integer',
         'finished_at' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

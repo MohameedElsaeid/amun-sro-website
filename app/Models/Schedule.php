@@ -38,4 +38,5 @@ class Schedule extends Model
         'SubInterval_RepititionTerm' => 'integer',
         'SubInterval_MaintainTime' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

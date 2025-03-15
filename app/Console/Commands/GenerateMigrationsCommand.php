@@ -23,19 +23,19 @@ class GenerateMigrationsCommand extends Command
     {
 
 
-        try {
-
-            Mail::to('m.ashraf.saed@gmail.com')->send(new UserRegisterEmail());
-            dd('4');
-        }catch (\Exception $exception){
-            dd($exception);
-        }
-
-        return 0;
+//        try {
+//
+//            Mail::to('m.ashraf.saed@gmail.com')->send(new UserRegisterEmail());
+//            dd('4');
+//        }catch (\Exception $exception){
+//            dd($exception);
+//        }
+//
+//        return 0;
 
         $event = config('database.connections.event');
         $custom = config('database.connections.custom');
-        $account = config('database.connections.account');
+        $account = config('database.connections.sqlsrv');
         $proxy = config('database.connections.shard');
         $shard = config('database.connections.shard');
         $log = config('database.connections.log');
@@ -46,6 +46,7 @@ class GenerateMigrationsCommand extends Command
                 'password' => $event['password'],
                 'host' => $event['host'],
                 'driver' => $event['driver'],
+                'connection' => 'event',
             ],
             [
                 'dbname' => $custom['database'],
@@ -53,6 +54,8 @@ class GenerateMigrationsCommand extends Command
                 'password' => $custom['password'],
                 'host' => $custom['host'],
                 'driver' => $custom['driver'],
+                'connection' => 'custom',
+
             ],
             [
                 'dbname' => $account['database'],
@@ -60,6 +63,8 @@ class GenerateMigrationsCommand extends Command
                 'password' => $account['password'],
                 'host' => $account['host'],
                 'driver' => $account['driver'],
+                'connection' => 'sqlsrv',
+
             ],
             [
                 'dbname' => $proxy['database'],
@@ -67,6 +72,7 @@ class GenerateMigrationsCommand extends Command
                 'password' => $proxy['password'],
                 'host' => $proxy['host'],
                 'driver' => $proxy['driver'],
+                'connection' => 'proxy',
             ],
             [
                 'dbname' => $shard['database'],
@@ -74,6 +80,7 @@ class GenerateMigrationsCommand extends Command
                 'password' => $shard['password'],
                 'host' => $shard['host'],
                 'driver' => $shard['driver'],
+                'connection' => 'shard',
             ],
             [
                 'dbname' => $log['database'],
@@ -81,11 +88,13 @@ class GenerateMigrationsCommand extends Command
                 'password' => $log['password'],
                 'host' => $log['host'],
                 'driver' => $log['driver'],
+                'connection' => 'log',
             ],
         ];
 
         foreach ($configs as $config) {
-            $connectionName = $config['dbname'];
+
+            $connectionName = $config['connection'];
             $connection = DriverManager::getConnection($config);
             $this->info("Using connection: {$connectionName}");
             if (!class_exists(DriverManager::class)) {
@@ -96,13 +105,44 @@ class GenerateMigrationsCommand extends Command
             $platform = $connection->getDatabasePlatform();
             $tables = $schemaManager->listTableNames();
             foreach ($tables as $tableName) {
-                $this->info("Processing table: {$tableName}");
-                $tableDetails = $schemaManager->introspectTable($tableName);
-                $migrationContent = $this->generateMigrationContent($tableName, $tableDetails, $platform);
-                $this->writeMigrationFile($tableName, $migrationContent);
+//                $this->info("Processing table: {$tableName}");
+//                $tableDetails = $schemaManager->introspectTable($tableName);
+//                $migrationContent = $this->generateMigrationContent($tableName, $tableDetails, $platform);
+//                $this->writeMigrationFile($tableName, $migrationContent);
+//
+//                $modelContent = $this->generateModelContent($tableName, $tableDetails, $platform);
+//                $this->writeModelFile($tableName, $modelContent);
 
-                $modelContent = $this->generateModelContent($tableName, $tableDetails, $platform);
-                $this->writeModelFile($tableName, $modelContent);
+                $modelPath = preg_split('/[\/\\\\]/', $tableName);
+
+                // The last part is the actual model name.
+                $modelName = Str::studly(Str::singular(array_pop($modelPath)));
+
+                // Start with the base Models directory.
+                $directory = app_path('Models');
+
+                $fileName = $directory . DIRECTORY_SEPARATOR . "{$modelName}.php";
+
+                if (file_exists($fileName)) {
+                    $content = file_get_contents($fileName);
+                }else{
+                    $this->output->info('Skipping migration because table `' . $tableName . '` does not exist.');
+                    continue;
+                }
+
+                // If the protected connection property is not already in the file, add it
+                if (strpos($content, 'protected $connection') === false) {
+                    // Locate the position of the last closing brace (assumed to be the end of the class)
+                    $pos = strrpos($content, '}');
+                    if ($pos !== false) {
+                        // Build the new content by inserting the new property before the last brace
+                        $propertyLine = "    protected \$connection = '$connectionName';\n";
+                        $newContent = substr($content, 0, $pos) . $propertyLine . substr($content, $pos);
+                        // Write the updated content back to the model file
+                        file_put_contents($fileName, $newContent);
+                    }
+                }
+
             }
             $this->info("Migration files generated successfully.");
         }

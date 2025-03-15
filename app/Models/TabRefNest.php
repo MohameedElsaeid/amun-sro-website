@@ -39,4 +39,5 @@ class TabRefNest extends Model
         'btRespawn' => 'integer',
         'btType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -28,4 +28,5 @@ class SiegeFortressBattleRecord extends Model
         'RankUpDate' => 'datetime',
         'CurRank' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

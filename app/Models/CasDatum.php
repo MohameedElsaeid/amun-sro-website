@@ -22,4 +22,5 @@ class CasDatum extends Model
         'dProcessDate' => 'datetime',
         'btUserChecked' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

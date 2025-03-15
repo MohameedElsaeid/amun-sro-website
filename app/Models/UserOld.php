@@ -27,4 +27,5 @@ class UserOld extends Model
         'CharID3' => 'integer',
         'Gold' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -22,4 +22,5 @@ class BOXRANDOM1 extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'log';
 }

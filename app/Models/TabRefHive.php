@@ -31,4 +31,5 @@ class TabRefHive extends Model
         'GameWorldID' => 'integer',
         'HatchObjType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

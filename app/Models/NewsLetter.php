@@ -10,4 +10,5 @@ class NewsLetter extends Model
         'Email',
         'JID'
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -23,4 +23,5 @@ class RefScheduleDefine extends Model
     protected $casts = [
         'ScheduleDefineIdx' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

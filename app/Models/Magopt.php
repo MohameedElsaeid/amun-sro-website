@@ -24,4 +24,5 @@ class Magopt extends Model
         'mLevel' => 'integer',
         'sortkey' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

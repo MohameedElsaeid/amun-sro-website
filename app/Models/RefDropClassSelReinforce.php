@@ -25,4 +25,5 @@ class RefDropClassSelReinforce extends Model
         'ProbGroup1' => 'float',
         'ProbGroup2' => 'float',
     ];
+    protected $connection = 'proxy';
 }

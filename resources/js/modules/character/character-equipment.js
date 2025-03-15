@@ -5,41 +5,32 @@
 
 export function initCharacterEquipment(state) {
     const equipmentSlots = document.querySelectorAll('.equipment-slot');
-    
+
     if (equipmentSlots.length === 0) {
-        console.log('No equipment slots found');
         return;
     }
-    
-    console.log('Initializing character equipment');
-    
-    // Initialize item set tracker
+
     initItemSetTracker();
-    
+
     // Listen for character updates
     document.addEventListener('character:updated', function(e) {
         const characterId = e.detail.characterId;
         updateCharacterEquipment(characterId);
     });
-    
+
     // Enable equipment slot interactions
     equipmentSlots.forEach(slot => {
         slot.addEventListener('click', function() {
             const slotName = this.dataset.slot;
-            console.log(`Clicked on equipment slot: ${slotName}`);
-            
-            // Open equipment selector modal
             const equipmentModal = document.querySelector('#equipment-modal');
             if (equipmentModal) {
                 equipmentModal.classList.remove('hidden');
                 equipmentModal.setAttribute('data-target-slot', slotName);
-                
-                // Populate modal with items that can be equipped in this slot
                 populateEquipmentModal(slotName);
             }
         });
     });
-    
+
     // Close modal button
     const closeModalBtn = document.querySelector('#close-equipment-modal');
     if (closeModalBtn) {
@@ -68,10 +59,10 @@ function updateCharacterEquipment(characterId) {
             shield: { id: 'sh2', name: 'Dragonscale Buckler', rarity: 'Epic', level: 91 }
         }
     };
-    
+
     // Get the equipment for the selected character
     const equipment = mockEquipment[characterId] || mockEquipment['char1'];
-    
+
     // Update each equipment slot
     Object.keys(equipment).forEach(slotName => {
         const slot = document.querySelector(`.equipment-slot[data-slot="${slotName}"]`);
@@ -79,17 +70,17 @@ function updateCharacterEquipment(characterId) {
             const item = equipment[slotName];
             const itemName = slot.querySelector('.item-name');
             const itemRarity = slot.querySelector('.item-rarity');
-            
+
             if (itemName) itemName.textContent = item.name;
             if (itemRarity) {
                 itemRarity.textContent = item.rarity;
                 itemRarity.className = `item-rarity text-xs ${getRarityColor(item.rarity)}`;
             }
-            
+
             slot.classList.add('item-equipped');
         }
     });
-    
+
     // Update item set bonuses
     checkItemSets();
 }
@@ -119,13 +110,13 @@ function populateEquipmentModal(slotName) {
             { id: 'sh3', name: 'Aegis of Protection', rarity: 'Legendary', level: 94, stats: '+70 Defense, +20% Block Chance' }
         ]
     };
-    
+
     const items = mockEquipment[slotName] || [];
     const modalContent = document.querySelector('#equipment-items-list');
-    
+
     if (modalContent) {
         modalContent.innerHTML = '';
-        
+
         items.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.className = 'bg-midnight-light p-3 rounded-lg text-center cursor-pointer hover:border hover:border-gold transition-all';
@@ -134,7 +125,7 @@ function populateEquipmentModal(slotName) {
                 <p class="text-sand-light text-xs">Level ${item.level} ${item.rarity}</p>
                 <p class="text-sand text-xs mt-1">${item.stats}</p>
             `;
-            
+
             itemElement.addEventListener('click', function() {
                 equipItem(slotName, item);
                 const equipmentModal = document.querySelector('#equipment-modal');
@@ -142,7 +133,7 @@ function populateEquipmentModal(slotName) {
                     equipmentModal.classList.add('hidden');
                 }
             });
-            
+
             modalContent.appendChild(itemElement);
         });
     }
@@ -154,16 +145,16 @@ function equipItem(slotName, item) {
     if (slot) {
         const itemName = slot.querySelector('.item-name');
         const itemRarity = slot.querySelector('.item-rarity');
-        
+
         if (itemName) itemName.textContent = item.name;
         if (itemRarity) {
             itemRarity.textContent = item.rarity;
             itemRarity.className = `item-rarity text-xs ${getRarityColor(item.rarity)}`;
         }
-        
+
         // Add equipped class to indicate the slot has an item
         slot.classList.add('item-equipped');
-        
+
         // Check if we've completed any item sets
         checkItemSets();
     }
@@ -187,7 +178,7 @@ function initItemSetTracker() {
         const totalSlots = document.querySelectorAll('.equipment-slot').length;
         const equippedSlots = document.querySelectorAll('.equipment-slot.item-equipped').length;
         const progressPercent = (equippedSlots / totalSlots) * 100;
-        
+
         const setProgressBar = document.querySelector('#item-set-progress');
         if (setProgressBar) {
             setProgressBar.style.width = `${progressPercent}%`;
@@ -199,14 +190,14 @@ function checkItemSets() {
     // This function checks if the player has completed any item sets
     const equippedSlots = document.querySelectorAll('.equipment-slot.item-equipped');
     const totalEquipped = equippedSlots.length;
-    
+
     const setProgressBar = document.querySelector('#item-set-progress');
     if (setProgressBar) {
         // Update the item set completion progress bar
         const totalSlots = document.querySelectorAll('.equipment-slot').length;
         const progressPercent = (totalEquipped / totalSlots) * 100;
         setProgressBar.style.width = `${progressPercent}%`;
-        
+
         // Update the set bonus text
         const setBonusText = document.querySelector('#set-bonus-text');
         if (setBonusText) {

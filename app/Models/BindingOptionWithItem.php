@@ -30,4 +30,5 @@ class BindingOptionWithItem extends Model
         'nParam1' => 'integer',
         'nParam2' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

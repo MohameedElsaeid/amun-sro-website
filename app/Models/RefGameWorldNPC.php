@@ -37,4 +37,5 @@ class RefGameWorldNPC extends Model
         'Param9' => 'integer',
         'Param10' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

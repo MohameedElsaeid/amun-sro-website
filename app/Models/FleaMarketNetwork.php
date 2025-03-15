@@ -30,4 +30,5 @@ class FleaMarketNetwork extends Model
         'MakeZone' => 'integer',
         'Cash' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

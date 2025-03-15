@@ -26,4 +26,5 @@ class LogServerEvent extends Model
         'ServerEventID' => 'integer',
         'LogType' => 'integer',
     ];
+    protected $connection = 'log';
 }

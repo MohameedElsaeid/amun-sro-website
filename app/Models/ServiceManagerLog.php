@@ -16,4 +16,5 @@ class ServiceManagerLog extends Model
         'nUserID' => 'integer',
         'EventTime' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

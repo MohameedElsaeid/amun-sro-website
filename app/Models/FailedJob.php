@@ -15,4 +15,5 @@ class FailedJob extends Model
     protected $casts = [
         'failed_at' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

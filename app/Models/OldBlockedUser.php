@@ -19,4 +19,5 @@ class OldBlockedUser extends Model
         'timeBegin' => 'datetime',
         'timeEnd' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

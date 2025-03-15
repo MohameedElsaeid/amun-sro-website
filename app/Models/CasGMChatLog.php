@@ -18,4 +18,5 @@ class CasGMChatLog extends Model
         'nCasSerial' => 'integer',
         'dWritten' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

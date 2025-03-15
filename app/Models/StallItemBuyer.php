@@ -24,4 +24,5 @@ class StallItemBuyer extends Model
         'ID' => 'integer',
         'StallSlot' => 'integer',
     ];
+    protected $connection = 'event';
 }

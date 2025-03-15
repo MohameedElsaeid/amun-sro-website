@@ -21,4 +21,5 @@ class SKSilkGood extends Model
         'Category' => 'integer',
         'RegDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -16,4 +16,5 @@ class SRCharAppoint extends Model
         'UserJID' => 'integer',
         'ShardID' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

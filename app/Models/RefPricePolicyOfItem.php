@@ -32,4 +32,5 @@ class RefPricePolicyOfItem extends Model
         'Param4' => 'integer',
         'index' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

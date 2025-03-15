@@ -27,4 +27,5 @@ class RefSiegeQuestReward extends Model
         'RewardRefID' => 'integer',
         'RewardValue' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

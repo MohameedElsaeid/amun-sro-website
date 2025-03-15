@@ -24,4 +24,5 @@ class ChestInfo extends Model
         'JID' => 'integer',
         'ChestSize' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

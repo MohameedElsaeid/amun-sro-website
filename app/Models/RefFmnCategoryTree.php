@@ -25,4 +25,5 @@ class RefFmnCategoryTree extends Model
         'TidGroupID' => 'integer',
         'Degree' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

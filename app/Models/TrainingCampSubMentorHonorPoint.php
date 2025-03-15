@@ -24,4 +24,5 @@ class TrainingCampSubMentorHonorPoint extends Model
         'CharID' => 'integer',
         'HonorPoint' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

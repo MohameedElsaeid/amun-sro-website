@@ -25,4 +25,5 @@ class RefTriggerEvent extends Model
         'ID' => 'integer',
         'RefTriggerCommonID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

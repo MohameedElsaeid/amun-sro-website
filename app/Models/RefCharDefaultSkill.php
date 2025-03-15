@@ -24,4 +24,5 @@ class RefCharDefaultSkill extends Model
         'Race' => 'integer',
         'SkillID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -16,4 +16,5 @@ class Dtproperty extends Model
         'objectid' => 'integer',
         'version' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

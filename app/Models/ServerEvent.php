@@ -26,4 +26,5 @@ class ServerEvent extends Model
         'AchievementCondition' => 'integer',
         'ProgressCount' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

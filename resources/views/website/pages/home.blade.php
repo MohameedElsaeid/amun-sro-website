@@ -62,7 +62,7 @@
                             <path d="M15 9.33a5 5 0 0 1 0 5.34"/>
                         </svg>
                         <span class="text-sand-light">Players: <span id="playersCounter"
-                                                                     class="text-gold font-bold">1116 / 5000</span></span>
+                                                                     class="text-gold font-bold">{{$onlinePlayersCount}} / 5000</span></span>
                     </div>
 
                     <div class="flex items-center mb-6">

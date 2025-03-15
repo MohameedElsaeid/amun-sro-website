@@ -18,4 +18,5 @@ class Job extends Model
         'available_at' => 'integer',
         'created_at' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

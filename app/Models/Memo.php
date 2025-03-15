@@ -27,4 +27,5 @@ class Memo extends Model
         'Status' => 'integer',
         'RefObjID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

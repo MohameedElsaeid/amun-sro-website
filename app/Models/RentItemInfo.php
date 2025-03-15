@@ -31,4 +31,5 @@ class RentItemInfo extends Model
         'nPackingState' => 'integer',
         'nPackingTime' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

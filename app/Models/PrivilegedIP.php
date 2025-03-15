@@ -22,4 +22,5 @@ class PrivilegedIP extends Model
         'IP7' => 'integer',
         'IP8' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

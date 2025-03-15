@@ -17,4 +17,5 @@ class VoteAction extends Model
         'VoteID' => 'integer',
         'Date' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

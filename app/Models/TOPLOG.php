@@ -25,4 +25,5 @@ class TOPLOG extends Model
         'CharID' => 'integer',
         'Date' => 'datetime',
     ];
+    protected $connection = 'log';
 }

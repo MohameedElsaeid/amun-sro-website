@@ -30,4 +30,5 @@ class CharQuest extends Model
         'QuestData1' => 'integer',
         'QuestData2' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

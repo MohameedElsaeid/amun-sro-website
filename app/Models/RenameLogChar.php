@@ -25,4 +25,5 @@ class RenameLogChar extends Model
         'CharID' => 'integer',
         'Time' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

@@ -29,4 +29,5 @@ class RefDropClassSelAmmo extends Model
         'ProbGroup5' => 'float',
         'ProbGroup6' => 'float',
     ];
+    protected $connection = 'proxy';
 }

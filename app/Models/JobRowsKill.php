@@ -26,4 +26,5 @@ class JobRowsKill extends Model
         'Kesilen' => 'integer',
         'DescType' => 'integer',
     ];
+    protected $connection = 'log';
 }

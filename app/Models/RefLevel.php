@@ -31,4 +31,5 @@ class RefLevel extends Model
         'JobExp_Robber' => 'integer',
         'JobExp_Hunter' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

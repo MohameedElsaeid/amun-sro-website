@@ -33,4 +33,5 @@ class RefGachaItemSet extends Model
         'param3' => 'integer',
         'param4' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

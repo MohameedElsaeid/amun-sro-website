@@ -26,4 +26,5 @@ class RefSiegeFortressBattleRank extends Model
         'ReqPKCount' => 'integer',
         'BindedSkillID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

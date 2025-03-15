@@ -16,4 +16,5 @@ class TBRefItemName extends Model
         'ITEM_ID' => 'float',
         'ITEM_SILK' => 'float',
     ];
+    protected $connection = 'sqlsrv';
 }

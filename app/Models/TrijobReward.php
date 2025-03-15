@@ -24,4 +24,5 @@ class TrijobReward extends Model
         'JobType' => 'integer',
         'Reward' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

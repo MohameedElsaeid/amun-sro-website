@@ -42,4 +42,5 @@ class RoyalItemPoolAutoEquipment extends Model
         'Va' => 'integer',
         'Race' => 'boolean',
     ];
+    protected $connection = 'log';
 }

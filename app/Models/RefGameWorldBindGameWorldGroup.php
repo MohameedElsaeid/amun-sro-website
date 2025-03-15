@@ -26,4 +26,5 @@ class RefGameWorldBindGameWorldGroup extends Model
         'GameWorldID' => 'integer',
         'GameWorldGroupID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

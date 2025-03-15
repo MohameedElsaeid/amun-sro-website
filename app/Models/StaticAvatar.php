@@ -39,4 +39,5 @@ class StaticAvatar extends Model
         'Param15' => 'integer',
         'Param16' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

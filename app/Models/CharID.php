@@ -23,4 +23,5 @@ class CharID extends Model
     protected $casts = [
         'ID' => 'integer',
     ];
+    protected $connection = 'log';
 }

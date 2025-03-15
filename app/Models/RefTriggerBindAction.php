@@ -26,4 +26,5 @@ class RefTriggerBindAction extends Model
         'TriggerID' => 'integer',
         'TriggerActionID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

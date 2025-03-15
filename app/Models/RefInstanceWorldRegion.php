@@ -24,4 +24,5 @@ class RefInstanceWorldRegion extends Model
         'WorldID' => 'integer',
         'RegionID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

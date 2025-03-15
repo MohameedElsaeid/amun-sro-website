@@ -33,4 +33,5 @@ class RefHWANLevel extends Model
         'ParamFourcc5' => 'integer',
         'ParamValue5' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

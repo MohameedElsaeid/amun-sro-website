@@ -14,4 +14,5 @@ class RefCountryNameAndCode extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'sqlsrv';
 }

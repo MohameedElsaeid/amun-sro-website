@@ -28,4 +28,5 @@ class SKSilkBuyList extends Model
         'MngID' => 'integer',
         'RegDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

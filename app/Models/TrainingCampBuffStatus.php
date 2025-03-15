@@ -29,4 +29,5 @@ class TrainingCampBuffStatus extends Model
         'RemainBuffPoint' => 'integer',
         'BuffType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

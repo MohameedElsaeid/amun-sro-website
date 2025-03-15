@@ -23,4 +23,5 @@ class RefGachaCode extends Model
     protected $casts = [
         'GachaSetID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

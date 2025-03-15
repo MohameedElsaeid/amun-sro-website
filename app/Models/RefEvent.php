@@ -25,4 +25,5 @@ class RefEvent extends Model
         'ID' => 'integer',
         'ScheduleCount' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

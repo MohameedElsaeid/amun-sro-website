@@ -21,4 +21,5 @@ class SKSHL extends Model
         'HGS' => 'integer',
         'event_time' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

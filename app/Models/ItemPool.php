@@ -24,4 +24,5 @@ class ItemPool extends Model
         'ItemID' => 'integer',
         'InUse' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

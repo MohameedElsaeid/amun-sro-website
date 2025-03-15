@@ -20,4 +20,5 @@ class ModuleVersion extends Model
         'nVersion' => 'integer',
         'nValid' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

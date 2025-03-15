@@ -30,4 +30,5 @@ class RefDropClassSelRecover extends Model
         'ProbGroup6' => 'float',
         'ProbGroup7' => 'float',
     ];
+    protected $connection = 'proxy';
 }

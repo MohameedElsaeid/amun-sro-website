@@ -24,4 +24,5 @@ class AssociationReputation extends Model
         'Reputation' => 'integer',
         'PriorOccupation' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

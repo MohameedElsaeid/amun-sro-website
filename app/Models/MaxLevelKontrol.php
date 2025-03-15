@@ -24,4 +24,5 @@ class MaxLevelKontrol extends Model
         'Zaman' => 'datetime',
         'index' => 'integer',
     ];
+    protected $connection = 'log';
 }

@@ -24,4 +24,5 @@ class RefGameWorldConfig extends Model
         'Service' => 'integer',
         'ID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

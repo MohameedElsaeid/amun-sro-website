@@ -26,4 +26,5 @@ class TBNet2e extends Model
         'HowPlay' => 'integer',
         'LastModification' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

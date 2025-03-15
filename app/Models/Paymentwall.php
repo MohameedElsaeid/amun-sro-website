@@ -25,4 +25,5 @@ class Paymentwall extends Model
         'credits' => 'integer',
         'date' => 'datetime',
     ];
+    protected $connection = 'log';
 }

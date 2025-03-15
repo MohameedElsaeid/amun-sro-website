@@ -27,4 +27,5 @@ class RefSiegeQuest extends Model
         'RewardConditionTargetCount' => 'integer',
         'IsAccumulation' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

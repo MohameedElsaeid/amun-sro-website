@@ -20,4 +20,5 @@ class TbPaygateTran extends Model
         'afterMoney' => 'integer',
         'PG_TransID' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

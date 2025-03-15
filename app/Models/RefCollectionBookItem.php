@@ -24,4 +24,5 @@ class RefCollectionBookItem extends Model
         'Service' => 'integer',
         'SlotIndex' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

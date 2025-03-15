@@ -34,4 +34,5 @@ class GuildMember extends Model
         'RefObjID' => 'integer',
         'SiegeAuthority' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

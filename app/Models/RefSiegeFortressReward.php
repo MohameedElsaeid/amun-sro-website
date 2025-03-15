@@ -27,4 +27,5 @@ class RefSiegeFortressReward extends Model
         'RewardValue' => 'integer',
         'RewardCount' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

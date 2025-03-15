@@ -18,4 +18,5 @@ class ShardCurrentUser extends Model
         'nUserCount' => 'integer',
         'dLogDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }
