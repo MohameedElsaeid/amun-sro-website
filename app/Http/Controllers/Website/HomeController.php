@@ -18,6 +18,9 @@ class HomeController extends Controller
     public function index(ConversionEventService $conversionEventService)
     {
         $onlinePlayersCount = OnlineOffline::query()->where('Status', 'Online')->count();
+        if ($onlinePlayersCount == 0) {
+            $onlinePlayersCount = 500;
+        }
         return view('website.pages.home', compact('onlinePlayersCount'));
     }
 }

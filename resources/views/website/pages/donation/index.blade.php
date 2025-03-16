@@ -22,7 +22,7 @@
                 <p class="text-midnight text-center mb-10">Select a package below to enhance your Amun Sro experience
                     with Silk units.</p>
 
-                <form id="donation-form">
+                <form id="donation-form" method="POST" action="{{route('website.donation.process')}}">
                     @csrf
                     @include('website.pages.donation.components.package-cards')
 

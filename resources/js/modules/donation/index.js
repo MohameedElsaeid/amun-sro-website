@@ -69,7 +69,6 @@ export function initDonationForm() {
     initPackageSelection(state);
     initPaymentMethodSelection(state);
     initFormSubmission(state);
-
     initModalClose();
 }
 

@@ -55,8 +55,8 @@ Route::group(['as' => 'website.'], function () {
     Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter.subscribe');
 
 
-    Route::middleware(['auth:web'])->group(function () {
-        Route::post('/donation/process', [PaymentController::class, 'processDonation']);
-    });
+//    Route::middleware(['auth:web'])->group(function () {
+        Route::post('/donation/process', [PaymentController::class, 'processDonation'])->name('donation.process');
+//    });
 
 });
