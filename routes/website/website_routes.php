@@ -57,6 +57,9 @@ Route::group(['as' => 'website.'], function () {
 
 //    Route::middleware(['auth:web'])->group(function () {
         Route::post('/donation/process', [PaymentController::class, 'processDonation'])->name('donation.process');
+    // Gamification routes
+        Route::get('/leaderboard', [GamificationController::class, 'index'])->name('leaderboard');
+        Route::get('/dashboard', [GamificationController::class, 'dashboard'])->name('gamification.dashboard');
 //    });
 
 });

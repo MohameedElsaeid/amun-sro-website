@@ -23,6 +23,7 @@ class User extends Authenticatable
     protected $table = 'dbo.TB_User';
     protected $primaryKey ='JID';
     protected $fillable = [
+        'last_login_bonus',
         'JID',
         'StrUserID',
         'password',
@@ -50,6 +51,7 @@ class User extends Authenticatable
     protected $casts = [
         'UserJID' => 'integer',
         'CharID' => 'integer',
+        'last_login_bonus' => 'date',
     ];
 
     /**

@@ -1,0 +1,59 @@
+
+/* Gamification Component Styles */
+
+/* Notifications */
+.gamification-notifications {
+    pointer-events: none;
+}
+
+.gamification-notifications > div {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+}
+
+/* Progress Bars */
+.level-progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+/* Achievement Items */
+.achievement-item {
+    transition: background-color 0.2s;
+}
+
+.achievement-item:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* Animation for Points Counter */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.point-gain-animation {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Leaderboard Styles */
+.leaderboard-item {
+    transition: transform 0.2s;
+}
+
+.leaderboard-item:hover {
+    transform: translateX(5px);
+}
+
+/* Top 3 Ranking */
+.rank-1 {
+    color: #FFD700; /* Gold */
+}
+
+.rank-2 {
+    color: #C0C0C0; /* Silver */
+}
+
+.rank-3 {
+    color: #CD7F32; /* Bronze */
+}

@@ -30,84 +30,53 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="{{ asset('config/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
-    <meta name="facebook-domain-verification" content="95adlebjrn0aztsy6zuef633ikvjpe"/>
+    <meta name="facebook-domain-verification" content="95adlebjrn0aztsy6zuef633ikvjpe" />
     <title>@yield('title', 'Amun Sro - ASRO Private Server')</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DDLY8K3BF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1DDLY8K3BF');
+    </script>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    @if(app()->isProduction())
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DDLY8K3BF"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+    <!-- Styles -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+                var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+            ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
 
-            gtag('js', new Date());
-
-            gtag('config', 'G-1DDLY8K3BF');
-        </script>
-        <script>
-            !function (w, d, t) {
-                w.TiktokAnalyticsObject = t;
-                var ttq = w[t] = w[t] || [];
-                ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"], ttq.setAndDefer = function (t, e) {
-                    t[e] = function () {
-                        t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
-                    }
-                };
-                for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-                ttq.instance = function (t) {
-                    for (
-                        var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
-                    return e
-                }, ttq.load = function (e, n) {
-                    var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner;
-                    ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
-                    n = document.createElement("script")
-                    ;n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
-                    e = document.getElementsByTagName("script")[0];
-                    e.parentNode.insertBefore(n, e)
-                };
-                ttq.load('CVA5UKJC77U13TBVQQP0');
-                ttq.page();
-            }(window, document, 'ttq');
-        </script>
-        <script>
-            !function (f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function () {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1308306323731554');
-            fbq('track', 'PageView');
-        </script>
-        <noscript>
-            <img height="1" width="1" style="display:none"
-                 src="https://www.facebook.com/tr?id=1308306323731554&ev=PageView&noscript=1"
-             alt=""/>
-        </noscript>
-    @endif
-
+            ttq.load('CVA5UKJC77U13TBVQQP0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1308306323731554');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=1308306323731554&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Meta Pixel Code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head') {{-- For page-specific head content --}}

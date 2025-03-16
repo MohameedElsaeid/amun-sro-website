@@ -66,6 +66,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all(), $registerIp)));
 
         $this->guard()->login($user);
+
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
@@ -77,6 +78,8 @@ class RegisterController extends Controller
             'fn' => $user->StrUserID,
         ])->onQueue('pixel-event');
 
+        $this->awardRegistrationPoints($user);
+
         // Determine the redirect URL
         $redirectTo = $request->input('redirect_to');
         if ($redirectTo && filter_var($redirectTo, FILTER_VALIDATE_URL)) {
@@ -84,6 +87,7 @@ class RegisterController extends Controller
                 ? new JsonResponse([], 201)
                 : redirect($redirectTo);
         }
+
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
@@ -135,6 +139,26 @@ class RegisterController extends Controller
             'Email' => $data['email'],
             'password' => md5($data['password']),
             'reg_ip' => $registerIp,
+        ]);
+    }
+
+    /**
+     * Award registration points to the user
+     *
+     * @param User $user
+     * @return void
+     */
+    protected function awardRegistrationPoints(User $user)
+    {
+        // Award 50 points for registration
+        $user->points = 50;
+        $user->save();
+
+        // Set a flash message for the notification
+        session()->flash('gamification_event', [
+            'action' => 'register',
+            'points' => 50,
+            'total_points' => $user->points
         ]);
     }
 }

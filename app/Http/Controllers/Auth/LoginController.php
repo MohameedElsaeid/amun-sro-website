@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\LoginEventJob;
 use App\Models\User;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -79,6 +80,8 @@ class LoginController extends Controller
                 'fn' => $request->user()->StrUserID,
             ])->onQueue('pixel-event');
 
+            $this->awardLoginPoints($request->user());
+
             // Determine the redirect URL
             $redirectTo = $request->input('redirect_to');
             if ($redirectTo && filter_var($redirectTo, FILTER_VALIDATE_URL)) {
@@ -140,6 +143,33 @@ class LoginController extends Controller
         }
 
         return false;
+    }
+
+    /**
+     * Award login points to the user
+     *
+     * @param User $user
+     * @return void
+     */
+    protected function awardLoginPoints(User $user)
+    {
+        $lastLoginDate = $user->last_login_bonus ? Carbon::parse($user->last_login_bonus)->toDateString() : null;
+        $today = Carbon::today()->toDateString();
+
+        // Only award points once per day
+        if ($lastLoginDate !== $today) {
+            // Award 10 points for login
+            $user->points = ($user->points ?? 0) + 10;
+            $user->last_login_bonus = $today;
+            $user->save();
+
+            // Set a flash message for the notification
+            session()->flash('gamification_event', [
+                'action' => 'login',
+                'points' => 10,
+                'total_points' => $user->points
+            ]);
+        }
     }
 
 }

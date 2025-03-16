@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\CaptureFbTracking;
 use App\Http\Middleware\HandleInertiaRequests;
@@ -32,6 +33,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'auth' => Authenticate::class,
+            'admin' => AdminMiddleware::class,
         ]);
         $middleware->use([
             InvokeDeferredCallbacks::class,

@@ -16,15 +16,18 @@
                     class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">
                     +{{ $package['bonus'] }} BONUS
                 </div>
-                <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">{{ number_format($package['silk']) }}
-                    Silk</h3>
+                <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">
+                    {{ number_format($package['silk']) }} Silk
+                </h3>
             </div>
             <div class="package-content p-6">
                 <div class="price-list space-y-2 mb-6">
                     @foreach($package['prices'] as $currency => $price)
-                        <div class="price-item flex justify-between" data-currency="{{ $currency }}">
-                            <span class="text-midnight-light">Price ({{ $currency }}):</span>
-                            <span class="font-bold text-midnight">{{ number_format($price) }}</span>
+                        <div class="price-list space-y-2 mb-6">
+                            <div class="price-item flex justify-between" data-currency="{{ $currency }}" @if($currency !== 'USDT') hidden @endif>
+                                <span class="text-midnight-light">Price ({{ $currency }}):</span>
+                                <span class="font-bold text-midnight">{{ number_format($price) }}</span>
+                            </div>
                         </div>
                     @endforeach
                 </div>
