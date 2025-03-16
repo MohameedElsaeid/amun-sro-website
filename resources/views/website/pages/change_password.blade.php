@@ -10,7 +10,7 @@
     <div class="page-hero" style="background-image: url('{{ asset('icons/feat_3.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4">My Account</h1>
-            <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">Manage your ASRO account</p>
+            <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">Change Password</p>
         </div>
     </div>
 
