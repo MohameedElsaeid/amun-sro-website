@@ -1,102 +1,83 @@
+
 /**
  * Package selection module for donation functionality
  */
 
 export function initPackageSelection(state) {
     const packageCards = document.querySelectorAll('.package-card');
+    const paymentContainer = document.getElementById('payment-container');
 
-    packageCards.forEach((card, index) => {
-        // Add data attribute for package ID
-        card.setAttribute('data-package-id', index);
-
+    packageCards.forEach((card) => {
         const selectButton = card.querySelector('.select-package');
-        if (!selectButton) return;
 
-        selectButton.addEventListener('click', function () {
+        selectButton.addEventListener('click', function() {
             // Get package information
+            const packageId = parseInt(card.getAttribute('data-package-id'));
             const silkAmount = card.querySelector('.silk-amount').textContent;
-            const bonusText = card.querySelector('.package-bonus').textContent.trim();
+            const bonusText = card.querySelector('.package-bonus').textContent;
 
-            // Get price based on selected currency - using a more compatible approach
-            const priceItems = card.querySelectorAll('.price-item');
-            let price = '';
-
-            // Find the price item that matches the selected currency
-            priceItems.forEach(item => {
-                const currencySpan = item.querySelector('span:first-child');
-                if (currencySpan && currencySpan.textContent.includes(state.selectedCurrency)) {
-                    price = item.querySelector('span:last-child').textContent;
-                }
-            });
-
-            // Fallback: look for price by position based on currency
-            if (!price) {
-                let priceIndex = 0;
-
-                switch (state.selectedCurrency) {
-                    case 'TL':
-                        priceIndex = 0;
-                        break;
-                    case 'EGP':
-                        priceIndex = 1;
-                        break;
-                    case 'USDT':
-                        priceIndex = 2;
-                        break;
-                }
-
-                if (priceItems && priceItems.length > priceIndex) {
-                    price = priceItems[priceIndex].querySelector('span:last-child').textContent;
-                }
+            // Get price based on selected currency
+            const priceElement = card.querySelector(`.price-item[data-currency="${state.selectedCurrency}"]`);
+            if (!priceElement) {
+                console.error('Price element not found for selected currency:', state.selectedCurrency);
+                return;
             }
 
+            const price = priceElement.querySelector('span:last-child').textContent;
+
             // Update state
-            state.selectedPackage = index;
+            state.selectedPackage = packageId;
             state.packageName = silkAmount;
             state.packageBonus = bonusText;
             state.packagePrice = price;
 
             // Update UI
-            packageCards.forEach(pc => {
-                pc.classList.remove('selected');
-                pc.style.borderColor = '';
-            });
-
+            packageCards.forEach(p => p.classList.remove('selected'));
             card.classList.add('selected');
-            card.style.borderColor = '#D5A021'; // Gold color
 
             // Update summary
-            updateOrderSummary(state);
+            updatePackageSummary(state);
 
-            // Check if we can enable the submit button
+            // Show payment container
+            if (paymentContainer) {
+                paymentContainer.classList.remove('hidden');
+
+                // Scroll to payment container
+                paymentContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Check if submit button can be enabled
             checkSubmitButton(state);
         });
     });
 }
 
 /**
- * Update the order summary with selected package information
+ * Update the package summary with selected package information
  */
-function updateOrderSummary(state) {
+function updatePackageSummary(state) {
+    // Update package name
     const summaryPackage = document.getElementById('summary-package');
-    const summaryBonus = document.getElementById('summary-bonus');
-    const summaryTotal = document.getElementById('summary-total');
-    const summaryCurrency = document.getElementById('summary-currency');
-
     if (summaryPackage) {
         summaryPackage.textContent = state.packageName || 'Select a package';
     }
 
+    // Update bonus
+    const summaryBonus = document.getElementById('summary-bonus');
     if (summaryBonus) {
         summaryBonus.textContent = state.packageBonus || '-';
     }
 
+    // Update total
+    const summaryTotal = document.getElementById('summary-total');
     if (summaryTotal) {
         summaryTotal.textContent = state.packagePrice || '-';
     }
 
+    // Update currency
+    const summaryCurrency = document.getElementById('summary-currency');
     if (summaryCurrency) {
-        summaryCurrency.textContent = state.selectedCurrency;
+        summaryCurrency.textContent = state.selectedCurrency || 'TL';
     }
 }
 
