@@ -25,7 +25,7 @@ class CaptureFbTracking
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $reader = new Reader(storage_path('app/geoip/GeoLite2-City.mmdb'));
+        $reader = new Reader(storage_path('geoip/GeoLite2-City.mmdb'));
         $ip = $request->ip();
         try {
             $record = $reader->city($ip);
