@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use App\Services\Facebook\ConversionEventService;
-use Illuminate\Http\Client\ConnectionException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
+use App\Jobs\DownloadEventJob;
+use Illuminate\Http\RedirectResponse;
 
 class DownloadsController extends Controller
 {
@@ -16,11 +14,9 @@ class DownloadsController extends Controller
     }
 
     /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     * @throws ConnectionException
+     * @return RedirectResponse
      */
-    public function sbot(ConversionEventService $conversionEventService)
+    public function sbot()
     {
         $user = auth()->user();
         $userData = [];
@@ -28,23 +24,18 @@ class DownloadsController extends Controller
             $userData['em'] = $user->Email;
             $userData['fn'] = $user->StrUserID;
         }
-        $customData = [
+        DownloadEventJob::dispatch($userData, [
             'event_source_url' => request()->fullUrl(),
             'referrer_url' => request()->headers->get('referer') ?? '',
             'source' => 'sbot'
-        ];
-
-        $conversionEventService->trackDownload($userData, $customData);
-
+        ])->onQueue('pixel-event');
         return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
     }
 
     /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     * @throws ConnectionException
+     * @return RedirectResponse
      */
-    public function client(ConversionEventService $conversionEventService)
+    public function client()
     {
         $user = auth()->user();
         $userData = [];
@@ -52,14 +43,11 @@ class DownloadsController extends Controller
             $userData['em'] = $user->Email;
             $userData['fn'] = $user->StrUserID;
         }
-        $customData = [
+        DownloadEventJob::dispatch($userData, [
             'event_source_url' => request()->fullUrl(),
             'referrer_url' => request()->headers->get('referer') ?? '',
             'source' => 'client'
-        ];
-
-        $conversionEventService->trackDownload($userData, $customData);
-
+        ])->onQueue('pixel-event');
         return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
     }
 }

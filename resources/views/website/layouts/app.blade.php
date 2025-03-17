@@ -35,6 +35,17 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DDLY8K3BF"></script>
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+                var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+            ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+            ttq.load('CVA5UKJC77U13TBVQQP0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head') {{-- For page-specific head content --}}
 
@@ -59,10 +70,12 @@
 <body class="bg-midnight-dark text-sand-light overflow-x-hidden">
 <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50  pointer-events-none z-10"></div>
 
-
-
-
 @include('website.partials.header')
+
+
+<!-- Add the notifications component at the top level -->
+@include('website.partials.notifications')
+
 
 <main>
     @yield('content')

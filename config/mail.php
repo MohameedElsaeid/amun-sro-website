@@ -45,7 +45,15 @@ return [
             'port' => env('MAIL_PORT', 2525),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'encryption' => env('MAIL_ENCRYPTION'),
             'timeout' => null,
+            'stream' => [
+                'ssl' => [
+                    'allow_self_signed' => true,
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                ],
+            ],
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
@@ -53,13 +61,13 @@ return [
             'transport' => 'ses',
         ],
 
-        'postmark' => [
+        'postmark' => array(
             'transport' => 'postmark',
             // 'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
             // 'client' => [
             //     'timeout' => 5,
             // ],
-        ],
+        ),
 
         'resend' => [
             'transport' => 'resend',

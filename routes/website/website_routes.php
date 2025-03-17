@@ -47,6 +47,7 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('faq');
     Route::get('/bug-report', [BugReportController::class, 'index'])->name('bug-report');
     Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+    Route::post('/contact-us', [ContactUsController::class, 'submit'])->name('contact-us.submit');
     Route::get('/terms', [TermsController::class, 'index'])->name('terms');
     Route::get('/careers', [CareersController::class, 'index'])->name('careers');
     Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
@@ -60,6 +61,5 @@ Route::group(['as' => 'website.'], function () {
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
-    Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter');
-
+    Route::post('news-letter', [NewsLetterController::class, 'subscribe'])->name('newsLetter.subscribe');
 });

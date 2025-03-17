@@ -17,7 +17,7 @@
                 <tr>
                     <td style="position: relative; text-align: center; padding: 0; color: #ffffff;">
                         <!-- Cover Image -->
-                        <img src="{{ asset('icons/cover.webp') }}"
+                        <img src="{{ $message->embed(public_path('icons/cover.webp')) }}"
                              alt="Amun Sro Server Cover"
                              style="width: 100%; display: block;">
                     </td>
@@ -65,27 +65,32 @@
                             <p style="font-size: 15px; color: #333333; margin: 0 0 10px;">Join Our Community</p>
                             <a href="https://bit.ly/4bEmY9b" target="_blank"
                                style="text-decoration: none; margin: 0 8px;">
-                                <img src="{{ asset('icons/social-media/Discord.png') }}" alt="Discord"
+                                <img src="{{ $message->embed(public_path('icons/social-media/Discord.png') )}}"
+                                     alt="Discord"
                                      style="width: 24px; height: 24px; vertical-align: middle;">
                             </a>
                             <a href="https://bit.ly/4ivLonE" target="_blank"
                                style="text-decoration: none; margin: 0 8px;">
-                                <img src="{{ asset('icons/social-media/Twitch.png') }}" alt="Twitch"
+                                <img src="{{ $message->embed(public_path('icons/social-media/Twitch.png')) }}"
+                                     alt="Twitch"
                                      style="width: 24px; height: 24px; vertical-align: middle;">
                             </a>
                             <a href="https://bit.ly/3XFE2G7" target="_blank"
                                style="text-decoration: none; margin: 0 8px;">
-                                <img src="{{ asset('icons/social-media/YouTube.png') }}" alt="YouTube"
+                                <img src="{{ $message->embed(public_path('icons/social-media/YouTube.png')) }}"
+                                     alt="YouTube"
                                      style="width: 24px; height: 24px; vertical-align: middle;">
                             </a>
                             <a href="https://bit.ly/3DrvwUp" target="_blank"
                                style="text-decoration: none; margin: 0 8px;">
-                                <img src="{{ asset('icons/social-media/Instagram.png') }}" alt="Instagram"
+                                <img src="{{ $message->embed(public_path('icons/social-media/Instagram.png')) }}"
+                                     alt="Instagram"
                                      style="width: 24px; height: 24px; vertical-align: middle;">
                             </a>
                             <a href="https://bit.ly/4kAwwWY" target="_blank"
                                style="text-decoration: none; margin: 0 8px;">
-                                <img src="{{ asset('icons/social-media/Facebook.png') }}" alt="Facebook"
+                                <img src="{{ $message->embed(public_path('icons/social-media/Facebook.png'))}}"
+                                     alt="Facebook"
                                      style="width: 24px; height: 24px; vertical-align: middle;">
                             </a>
                         </div>

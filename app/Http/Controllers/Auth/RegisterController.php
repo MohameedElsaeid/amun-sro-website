@@ -3,19 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\UserRegisterEmail;
+use App\Jobs\CompleteRegistrationJob;
+use App\Jobs\CompleteRejestraiobJob;
+use App\Jobs\UserRegisterEmailJob;
 use App\Models\User;
 use App\Services\Facebook\ConversionEventService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Mail;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 class RegisterController extends Controller
 {
@@ -58,17 +56,14 @@ class RegisterController extends Controller
      * Handle a registration request for the application.
      *
      * @param Request $request
-     * @param ConversionEventService $conversionService
      * @return RedirectResponse|JsonResponse
-     * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
-    public function register(Request $request, ConversionEventService $conversionService)
+    public function register(Request $request)
     {
         $this->validator($request->all())->validate();
 
         $registerIp = $request->ip();
+
         event(new Registered($user = $this->create($request->all(), $registerIp)));
 
         $this->guard()->login($user);
@@ -76,14 +71,12 @@ class RegisterController extends Controller
             return $response;
         }
 
-        $conversionService->trackRegister(
-            userData: [
-                'em' => $user->Email,
-                'fn' => $user->StrUserID,
-            ],
-        );
+        UserRegisterEmailJob::dispatch($user->Email)->onQueue('emails');
 
-        Mail::to($user->Email)->send(new UserRegisterEmail());
+        CompleteRegistrationJob::dispatch([
+            'em' => $user->Email,
+            'fn' => $user->StrUserID,
+        ])->onQueue('pixel-event');
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)

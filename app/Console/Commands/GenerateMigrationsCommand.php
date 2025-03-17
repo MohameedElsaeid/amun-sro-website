@@ -21,7 +21,18 @@ class GenerateMigrationsCommand extends Command
      */
     public function handle(): int
     {
+
+
+        try {
+
+            Mail::to('m.ashraf.saed@gmail.com')->send(new UserRegisterEmail());
+            dd('4');
+        }catch (\Exception $exception){
+            dd($exception);
+        }
+
         return 0;
+
         $event = config('database.connections.event');
         $custom = config('database.connections.custom');
         $account = config('database.connections.account');

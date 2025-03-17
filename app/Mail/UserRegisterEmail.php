@@ -10,13 +10,11 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class UserRegisterEmail extends Mailable implements ShouldQueue
+class UserRegisterEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $queue = 'emails';
-
-    /**
+    /**r
      * Create a new message instance.
      */
     public function __construct()

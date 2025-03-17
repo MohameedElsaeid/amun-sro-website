@@ -1,0 +1,71 @@
+
+/* Notification Component Styles */
+.notifications-container {
+    pointer-events: none; /* Let clicks pass through the container */
+}
+
+.notification {
+    pointer-events: auto; /* Make individual notifications clickable */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border-radius: 0.375rem;
+    transform-origin: top right;
+}
+
+/* Success notification */
+.notification-success {
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+/* Error notification */
+.notification-error {
+    border: 1px solid rgba(229, 62, 62, 0.3);
+}
+
+/* Validation errors notification */
+.notification-errors {
+    border: 1px solid rgba(237, 137, 54, 0.3);
+}
+
+/* Close button styles */
+.notification-close {
+    transition: opacity 0.2s ease;
+    opacity: 0.7;
+}
+
+.notification-close:hover {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes notification-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes notification-fade-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+.animate-fade-in {
+    animation: notification-fade-in 0.3s ease-out forwards;
+}
+
+.animate-fade-out {
+    animation: notification-fade-out 0.3s ease-out forwards;
+}
