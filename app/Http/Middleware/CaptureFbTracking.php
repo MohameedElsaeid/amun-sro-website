@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Exception;
 use GeoIp2\Database\Reader;
 use Illuminate\Http\Request;
 use Log;
@@ -28,6 +29,7 @@ class CaptureFbTracking
         $reader = new Reader(storage_path('geoip/GeoLite2-City.mmdb'));
         $tracking = session()->get('fb_tracking', []);
         $ip = $request->ip();
+
         if ($fbclid = $request->query('fbclid')) {
             $tracking['fbclid'] = $fbclid;
             if ($request->hasCookie('_fbc')) {
@@ -47,27 +49,26 @@ class CaptureFbTracking
             $tracking['fbp'] = $request->cookie('_fbp');
         }
 
-        $tracking['client_ip_address'] = $request->ip();
+        $tracking['client_ip_address'] = $ip;
         $tracking['client_user_agent'] = $request->header('User-Agent');
-
 
         try {
             $record = $reader->city($ip);
             $tracking['ct'] = $record->city->name;
             $tracking['country'] = $record->country->isoCode;
-            if (!is_null($record->postal->code)){
+            if (!is_null($record->postal->code)) {
                 $tracking['zp'] = $record->postal->code;
             }
-            $tracking['st'] =  $record->mostSpecificSubdivision->name;
-            Log::channel('header')->info($tracking);
-            session()->put('fb_tracking', $tracking);
-        } catch (\Exception $e) {
-            session()->put('fb_tracking', $tracking);
+            $tracking['st'] = $record->mostSpecificSubdivision->name;
+        } catch (Exception $e) {
         }
 
+        $allQueryParams = $request->query();
+        ksort($allQueryParams);
+        $tracking['query'] = $allQueryParams;
 
-
-
+        Log::channel('header')->info($tracking);
+        session()->put('fb_tracking', $tracking);
         return $next($request);
     }
 
@@ -78,9 +79,7 @@ class CaptureFbTracking
      */
     protected function formatFbc($fbclid): string
     {
-        // Use the current time in milliseconds.
         $creationTime = round(microtime(true) * 1000);
-        // Assuming a subdomain index of 1 for your domain.
         return "fb.1.{$creationTime}.{$fbclid}";
     }
 }
