@@ -125,9 +125,7 @@ class UsersTableSeeder extends Seeder
 
         // Build the final JSON structure.
         $phbotJson = [
-            "Accounts" => [
-                "Category" => $accounts
-            ],
+            "Accounts" => $accounts,
             "Options" => $globalOptions
         ];
 

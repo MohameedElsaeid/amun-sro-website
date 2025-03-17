@@ -12,6 +12,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
@@ -58,7 +60,8 @@ class LoginController extends Controller
      *
      * @param Request $request
      * @return JsonResponse|RedirectResponse|Response
-     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function login(Request $request)
     {
@@ -75,10 +78,10 @@ class LoginController extends Controller
                 $request->session()->put('auth.password_confirmed_at', time());
             }
 
-            LoginEventJob::dispatch([
+            LoginEventJob::dispatch(getTrackingData([
                 'em' => $request->user()->Email,
                 'fn' => $request->user()->StrUserID,
-            ])->onQueue('pixel-event');
+            ]))->onQueue('pixel-event');
 
             $this->awardLoginPoints($request->user());
 

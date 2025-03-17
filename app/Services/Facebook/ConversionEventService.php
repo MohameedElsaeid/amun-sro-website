@@ -60,19 +60,14 @@ class ConversionEventService
      * @param array $customData
      * @param string|null $testEventCode
      * @return array The complete payload for the event.
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     protected function buildEventPayload(string $eventName, array $userData = [], array $customData = [], ?string $testEventCode = null): array
     {
-        $trackingData = $this->getTrackingData();
-        $mergedUserData = array_merge($trackingData, $userData);
-
         $payload = [
             'event_name' => $eventName,
             'event_time' => time(),
             'action_source' => 'website',
-            'user_data' => $mergedUserData,
+            'user_data' => $userData,
             'custom_data' => $customData,
         ];
 

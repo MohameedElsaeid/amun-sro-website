@@ -13,7 +13,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class RegisterController extends Controller
 {
@@ -57,6 +58,8 @@ class RegisterController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse|JsonResponse
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function register(Request $request)
     {
@@ -72,12 +75,12 @@ class RegisterController extends Controller
             return $response;
         }
 
-        UserRegisterEmailJob::dispatch($user->Email)->onQueue('emails');
+//        UserRegisterEmailJob::dispatch($user->Email)->onQueue('emails');
 
-        CompleteRegistrationJob::dispatch([
+        CompleteRegistrationJob::dispatch(getTrackingData([
             'em' => $user->Email,
             'fn' => $user->StrUserID,
-        ])->onQueue('pixel-event');
+        ]))->onQueue('pixel-event');
 
         $this->awardRegistrationPoints($user);
 

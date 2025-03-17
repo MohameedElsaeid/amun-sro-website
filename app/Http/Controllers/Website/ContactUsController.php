@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Jobs\ContactUsEventJob;
 use App\Models\ContactUs;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class ContactUsController extends Controller
 {
@@ -14,6 +17,12 @@ class ContactUsController extends Controller
         return view('website.pages.contactus');
     }
 
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
     public function submit(Request $request)
     {
         $request->validate(
@@ -39,17 +48,19 @@ class ContactUsController extends Controller
         ]
         );
 
-        ContactUs::create(array_merge($request->all(), ['JID' => $request->user()?->JID]));
+        ContactUs::query()->create(array_merge($request->all(), ['JID' => $request->user()?->JID]));
+
         ContactUsEventJob::dispatch(
-            [
+            getTrackingData([
                 'fn' => $request->get('name'),
                 'em' => $request->get('email'),
-            ],
+            ]),
             [
                 'subject' => $request->get('subject'),
                 'message' => $request->get('message'),
             ]
         )->onQueue('pixel-event');
+
         return redirect()->back()->with('success', 'Your message has been sent. we will get back to you as soon as possible.');
     }
 }
