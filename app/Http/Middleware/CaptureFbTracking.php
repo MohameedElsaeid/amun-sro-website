@@ -3,8 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use GeoIp2\Database\Reader;
 use Illuminate\Http\Request;
 use Log;
+use MaxMind\Db\Reader\InvalidDatabaseException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,11 +21,31 @@ class CaptureFbTracking
      * @return Response
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
+     * @throws InvalidDatabaseException
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $reader = new Reader(storage_path('app/geoip/GeoLite2-City.mmdb'));
+        $ip = $request->ip();
+        try {
+            $record = $reader->city($ip);
+            $request->attributes->set('geo', [
+                'country' => $record->country->isoCode,
+                'city'    => $record->city->name,
+                'latitude'=> $record->location->latitude,
+                'longitude'=> $record->location->longitude,
+            ]);
+            Log::channel('header')->info('Request Headers:', [
+                'country' => $record->country->isoCode,
+                'city'    => $record->city->name,
+                'latitude'=> $record->location->latitude,
+                'longitude'=> $record->location->longitude,
+            ]);
+        } catch (\Exception $e) {
+            // Handle exception or set defaults
+            $request->attributes->set('geo', null);
+        }
 
-        Log::channel('header')->info('Request Headers:', $request->headers->all());
 
         // Retrieve existing tracking data from session or start fresh.
         $tracking = session()->get('fb_tracking', []);
