@@ -26,4 +26,5 @@ class ShopItemStockQuantity extends Model
         'ConstStockQuantity' => 'integer',
         'StockQuantity' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

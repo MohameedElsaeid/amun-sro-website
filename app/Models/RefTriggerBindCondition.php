@@ -26,4 +26,5 @@ class RefTriggerBindCondition extends Model
         'TriggerID' => 'integer',
         'TriggerConditionID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

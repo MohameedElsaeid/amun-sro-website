@@ -17,4 +17,5 @@ class PayOp extends Model
         'Amount' => 'integer',
         'Status' => 'boolean',
     ];
+    protected $connection = 'sqlsrv';
 }

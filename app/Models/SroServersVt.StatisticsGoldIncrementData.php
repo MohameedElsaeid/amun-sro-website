@@ -22,4 +22,5 @@ class SroServersVt.StatisticsGoldIncrementData extends Model
                 'Income' => 'integer',
                 'HunterProfit' => 'integer',
             ];
-        }
+            protected $connection = 'log';
+}

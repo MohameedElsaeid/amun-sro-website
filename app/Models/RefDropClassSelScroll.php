@@ -26,4 +26,5 @@ class RefDropClassSelScroll extends Model
         'ProbGroup2' => 'float',
         'ProbGroup3' => 'float',
     ];
+    protected $connection = 'proxy';
 }

@@ -33,4 +33,5 @@ class SiegeFortressObject extends Model
         'Direction' => 'float',
         'OwnerLevel' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

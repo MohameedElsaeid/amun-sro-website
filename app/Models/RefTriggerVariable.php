@@ -26,4 +26,5 @@ class RefTriggerVariable extends Model
         'BindTriggerID' => 'integer',
         'Value' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

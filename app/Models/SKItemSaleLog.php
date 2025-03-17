@@ -24,4 +24,5 @@ class SKItemSaleLog extends Model
         'IP' => 'integer',
         'RegDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

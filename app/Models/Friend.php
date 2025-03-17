@@ -25,4 +25,5 @@ class Friend extends Model
         'FriendCharID' => 'integer',
         'RefObjID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

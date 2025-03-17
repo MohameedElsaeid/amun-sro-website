@@ -26,4 +26,5 @@ class LogSchedule extends Model
         'ScheduleIdx' => 'integer',
         'OccureTime' => 'datetime',
     ];
+    protected $connection = 'log';
 }

@@ -16,4 +16,5 @@ class SrcmsEpin extends Model
         'code' => 'integer',
         'silkAmount' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

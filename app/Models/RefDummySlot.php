@@ -23,4 +23,5 @@ class RefDummySlot extends Model
     protected $casts = [
         'cnt' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

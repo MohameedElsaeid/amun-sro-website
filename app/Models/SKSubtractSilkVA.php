@@ -28,4 +28,5 @@ class SKSubtractSilkVA extends Model
         'MngID' => 'integer',
         'RegDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -27,4 +27,5 @@ class ClientConfig extends Model
         'SlotType' => 'integer',
         'Data' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

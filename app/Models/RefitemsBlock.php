@@ -23,4 +23,5 @@ class RefitemsBlock extends Model
     protected $casts = [
         'RefItemID' => 'integer',
     ];
+    protected $connection = 'log';
 }

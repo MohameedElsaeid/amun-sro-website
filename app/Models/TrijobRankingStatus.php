@@ -17,4 +17,5 @@ class TrijobRankingStatus extends Model
         'Status' => 'integer',
         'UpdateTime' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -20,4 +20,5 @@ class SKSilkChangeBYWeb extends Model
         'silk_type' => 'integer',
         'reason' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

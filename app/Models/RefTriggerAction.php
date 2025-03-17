@@ -26,4 +26,5 @@ class RefTriggerAction extends Model
         'RefTriggerCommonID' => 'integer',
         'Delay' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

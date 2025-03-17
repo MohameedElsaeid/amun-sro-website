@@ -16,4 +16,5 @@ class SKResetSkillLog extends Model
         'JID' => 'integer',
         'TimeReset' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

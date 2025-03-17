@@ -25,4 +25,5 @@ class RegionName extends Model
         'RegionID' => 'integer',
         'TownNumber' => 'integer',
     ];
+    protected $connection = 'log';
 }

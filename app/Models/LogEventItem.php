@@ -32,4 +32,5 @@ class LogEventItem extends Model
         'Serial64' => 'integer',
         'Gold' => 'integer',
     ];
+    protected $connection = 'log';
 }

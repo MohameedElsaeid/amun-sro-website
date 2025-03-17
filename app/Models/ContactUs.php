@@ -13,4 +13,5 @@ class ContactUs extends Model
         'message',
         'JID',
     ];
+    protected $connection = 'sqlsrv';
 }

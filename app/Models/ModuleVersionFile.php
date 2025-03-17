@@ -25,4 +25,5 @@ class ModuleVersionFile extends Model
         'timeModified' => 'datetime',
         'nValid' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

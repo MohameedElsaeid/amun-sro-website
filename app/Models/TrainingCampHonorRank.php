@@ -25,4 +25,5 @@ class TrainingCampHonorRank extends Model
         'CampID' => 'integer',
         'Rank' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

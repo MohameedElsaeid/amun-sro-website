@@ -14,4 +14,5 @@ class SrcmsDownload extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -23,4 +23,5 @@ class BlockedWhisperer extends Model
     protected $casts = [
         'OwnerID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

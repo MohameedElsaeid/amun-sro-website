@@ -25,4 +25,5 @@ class TabRefRankingTraderContribution extends Model
         'JobLevel' => 'integer',
         'Contribution' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -28,4 +28,5 @@ class RefSiegeBlessBuff extends Model
         'NeedGold' => 'integer',
         'NeedGP' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

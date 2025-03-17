@@ -134,6 +134,19 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'local-exceptions' => [
+            'driver' => 'single',
+            'level' => env('LOG_LEVEL', 'debug'),
+            'path' => storage_path('logs/local-exceptions.log'),
+            'replace_placeholders' => true,
+        ],
+        'header' => [
+            'driver' => 'single',
+            'level' => env('LOG_LEVEL', 'debug'),
+            'path' => storage_path('logs/header.log'),
+            'replace_placeholders' => true,
+        ],
+
     ],
 
 ];

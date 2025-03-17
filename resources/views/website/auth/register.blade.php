@@ -58,7 +58,6 @@
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
-
                         <div>
                             <label for="password_confirmation" class="block text-sand-light font-medium mb-2">Confirm
                                 Password</label>
@@ -67,7 +66,12 @@
                                    placeholder="Confirm your password" required>
                         </div>
                     </div>
-
+                    @if(isset($referrerId))
+                        <input type="hidden" name="code" value="{{ $referrerId }}">
+                        <div class="bg-gold/10 text-gold border border-gold/20 p-3 rounded-md mb-6 text-center">
+                            <p>You are registering with an invitation link.</p>
+                        </div>
+                    @endif
                     <div class="border-t border-gold-dark/20 pt-6">
                         <div class="flex items-start">
                             <input type="checkbox" id="terms" name="terms"

@@ -19,4 +19,5 @@ class Donation extends Model
         'Total' => 'integer',
         'Date' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

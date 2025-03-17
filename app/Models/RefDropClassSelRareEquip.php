@@ -59,4 +59,5 @@ class RefDropClassSelRareEquip extends Model
         'ProbGroup35' => 'float',
         'ProbGroup36' => 'float',
     ];
+    protected $connection = 'proxy';
 }

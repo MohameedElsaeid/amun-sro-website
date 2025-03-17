@@ -39,4 +39,5 @@ class SKPKUpdateLog extends Model
         '_Skill_Before' => 'integer',
         '_Skill_After' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

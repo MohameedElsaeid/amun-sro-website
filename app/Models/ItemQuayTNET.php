@@ -22,4 +22,5 @@ class ItemQuayTNET extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'proxy';
 }

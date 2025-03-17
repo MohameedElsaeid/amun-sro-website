@@ -17,4 +17,5 @@ class SrcmsRefferal extends Model
         'invitedUserJID' => 'integer',
         'bonusAdded' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

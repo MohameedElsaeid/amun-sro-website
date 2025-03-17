@@ -28,4 +28,5 @@ class KillHistory extends Model
         'isJob' => 'integer',
         'timestamp' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

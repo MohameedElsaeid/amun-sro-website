@@ -33,4 +33,5 @@ class Guild extends Model
         'MercenaryAttr' => 'integer',
         'ItemPoints' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

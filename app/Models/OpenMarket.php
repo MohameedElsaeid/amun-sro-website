@@ -37,4 +37,5 @@ class OpenMarket extends Model
         'UseCash' => 'integer',
         'Serial64' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

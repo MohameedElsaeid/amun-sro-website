@@ -28,4 +28,5 @@ class SiegeFortressItemForge extends Model
         'StartDate' => 'datetime',
         'FinishDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

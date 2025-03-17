@@ -25,4 +25,5 @@ class RefQuest extends Model
         'ID' => 'integer',
         'Level' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

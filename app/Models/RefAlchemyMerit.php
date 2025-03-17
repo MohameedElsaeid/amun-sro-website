@@ -32,4 +32,5 @@ class RefAlchemyMerit extends Model
         'FreeParam2' => 'integer',
         'FreeParam3' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

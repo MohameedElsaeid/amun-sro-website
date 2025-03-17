@@ -37,8 +37,6 @@ class ConversionEventService
      * @param string|null $testEventCode Optional test event code.
      * @return Response
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function trackLogin(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -60,19 +58,14 @@ class ConversionEventService
      * @param array $customData
      * @param string|null $testEventCode
      * @return array The complete payload for the event.
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     protected function buildEventPayload(string $eventName, array $userData = [], array $customData = [], ?string $testEventCode = null): array
     {
-        $trackingData = $this->getTrackingData();
-        $mergedUserData = array_merge($trackingData, $userData);
-
         $payload = [
             'event_name' => $eventName,
             'event_time' => time(),
             'action_source' => 'website',
-            'user_data' => $mergedUserData,
+            'user_data' => $userData,
             'custom_data' => $customData,
         ];
 
@@ -111,8 +104,6 @@ class ConversionEventService
      * @param string|null $testEventCode
      * @return Response
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function trackRegister(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -143,8 +134,7 @@ class ConversionEventService
     }
 
     /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
+     * @return Response
      * @throws ConnectionException
      */
     public function sendPageView(): Response
@@ -176,8 +166,6 @@ class ConversionEventService
      * @param string|null $testEventCode
      * @return Response
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function trackViewContent(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -242,8 +230,6 @@ class ConversionEventService
      * @param string|null $testEventCode
      * @return Response
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function trackInitPayment(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {

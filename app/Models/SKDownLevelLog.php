@@ -16,4 +16,5 @@ class SKDownLevelLog extends Model
         'JID' => 'integer',
         'timedown' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

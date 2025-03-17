@@ -18,4 +18,5 @@ class SKSilk extends Model
         'silk_gift' => 'integer',
         'silk_point' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

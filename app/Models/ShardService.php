@@ -16,4 +16,5 @@ class ShardService extends Model
         'ShardID' => 'integer',
         'ServiceType' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

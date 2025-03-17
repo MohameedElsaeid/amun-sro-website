@@ -15,4 +15,5 @@ class Cache extends Model
     protected $casts = [
         'expiration' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

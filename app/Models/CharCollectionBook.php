@@ -26,4 +26,5 @@ class CharCollectionBook extends Model
         'SlotIndex' => 'integer',
         'RegDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

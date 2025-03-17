@@ -28,4 +28,5 @@ class TrainingCamp extends Model
         'EvaluationPoint' => 'integer',
         'LatestEvaluationDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

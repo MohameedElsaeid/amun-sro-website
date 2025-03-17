@@ -23,4 +23,5 @@ class LatestItemSerial extends Model
     protected $casts = [
         'LatestItemSerial' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

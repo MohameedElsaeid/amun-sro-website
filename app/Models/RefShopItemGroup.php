@@ -24,4 +24,5 @@ class RefShopItemGroup extends Model
         'Service' => 'integer',
         'GroupID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

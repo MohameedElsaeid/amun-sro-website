@@ -17,4 +17,5 @@ class SKGamebangIp extends Model
         'ip' => 'integer',
         'capacity' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

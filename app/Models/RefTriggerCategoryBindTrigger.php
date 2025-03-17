@@ -26,4 +26,5 @@ class RefTriggerCategoryBindTrigger extends Model
         'TriggerCategoryID' => 'integer',
         'TriggerID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

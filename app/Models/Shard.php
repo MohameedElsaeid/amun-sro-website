@@ -21,4 +21,5 @@ class Shard extends Model
         'nStatus' => 'integer',
         'nCurrentUserRatio' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -26,4 +26,5 @@ class RefGachaNpcMap extends Model
         'SelectionGachaID' => 'integer',
         'WasteGachaID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

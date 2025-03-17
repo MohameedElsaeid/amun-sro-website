@@ -25,4 +25,5 @@ class ServerEventReward extends Model
         'RewardID' => 'integer',
         'RemainRewardTime' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

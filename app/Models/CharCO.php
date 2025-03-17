@@ -34,4 +34,5 @@ class CharCO extends Model
         'PetOption' => 'integer',
         'RentEndTime' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

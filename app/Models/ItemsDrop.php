@@ -24,4 +24,5 @@ class ItemsDrop extends Model
         'CharID' => 'integer',
         'Serial64' => 'integer',
     ];
+    protected $connection = 'log';
 }

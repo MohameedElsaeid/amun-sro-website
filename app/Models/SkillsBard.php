@@ -25,4 +25,5 @@ class SkillsBard extends Model
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
+    protected $connection = 'log';
 }

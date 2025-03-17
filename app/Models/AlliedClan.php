@@ -34,4 +34,5 @@ class AlliedClan extends Model
         'LastCrestRev' => 'integer',
         'CurCrestRev' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

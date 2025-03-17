@@ -25,4 +25,5 @@ class SiegeFortressStoneState extends Model
         'GuildID' => 'integer',
         'AccumulateDamage' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

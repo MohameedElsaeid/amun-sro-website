@@ -28,4 +28,5 @@ class RefFmnTidGroupMap extends Model
         'TypeID3' => 'integer',
         'TypeID4' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

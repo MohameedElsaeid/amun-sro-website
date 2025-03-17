@@ -7,12 +7,16 @@ use App\Jobs\SubscribeNewsLetterEventJob;
 use App\Models\NewsLetter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class NewsLetterController extends Controller
 {
     /**
      * @param Request $request
      * @return RedirectResponse
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function subscribe(Request $request)
     {
@@ -33,7 +37,7 @@ class NewsLetterController extends Controller
         } else {
             $userData['em'] = $request->get('email');
         }
-        SubscribeNewsLetterEventJob::dispatch($userData)->onQueue('pixel-event');
+        SubscribeNewsLetterEventJob::dispatch(getTrackingData($userData))->onQueue('pixel-event');
         return redirect()->back()->with('success', 'You have successfully subscribed to our newsletter.');
 
     }

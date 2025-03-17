@@ -29,4 +29,5 @@ class LogSEEKNDESTROYITEMFAST extends Model
         'Variance' => 'integer',
         'Data' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

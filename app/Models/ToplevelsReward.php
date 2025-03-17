@@ -36,4 +36,5 @@ class ToplevelsReward extends Model
         'RewardMaleCount' => 'integer',
         'RewardFemaleCount' => 'integer',
     ];
+    protected $connection = 'log';
 }

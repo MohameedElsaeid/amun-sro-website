@@ -25,4 +25,5 @@ class SkillsClaric extends Model
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
+    protected $connection = 'log';
 }

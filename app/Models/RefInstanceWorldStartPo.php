@@ -28,4 +28,5 @@ class RefInstanceWorldStartPo extends Model
         'PosZ' => 'integer',
         'Param' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

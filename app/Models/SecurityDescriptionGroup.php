@@ -15,4 +15,5 @@ class SecurityDescriptionGroup extends Model
     protected $casts = [
         'nID' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

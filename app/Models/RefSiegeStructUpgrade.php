@@ -23,4 +23,5 @@ class RefSiegeStructUpgrade extends Model
     protected $casts = [
         'Service' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

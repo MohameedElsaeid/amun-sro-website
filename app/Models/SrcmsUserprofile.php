@@ -17,4 +17,5 @@ class SrcmsUserprofile extends Model
         'gender' => 'integer',
         'ispublic' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

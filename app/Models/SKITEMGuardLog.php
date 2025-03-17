@@ -20,4 +20,5 @@ class SKITEMGuardLog extends Model
         'optionLvl' => 'integer',
         'LastGuard' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

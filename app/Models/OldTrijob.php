@@ -29,4 +29,5 @@ class OldTrijob extends Model
         'JobLvl_Hunter' => 'integer',
         'Hunter_Exp' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

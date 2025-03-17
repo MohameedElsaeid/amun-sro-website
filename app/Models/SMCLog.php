@@ -16,4 +16,5 @@ class SMCLog extends Model
         'Catagory' => 'integer',
         'dLogDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

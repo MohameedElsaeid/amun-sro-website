@@ -35,4 +35,5 @@ class RefDropClassSelAlchemyTablet extends Model
         'ProbGroup11' => 'float',
         'ProbGroup12' => 'float',
     ];
+    protected $connection = 'proxy';
 }

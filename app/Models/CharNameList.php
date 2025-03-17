@@ -23,4 +23,5 @@ class CharNameList extends Model
     protected $casts = [
         'CharID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

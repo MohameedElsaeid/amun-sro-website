@@ -23,4 +23,5 @@ class RefFmnTidGroup extends Model
     protected $casts = [
         'TidGroupID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

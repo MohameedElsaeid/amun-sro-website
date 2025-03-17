@@ -23,4 +23,5 @@ class TrainingCampHonorRankUpdateDate extends Model
     protected $casts = [
         'LastUpdateDate' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

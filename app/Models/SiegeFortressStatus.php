@@ -18,4 +18,5 @@ class SiegeFortressStatus extends Model
         'TaxRatio' => 'integer',
         'OwnerUpdateDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

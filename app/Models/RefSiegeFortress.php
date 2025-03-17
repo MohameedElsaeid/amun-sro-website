@@ -30,4 +30,5 @@ class RefSiegeFortress extends Model
         'TaxTargets' => 'integer',
         'RequestFee' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

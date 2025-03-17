@@ -15,4 +15,5 @@ class CacheLock extends Model
     protected $casts = [
         'expiration' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

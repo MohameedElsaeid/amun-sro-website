@@ -25,4 +25,5 @@ class RefSiegeFortressGuard extends Model
         'FortressID' => 'integer',
         'GuardRefObjID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

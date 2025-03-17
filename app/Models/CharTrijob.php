@@ -28,4 +28,5 @@ class CharTrijob extends Model
         'Contribution' => 'integer',
         'Reward' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

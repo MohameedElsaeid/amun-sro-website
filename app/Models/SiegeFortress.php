@@ -31,4 +31,5 @@ class SiegeFortress extends Model
         'CreatedDungeonCount' => 'integer',
         'IntroductionModificationPermission' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

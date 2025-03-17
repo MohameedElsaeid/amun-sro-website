@@ -40,4 +40,5 @@ class RefRegion extends Model
         'LinkedRegion_9' => 'integer',
         'LinkedRegion_10' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

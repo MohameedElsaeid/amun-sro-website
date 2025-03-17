@@ -64,4 +64,5 @@ class TabRefTactic extends Model
         'dwChampionTacticsID' => 'integer',
         'AdditionOptionFlag' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -17,4 +17,5 @@ class VoteLink extends Model
         'Time' => 'integer',
         'Reward' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

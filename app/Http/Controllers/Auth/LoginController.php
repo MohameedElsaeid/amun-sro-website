@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Jobs\LoginEventJob;
 use App\Models\User;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
@@ -57,19 +60,16 @@ class LoginController extends Controller
      *
      * @param Request $request
      * @return JsonResponse|RedirectResponse|Response
-     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function login(Request $request)
     {
         $this->validateLogin($request);
 
-        // If the class is using the ThrottlesLogins trait, we can automatically throttle
-        // the login attempts for this application. We'll key this by the username and
-        // the IP address of the client making these requests into this application.
         if (method_exists($this, 'hasTooManyLoginAttempts') &&
             $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-
             return $this->sendLockoutResponse($request);
         }
 
@@ -78,19 +78,23 @@ class LoginController extends Controller
                 $request->session()->put('auth.password_confirmed_at', time());
             }
 
-            LoginEventJob::dispatch([
+            LoginEventJob::dispatch(getTrackingData([
                 'em' => $request->user()->Email,
                 'fn' => $request->user()->StrUserID,
-            ])->onQueue('pixel-event');
+            ]))->onQueue('pixel-event');
+
+            $this->awardLoginPoints($request->user());
+
+            // Determine the redirect URL
+            $redirectTo = $request->input('redirect_to');
+            if ($redirectTo && filter_var($redirectTo, FILTER_VALIDATE_URL)) {
+                return redirect($redirectTo);
+            }
 
             return $this->sendLoginResponse($request);
         }
 
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
-
         return $this->sendFailedLoginResponse($request);
     }
 
@@ -142,6 +146,33 @@ class LoginController extends Controller
         }
 
         return false;
+    }
+
+    /**
+     * Award login points to the user
+     *
+     * @param User $user
+     * @return void
+     */
+    protected function awardLoginPoints(User $user)
+    {
+        $lastLoginDate = $user->last_login_bonus ? Carbon::parse($user->last_login_bonus)->toDateString() : null;
+        $today = Carbon::today()->toDateString();
+
+        // Only award points once per day
+        if ($lastLoginDate !== $today) {
+            // Award 10 points for login
+            $user->points = ($user->points ?? 0) + 10;
+            $user->last_login_bonus = $today;
+            $user->save();
+
+            // Set a flash message for the notification
+            session()->flash('gamification_event', [
+                'action' => 'login',
+                'points' => 10,
+                'total_points' => $user->points
+            ]);
+        }
     }
 
 }

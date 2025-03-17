@@ -25,4 +25,5 @@ class RowKill extends Model
         'KillerID' => 'integer',
         'Kills' => 'integer',
     ];
+    protected $connection = 'log';
 }

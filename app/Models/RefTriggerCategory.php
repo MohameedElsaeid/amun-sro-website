@@ -25,4 +25,5 @@ class RefTriggerCategory extends Model
         'ID' => 'integer',
         'IndexNumber' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

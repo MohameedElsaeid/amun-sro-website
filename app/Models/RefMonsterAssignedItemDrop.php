@@ -47,4 +47,5 @@ class RefMonsterAssignedItemDrop extends Model
         'RefMagicOptionID9' => 'integer',
         'CustomValue9' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

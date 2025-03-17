@@ -15,4 +15,5 @@ class WriteOutResetPlayTime extends Model
     protected $casts = [
         'LatestResetTime' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

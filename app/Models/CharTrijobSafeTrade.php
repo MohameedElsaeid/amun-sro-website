@@ -26,4 +26,5 @@ class CharTrijobSafeTrade extends Model
         'Status' => 'integer',
         'LastSafeTrade' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

@@ -24,4 +24,5 @@ class RefShardContentConfig extends Model
         'Service' => 'integer',
         'ID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

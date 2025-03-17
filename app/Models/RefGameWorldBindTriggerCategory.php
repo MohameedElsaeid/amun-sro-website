@@ -26,4 +26,5 @@ class RefGameWorldBindTriggerCategory extends Model
         'GameWorldID' => 'integer',
         'TriggerCategoryID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

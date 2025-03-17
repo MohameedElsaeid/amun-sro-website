@@ -24,4 +24,5 @@ class RefSkillByItemOptLevel extends Model
         'Link' => 'integer',
         'RefSkillID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -26,4 +26,5 @@ class TBUserBak extends Model
         'AccPlayTime' => 'integer',
         'LatestUpdateTime_ToPlayTime' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

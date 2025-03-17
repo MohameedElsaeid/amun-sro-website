@@ -23,4 +23,5 @@ class IncomingGlobalChat extends Model
     protected $casts = [
         'ID' => 'integer',
     ];
+    protected $connection = 'event';
 }

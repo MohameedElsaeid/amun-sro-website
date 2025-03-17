@@ -25,4 +25,5 @@ class InventoryForLinkedStorage extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

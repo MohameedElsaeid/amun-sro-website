@@ -26,4 +26,5 @@ class RefDropGold extends Model
         'GoldMin' => 'integer',
         'GoldMax' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

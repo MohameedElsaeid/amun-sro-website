@@ -24,4 +24,5 @@ class RefMappingShopGroup extends Model
         'Service' => 'integer',
         'Country' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

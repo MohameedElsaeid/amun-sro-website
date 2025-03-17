@@ -22,4 +22,5 @@ class BlackNameList extends Model
 
     protected $casts = [
     ];
+    protected $connection = 'proxy';
 }

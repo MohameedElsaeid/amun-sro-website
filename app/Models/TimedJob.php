@@ -37,4 +37,5 @@ class TimedJob extends Model
         'Serial64' => 'integer',
         'JID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

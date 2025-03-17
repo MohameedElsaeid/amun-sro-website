@@ -26,4 +26,5 @@ class KillDeathCounter extends Model
         'kills' => 'integer',
         'timestamp' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

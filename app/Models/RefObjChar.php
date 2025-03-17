@@ -103,4 +103,5 @@ class RefObjChar extends Model
         'Except_10' => 'integer',
         'Link' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

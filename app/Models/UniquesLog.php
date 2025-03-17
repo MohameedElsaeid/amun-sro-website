@@ -24,4 +24,5 @@ class UniquesLog extends Model
         'ID' => 'integer',
         'Type' => 'integer',
     ];
+    protected $connection = 'event';
 }

@@ -25,4 +25,5 @@ class UniqueKillList extends Model
         'CharID' => 'integer',
         'time' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

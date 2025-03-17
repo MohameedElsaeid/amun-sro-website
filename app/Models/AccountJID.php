@@ -24,4 +24,5 @@ class AccountJID extends Model
         'JID' => 'integer',
         'Gold' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Jobs\DownloadEventJob;
 use Illuminate\Http\RedirectResponse;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class DownloadsController extends Controller
 {
@@ -34,6 +36,8 @@ class DownloadsController extends Controller
 
     /**
      * @return RedirectResponse
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function client()
     {
@@ -43,11 +47,11 @@ class DownloadsController extends Controller
             $userData['em'] = $user->Email;
             $userData['fn'] = $user->StrUserID;
         }
-        DownloadEventJob::dispatch($userData, [
+        DownloadEventJob::dispatch(getTrackingData($userData), [
             'event_source_url' => request()->fullUrl(),
             'referrer_url' => request()->headers->get('referer') ?? '',
             'source' => 'client'
         ])->onQueue('pixel-event');
-        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunSroSBotP.rar');
+        return redirect()->away('https://amun-sro.lon1.cdn.digitaloceanspaces.com/downloads/AmunClient.rar');
     }
 }

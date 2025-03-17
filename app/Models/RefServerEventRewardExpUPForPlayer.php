@@ -26,4 +26,5 @@ class RefServerEventRewardExpUPForPlayer extends Model
         'ApplyExpRatio' => 'integer',
         'ApplySExpRatio' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

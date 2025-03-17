@@ -24,4 +24,5 @@ class UniqueRanking extends Model
         'CharID' => 'integer',
         'points' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

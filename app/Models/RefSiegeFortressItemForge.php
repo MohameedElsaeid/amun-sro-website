@@ -28,4 +28,5 @@ class RefSiegeFortressItemForge extends Model
         'ReqGP' => 'integer',
         'ForgeTimeMin' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

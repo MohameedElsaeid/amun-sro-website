@@ -24,4 +24,5 @@ class ILegendTool extends Model
         'ID' => 'integer',
         'Service' => 'integer',
     ];
+    protected $connection = 'event';
 }

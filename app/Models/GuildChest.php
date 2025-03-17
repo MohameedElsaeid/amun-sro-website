@@ -25,4 +25,5 @@ class GuildChest extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

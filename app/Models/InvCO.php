@@ -25,4 +25,5 @@ class InvCO extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

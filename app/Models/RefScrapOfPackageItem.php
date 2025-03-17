@@ -45,4 +45,5 @@ class RefScrapOfPackageItem extends Model
         'Param4' => 'integer',
         'Index' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

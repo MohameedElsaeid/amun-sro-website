@@ -24,4 +24,5 @@ class RefObjStruct extends Model
         'ID' => 'integer',
         'Dummy_Data' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

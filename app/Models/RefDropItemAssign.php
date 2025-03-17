@@ -28,4 +28,5 @@ class RefDropItemAssign extends Model
         'AssignedGroup' => 'integer',
         'DropCount' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

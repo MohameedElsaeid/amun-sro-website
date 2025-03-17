@@ -15,4 +15,5 @@ class SrZorGlobalChatLog extends Model
     protected $casts = [
         'time' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -27,4 +27,5 @@ class RefServerEventRewardSpawnMonster extends Model
         'PosY' => 'float',
         'PosZ' => 'float',
     ];
+    protected $connection = 'proxy';
 }

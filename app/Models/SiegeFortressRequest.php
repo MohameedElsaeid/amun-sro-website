@@ -25,4 +25,5 @@ class SiegeFortressRequest extends Model
         'GuildID' => 'integer',
         'RequestType' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

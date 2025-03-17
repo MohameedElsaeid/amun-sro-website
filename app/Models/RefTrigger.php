@@ -27,4 +27,5 @@ class RefTrigger extends Model
         'IsRepeat' => 'integer',
         'IndexNumber' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

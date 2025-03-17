@@ -23,4 +23,5 @@ class EventWinner extends Model
     protected $casts = [
         'Wins' => 'integer',
     ];
+    protected $connection = 'event';
 }

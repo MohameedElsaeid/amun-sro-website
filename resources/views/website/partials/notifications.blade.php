@@ -64,36 +64,36 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all close buttons
-    const closeButtons = document.querySelectorAll('.notification-close');
-    
-    // Add click event to each close button
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const notification = this.closest('.notification');
-            
-            // Add fade out animation class
-            notification.classList.add('animate-fade-out');
-            
-            // Remove the notification after animation completes
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        });
-    });
-    
-    // Auto-dismiss notifications after 5 seconds
-    const notifications = document.querySelectorAll('.notification');
-    notifications.forEach(notification => {
-        setTimeout(() => {
-            if (notification) {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all close buttons
+        const closeButtons = document.querySelectorAll('.notification-close');
+
+        // Add click event to each close button
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const notification = this.closest('.notification');
+
+                // Add fade out animation class
                 notification.classList.add('animate-fade-out');
+
+                // Remove the notification after animation completes
                 setTimeout(() => {
                     notification.remove();
                 }, 300);
-            }
-        }, 5000);
+            });
+        });
+
+        // Auto-dismiss notifications after 5 seconds
+        const notifications = document.querySelectorAll('.notification');
+        notifications.forEach(notification => {
+            setTimeout(() => {
+                if (notification) {
+                    notification.classList.add('animate-fade-out');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }
+            }, 5000);
+        });
     });
-});
 </script>

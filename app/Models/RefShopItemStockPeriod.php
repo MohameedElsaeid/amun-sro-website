@@ -28,4 +28,5 @@ class RefShopItemStockPeriod extends Model
         'StockExpireDate' => 'datetime',
         'PeriodDevice' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

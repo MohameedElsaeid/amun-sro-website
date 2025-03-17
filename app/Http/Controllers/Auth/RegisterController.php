@@ -4,16 +4,17 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
-use App\Jobs\CompleteRejestraiobJob;
-use App\Jobs\UserRegisterEmailJob;
+use App\Models\Referral;
 use App\Models\User;
-use App\Services\Facebook\ConversionEventService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
+use Str;
 
 class RegisterController extends Controller
 {
@@ -47,9 +48,10 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm(ConversionEventService $conversionService)
+    public function showRegistrationForm(Request $request)
     {
-        return view('website.auth.register');
+        $referrerId = $request->query('code');
+        return view('website.auth.register', compact('referrerId'));
     }
 
     /**
@@ -57,6 +59,8 @@ class RegisterController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse|JsonResponse
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function register(Request $request)
     {
@@ -67,16 +71,41 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all(), $registerIp)));
 
         $this->guard()->login($user);
+
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
+        $referrerId = null;
+        if ($request->has('code')) {
+            $referrer = User::where('referral_code', $request->get('code'))->first();
+            if ($referrer) {
+                $referrerId = $referrer->JID;
+            }
+        }
 
-        UserRegisterEmailJob::dispatch($user->Email)->onQueue('emails');
+        $user->referred_by = $referrerId;
+        $user->save();
 
-        CompleteRegistrationJob::dispatch([
+        if ($referrerId) {
+            Referral::create([
+                'referrer_id' => $referrerId,
+                'referee_id' => $user->JID,
+            ]);
+        }
+
+        CompleteRegistrationJob::dispatch(getTrackingData([
             'em' => $user->Email,
             'fn' => $user->StrUserID,
-        ])->onQueue('pixel-event');
+        ]))->onQueue('pixel-event');
+
+        $this->awardRegistrationPoints($user);
+
+        $redirectTo = $request->input('redirect_to');
+        if ($redirectTo && filter_var($redirectTo, FILTER_VALIDATE_URL)) {
+            return $request->wantsJson()
+                ? new JsonResponse([], 201)
+                : redirect($redirectTo);
+        }
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
@@ -92,9 +121,25 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255', 'unique:TB_User,StrUserID'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:TB_User,Email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'username' => [
+                'required',
+                'string',
+                'max:255',
+                'unique:TB_User,StrUserID',
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:TB_User,Email',
+            ],
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+            ],
         ], [
             'username.required' => 'Please enter your username.',
             'username.string' => 'Your username must be a valid string.',
@@ -128,6 +173,39 @@ class RegisterController extends Controller
             'Email' => $data['email'],
             'password' => md5($data['password']),
             'reg_ip' => $registerIp,
+            'referral_code' => $this->createReferralCode()
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    private function createReferralCode()
+    {
+        $code = strtoupper(Str::random(10));
+        if (!User::where('referral_code', $code)->exists()) {
+            return $code;
+        }
+        return $this->createReferralCode();
+    }
+
+    /**
+     * Award registration points to the user
+     *
+     * @param User $user
+     * @return void
+     */
+    protected function awardRegistrationPoints(User $user)
+    {
+        // Award 50 points for registration
+        $user->points = 50;
+        $user->save();
+
+        // Set a flash message for the notification
+        session()->flash('gamification_event', [
+            'action' => 'register',
+            'points' => 50,
+            'total_points' => $user->points
         ]);
     }
 }

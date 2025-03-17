@@ -25,4 +25,5 @@ class RefShopTabGroup extends Model
         'Country' => 'integer',
         'ID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

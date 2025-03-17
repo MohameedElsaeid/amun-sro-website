@@ -24,4 +24,5 @@ class RefCharGen extends Model
         'Service' => 'integer',
         'RefObjID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

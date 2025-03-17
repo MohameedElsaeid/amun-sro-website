@@ -28,4 +28,5 @@ class RefSiegeDungeon extends Model
         'EntryGold' => 'integer',
         'EntryGP' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

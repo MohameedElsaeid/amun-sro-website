@@ -20,4 +20,5 @@ class LoginLogoutStatistic extends Model
         'dLogout' => 'datetime',
         'byReserved' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

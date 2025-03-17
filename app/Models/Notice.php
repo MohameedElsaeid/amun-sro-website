@@ -17,4 +17,5 @@ class Notice extends Model
         'ContentID' => 'integer',
         'EditDate' => 'datetime',
     ];
+    protected $connection = 'sqlsrv';
 }

@@ -26,4 +26,5 @@ class HonorRowKill extends Model
         'Kesilen' => 'integer',
         'DescType' => 'integer',
     ];
+    protected $connection = 'log';
 }

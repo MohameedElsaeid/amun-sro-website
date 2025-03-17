@@ -32,4 +32,5 @@ class ItemQuotation extends Model
         'FluctuateAmount' => 'integer',
         'CurStockAmount' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

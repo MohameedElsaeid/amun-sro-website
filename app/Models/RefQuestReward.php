@@ -43,4 +43,5 @@ class RefQuestReward extends Model
         'Param2' => 'integer',
         'Param3' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -27,4 +27,5 @@ class LogCashItem extends Model
         'EventTime' => 'datetime',
         'Serial64' => 'integer',
     ];
+    protected $connection = 'log';
 }

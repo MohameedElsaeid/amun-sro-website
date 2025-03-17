@@ -15,4 +15,5 @@ class Migration extends Model
     protected $casts = [
         'batch' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

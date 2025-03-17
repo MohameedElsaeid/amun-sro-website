@@ -25,4 +25,5 @@ class CharSkillMastery extends Model
         'MasteryID' => 'integer',
         'Level' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

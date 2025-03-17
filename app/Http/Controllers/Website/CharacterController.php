@@ -14,10 +14,10 @@ class CharacterController extends Controller
      *
      * @return void
      */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * @return Factory|View|Application|\Illuminate\View\View|object

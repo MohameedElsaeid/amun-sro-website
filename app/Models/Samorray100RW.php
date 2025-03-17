@@ -25,4 +25,5 @@ class Samorray100RW extends Model
         'CurLevel' => 'integer',
         'charjid' => 'integer',
     ];
+    protected $connection = 'log';
 }

@@ -24,4 +24,5 @@ class SystemService extends Model
         'ID' => 'integer',
         'Service' => 'integer',
     ];
+    protected $connection = 'event';
 }

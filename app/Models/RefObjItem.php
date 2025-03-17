@@ -107,4 +107,5 @@ class RefObjItem extends Model
         'ChildItemCount' => 'integer',
         'Link' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

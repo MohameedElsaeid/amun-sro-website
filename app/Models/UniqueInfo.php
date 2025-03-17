@@ -23,4 +23,5 @@ class UniqueInfo extends Model
     protected $casts = [
         'Point' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

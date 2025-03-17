@@ -35,4 +35,5 @@ class RefServerEvent extends Model
         'GiveRewardDelayTime' => 'integer',
         'ActivateClientUI' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

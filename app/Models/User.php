@@ -6,6 +6,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Eloquent;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
@@ -21,11 +23,14 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $connection = 'sqlsrv';
     protected $table = 'dbo.TB_User';
-    protected $primaryKey ='JID';
+    protected $primaryKey = 'JID';
     protected $fillable = [
+        'last_login_bonus',
         'JID',
         'StrUserID',
         'password',
+        'referral_code',
+        'referred_by',
         'Status',
         'GMrank',
         'Name',
@@ -51,6 +56,7 @@ class User extends Authenticatable
     protected $casts = [
         'UserJID' => 'integer',
         'CharID' => 'integer',
+        'last_login_bonus' => 'date',
     ];
 
     /**
@@ -62,5 +68,15 @@ class User extends Authenticatable
     public function getAuthPassword(): string
     {
         return $this->password;
+    }
+
+    public function referrals(): \Illuminate\Database\Eloquent\Builder|User|HasMany
+    {
+        return $this->hasMany(User::class, 'referred_by');
+    }
+
+    public function referrer(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'referred_by');
     }
 }

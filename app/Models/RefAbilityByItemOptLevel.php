@@ -26,4 +26,5 @@ class RefAbilityByItemOptLevel extends Model
         'RefItemID' => 'integer',
         'ItemOptLevel' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

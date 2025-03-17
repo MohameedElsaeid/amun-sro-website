@@ -26,4 +26,5 @@ class SkillBaoHiemTNET extends Model
         'Regdate' => 'datetime',
         'LastModified' => 'datetime',
     ];
+    protected $connection = 'proxy';
 }

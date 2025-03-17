@@ -23,4 +23,5 @@ class IncomingPrivateChat extends Model
     protected $casts = [
         'ID' => 'integer',
     ];
+    protected $connection = 'event';
 }

@@ -25,4 +25,5 @@ class SkillsWizard extends Model
         'SkillID' => 'integer',
         'MasteryID' => 'integer',
     ];
+    protected $connection = 'log';
 }

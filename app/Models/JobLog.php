@@ -28,4 +28,5 @@ class JobLog extends Model
         'TotalAmount' => 'integer',
         'index' => 'integer',
     ];
+    protected $connection = 'log';
 }

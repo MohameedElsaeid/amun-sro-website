@@ -36,4 +36,5 @@ class RefSetItemGroup extends Model
         '10SetMOptGroupID' => 'integer',
         '11SetMOptGroupID' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

@@ -24,4 +24,5 @@ class Top300 extends Model
         'CharID' => 'integer',
         'Data2' => 'integer',
     ];
+    protected $connection = 'log';
 }

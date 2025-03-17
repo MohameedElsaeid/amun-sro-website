@@ -31,4 +31,5 @@ class RefMonsterAssignedItemRndDrop extends Model
         'param1' => 'integer',
         'param2' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

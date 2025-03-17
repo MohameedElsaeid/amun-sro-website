@@ -25,4 +25,5 @@ class RefDropOptLvlSel extends Model
         'Prob' => 'float',
         'ReqOnlineTime' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

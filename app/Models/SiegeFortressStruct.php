@@ -29,4 +29,5 @@ class SiegeFortressStruct extends Model
         'MakeDate' => 'datetime',
         'State' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

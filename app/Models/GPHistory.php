@@ -27,4 +27,5 @@ class GPHistory extends Model
         'UsedGP' => 'integer',
         'Reason' => 'integer',
     ];
+    protected $connection = 'proxy';
 }

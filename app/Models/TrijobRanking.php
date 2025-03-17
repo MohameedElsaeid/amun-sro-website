@@ -23,4 +23,5 @@ class TrijobRanking extends Model
         'RankDelta' => 'integer',
         'Country' => 'integer',
     ];
+    protected $connection = 'sqlsrv';
 }

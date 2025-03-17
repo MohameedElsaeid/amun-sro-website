@@ -25,4 +25,5 @@ class FlagWorldEventParticipant extends Model
         'LatestAttempt' => 'datetime',
         'Count' => 'integer',
     ];
+    protected $connection = 'proxy';
 }
