@@ -62,6 +62,7 @@ return Application::configure(basePath: dirname(__DIR__))
         });
         if (app()->environment('local')) {
             $exceptions->renderable(function (Throwable $exception, Request $request) {
+               dd($exception);
                 Log::channel('local-exceptions')->error($exception);
             });
         }

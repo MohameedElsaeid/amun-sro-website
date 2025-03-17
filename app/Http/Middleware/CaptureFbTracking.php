@@ -70,20 +70,33 @@ class CaptureFbTracking
 
         // Capture and store all incoming query parameters
         $allQueryParams = $request->query();
+        $attributionData = [];
+        if (isset($allQueryParams['campaign_id'])) {
+            $attributionData['campaign'] = $allQueryParams['campaign_id'];
+        }
+
+        if (isset($allQueryParams['ad_set_id'])) {
+            $attributionData['ad_set'] = $allQueryParams['ad_set_id'];
+        }
+
+        if (isset($allQueryParams['ad_id'])) {
+            $attributionData['ad'] = $allQueryParams['ad_id'];
+        }
+
+        $tracking['attribution'] = $attributionData;
+
         ksort($allQueryParams);
         $tracking['query'] = $allQueryParams;
 
         // Capture UTM parameters separately
-        $utmParams = [];
-        foreach ($allQueryParams as $key => $value) {
-            if (strpos($key, 'utm_') === 0) {
-                $utmParams[$key] = $value;
-            }
-        }
+        $utmParams = array_filter($allQueryParams, function ($key) {
+            return str_starts_with($key, 'utm_');
+        }, ARRAY_FILTER_USE_KEY);
         ksort($utmParams);
         $tracking['utm'] = $utmParams;
 
         Log::channel('header')->info($tracking);
+//        dd($tracking);
         session()->put('fb_tracking', $tracking);
 
         return $next($request);
