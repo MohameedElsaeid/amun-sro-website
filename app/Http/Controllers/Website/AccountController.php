@@ -50,16 +50,18 @@ class AccountController extends Controller
     public function viewProfile(Request $request)
     {
         $data = $request->user();
+       
         return view('website.pages.profile', compact('data'));
     }
     public function update(UpdateUserRequest $request)
     {
         $user = Auth::user();
-    
+     
         $user->update([
             'StrUserID' => trim($request->StrUserID),
             'phone' => trim($request->phone),
             'sex' => trim($request->gender),
+            'country_code' => trim($request->country_code),
         ]);
     
         return redirect()->back()->with('success', 'Account updated successfully.');
