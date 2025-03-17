@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Log;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,6 +22,9 @@ class CaptureFbTracking
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+        Log::channel('header')->info('Request Headers:', $request->headers->all());
+
         // Retrieve existing tracking data from session or start fresh.
         $tracking = session()->get('fb_tracking', []);
 
