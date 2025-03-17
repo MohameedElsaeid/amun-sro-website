@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Exception;
 use GeoIp2\Database\Reader;
 use Illuminate\Http\Request;
 use Log;
@@ -30,6 +29,7 @@ class CaptureFbTracking
         $tracking = session()->get('fb_tracking', []);
         $ip = $request->ip();
 
+        // Handle Facebook-specific parameters
         if ($fbclid = $request->query('fbclid')) {
             $tracking['fbclid'] = $fbclid;
             if ($request->hasCookie('_fbc')) {
@@ -49,9 +49,11 @@ class CaptureFbTracking
             $tracking['fbp'] = $request->cookie('_fbp');
         }
 
+        // Store client info
         $tracking['client_ip_address'] = $ip;
         $tracking['client_user_agent'] = $request->header('User-Agent');
 
+        // Attempt to capture geo-information
         try {
             $record = $reader->city($ip);
             $tracking['ct'] = $record->city->name;
@@ -60,15 +62,30 @@ class CaptureFbTracking
                 $tracking['zp'] = $record->postal->code;
             }
             $tracking['st'] = $record->mostSpecificSubdivision->name;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
+            // Log the exception for debugging purposes
+            Log::error('GeoIP lookup failed: ' . $e->getMessage());
+            // In case of any issues, keep the tracking info intact
         }
 
+        // Capture and store all incoming query parameters
         $allQueryParams = $request->query();
         ksort($allQueryParams);
         $tracking['query'] = $allQueryParams;
 
+        // Capture UTM parameters separately
+        $utmParams = [];
+        foreach ($allQueryParams as $key => $value) {
+            if (strpos($key, 'utm_') === 0) {
+                $utmParams[$key] = $value;
+            }
+        }
+        ksort($utmParams);
+        $tracking['utm'] = $utmParams;
+
         Log::channel('header')->info($tracking);
         session()->put('fb_tracking', $tracking);
+
         return $next($request);
     }
 
