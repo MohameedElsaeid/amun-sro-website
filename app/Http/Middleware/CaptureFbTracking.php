@@ -55,7 +55,9 @@ class CaptureFbTracking
             $record = $reader->city($ip);
             $tracking['ct'] = $record->city->name;
             $tracking['country'] = $record->country->isoCode;
-            $tracking['zp'] = $record->postal->code;
+            if (!is_null($record->postal->code)){
+                $tracking['zp'] = $record->postal->code;
+            }
             $tracking['st'] =  $record->mostSpecificSubdivision->name;
             Log::channel('header')->info($tracking);
             session()->put('fb_tracking', $tracking);
