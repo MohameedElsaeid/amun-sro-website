@@ -13,6 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -103,9 +104,25 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255', 'unique:TB_User,StrUserID'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:TB_User,Email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'username' => [
+                'required',
+                'string',
+                'max:255',
+                'unique:TB_User,StrUserID',
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:TB_User,Email',
+            ],
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+            ],
         ], [
             'username.required' => 'Please enter your username.',
             'username.string' => 'Your username must be a valid string.',
