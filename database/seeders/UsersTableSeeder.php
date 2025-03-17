@@ -133,6 +133,6 @@ class UsersTableSeeder extends Seeder
 
         // Save the JSON file in the storage folder.
         $jsonData = json_encode($phbotJson, JSON_PRETTY_PRINT);
-        file_put_contents(storage_path('phbot.json'), $jsonData);
+        file_put_contents(database_path('phbot.json'), $jsonData);
     }
 }
