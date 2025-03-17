@@ -16,6 +16,7 @@ use Illuminate\Http\Middleware\TrustHosts;
 use Illuminate\Http\Middleware\TrustProxies;
 use Illuminate\Http\Middleware\ValidatePostSize;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -36,6 +37,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'auth' => Authenticate::class,
             'admin' => AdminMiddleware::class,
+            'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         ]);
         $middleware->use([
             InvokeDeferredCallbacks::class,
@@ -47,7 +49,6 @@ return Application::configure(basePath: dirname(__DIR__))
             TrimStrings::class,
             ConvertEmptyStringsToNull::class,
 //             CacheResponse::class,
-            // ThrottleRequests::class,
             CaptureFbTracking::class,
             HandleInertiaRequests::class,
         ]);
