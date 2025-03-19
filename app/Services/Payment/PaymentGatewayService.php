@@ -2,6 +2,7 @@
 
 namespace App\Services\Payment;
 
+use App\Models\User;
 use InvalidArgumentException;
 
 class PaymentGatewayService
@@ -16,17 +17,16 @@ class PaymentGatewayService
      *
      * @throws InvalidArgumentException if the payment method is not supported.
      */
-    public function generatePaymentUrl(array $paymentMethod, string $transactionId): array
+    public function generatePaymentUrl(User $user, array $paymentMethod, array $package, string $currency): array
     {
+        dd($paymentMethod, $package, $currency);
         $method = $paymentMethod['method'];
         $iframeUrl = '';
         $modalTitle = '';
 
         switch ($method) {
             case 'Credit/Debit Card':
-                $iframeUrl = "https://checkout.stripe.com/pay/" . $transactionId;
-                $modalTitle = "Complete Card Payment";
-                break;
+                return (new Stripe($user,))->pay();
             case 'PayPal':
                 $iframeUrl = "https://www.paypal.com/checkoutnow?token=" . $transactionId;
                 $modalTitle = "Complete PayPal Payment";

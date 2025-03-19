@@ -7,6 +7,7 @@ import { initDonationForm } from './modules/donation/index.js';
 import { initCharacterModule } from './modules/character.js';
 import { initNotifications } from './modules/notifications.js';
 import {awardPoints, initGamification} from "./modules/gamification.js";
+import {initCountdown} from "./modules/countdown.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
@@ -15,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initCharacterModule();
     initNotifications();
     initGamification();
+    initCountdown();
 
-    // Check for gamification event from session flash
     if (window.gamificationEvent) {
         const event = window.gamificationEvent;
         awardPoints(

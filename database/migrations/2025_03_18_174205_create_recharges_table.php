@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('TB_User', function (Blueprint $table) {
-            $table->timestamp('email_verified_at')->nullable();
-            $table->unsignedInteger('user_jid')->index();
-            $table->rememberToken();
+        Schema::create('recharges', function (Blueprint $table) {
+            $table->id();
+
+            $table->timestamps();
         });
     }
 
@@ -23,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('TB_User', function (Blueprint $table) {
-
-        });
+        Schema::dropIfExists('recharges');
     }
 };

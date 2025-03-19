@@ -67,6 +67,7 @@
                                             {{ $package['label'] }}
                                         </div>
                                     @endif
+
                                     <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">
                                         +{{ $package['bonus'] }} BONUS
                                     </div>

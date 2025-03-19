@@ -136,7 +136,7 @@ function submitDonationForm(state) {
                 const externalPaymentLink = document.getElementById('external-payment-link');
 
                 if (paymentIframe && paymentModal && paymentModalTitle) {
-                    paymentIframe.src = data.iframe_url;
+                    // paymentIframe.src = data.iframe_url;
                     paymentModalTitle.textContent = data.modal_title || 'Complete Payment';
 
                     if (transactionId) {
