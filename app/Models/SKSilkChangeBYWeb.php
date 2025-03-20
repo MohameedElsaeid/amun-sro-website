@@ -21,4 +21,14 @@ class SKSilkChangeBYWeb extends Model
         'reason' => 'integer',
     ];
     protected $connection = 'sqlsrv';
+    /**
+     * Type 0 is regular Silk
+     */
+    public const SILKTYPESILK = 0;
+
+
+    /**
+     * Reason 1 is for Gift (Activity Points)
+     */
+    public const SILKREASONGIFT = 1;
 }

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('TB_User', function (Blueprint $table) {
-            $table->timestamp('email_verified_at')->nullable();
-            $table->unsignedInteger('user_jid')->index();
-            $table->rememberToken();
+        Schema::create('stripe_users', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedInteger('jid_id')->index();
+            $table->char('stripe_user_id')->index();
+            $table->timestamps();
         });
     }
 
@@ -23,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('TB_User', function (Blueprint $table) {
-
-        });
+        Schema::dropIfExists('stripe_users');
     }
 };

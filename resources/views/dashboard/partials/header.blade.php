@@ -33,9 +33,9 @@
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-                    <form id="logout-form" action="{{ route('website.logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+{{--                    <form id="logout-form" action="{{ route('website.logout') }}" method="POST" class="d-none">--}}
+{{--                        @csrf--}}
+{{--                    </form>--}}
                 @endauth
             </div>
             <div class="md:hidden">
@@ -78,12 +78,14 @@
                             {{ __('Logout') }}
                         </a>
                     </div>
-                    <form id="logout-form" action="{{ route('website.logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+
                 @endauth
             </div>
         </div>
     </div>
 
+
+    <form id="logout-form" action="{{ route('website.logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
 </header>

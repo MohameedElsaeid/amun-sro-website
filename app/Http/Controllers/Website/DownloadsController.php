@@ -12,7 +12,9 @@ class DownloadsController extends Controller
 {
     public function index()
     {
-        return view('website.pages.downloads');
+        $targetDate = now()->addDays(10)->format('Y-m-d H:i:s');
+
+        return view('website.pages.countdown', compact('targetDate'));
     }
 
     /**

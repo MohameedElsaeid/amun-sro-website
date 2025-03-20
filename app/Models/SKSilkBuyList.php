@@ -29,4 +29,18 @@ class SKSilkBuyList extends Model
         'RegDate' => 'datetime',
     ];
     protected $connection = 'sqlsrv';
+    /**
+     * Type 3 is for Web
+     */
+    public const SILKTYPEWEB = 3;
+
+    /**
+     * Type 2 is for Web
+     */
+    public const SILKTYPEVOUCHER = 2;
+
+    /**
+     * Reason 3 is for Web
+     */
+    public const SILKREASONWEB = 3;
 }
