@@ -68,14 +68,12 @@
                                 meet one of the following goals:</p>
 
                             <ul class="list-disc list-inside text-sand-light pl-4 space-y-1">
-                                <li>Buy Premium Plus</li>
                                 <li>Buy 1k Silk</li>
-                                <li>Reach Level 100</li>
                             </ul>
 
                             <h3 class="text-xl font-bold text-sand-light pt-2">Reward System</h3>
                             <p class="text-sand-light">For every 16 users who meet the required conditions, you will
-                                earn a cash reward of $100.</p>
+                                earn a cash reward of 100 Real Silk.</p>
                         </div>
 
                         <!-- Stats Cards -->
@@ -90,7 +88,7 @@
                             </div>
                             <div class="bg-midnight border border-gold/20 rounded-lg p-4 text-center">
                                 <p class="text-sand-light/70 text-sm">Total Earnings</p>
-                                <p class="text-3xl font-bold text-gold">$ {{ $rewardStats['totalEarnings'] }}</p>
+                                <p class="text-3xl font-bold text-gold">Silk {{ $rewardStats['totalEarnings'] }}</p>
                             </div>
                         </div>
 
