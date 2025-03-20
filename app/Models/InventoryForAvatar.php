@@ -26,4 +26,18 @@ class InventoryForAvatar extends Model
         'ItemID' => 'integer',
     ];
     protected $connection = 'proxy';
+
+
+    public function getChar()
+    {
+        return $this->hasMany(Char::class, 'CharID');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getItem()
+    {
+        return $this->belongsTo(Items::class, 'ItemID', 'ID64');
+    }
 }

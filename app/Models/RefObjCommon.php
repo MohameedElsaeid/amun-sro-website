@@ -71,4 +71,9 @@ class RefObjCommon extends Model
         'Link' => 'integer',
     ];
     protected $connection = 'proxy';
+
+    public function getRefObjItem()
+    {
+        return $this->hasOne(RefObjItem::class, 'ID', 'Link');
+    }
 }

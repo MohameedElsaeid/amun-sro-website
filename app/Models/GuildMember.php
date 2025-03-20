@@ -35,4 +35,11 @@ class GuildMember extends Model
         'SiegeAuthority' => 'integer',
     ];
     protected $connection = 'proxy';
+
+
+    public function getCharItemPoints()
+    {
+        return $this->belongsTo(Char::class, 'CharID', 'CharID')
+            ->select('CharID', 'ItemPoints');
+    }
 }

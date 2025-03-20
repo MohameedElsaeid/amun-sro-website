@@ -34,4 +34,9 @@ class Guild extends Model
         'ItemPoints' => 'integer',
     ];
     protected $connection = 'proxy';
+
+    public function getGuildMembers()
+    {
+        return $this->hasMany(GuildMember::class, 'GuildID', 'ID');
+    }
 }
