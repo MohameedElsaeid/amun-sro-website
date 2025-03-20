@@ -93,10 +93,9 @@ class CaptureFbTracking
             return str_starts_with($key, 'utm_');
         }, ARRAY_FILTER_USE_KEY);
         ksort($utmParams);
-        $tracking['utm'] = $utmParams;
 
-        Log::channel('header')->info($tracking);
-//        dd($tracking);
+        ;
+        $tracking['utm'] = array_merge($utmParams,['visit_time' => time()]);
         session()->put('fb_tracking', $tracking);
 
         return $next($request);

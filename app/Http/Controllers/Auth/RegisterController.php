@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
 use App\Models\Referral;
+use App\Models\SKSilk;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -86,12 +87,27 @@ class RegisterController extends Controller
         $user->referred_by = $referrerId;
         $user->save();
 
+        $skSilk = SKSilk::query()->where('JID', $user->JID)->first();
+
+        if ($skSilk) {
+            $skSilk->silk_gift = 1000;
+            $skSilk->save();
+        } else {
+            SKSilk::query()->create([
+                'JID' => $user->JID,
+                'silk_own' => 0,
+                'silk_gift' => 1000,
+                'silk_point' => 0
+            ]);
+        }
+
         if ($referrerId) {
             Referral::create([
                 'referrer_id' => $referrerId,
                 'referee_id' => $user->JID,
             ]);
         }
+
 
         CompleteRegistrationJob::dispatch(getTrackingData([
             'em' => $user->Email,
