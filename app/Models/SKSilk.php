@@ -11,6 +11,7 @@ class SKSilk extends Model
     protected $fillable = [
         'JID', 'silk_own', 'silk_gift', 'silk_point'
     ];
+    protected $primaryKey = 'JID';
 
     protected $casts = [
         'JID' => 'integer',

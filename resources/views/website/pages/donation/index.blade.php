@@ -5,7 +5,7 @@
 @section('meta-description', 'Recharge Silk Units to enhance your gameplay on Amun Sro. Choose from various packages and power up your adventure in our Silkroad private server.')
 
 @section('content')
-    <!-- Hero Section with Simplified Message -->
+    <!-- Hero Section -->
     <div class="page-hero relative" style="background-image: url('{{ asset('icons/feat_5.webp') }}');">
         <div class="container mx-auto px-4 text-center relative z-10 py-16">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4 hero-animate">Recharge Silk</h1>
@@ -38,211 +38,111 @@
         </div>
     </div>
 
-    <!-- Main Content - Simplified Package Selection -->
+    <!-- Main Content -->
     <main class="py-10 bg-sand-light relative z-20">
         <div class="container mx-auto px-4">
-            <!-- Currency Selection - Simplified -->
-            <div class="text-center mb-8 bg-white p-4 rounded-lg shadow">
-                <h3 class="text-xl font-bold text-midnight mb-4">Select Currency</h3>
-                <div class="flex justify-center flex-wrap gap-2">
-                    <button type="button" class="currency-option px-4 py-2 rounded-lg bg-midnight-light/10 text-midnight font-bold hover:bg-gold hover:text-midnight-dark transition-colors" data-currency="TL">TL</button>
-                    <button type="button" class="currency-option px-4 py-2 rounded-lg bg-midnight-light/10 text-midnight font-bold hover:bg-gold hover:text-midnight-dark transition-colors" data-currency="EGP">EGP</button>
-                    <button type="button" class="currency-option px-4 py-2 rounded-lg bg-midnight-light/10 text-midnight font-bold hover:bg-gold hover:text-midnight-dark transition-colors" data-currency="USDT">USDT</button>
+            <!-- Currency Selection -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-cinzel font-bold text-midnight mb-6">Select Your Currency</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <a href="{{ route('website.donate.currency', 'USDT') }}" class="bg-white hover:bg-gold-light border border-gold rounded-lg shadow p-6 flex flex-col items-center transition-all hover:scale-105">
+                        <div class="bg-gold rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-midnight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-midnight">US Dollar (USDT)</h3>
+                        <p class="text-sm text-midnight-light mt-2">Stable cryptocurrency pegged to USD</p>
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'TL') }}" class="bg-white hover:bg-gold-light border border-sand rounded-lg shadow p-6 flex flex-col items-center transition-all hover:scale-105">
+                        <div class="bg-midnight-light/10 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-midnight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-midnight">Turkish Lira (TL)</h3>
+                        <p class="text-sm text-midnight-light mt-2">Local Turkish currency</p>
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'EGP') }}" class="bg-white hover:bg-gold-light border border-sand rounded-lg shadow p-6 flex flex-col items-center transition-all hover:scale-105">
+                        <div class="bg-midnight-light/10 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-midnight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-midnight">Egyptian Pound (EGP)</h3>
+                        <p class="text-sm text-midnight-light mt-2">Local Egyptian currency</p>
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'BRL') }}" class="bg-white hover:bg-gold-light border border-sand rounded-lg shadow p-6 flex flex-col items-center transition-all hover:scale-105">
+                        <div class="bg-midnight-light/10 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-midnight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-midnight">Brazilian Real (BRL)</h3>
+                        <p class="text-sm text-midnight-light mt-2">Local Brazilian currency</p>
+                    </a>
                 </div>
             </div>
 
-            <!-- Most Popular Packages - Highlight only a few options -->
-            <div id="silk-packages" class="mb-10">
-                <h2 class="text-3xl font-cinzel font-bold text-midnight text-center mb-6">Popular Packages</h2>
-
-                <form id="donation-form">
-                    @csrf
-                    <!-- Featured Packages - Only show 3 most popular -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        @foreach(array_slice($paymentInformation['packages'], 4, 3) as $index => $package)
-                            <div class="package-card bg-white border border-sand rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105" data-package-id="{{ $index + 4 }}">
-                                <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-4 text-center @if($package['label']) relative overflow-hidden @endif">
-                                    @if($package['label'])
-                                        <div class="package-popular absolute top-0 right-0 bg-midnight text-gold text-xs font-bold px-4 py-1 transform rotate-45 translate-x-6 translate-y-3">
-                                            {{ $package['label'] }}
-                                        </div>
-                                    @endif
-
-                                    <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">
-                                        +{{ $package['bonus'] }} BONUS
-                                    </div>
-                                    <h3 class="silk-amount text-2xl font-cinzel font-bold text-midnight-dark">{{ number_format($package['silk']) }} Silk</h3>
+            <!-- Featured Packages Preview -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-10">
+                <h3 class="text-2xl font-cinzel font-bold text-midnight text-center mb-6">Popular Packages</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    @foreach(array_slice($paymentInformation['packages'], 4, 3) as $package)
+                        <div class="border border-sand rounded-lg overflow-hidden transition-all hover:border-gold">
+                            <div class="bg-gradient-to-r from-gold-dark to-gold p-4 text-center">
+                                <div class="package-bonus inline-block bg-midnight text-gold-dark text-sm font-bold px-3 py-1 rounded-full mb-2">
+                                    +{{ $package['bonus'] }} BONUS
                                 </div>
-                                <div class="package-content p-6">
-                                    <div class="price-list space-y-2 mb-6">
-                                        @foreach($package['prices'] as $currency => $price)
-                                            <div class="price-item flex justify-between" data-currency="{{ $currency }}">
-                                                <span class="text-midnight-light">Price ({{ $currency }}):</span>
-                                                <span class="font-bold text-midnight">{{ number_format($price) }}</span>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    <button type="button" class="select-package w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors">
-                                        Select Package
-                                    </button>
-                                </div>
+                                <h3 class="text-2xl font-cinzel font-bold text-midnight-dark">{{ number_format($package['silk']) }} Silk</h3>
                             </div>
-                        @endforeach
-                    </div>
-
-                    <!-- Show More Packages Toggle Button -->
-                    <div class="text-center mb-8">
-                        <button type="button" id="toggle-all-packages" class="inline-flex items-center px-6 py-3 border border-gold rounded-md shadow-sm text-base font-medium text-midnight bg-gold hover:bg-gold-dark transition-colors">
-                            <span id="toggle-text">Show All Packages</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" id="toggle-icon">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <!-- All Packages (Initially Hidden) -->
-                    <div id="all-packages" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12 hidden">
-                        @foreach($paymentInformation['packages'] as $index => $package)
-                            @if(!in_array($index, [4, 5, 6]))
-                                <div class="package-card bg-white border border-sand rounded-lg overflow-hidden shadow-md" data-package-id="{{ $index }}">
-                                    <div class="package-header bg-gradient-to-r from-gold-dark to-gold p-3 text-center @if($package['label']) relative overflow-hidden @endif">
-                                        @if($package['label'])
-                                            <div class="package-popular absolute top-0 right-0 bg-midnight text-gold text-xs font-bold px-4 py-1 transform rotate-45 translate-x-6 translate-y-3">
-                                                {{ $package['label'] }}
-                                            </div>
-                                        @endif
-                                        <div class="package-bonus inline-block bg-midnight text-gold-dark text-xs font-bold px-2 py-1 rounded-full mb-2">
-                                            +{{ $package['bonus'] }} BONUS
-                                        </div>
-                                        <h3 class="silk-amount text-xl font-cinzel font-bold text-midnight-dark">{{ number_format($package['silk']) }} Silk</h3>
-                                    </div>
-                                    <div class="package-content p-4">
-                                        <div class="price-list space-y-1 mb-4 text-sm">
-                                            @foreach($package['prices'] as $currency => $price)
-                                                <div class="price-item flex justify-between" data-currency="{{ $currency }}">
-                                                    <span class="text-midnight-light">{{ $currency }}:</span>
-                                                    <span class="font-bold text-midnight">{{ number_format($price) }}</span>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                        <button type="button" class="select-package w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors text-sm">
-                                            Select
-                                        </button>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-
-                    <!-- Payment Section - Simplified -->
-                    <div class="payment-section bg-white p-6 rounded-lg shadow-lg border border-gold mb-8 hidden" id="payment-container">
-                        <div class="flex items-center justify-between mb-4 border-b border-sand pb-4">
-                            <h3 class="text-2xl font-cinzel font-bold text-midnight">Complete Your Purchase</h3>
-                            <button type="button" id="change-package" class="text-gold hover:text-gold-dark">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <!-- Order Summary - Compact -->
-                        <div class="order-summary bg-midnight-light/5 p-4 rounded-lg mb-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-midnight font-bold">Selected Package:</span>
-                                <span class="font-bold text-midnight-dark text-lg" id="summary-package">-</span>
-                            </div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-midnight-light">Bonus:</span>
-                                <span class="text-gold-dark font-bold" id="summary-bonus">-</span>
-                            </div>
-                            <div class="border-t border-sand-light my-2 pt-2">
-                                <div class="flex justify-between items-center text-lg">
-                                    <span class="text-midnight font-bold">Total Amount:</span>
-                                    <div>
-                                        <span class="font-bold text-midnight-dark" id="summary-total">-</span>
-                                        <span class="font-bold text-midnight-light ml-1" id="summary-currency">TL</span>
-                                    </div>
+                            <div class="p-4 text-center">
+                                <p class="text-midnight-light mb-4">Select your currency to see pricing and purchase this package</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="{{ route('website.donate.currency', 'USDT') }}" class="px-3 py-1 bg-gold text-midnight-dark text-sm rounded font-bold hover:bg-gold-dark transition-colors">USDT</a>
+                                    <a href="{{ route('website.donate.currency', 'TL') }}" class="px-3 py-1 bg-midnight-light/10 text-midnight text-sm rounded font-bold hover:bg-midnight-light/20 transition-colors">TL</a>
+                                    <a href="{{ route('website.donate.currency', 'EGP') }}" class="px-3 py-1 bg-midnight-light/10 text-midnight text-sm rounded font-bold hover:bg-midnight-light/20 transition-colors">EGP</a>
+                                    <a href="{{ route('website.donate.currency', 'BRL') }}" class="px-3 py-1 bg-midnight-light/10 text-midnight text-sm rounded font-bold hover:bg-midnight-light/20 transition-colors">BRL</a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Payment Methods - Simplified Grid -->
-                        <div class="mb-6">
-                            <h4 class="font-bold text-midnight mb-3">Select Payment Method:</h4>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                @foreach($paymentInformation['paymentMethods'] as $index => $paymentMethod)
-                                    <div class="payment-method bg-white border border-sand hover:bg-gold-light rounded-lg p-3 text-center cursor-pointer hover:border-gold transition-colors" data-method-id="{{ $index }}">
-                                        <img src="{{ $paymentMethod['icon'] }}" alt="{{ $paymentMethod['method'] }}" class="h-8 mx-auto mb-2">
-                                        <span class="payment-name font-bold text-midnight text-sm">{{ $paymentMethod['method'] }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <!-- Submit Button - More Prominent -->
-                        <button type="submit" class="donation-submit-btn w-full bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-4 px-6 rounded-lg transition-colors text-lg opacity-50 cursor-not-allowed flex items-center justify-center" disabled>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            Complete Purchase
-                        </button>
-
-                        <p class="security-note mt-4 text-center text-sm text-midnight-light flex items-center justify-center">
-                            <svg class="secure-icon inline-block h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                            </svg>
-                            Secure payment processing. Your payment details are encrypted and protected.
-                        </p>
-                    </div>
-                </form>
+                    @endforeach
+                </div>
             </div>
+
+            <!-- Simple FAQ -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-10">
+                <h3 class="text-2xl font-cinzel font-bold text-midnight text-center mb-6">Common Questions</h3>
+                <div class="space-y-4">
+                    <div class="border-b border-sand pb-4">
+                        <h4 class="text-lg font-bold text-midnight mb-2">How quickly will I receive my Silk?</h4>
+                        <p class="text-midnight-light">Silk is credited to your account immediately after payment confirmation. You'll be ready to use it within minutes!</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-midnight mb-2">Is it safe to purchase Silk?</h4>
+                        <p class="text-midnight-light">Absolutely! We use industry-standard encryption to protect your payment details. We never store sensitive payment information on our servers.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- CTA at Bottom -->
             <div class="text-center mb-8">
                 <h3 class="text-2xl font-cinzel font-bold text-midnight mb-4">Ready to Power Up Your Gameplay?</h3>
-                <a href="#silk-packages" class="inline-block bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-3 px-8 rounded-lg transition-colors text-lg">
-                    Choose Your Package Now
-                </a>
+                <div class="flex justify-center space-x-4">
+                    <a href="{{ route('website.donate.currency', 'USDT') }}" class="inline-block bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-3 px-6 rounded-lg transition-colors">
+                        Buy with USDT
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'TL') }}" class="inline-block border border-midnight-light text-midnight hover:bg-midnight-light/10 font-bold py-3 px-6 rounded-lg transition-colors">
+                        Buy with TL
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'EGP') }}" class="inline-block border border-midnight-light text-midnight hover:bg-midnight-light/10 font-bold py-3 px-6 rounded-lg transition-colors">
+                        Buy with EGP
+                    </a>
+                    <a href="{{ route('website.donate.currency', 'BRL') }}" class="inline-block border border-midnight-light text-midnight hover:bg-midnight-light/10 font-bold py-3 px-6 rounded-lg transition-colors">
+                        Buy with BRL
+                    </a>
+                </div>
             </div>
         </div>
     </main>
-
-    @include('website.pages.donation.components.payment-modal')
 @endsection
-
-@push('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggle all packages
-            const toggleButton = document.getElementById('toggle-all-packages');
-            const allPackagesContainer = document.getElementById('all-packages');
-            const toggleText = document.getElementById('toggle-text');
-            const toggleIcon = document.getElementById('toggle-icon');
-
-            if (toggleButton && allPackagesContainer) {
-                toggleButton.addEventListener('click', function() {
-                    allPackagesContainer.classList.toggle('hidden');
-                    if (allPackagesContainer.classList.contains('hidden')) {
-                        toggleText.textContent = 'Show All Packages';
-                        toggleIcon.innerHTML = '<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />';
-                    } else {
-                        toggleText.textContent = 'Hide Extra Packages';
-                        toggleIcon.innerHTML = '<path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />';
-                    }
-                });
-            }
-
-            // Change package button functionality
-            const changePackageBtn = document.getElementById('change-package');
-            const paymentContainer = document.getElementById('payment-container');
-
-            if (changePackageBtn && paymentContainer) {
-                changePackageBtn.addEventListener('click', function() {
-                    paymentContainer.classList.add('hidden');
-                    document.querySelectorAll('.package-card').forEach(card => {
-                        card.classList.remove('selected');
-                    });
-                });
-            }
-        });
-    </script>
-@endpush

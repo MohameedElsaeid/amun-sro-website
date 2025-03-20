@@ -21,4 +21,11 @@ class ModuleVersion extends Model
         'nValid' => 'integer',
     ];
     protected $connection = 'sqlsrv';
+    /**
+     * The primary Key for the table
+     *
+     * @var string SerialNo
+     */
+    protected $primaryKey = 'nID';
+
 }

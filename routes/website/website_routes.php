@@ -46,7 +46,14 @@ Route::middleware('throttle:60,1')->group(function () {
         Route::get('/terms', [TermsController::class, 'index'])->name('terms');
         Route::get('/careers', [CareersController::class, 'index'])->name('careers');
         Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
-        Route::get('/recharge', [PaymentController::class, 'index'])->name('donate');
+//        Route::get('/recharge', [PaymentController::class, 'index'])->name('donate');
+
+        // Donation routes
+        Route::get('/donate', [PaymentController::class, 'index'])->name('donate');
+        Route::get('/donate/{currency}', [PaymentController::class, 'currencyPackages'])->name('donate.currency');
+        Route::post('/donate/payment-method', [PaymentController::class, 'selectPaymentMethod'])->name('donate.payment-method');
+        Route::post('/donate/process', [PaymentController::class, 'processPayment'])->name('donate.process');
+
         //AUTH
         Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
         Route::post('/login', [LoginController::class, 'login'])->name('login.submit');

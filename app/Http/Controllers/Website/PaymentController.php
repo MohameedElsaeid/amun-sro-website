@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use App\Models\StripeUser;
 use App\Models\StripeUsers;
 use App\Models\User;
 use App\Services\Payment\PaymentGatewayService;
 use App\Services\Payment\PaymentInformationProvider;
+use Exception;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Stripe\Customer;
-use Stripe\EphemeralKey;
 use Stripe\PaymentIntent;
-use Stripe\StripeClient;
+use Stripe\Stripe;
 
 class PaymentController extends Controller
 {
@@ -25,10 +26,123 @@ class PaymentController extends Controller
     {
     }
 
+    /**
+     * Display currency-specific package list
+     *
+     * @param string $currency
+     * @return View
+     */
+    public function currencyPackages(string $currency)
+    {
+        // Validate currency is valid
+        $validCurrencies = ['USDT', 'TL', 'EGP', 'BRL'];
+
+        if (!in_array($currency, $validCurrencies)) {
+            abort(404);
+        }
+
+        $paymentInformation = $this->paymentInfoProvider->getPaymentInformation();
+
+        return view('website.pages.donation.currency_packages', [
+            'paymentInformation' => $paymentInformation,
+            'currency' => $currency
+        ]);
+    }
+
+    /**
+     * Display payment methods for selected package
+     *
+     * @param Request $request
+     * @return View
+     */
+    public function selectPaymentMethod(Request $request)
+    {
+        $validated = $request->validate([
+            'package_id' => 'required|integer',
+            'currency' => 'required|string|in:USDT,TL,EGP,BRL'
+        ]);
+
+        $packageId = $validated['package_id'];
+        $currency = $validated['currency'];
+
+        $paymentInformation = $this->paymentInfoProvider->getPaymentInformation();
+
+        // Check if package exists
+        if (!isset($paymentInformation['packages'][$packageId])) {
+            abort(404);
+        }
+
+        $selectedPackage = $paymentInformation['packages'][$packageId];
+        $paymentMethods = $paymentInformation['paymentMethods'];
+
+        return view('website.pages.donation.payment_methods', [
+            'package' => $selectedPackage,
+            'packageId' => $packageId,
+            'currency' => $currency,
+            'paymentMethods' => $paymentMethods,
+            'price' => $selectedPackage['prices'][$currency] ?? 0
+        ]);
+    }
+
     public function index()
     {
         $paymentInformation = $this->paymentInfoProvider->getPaymentInformation();
         return view('website.pages.donation.index', compact('paymentInformation'));
+    }
+
+    /**
+     * Process payment for the selected package and payment method
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function processPayment(Request $request)
+    {
+        \Log::info(json_encode($request->all()));
+
+//        // Validate request
+//        $validated = $request->validate([
+//            'package_id' => 'required|numeric',
+//            'payment_method' => 'required|numeric',
+//            'currency' => 'required|string|in:USDT,TL,EGP',
+//        ]);
+//
+//        // Check if user is authenticated
+        if (!Auth::check()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'You must be logged in to make a donation',
+                'redirect' => route('website.login', ['redirect' => 'donation'])
+            ], 401);
+        }
+//
+//        // Get package information
+//        $paymentInformation = $this->getPaymentInformation();
+//        $packageIndex = (int)$validated['package_id'];
+//        $paymentMethodIndex = (int)$validated['payment_method'];
+//        $currency = $validated['currency'];
+//
+//        // Check if package exists
+//        if (!isset($paymentInformation['packages'][$packageIndex])) {
+//            return response()->json([
+//                'success' => false,
+//                'message' => 'Invalid package selected',
+//            ], 400);
+//        }
+//
+//        // Check if payment method exists
+//        if (!isset($paymentInformation['paymentMethods'][$paymentMethodIndex])) {
+//            return response()->json([
+//                'success' => false,
+//                'message' => 'Invalid payment method selected',
+//            ], 400);
+//        }
+//
+//        // Process payment based on the selected method
+//        $paymentProcessor = $this->getPaymentProcessor($paymentMethodIndex);
+//        $result = $paymentProcessor->processPayment($packageIndex, $currency);
+//
+//        return response()->json($result);
     }
 
     public function processDonation(Request $request)
@@ -103,7 +217,7 @@ class PaymentController extends Controller
 
         try {
 
-            \Stripe\Stripe::setApiKey(config('payment.stripe.secret_key'));
+            Stripe::setApiKey(config('payment.stripe.secret_key'));
 //            $stripeUser = StripeUser::where([
 //                'jid_id' => $user->JID
 //            ])->first();
@@ -147,14 +261,14 @@ class PaymentController extends Controller
                 ]
             ]);
             return response()->json([
-                'success'       => true,
-                'payment_method'=> 'stripe',
+                'success' => true,
+                'payment_method' => 'stripe',
                 'client_secret' => $paymentIntent->client_secret,
-                'transaction_id'=> 1,
-                'modal_title'   => 'Complete Payment',
+                'transaction_id' => 1,
+                'modal_title' => 'Complete Payment',
             ]);
 
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             dd($exception);
         }
         // Get the payment URL and modal title using the Payment Gateway Service

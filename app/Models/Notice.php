@@ -18,4 +18,12 @@ class Notice extends Model
         'EditDate' => 'datetime',
     ];
     protected $connection = 'sqlsrv';
+
+    /**
+     * @return string
+     */
+    public function getDateFormat()
+    {
+        return 'Y-m-d H:i:s.u';
+    }
 }
