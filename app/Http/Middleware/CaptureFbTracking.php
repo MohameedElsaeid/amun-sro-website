@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Jobs\VisitsCreationJob;
 use App\Models\Visit;
 use Closure;
 use Exception;
@@ -95,35 +96,8 @@ class CaptureFbTracking
             return str_starts_with($key, 'utm_');
         }, ARRAY_FILTER_USE_KEY);
         ksort($utmParams);
-
         $tracking['utm'] = array_merge($utmParams, ['visit_time' => time()]);
-        Visit::create([
-            'fbclid' => $tracking['fbclid'] ?? null,
-            'fbc' => $tracking['fbc'] ?? null,
-            'fbp' => $tracking['fbp'] ?? null,
-            'client_ip_address' => $tracking['client_ip_address'] ?? null,
-            'client_user_agent' => $tracking['client_user_agent'] ?? null,
-            'ct' => $tracking['ct'] ?? null,
-            'country' => $tracking['country'] ?? null,
-            'st' => $tracking['st'] ?? null,
-            // UTM columns
-            'utm_ad_id' => $utmParams['utm_ad_id'] ?? null,
-            'utm_adset_id' => $utmParams['utm_adset_id'] ?? null,
-            'utm_campaign' => $utmParams['utm_campaign'] ?? null,
-            'utm_campaign_id' => $utmParams['utm_campaign_id'] ?? null,
-            'utm_medium' => $utmParams['utm_medium'] ?? null,
-            'utm_source' => $utmParams['utm_source'] ?? null,
-            // Query columns
-            'query_fbclid' => $allQueryParams['fbclid'] ?? null,
-            'query_utm_ad_id' => $allQueryParams['utm_ad_id'] ?? null,
-            'query_utm_adset_id' => $allQueryParams['utm_adset_id'] ?? null,
-            'query_utm_campaign' => $allQueryParams['utm_campaign'] ?? null,
-            'query_utm_campaign_id' => $allQueryParams['utm_campaign_id'] ?? null,
-            'query_utm_medium' => $allQueryParams['utm_medium'] ?? null,
-            'query_utm_source' => $allQueryParams['utm_source'] ?? null,
-            'visit_time' => $tracking['utm']['visit_time'] ?? time(),
-        ]);
-
+        VisitsCreationJob::dispatch($tracking)->onQueue('visits');
         session()->put('fb_tracking', $tracking);
         return $next($request);
     }
