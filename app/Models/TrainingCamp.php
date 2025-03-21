@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCamp newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCamp newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCamp query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TrainingCamp newModelQuery()
+ * @method static Builder<static>|TrainingCamp newQuery()
+ * @method static Builder<static>|TrainingCamp query()
+ * @mixin Eloquent
  */
 class TrainingCamp extends Model
 {

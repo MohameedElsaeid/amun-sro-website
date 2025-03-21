@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyTablet query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefDropClassSelAlchemyTablet newModelQuery()
+ * @method static Builder<static>|RefDropClassSelAlchemyTablet newQuery()
+ * @method static Builder<static>|RefDropClassSelAlchemyTablet query()
+ * @mixin Eloquent
  */
 class RefDropClassSelAlchemyTablet extends Model
 {

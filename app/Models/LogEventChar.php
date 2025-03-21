@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventChar newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventChar newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventChar query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogEventChar newModelQuery()
+ * @method static Builder<static>|LogEventChar newQuery()
+ * @method static Builder<static>|LogEventChar query()
+ * @mixin Eloquent
  */
 class LogEventChar extends Model
 {

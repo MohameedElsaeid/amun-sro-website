@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeStructUpgrade query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSiegeStructUpgrade newModelQuery()
+ * @method static Builder<static>|RefSiegeStructUpgrade newQuery()
+ * @method static Builder<static>|RefSiegeStructUpgrade query()
+ * @mixin Eloquent
  */
 class RefSiegeStructUpgrade extends Model
 {

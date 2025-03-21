@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSetItemGroup query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSetItemGroup newModelQuery()
+ * @method static Builder<static>|RefSetItemGroup newQuery()
+ * @method static Builder<static>|RefSetItemGroup query()
+ * @mixin Eloquent
  */
 class RefSetItemGroup extends Model
 {

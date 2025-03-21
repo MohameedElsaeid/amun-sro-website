@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AccountJID newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AccountJID newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AccountJID query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|AccountJID newModelQuery()
+ * @method static Builder<static>|AccountJID newQuery()
+ * @method static Builder<static>|AccountJID query()
+ * @mixin Eloquent
  */
 class AccountJID extends Model
 {

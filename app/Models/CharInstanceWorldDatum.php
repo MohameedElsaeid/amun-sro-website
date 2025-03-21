@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharInstanceWorldDatum newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharInstanceWorldDatum newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharInstanceWorldDatum query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharInstanceWorldDatum newModelQuery()
+ * @method static Builder<static>|CharInstanceWorldDatum newQuery()
+ * @method static Builder<static>|CharInstanceWorldDatum query()
+ * @mixin Eloquent
  */
 class CharInstanceWorldDatum extends Model
 {

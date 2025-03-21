@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomPcLimit query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CustomPcLimit newModelQuery()
+ * @method static Builder<static>|CustomPcLimit newQuery()
+ * @method static Builder<static>|CustomPcLimit query()
+ * @mixin Eloquent
  */
 class CustomPcLimit extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RowKill newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RowKill newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RowKill query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RowKill newModelQuery()
+ * @method static Builder<static>|RowKill newQuery()
+ * @method static Builder<static>|RowKill query()
+ * @mixin Eloquent
  */
 class RowKill extends Model
 {

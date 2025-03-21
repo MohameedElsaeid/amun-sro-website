@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvCO query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|InvCO newModelQuery()
+ * @method static Builder<static>|InvCO newQuery()
+ * @method static Builder<static>|InvCO query()
+ * @mixin Eloquent
  */
 class InvCO extends Model
 {

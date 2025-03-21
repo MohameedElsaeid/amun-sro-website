@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserOld query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|UserOld newModelQuery()
+ * @method static Builder<static>|UserOld newQuery()
+ * @method static Builder<static>|UserOld query()
+ * @mixin Eloquent
  */
 class UserOld extends Model
 {

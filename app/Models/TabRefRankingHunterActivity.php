@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingHunterActivity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingHunterActivity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingHunterActivity query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabRefRankingHunterActivity newModelQuery()
+ * @method static Builder<static>|TabRefRankingHunterActivity newQuery()
+ * @method static Builder<static>|TabRefRankingHunterActivity query()
+ * @mixin Eloquent
  */
 class TabRefRankingHunterActivity extends Model
 {

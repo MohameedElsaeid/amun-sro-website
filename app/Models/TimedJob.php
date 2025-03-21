@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJob newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJob newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJob query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TimedJob newModelQuery()
+ * @method static Builder<static>|TimedJob newQuery()
+ * @method static Builder<static>|TimedJob query()
+ * @mixin Eloquent
  */
 class TimedJob extends Model
 {

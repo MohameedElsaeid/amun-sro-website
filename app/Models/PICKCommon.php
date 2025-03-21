@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PICKCommon newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PICKCommon newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PICKCommon query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|PICKCommon newModelQuery()
+ * @method static Builder<static>|PICKCommon newQuery()
+ * @method static Builder<static>|PICKCommon query()
+ * @mixin Eloquent
  */
 class PICKCommon extends Model
 {

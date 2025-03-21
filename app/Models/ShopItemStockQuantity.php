@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ShopItemStockQuantity query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ShopItemStockQuantity newModelQuery()
+ * @method static Builder<static>|ShopItemStockQuantity newQuery()
+ * @method static Builder<static>|ShopItemStockQuantity query()
+ * @mixin Eloquent
  */
 class ShopItemStockQuantity extends Model
 {

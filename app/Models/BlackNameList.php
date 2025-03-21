@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BlackNameList newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BlackNameList newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BlackNameList query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|BlackNameList newModelQuery()
+ * @method static Builder<static>|BlackNameList newQuery()
+ * @method static Builder<static>|BlackNameList query()
+ * @mixin Eloquent
  */
 class BlackNameList extends Model
 {

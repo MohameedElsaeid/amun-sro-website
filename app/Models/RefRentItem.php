@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRentItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRentItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRentItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefRentItem newModelQuery()
+ * @method static Builder<static>|RefRentItem newQuery()
+ * @method static Builder<static>|RefRentItem query()
+ * @mixin Eloquent
  */
 class RefRentItem extends Model
 {

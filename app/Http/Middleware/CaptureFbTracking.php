@@ -2,8 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Jobs\VisitsCreationJob;
-use App\Models\Visit;
 use Closure;
 use Exception;
 use GeoIp2\Database\Reader;
@@ -97,7 +95,7 @@ class CaptureFbTracking
         }, ARRAY_FILTER_USE_KEY);
         ksort($utmParams);
         $tracking['utm'] = array_merge($utmParams, ['visit_time' => time()]);
-        VisitsCreationJob::dispatch($tracking)->onQueue('visits');
+//        VisitsCreationJob::dispatch($tracking)->onQueue('visits');
         session()->put('fb_tracking', $tracking);
         return $next($request);
     }

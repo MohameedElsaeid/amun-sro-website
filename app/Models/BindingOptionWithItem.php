@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BindingOptionWithItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|BindingOptionWithItem newModelQuery()
+ * @method static Builder<static>|BindingOptionWithItem newQuery()
+ * @method static Builder<static>|BindingOptionWithItem query()
+ * @mixin Eloquent
  */
 class BindingOptionWithItem extends Model
 {

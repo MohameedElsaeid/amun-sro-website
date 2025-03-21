@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMappingShopGroup newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMappingShopGroup newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMappingShopGroup query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefMappingShopGroup newModelQuery()
+ * @method static Builder<static>|RefMappingShopGroup newQuery()
+ * @method static Builder<static>|RefMappingShopGroup query()
+ * @mixin Eloquent
  */
 class RefMappingShopGroup extends Model
 {

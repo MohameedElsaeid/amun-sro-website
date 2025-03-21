@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogServerEvent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogServerEvent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogServerEvent query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogServerEvent newModelQuery()
+ * @method static Builder<static>|LogServerEvent newQuery()
+ * @method static Builder<static>|LogServerEvent query()
+ * @mixin Eloquent
  */
 class LogServerEvent extends Model
 {

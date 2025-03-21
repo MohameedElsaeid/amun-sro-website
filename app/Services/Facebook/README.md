@@ -51,7 +51,8 @@ return [
 
 ## Usage
 
-The services are designed to be injected via Laravel's dependency injection. Below is an example of how you might use the `ConversionEventService` in a controller:
+The services are designed to be injected via Laravel's dependency injection. Below is an example of how you might use
+the `ConversionEventService` in a controller:
 
 ```php
 use App\Services\ConversionEventService;
@@ -87,11 +88,15 @@ Each event function includes inline hints describing which parameters to pass.
 ## Event Parameters
 
 ### Body Parameters
+
 - **data:** The main container for all event data.
 - **test_event_code:** (Optional) A code to mark the event as a test event.
 
 ### Customer Information Parameters
-These parameters are used to identify the customer. Hashing is required for most keys (using SHA-256), except where noted.
+
+These parameters are used to identify the customer. Hashing is required for most keys (using SHA-256), except where
+noted.
+
 - **em:** Email — *Hashing required*
 - **ph:** Phone Number — *Hashing required*
 - **fn:** First Name — *Hashing required*
@@ -119,7 +124,9 @@ These parameters are used to identify the customer. Hashing is required for most
 - **ig_sid:** Click to Instagram ID — *Do not hash*
 
 ### Server Event Parameters
+
 These parameters are sent with each event payload:
+
 - **event_name**
 - **event_time**
 - **user_data**
@@ -134,7 +141,9 @@ These parameters are sent with each event payload:
 - **referrer_url**
 
 ### App Data Parameters
+
 Used primarily for app events:
+
 - **advertiser_tracking_enabled**
 - **application_tracking_enabled**
 - **extinfo**
@@ -148,7 +157,9 @@ Used primarily for app events:
 - **vendor_id**
 
 ### Original Event Data Parameters
+
 Additional parameters available for event data:
+
 - **event_name**
 - **event_time**
 - **order_id**
@@ -158,33 +169,35 @@ Additional parameters available for event data:
 
 ## Default (Standard) Events
 
-These events can also be tracked with the Meta Pixel's `fbq('track')` function when used alongside the Conversions API. It is recommended to include the `eventID` parameter as a fourth parameter to the function.
+These events can also be tracked with the Meta Pixel's `fbq('track')` function when used alongside the Conversions API.
+It is recommended to include the `eventID` parameter as a fourth parameter to the function.
 
-| **Event Name**           | **Description**                                                                                  | **Object Properties**                                                                          | **Promoted Object custom_event_type**             |
-|--------------------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| **AddPaymentInfo**       | When payment information is added in the checkout flow. A person clicks on a save billing button. | content_ids, contents, currency, value *(Optional)*                                            | ADD_PAYMENT_INFO                                  |
-| **AddToCart**            | When a product is added to the shopping cart. A person clicks on an add to cart button.            | content_ids, content_type, contents, currency, value *(Optional; Required for Advantage+ catalog ads: contents)* | ADD_TO_CART                                       |
-| **AddToWishlist**        | When a product is added to a wishlist. A person clicks on an add to wishlist button.                | content_ids, contents, currency, value *(Optional)*                                            | ADD_TO_WISHLIST                                   |
-| **CompleteRegistration** | When a registration form is completed. A person submits a subscription or signup form.             | currency, value *(Optional)*                                                                     | COMPLETE_REGISTRATION                             |
-| **Contact**              | When a person initiates contact with your business (via phone, SMS, email, chat, etc.).             | *(None specified)*                                                                             | CONTACT                                           |
-| **CustomizeProduct**     | When a person customizes a product (e.g., selects a t-shirt color).                                | *(None specified)*                                                                             | CUSTOMIZE_PRODUCT                                 |
-| **Donate**               | When a person donates funds to your organization or cause. A person adds a donation to their cart.  | *(None specified)*                                                                             | *(None specified)*                                |
-| **FindLocation**         | When a person searches for a location of your store via a website or app, intending to visit.        | *(None specified)*                                                                             | FIND_LOCATION                                     |
-| **InitiateCheckout**     | When a person enters the checkout flow. A person clicks on a checkout button.                     | content_ids, contents, currency, num_items, value *(Optional)*                                   | INITIATE_CHECKOUT                                 |
-| **Lead**                 | When a sign-up is completed. A person clicks on pricing.                                          | currency, value *(Optional)*                                                                     | LEAD                                              |
-| **Purchase**             | When a purchase is made or the checkout flow is completed. A person lands on a thank you page.      | content_ids, content_type, contents, currency, num_items, value *(Required: currency and value; Required for Advantage+ catalog ads: contents or content_ids)* | PURCHASE                                          |
-| **Schedule**             | When a person books an appointment to visit one of your locations.                               | *(None specified)*                                                                             | SCHEDULE                                          |
-| **Search**               | When a search is made on your website. A person searches for a product.                           | content_ids, content_type, contents, currency, search_string, value *(Optional; Required for Advantage+ catalog ads: contents or content_ids)* | SEARCH                                            |
-| **StartTrial**           | When a person starts a free trial of your product/service.                                       | currency, predicted_ltv, value *(Optional)*                                                    | START_TRIAL                                       |
-| **SubmitApplication**    | When a person applies for a product, service, or program (e.g., credit card, educational program). | *(None specified)*                                                                             | SUBMIT_APPLICATION                                |
-| **Subscribe**            | When a person subscribes to a paid subscription for your product/service.                        | currency, predicted_ltv, value *(Optional)*                                                    | SUBSCRIBE                                         |
-| **ViewContent**          | When a user visits a page you care about (e.g., a product details or landing page).               | content_ids, content_type, contents, currency, value *(Optional; Required for Advantage+ catalog ads: contents or content_ids)* | VIEW_CONTENT                                      |
+| **Event Name**           | **Description**                                                                                    | **Object Properties**                                                                                                                                          | **Promoted Object custom_event_type** |
+|--------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| **AddPaymentInfo**       | When payment information is added in the checkout flow. A person clicks on a save billing button.  | content_ids, contents, currency, value *(Optional)*                                                                                                            | ADD_PAYMENT_INFO                      |
+| **AddToCart**            | When a product is added to the shopping cart. A person clicks on an add to cart button.            | content_ids, content_type, contents, currency, value *(Optional; Required for Advantage+ catalog ads: contents)*                                               | ADD_TO_CART                           |
+| **AddToWishlist**        | When a product is added to a wishlist. A person clicks on an add to wishlist button.               | content_ids, contents, currency, value *(Optional)*                                                                                                            | ADD_TO_WISHLIST                       |
+| **CompleteRegistration** | When a registration form is completed. A person submits a subscription or signup form.             | currency, value *(Optional)*                                                                                                                                   | COMPLETE_REGISTRATION                 |
+| **Contact**              | When a person initiates contact with your business (via phone, SMS, email, chat, etc.).            | *(None specified)*                                                                                                                                             | CONTACT                               |
+| **CustomizeProduct**     | When a person customizes a product (e.g., selects a t-shirt color).                                | *(None specified)*                                                                                                                                             | CUSTOMIZE_PRODUCT                     |
+| **Donate**               | When a person donates funds to your organization or cause. A person adds a donation to their cart. | *(None specified)*                                                                                                                                             | *(None specified)*                    |
+| **FindLocation**         | When a person searches for a location of your store via a website or app, intending to visit.      | *(None specified)*                                                                                                                                             | FIND_LOCATION                         |
+| **InitiateCheckout**     | When a person enters the checkout flow. A person clicks on a checkout button.                      | content_ids, contents, currency, num_items, value *(Optional)*                                                                                                 | INITIATE_CHECKOUT                     |
+| **Lead**                 | When a sign-up is completed. A person clicks on pricing.                                           | currency, value *(Optional)*                                                                                                                                   | LEAD                                  |
+| **Purchase**             | When a purchase is made or the checkout flow is completed. A person lands on a thank you page.     | content_ids, content_type, contents, currency, num_items, value *(Required: currency and value; Required for Advantage+ catalog ads: contents or content_ids)* | PURCHASE                              |
+| **Schedule**             | When a person books an appointment to visit one of your locations.                                 | *(None specified)*                                                                                                                                             | SCHEDULE                              |
+| **Search**               | When a search is made on your website. A person searches for a product.                            | content_ids, content_type, contents, currency, search_string, value *(Optional; Required for Advantage+ catalog ads: contents or content_ids)*                 | SEARCH                                |
+| **StartTrial**           | When a person starts a free trial of your product/service.                                         | currency, predicted_ltv, value *(Optional)*                                                                                                                    | START_TRIAL                           |
+| **SubmitApplication**    | When a person applies for a product, service, or program (e.g., credit card, educational program). | *(None specified)*                                                                                                                                             | SUBMIT_APPLICATION                    |
+| **Subscribe**            | When a person subscribes to a paid subscription for your product/service.                          | currency, predicted_ltv, value *(Optional)*                                                                                                                    | SUBSCRIBE                             |
+| **ViewContent**          | When a user visits a page you care about (e.g., a product details or landing page).                | content_ids, content_type, contents, currency, value *(Optional; Required for Advantage+ catalog ads: contents or content_ids)*                                | VIEW_CONTENT                          |
 
 ---
 
 ## Object Properties
 
-When sending event parameters, you may also include the following predefined object properties in your custom event data (formatted as JSON):
+When sending event parameters, you may also include the following predefined object properties in your custom event
+data (formatted as JSON):
 
 - **content_category**
     - **Type:** String
@@ -200,8 +213,10 @@ When sending event parameters, you may also include the following predefined obj
 
 - **content_type**
     - **Type:** String
-    - **Description:** Either `product` or `product_group` depending on whether the IDs refer to individual products or product groups.
-    - **Note:** If no `content_type` is provided, Meta will match the event to every item with the same ID, regardless of type.
+    - **Description:** Either `product` or `product_group` depending on whether the IDs refer to individual products or
+      product groups.
+    - **Note:** If no `content_type` is provided, Meta will match the event to every item with the same ID, regardless
+      of type.
 
 - **contents**
     - **Type:** Array of objects
@@ -246,7 +261,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-*For more detailed guidance, please refer to the official Meta (Facebook) documentation on the Conversions API and Meta Pixel integration.*
+*For more detailed guidance, please refer to the official Meta (Facebook) documentation on the Conversions API and Meta
+Pixel integration.*
+
 ```
 
 You can now copy the entire content above and add it to your project as your `README.md` file.

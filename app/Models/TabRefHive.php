@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefHive newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefHive newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefHive query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabRefHive newModelQuery()
+ * @method static Builder<static>|TabRefHive newQuery()
+ * @method static Builder<static>|TabRefHive query()
+ * @mixin Eloquent
  */
 class TabRefHive extends Model
 {

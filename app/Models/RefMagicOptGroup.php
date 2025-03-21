@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOptGroup newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOptGroup newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefMagicOptGroup query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefMagicOptGroup newModelQuery()
+ * @method static Builder<static>|RefMagicOptGroup newQuery()
+ * @method static Builder<static>|RefMagicOptGroup query()
+ * @mixin Eloquent
  */
 class RefMagicOptGroup extends Model
 {

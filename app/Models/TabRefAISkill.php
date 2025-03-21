@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefAISkill newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefAISkill newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefAISkill query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabRefAISkill newModelQuery()
+ * @method static Builder<static>|TabRefAISkill newQuery()
+ * @method static Builder<static>|TabRefAISkill query()
+ * @mixin Eloquent
  */
 class TabRefAISkill extends Model
 {

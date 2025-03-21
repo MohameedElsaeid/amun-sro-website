@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogEventSiegeFortress query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogEventSiegeFortress newModelQuery()
+ * @method static Builder<static>|LogEventSiegeFortress newQuery()
+ * @method static Builder<static>|LogEventSiegeFortress query()
+ * @mixin Eloquent
  */
 class LogEventSiegeFortress extends Model
 {

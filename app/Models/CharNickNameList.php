@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharNickNameList newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharNickNameList newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharNickNameList query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharNickNameList newModelQuery()
+ * @method static Builder<static>|CharNickNameList newQuery()
+ * @method static Builder<static>|CharNickNameList query()
+ * @mixin Eloquent
  */
 class CharNickNameList extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefClimate query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefClimate newModelQuery()
+ * @method static Builder<static>|RefClimate newQuery()
+ * @method static Builder<static>|RefClimate query()
+ * @mixin Eloquent
  */
 class RefClimate extends Model
 {

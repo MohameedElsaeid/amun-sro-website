@@ -2,14 +2,12 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\UserRegisterEmail;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Column;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
-use Mail;
 
 class GenerateMigrationsCommand extends Command
 {
@@ -125,7 +123,7 @@ class GenerateMigrationsCommand extends Command
 
                 if (file_exists($fileName)) {
                     $content = file_get_contents($fileName);
-                }else{
+                } else {
                     $this->output->info('Skipping migration because table `' . $tableName . '` does not exist.');
                     continue;
                 }

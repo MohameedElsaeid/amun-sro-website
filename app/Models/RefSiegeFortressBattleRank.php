@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeFortressBattleRank query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSiegeFortressBattleRank newModelQuery()
+ * @method static Builder<static>|RefSiegeFortressBattleRank newQuery()
+ * @method static Builder<static>|RefSiegeFortressBattleRank query()
+ * @mixin Eloquent
  */
 class RefSiegeFortressBattleRank extends Model
 {

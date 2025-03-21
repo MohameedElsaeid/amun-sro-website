@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWarlock newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWarlock newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWarlock query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillsWarlock newModelQuery()
+ * @method static Builder<static>|SkillsWarlock newQuery()
+ * @method static Builder<static>|SkillsWarlock query()
+ * @mixin Eloquent
  */
 class SkillsWarlock extends Model
 {

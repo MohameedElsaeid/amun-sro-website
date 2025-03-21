@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToBuyScrapItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefRewardPolicyToBuyScrapItem newModelQuery()
+ * @method static Builder<static>|RefRewardPolicyToBuyScrapItem newQuery()
+ * @method static Builder<static>|RefRewardPolicyToBuyScrapItem query()
+ * @mixin Eloquent
  */
 class RefRewardPolicyToBuyScrapItem extends Model
 {

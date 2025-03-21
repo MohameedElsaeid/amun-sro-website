@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|StaticAvatar query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|StaticAvatar newModelQuery()
+ * @method static Builder<static>|StaticAvatar newQuery()
+ * @method static Builder<static>|StaticAvatar query()
+ * @mixin Eloquent
  */
 class StaticAvatar extends Model
 {

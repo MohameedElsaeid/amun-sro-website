@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerCategoryBindTrigger newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerCategoryBindTrigger newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerCategoryBindTrigger query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTriggerCategoryBindTrigger newModelQuery()
+ * @method static Builder<static>|RefTriggerCategoryBindTrigger newQuery()
+ * @method static Builder<static>|RefTriggerCategoryBindTrigger query()
+ * @mixin Eloquent
  */
 class RefTriggerCategoryBindTrigger extends Model
 {

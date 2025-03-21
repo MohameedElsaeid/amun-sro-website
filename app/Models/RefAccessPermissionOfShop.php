@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAccessPermissionOfShop query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefAccessPermissionOfShop newModelQuery()
+ * @method static Builder<static>|RefAccessPermissionOfShop newQuery()
+ * @method static Builder<static>|RefAccessPermissionOfShop query()
+ * @mixin Eloquent
  */
 class RefAccessPermissionOfShop extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JID newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JID newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JID query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|JID newModelQuery()
+ * @method static Builder<static>|JID newQuery()
+ * @method static Builder<static>|JID query()
+ * @mixin Eloquent
  */
 class JID extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCollectionBookTheme query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefCollectionBookTheme newModelQuery()
+ * @method static Builder<static>|RefCollectionBookTheme newQuery()
+ * @method static Builder<static>|RefCollectionBookTheme query()
+ * @mixin Eloquent
  */
 class RefCollectionBookTheme extends Model
 {

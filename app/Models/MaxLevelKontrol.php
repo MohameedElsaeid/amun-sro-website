@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaxLevelKontrol newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaxLevelKontrol newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaxLevelKontrol query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|MaxLevelKontrol newModelQuery()
+ * @method static Builder<static>|MaxLevelKontrol newQuery()
+ * @method static Builder<static>|MaxLevelKontrol query()
+ * @mixin Eloquent
  */
 class MaxLevelKontrol extends Model
 {

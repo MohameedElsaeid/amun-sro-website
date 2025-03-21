@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaNpcMap newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaNpcMap newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGachaNpcMap query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefGachaNpcMap newModelQuery()
+ * @method static Builder<static>|RefGachaNpcMap newQuery()
+ * @method static Builder<static>|RefGachaNpcMap query()
+ * @mixin Eloquent
  */
 class RefGachaNpcMap extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TrainingCampHonorRank query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TrainingCampHonorRank newModelQuery()
+ * @method static Builder<static>|TrainingCampHonorRank newQuery()
+ * @method static Builder<static>|TrainingCampHonorRank query()
+ * @mixin Eloquent
  */
 class TrainingCampHonorRank extends Model
 {

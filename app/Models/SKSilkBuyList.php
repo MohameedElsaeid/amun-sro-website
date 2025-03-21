@@ -6,12 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class SKSilkBuyList extends Model
 {
+    /**
+     * Type 3 is for Web
+     */
+    public const SILKTYPEWEB = 3;
+    /**
+     * Type 2 is for Web
+     */
+    public const SILKTYPEVOUCHER = 2;
+    /**
+     * Reason 3 is for Web
+     */
+    public const SILKREASONWEB = 3;
     public $timestamps = false;
     protected $table = 'SK_SilkBuyList';
     protected $fillable = [
         'BuyNo', 'UserJID', 'Silk_Type', 'Silk_Reason', 'Silk_Offset', 'Silk_Remain', 'ID', 'BuyQuantity', 'OrderNumber', 'PGCompany', 'PayMethod', 'PGUniqueNo', 'AuthNumber', 'AuthDate', 'SubJID', 'srID', 'SlipPaper', 'MngID', 'IP', 'RegDate'
     ];
-
     protected $casts = [
         'BuyNo' => 'integer',
         'UserJID' => 'integer',
@@ -29,18 +40,4 @@ class SKSilkBuyList extends Model
         'RegDate' => 'datetime',
     ];
     protected $connection = 'sqlsrv';
-    /**
-     * Type 3 is for Web
-     */
-    public const SILKTYPEWEB = 3;
-
-    /**
-     * Type 2 is for Web
-     */
-    public const SILKTYPEVOUCHER = 2;
-
-    /**
-     * Reason 3 is for Web
-     */
-    public const SILKREASONWEB = 3;
 }

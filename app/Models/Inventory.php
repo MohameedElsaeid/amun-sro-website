@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Inventory newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Inventory newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Inventory query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Inventory newModelQuery()
+ * @method static Builder<static>|Inventory newQuery()
+ * @method static Builder<static>|Inventory query()
+ * @mixin Eloquent
  */
 class Inventory extends Model
 {

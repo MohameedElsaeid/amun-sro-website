@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPricePolicyOfItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPricePolicyOfItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefPricePolicyOfItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefPricePolicyOfItem newModelQuery()
+ * @method static Builder<static>|RefPricePolicyOfItem newQuery()
+ * @method static Builder<static>|RefPricePolicyOfItem query()
+ * @mixin Eloquent
  */
 class RefPricePolicyOfItem extends Model
 {

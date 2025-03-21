@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimedJobForPet query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TimedJobForPet newModelQuery()
+ * @method static Builder<static>|TimedJobForPet newQuery()
+ * @method static Builder<static>|TimedJobForPet query()
+ * @mixin Eloquent
  */
 class TimedJobForPet extends Model
 {

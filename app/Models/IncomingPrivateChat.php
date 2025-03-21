@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IncomingPrivateChat newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IncomingPrivateChat newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IncomingPrivateChat query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|IncomingPrivateChat newModelQuery()
+ * @method static Builder<static>|IncomingPrivateChat newQuery()
+ * @method static Builder<static>|IncomingPrivateChat query()
+ * @mixin Eloquent
  */
 class IncomingPrivateChat extends Model
 {

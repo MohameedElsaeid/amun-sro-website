@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueRanking newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueRanking newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueRanking query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|UniqueRanking newModelQuery()
+ * @method static Builder<static>|UniqueRanking newQuery()
+ * @method static Builder<static>|UniqueRanking query()
+ * @mixin Eloquent
  */
 class UniqueRanking extends Model
 {

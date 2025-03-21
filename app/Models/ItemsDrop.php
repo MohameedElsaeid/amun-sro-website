@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemsDrop newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemsDrop newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemsDrop query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ItemsDrop newModelQuery()
+ * @method static Builder<static>|ItemsDrop newQuery()
+ * @method static Builder<static>|ItemsDrop query()
+ * @mixin Eloquent
  */
 class ItemsDrop extends Model
 {

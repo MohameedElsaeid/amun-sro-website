@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortress newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortress newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortress query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SiegeFortress newModelQuery()
+ * @method static Builder<static>|SiegeFortress newQuery()
+ * @method static Builder<static>|SiegeFortress query()
+ * @mixin Eloquent
  */
 class SiegeFortress extends Model
 {

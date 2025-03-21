@@ -13,6 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
+use Log;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 
@@ -98,7 +99,7 @@ class PaymentController extends Controller
      */
     public function processPayment(Request $request)
     {
-        \Log::info(json_encode($request->all()));
+        Log::info(json_encode($request->all()));
 
 //        // Validate request
 //        $validated = $request->validate([

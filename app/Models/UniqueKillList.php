@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniqueKillList query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|UniqueKillList newModelQuery()
+ * @method static Builder<static>|UniqueKillList newQuery()
+ * @method static Builder<static>|UniqueKillList query()
+ * @mixin Eloquent
  */
 class UniqueKillList extends Model
 {

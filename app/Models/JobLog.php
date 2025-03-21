@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobLog query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|JobLog newModelQuery()
+ * @method static Builder<static>|JobLog newQuery()
+ * @method static Builder<static>|JobLog query()
+ * @mixin Eloquent
  */
 class JobLog extends Model
 {

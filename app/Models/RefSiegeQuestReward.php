@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuestReward newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuestReward newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeQuestReward query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSiegeQuestReward newModelQuery()
+ * @method static Builder<static>|RefSiegeQuestReward newQuery()
+ * @method static Builder<static>|RefSiegeQuestReward query()
+ * @mixin Eloquent
  */
 class RefSiegeQuestReward extends Model
 {

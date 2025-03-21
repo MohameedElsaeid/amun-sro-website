@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindCondition newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindCondition newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerBindCondition query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTriggerBindCondition newModelQuery()
+ * @method static Builder<static>|RefTriggerBindCondition newQuery()
+ * @method static Builder<static>|RefTriggerBindCondition query()
+ * @mixin Eloquent
  */
 class RefTriggerBindCondition extends Model
 {

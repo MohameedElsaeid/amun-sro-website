@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Top200 query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Top200 newModelQuery()
+ * @method static Builder<static>|Top200 newQuery()
+ * @method static Builder<static>|Top200 query()
+ * @mixin Eloquent
  */
 class Top200 extends Model
 {

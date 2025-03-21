@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerConditionParam query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTriggerConditionParam newModelQuery()
+ * @method static Builder<static>|RefTriggerConditionParam newQuery()
+ * @method static Builder<static>|RefTriggerConditionParam query()
+ * @mixin Eloquent
  */
 class RefTriggerConditionParam extends Model
 {

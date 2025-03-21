@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Friend newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Friend newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Friend query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Friend newModelQuery()
+ * @method static Builder<static>|Friend newQuery()
+ * @method static Builder<static>|Friend query()
+ * @mixin Eloquent
  */
 class Friend extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsBicheon query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillsBicheon newModelQuery()
+ * @method static Builder<static>|SkillsBicheon newQuery()
+ * @method static Builder<static>|SkillsBicheon query()
+ * @mixin Eloquent
  */
 class SkillsBicheon extends Model
 {

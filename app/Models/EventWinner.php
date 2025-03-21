@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EventWinner newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EventWinner newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EventWinner query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|EventWinner newModelQuery()
+ * @method static Builder<static>|EventWinner newQuery()
+ * @method static Builder<static>|EventWinner query()
+ * @mixin Eloquent
  */
 class EventWinner extends Model
 {

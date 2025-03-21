@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Char newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Char newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Char query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Char newModelQuery()
+ * @method static Builder<static>|Char newQuery()
+ * @method static Builder<static>|Char query()
+ * @mixin Eloquent
  */
 class Char extends Model
 {

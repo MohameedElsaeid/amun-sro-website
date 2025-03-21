@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FleaMarketNetwork query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|FleaMarketNetwork newModelQuery()
+ * @method static Builder<static>|FleaMarketNetwork newQuery()
+ * @method static Builder<static>|FleaMarketNetwork query()
+ * @mixin Eloquent
  */
 class FleaMarketNetwork extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCollectionBook newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCollectionBook newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharCollectionBook query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharCollectionBook newModelQuery()
+ * @method static Builder<static>|CharCollectionBook newQuery()
+ * @method static Builder<static>|CharCollectionBook query()
+ * @mixin Eloquent
  */
 class CharCollectionBook extends Model
 {

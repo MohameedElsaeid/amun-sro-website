@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyATTRStone newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyATTRStone newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelAlchemyATTRStone query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefDropClassSelAlchemyATTRStone newModelQuery()
+ * @method static Builder<static>|RefDropClassSelAlchemyATTRStone newQuery()
+ * @method static Builder<static>|RefDropClassSelAlchemyATTRStone query()
+ * @mixin Eloquent
  */
 class RefDropClassSelAlchemyATTRStone extends Model
 {

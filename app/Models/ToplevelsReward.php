@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ToplevelsReward query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ToplevelsReward newModelQuery()
+ * @method static Builder<static>|ToplevelsReward newQuery()
+ * @method static Builder<static>|ToplevelsReward query()
+ * @mixin Eloquent
  */
 class ToplevelsReward extends Model
 {

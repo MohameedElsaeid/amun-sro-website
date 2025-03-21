@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|JobRowsKill query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|JobRowsKill newModelQuery()
+ * @method static Builder<static>|JobRowsKill newQuery()
+ * @method static Builder<static>|JobRowsKill query()
+ * @mixin Eloquent
  */
 class JobRowsKill extends Model
 {

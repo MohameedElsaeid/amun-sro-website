@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IPLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IPLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IPLog query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|IPLog newModelQuery()
+ * @method static Builder<static>|IPLog newQuery()
+ * @method static Builder<static>|IPLog query()
+ * @mixin Eloquent
  */
 class IPLog extends Model
 {

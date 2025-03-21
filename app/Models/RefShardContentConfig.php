@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShardContentConfig newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShardContentConfig newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShardContentConfig query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefShardContentConfig newModelQuery()
+ * @method static Builder<static>|RefShardContentConfig newQuery()
+ * @method static Builder<static>|RefShardContentConfig query()
+ * @mixin Eloquent
  */
 class RefShardContentConfig extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldNPC query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefGameWorldNPC newModelQuery()
+ * @method static Builder<static>|RefGameWorldNPC newQuery()
+ * @method static Builder<static>|RefGameWorldNPC query()
+ * @mixin Eloquent
  */
 class RefGameWorldNPC extends Model
 {

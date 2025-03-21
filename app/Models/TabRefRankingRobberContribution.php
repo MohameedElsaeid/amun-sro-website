@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingRobberContribution query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabRefRankingRobberContribution newModelQuery()
+ * @method static Builder<static>|TabRefRankingRobberContribution newQuery()
+ * @method static Builder<static>|TabRefRankingRobberContribution query()
+ * @mixin Eloquent
  */
 class TabRefRankingRobberContribution extends Model
 {

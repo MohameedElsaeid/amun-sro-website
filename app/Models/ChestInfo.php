@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ChestInfo newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ChestInfo newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ChestInfo query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ChestInfo newModelQuery()
+ * @method static Builder<static>|ChestInfo newQuery()
+ * @method static Builder<static>|ChestInfo query()
+ * @mixin Eloquent
  */
 class ChestInfo extends Model
 {

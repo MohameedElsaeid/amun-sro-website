@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemPool newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemPool newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ItemPool query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ItemPool newModelQuery()
+ * @method static Builder<static>|ItemPool newQuery()
+ * @method static Builder<static>|ItemPool query()
+ * @mixin Eloquent
  */
 class ItemPool extends Model
 {
