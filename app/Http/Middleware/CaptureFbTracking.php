@@ -96,6 +96,7 @@ class CaptureFbTracking
 
         ;
         $tracking['utm'] = array_merge($utmParams,['visit_time' => time()]);
+        Log::channel('header')->info(json_encode($tracking));
         session()->put('fb_tracking', $tracking);
 
         return $next($request);
