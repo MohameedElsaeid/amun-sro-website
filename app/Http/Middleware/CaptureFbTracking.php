@@ -44,9 +44,7 @@ class CaptureFbTracking
             }
         }
 
-        if ($fbp = $request->query('_fbp')) {
-            $tracking['fbp'] = $fbp;
-        } elseif ($request->hasCookie('_fbp')) {
+        if ($request->hasCookie('_fbp')){
             $tracking['fbp'] = $request->cookie('_fbp');
         }
 
