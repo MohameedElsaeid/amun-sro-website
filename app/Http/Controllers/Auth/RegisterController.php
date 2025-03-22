@@ -7,6 +7,7 @@ use App\Jobs\CompleteRegistrationJob;
 use App\Models\Referral;
 use App\Models\SKSilk;
 use App\Models\User;
+use App\Rules\ReservedUsername;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\JsonResponse;
@@ -140,13 +141,17 @@ class RegisterController extends Controller
             'username' => [
                 'required',
                 'string',
+                'min:3',
                 'max:255',
+                'regex:/^[a-zA-Z0-9_]+$/',
                 'unique:TB_User,StrUserID',
+                new ReservedUsername(),
             ],
             'email' => [
                 'required',
                 'string',
                 'email',
+                'email:rfc,dns',
                 'max:255',
                 'unique:TB_User,Email',
             ],
@@ -159,15 +164,15 @@ class RegisterController extends Controller
         ], [
             'username.required' => 'Please enter your username.',
             'username.string' => 'Your username must be a valid string.',
+            'username.min' => 'Your username must be at least 3 characters long.',
             'username.max' => 'Your username cannot exceed 255 characters.',
+            'username.regex' => 'Your username may only contain letters, numbers, and underscores.',
             'username.unique' => 'This username is already in use. Please choose a different one.',
-
             'email.required' => 'Please provide your email address.',
             'email.string' => 'Your email address must be a valid string.',
             'email.email' => 'Please enter a valid email address.',
             'email.max' => 'Your email address cannot exceed 255 characters.',
             'email.unique' => 'This email is already registered. Please use a different email.',
-
             'password.required' => 'Please enter a password.',
             'password.string' => 'Your password must be a valid string.',
             'password.min' => 'Your password must be at least 8 characters long.',
