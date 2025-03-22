@@ -108,6 +108,8 @@ class ConversionEventService
             $payload['test_event_code'] = $testEventCode;
         }
 
+        \Log::channel('facebook')->info(json_encode($payload));
+
         return $payload;
     }
 
