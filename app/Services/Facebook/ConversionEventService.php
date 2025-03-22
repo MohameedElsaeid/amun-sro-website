@@ -61,10 +61,10 @@ class ConversionEventService
     protected function buildEventPayload(string $eventName, array $userData = [], array $customData = [], ?string $testEventCode = null): array
     {
         $attributionData = [];
-        if (isset($userData['utm']['utm_ad_id'])) {
+        if (isset($userData['utm']['utm_campaign_id'])) {
             $attributionData['campaign_id'] = $userData['utm']['utm_campaign_id'];
         }
-        if (isset($userData['utm']['utm_ad_id'])) {
+        if (isset($userData['utm']['utm_adset_id'])) {
             $attributionData['adset_id'] = $userData['utm']['utm_adset_id'];
         }
         if (isset($userData['utm']['utm_ad_id'])) {
