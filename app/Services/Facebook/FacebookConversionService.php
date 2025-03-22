@@ -50,27 +50,33 @@ class FacebookConversionService
      *
      * @param array $eventData Complete event payload.
      * @return Response
-     * @throws ConnectionException
      */
     public function sendEvent(array $eventData): Response
     {
-        if (isset($eventData['user_data']) && is_array($eventData['user_data'])) {
-            $eventData['user_data'] = $this->hashUserData($eventData['user_data']);
+        try {
+
+            if (isset($eventData['user_data']) && is_array($eventData['user_data'])) {
+                $eventData['user_data'] = $this->hashUserData($eventData['user_data']);
+            }
+
+            $payload = [
+                'data' => [
+                    $eventData,
+                ],
+            ];
+
+            if (isset($eventData['test_event_code'])) {
+                $payload['test_event_code'] = $eventData['test_event_code'];
+            }
+
+            Log::channel('facebook')->info(json_encode($payload));
+
+            return Http::post("{$this->endpoint}?access_token={$this->accessToken}", $payload);
+
+        }catch (Exception $exception){
+            Log::channel('fb-pixel')->critical($exception->getMessage());
         }
 
-        $payload = [
-            'data' => [
-                $eventData,
-            ],
-        ];
-
-        if (isset($eventData['test_event_code'])) {
-            $payload['test_event_code'] = $eventData['test_event_code'];
-        }
-
-        Log::channel('facebook')->info(json_encode($payload));
-
-        return Http::post("{$this->endpoint}?access_token={$this->accessToken}", $payload);
     }
 
     /**

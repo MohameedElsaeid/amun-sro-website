@@ -36,7 +36,6 @@ class ConversionEventService
      * @param array $customData Custom event parameters.
      * @param string|null $testEventCode Optional test event code.
      * @return Response
-     * @throws ConnectionException
      */
     public function trackLogin(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -74,6 +73,24 @@ class ConversionEventService
         if (isset($userData['utm']['visit_time'])) {
             $attributionData['visit_time'] = $userData['utm']['visit_time'];
         }
+
+        if (isset($userData['fbclid'])) {
+            unset($attributionData['fbclid']);
+        }
+
+        if (isset($userData['attribution'])) {
+            unset($attributionData['attribution']);
+        }
+
+        if (isset($userData['query'])) {
+            unset($attributionData['query']);
+        }
+
+        if (isset($userData['utm'])) {
+            unset($attributionData['utm']);
+        }
+
+
         $payload = [
             'event_name' => $eventName,
             'event_time' => time(),
@@ -106,7 +123,6 @@ class ConversionEventService
      * @param array $customData
      * @param string|null $testEventCode
      * @return Response
-     * @throws ConnectionException
      */
     public function trackRegister(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {

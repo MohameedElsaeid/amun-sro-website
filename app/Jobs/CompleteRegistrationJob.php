@@ -25,8 +25,6 @@ class CompleteRegistrationJob implements ShouldQueue
      * Execute the job.
      * @param ConversionEventService $conversionService
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function handle(ConversionEventService $conversionService): void
     {
