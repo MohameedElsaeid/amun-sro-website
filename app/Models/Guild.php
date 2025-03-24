@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Guild extends Model
 {
+    protected $connection = 'shard';
+
     public $timestamps = false;
     protected $table = '_Guild';
     protected $fillable = [
@@ -33,7 +35,6 @@ class Guild extends Model
         'MercenaryAttr' => 'integer',
         'ItemPoints' => 'integer',
     ];
-    protected $connection = 'proxy';
 
     public function getGuildMembers()
     {

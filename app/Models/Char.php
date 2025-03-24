@@ -15,11 +15,12 @@ use Illuminate\Database\Eloquent\Model;
 class Char extends Model
 {
     public $timestamps = false;
-    protected $table = '_Char';
+    protected $connection = 'shard';
+    protected $table = 'dbo._Char';
     protected $fillable = [
         'CharID', 'Deleted', 'RefObjID', 'CharName16', 'NickName16', 'Scale', 'CurLevel', 'MaxLevel', 'ExpOffset', 'SExpOffset', 'Strength', 'Intellect', 'RemainGold', 'RemainSkillPoint', 'RemainStatPoint', 'RemainHwanCount', 'GatheredExpPoint', 'HP', 'MP', 'LatestRegion', 'PosX', 'PosY', 'PosZ', 'AppointedTeleport', 'AutoInvestExp', 'InventorySize', 'DailyPK', 'TotalPK', 'PKPenaltyPoint', 'TPP', 'PenaltyForfeit', 'JobPenaltyTime', 'JobLvl_Trader', 'Trader_Exp', 'JobLvl_Hunter', 'Hunter_Exp', 'JobLvl_Robber', 'Robber_Exp', 'GuildID', 'LastLogout', 'TelRegion', 'TelPosX', 'TelPosY', 'TelPosZ', 'DiedRegion', 'DiedPosX', 'DiedPosY', 'DiedPosZ', 'WorldID', 'TelWorldID', 'DiedWorldID', 'HwanLevel', 'ItemPoints', 'PVPPoints', 'JOBPoints', 'Rarity', 'Support'
     ];
-
+   
     protected $casts = [
         'CharID' => 'integer',
         'Deleted' => 'integer',
@@ -77,7 +78,7 @@ class Char extends Model
         'Rarity' => 'integer',
         'Support' => 'integer',
     ];
-    protected $connection = 'proxy';
+    protected $primaryKey = 'CharID';
 
     public function getGuildMemberUser()
     {

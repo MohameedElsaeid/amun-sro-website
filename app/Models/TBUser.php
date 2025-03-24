@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class TBUser extends Model
+
+class TbUser extends Authenticatable
 {
-    public $timestamps = false;
-    protected $table = 'TB_User';
     protected $fillable = [
         'JID', 'StrUserID', 'password', 'Status', 'GMrank', 'Name', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'AccPlayTime', 'LatestUpdateTime_ToPlayTime', 'Play123Time'
     ];
-
+    protected $table = 'dbo.TB_User';
     protected $casts = [
         'JID' => 'integer',
         'Status' => 'integer',
@@ -30,37 +30,45 @@ class TBUser extends Model
         'LatestUpdateTime_ToPlayTime' => 'integer',
         'Play123Time' => 'integer',
     ];
-    protected $connection = 'sqlsrv';
-
+    protected $connection = 'sqlsrv';    
+    protected $primaryKey = 'JID';
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password'
+    ];
 
     /**
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function getSkSilk(): BelongsTo
+    public function getSkSilk()
     {
         return $this->belongsTo(SkSilk::class, 'JID', 'JID');
     }
 
     /**
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function getSkSilkHistory(): HasMany
+    public function getSkSilkHistory()
     {
         return $this->hasMany(SkSilkBuyList::class, 'UserJID', 'JID');
     }
 
     /**
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
      */
-    public function getShardUser(): BelongsToMany
+    public function getShardUser()
     {
         return $this->belongsToMany(Char::class, '_User', 'UserJID', 'CharID');
     }
 
     /**
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function getPunishmentUser(): HasMany
+    public function getPunishmentUser()
     {
         $query = $this->hasMany(Punishment::class, 'UserJID', 'JID');
         $query->where('BlockEndTime', '>', Carbon::now()->format('Y-m-d H:i:s'));
@@ -68,9 +76,9 @@ class TBUser extends Model
     }
 
     /**
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function getIsBlockedUser(): HasMany
+    public function getIsBlockedUser()
     {
         $query = $this->hasMany(BlockedUser::class, 'UserJID', 'JID');
         $query->where('timeEnd', '>', Carbon::now()->format('Y-m-d H:i:s'))->first();
@@ -78,9 +86,9 @@ class TBUser extends Model
     }
 
     /**
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function getChestUser(): HasMany
+    public function getChestUser()
     {
         $query = $this->hasMany(Chest::class, 'UserJID', 'JID');
         $query->where('ItemID', '!=', 0);
@@ -88,13 +96,23 @@ class TBUser extends Model
     }
 
     /**
-     * @return BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function getChestItemUser(): BelongsToMany
+    public function getChestItemUser()
     {
         $query = $this->belongsToMany(Items::class, Chest::class, 'UserJID', 'ItemID', '', 'ID64');
         $query->where('ItemID', '!=', 0);
         return $query;
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function getWebUser()
+    {
+        return $this->hasOne(User::class, 'jid', 'JID');
+    }
+
+
 
 }

@@ -6,6 +6,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Eloquent;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,69 +19,42 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static Builder<static>|User query()
  * @mixin Eloquent
  */
-class User extends Authenticatable
+class User extends Model
 {
-    public $timestamps = false;
-    protected $connection = 'sqlsrv';
-    protected $table = 'dbo.TB_User';
-    protected $primaryKey = 'JID';
-    protected $fillable = [
-        'last_login_bonus',
-        'JID',
-        'StrUserID',
-        'password',
-        'referral_code',
-        'referred_by',
-        'Status',
-        'GMrank',
-        'Name',
-        'Email',
-        'sex',
-        'certificate_num',
-        'address',
-        'postcode',
-        'phone',
-        'country_code',
-        'mobile',
-        'regtime',
-        'reg_ip',
-        'Time_log',
-        'freetime',
-        'sec_primary',
-        'sec_content',
-        'AccPlayTime',
-        'LatestUpdateTime_ToPlayTime',
-        'Play123Time',
-    ];
 
-    protected $casts = [
-        'UserJID' => 'integer',
-        'CharID' => 'integer',
-        'last_login_bonus' => 'date',
+       /**
+     * The Database connection name for the model.
+     *
+     * @var string
+     */
+    protected $connection = 'shard';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'dbo._User';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'UserJID', 'CharID'
     ];
 
     /**
-     * Get the password for the user.
-     * This should return the MD5 hash stored in the database
-     *
-     * @return string
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function getAuthPassword(): string
-    {
-        return $this->password;
-    }
-
-    public function referrals(): \Illuminate\Database\Eloquent\Builder|User|HasMany
-    {
-        return $this->hasMany(User::class, 'referred_by');
-    }
-
-    public function referrer(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'referred_by');
-    }
-
-
     public function getTbUser()
     {
         return $this->belongsTo(TbUser::class, 'UserJID', 'JID');
