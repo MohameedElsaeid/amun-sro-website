@@ -83,8 +83,8 @@ class LoginController extends Controller
                 'em' => $request->user()->Email,
                 'fn' => $request->user()->StrUserID,
             ]))->onQueue('pixel-event');
-            dd($request->user());
-            $this->awardLoginPoints($request->user());
+          
+            // $this->awardLoginPoints($request->user());
 
             // Determine the redirect URL
             $redirectTo = $request->input('redirect_to');
