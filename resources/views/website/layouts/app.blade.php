@@ -5,19 +5,24 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description"
-          content="@yield('meta-description', 'Amun Sro – The ultimate SilkRoad private server experience for ASRO fans')">
+          content="@yield('meta-description', 'Amun Sro – The ultimate Silk Road Online Private Server experience. Enjoy top Silk Road Private Server gameplay with PvP action, modded features, and the best ASRO community.')">
+    <meta name="keywords"
+          content="Silk Road Online Private Server, Silk Road Private Server, SRO Private Server, Amun Sro, Silk Road Online PvP Server, Silk Road Online, en iyi silkroad, سيرفر خاص سيلك رود اونلاين, امون إس آر أو, سيرفر سيلك رود, أفضل سيرفر سيلك رود اونلاين, Silk Road Online Özel Sunucu, SRO Özel Sunucu">
+    @if(trim($__env->yieldContent('meta-keywords')))
+        <meta name="keywords" content="@yield('meta-keywords','Silk Road Online Private Server, Silk Road Private Server, SRO Private Server, Amun Sro, Silk Road Online PvP Server, Silk Road Online, en iyi silkroad, سيرفر خاص سيلك رود اونلاين, امون إس آر أو, سيرفر سيلك رود, أفضل سيرفر سيلك رود اونلاين, Silk Road Online Özel Sunucu, SRO Özel Sunucu')">
+    @endif
     <meta name="robots" content="@yield('robots', 'index, follow')">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'Amun Sro')">
     <meta property="og:description"
-          content="@yield('meta-description', 'Amun Sro – Experience the thrill of ancient Egypt in our private server!')">
+          content="@yield('meta-description', 'Amun Sro – Experience the ultimate Silk Road Online Private Server adventure. Join our PvP battles and modded gameplay, and explore the ancient Silk Road legacy.')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="@yield('og-image', asset('icons/cover.webp'))">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'Amun Sro')">
     <meta name="twitter:description"
-          content="@yield('meta-description', 'Amun Sro – Experience the thrill of ancient Egypt in our private server!')">
+          content="@yield('meta-description', 'Amun Sro – Experience the ultimate Silk Road Online Private Server adventure with PvP action and modded features!')">
     <meta name="twitter:image" content="@yield('og-image', asset('icons/cover.webp'))">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icons/favicon-32x32.webp') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icons/favicon-16x16.webp') }}">
@@ -104,21 +109,18 @@
         <noscript>
             <img height="1" width="1" style="display:none"
                  src="https://www.facebook.com/tr?id=1308306323731554&ev=PageView&noscript=1"
-             alt=""/>
+                 alt=""/>
         </noscript>
     @endif
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head') {{-- For page-specific head content --}}
-
-
 </head>
 <body class="bg-midnight-dark text-sand-light overflow-x-hidden">
-<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50  pointer-events-none z-10"></div>
+<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-midnight/50 pointer-events-none z-10"></div>
 
 @include('website.partials.header')
-
 
 <!-- Add the notifications component at the top level -->
 @include('website.partials.flash-notifications')

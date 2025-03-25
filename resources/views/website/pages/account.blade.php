@@ -2,6 +2,7 @@
 
 @section('title', 'Account Management - ASRO')
 @section('meta-description', 'Manage your ASRO account settings, security, and character information from one central dashboard.')
+@section('meta-keywords', 'ASRO Account Management, ASRO Account, Manage ASRO, ASRO Dashboard, Account Settings, Profile Management, ASRO Game')
 
 @section('content')
     <!-- Hero Section -->

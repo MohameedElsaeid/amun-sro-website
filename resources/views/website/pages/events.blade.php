@@ -1,8 +1,8 @@
-
 @extends('website.layouts.app')
 
 @section('title', 'Events - Amun Sro')
 @section('meta-description', 'View upcoming events and tournaments on Amun Sro – join battles, quests, and special community events on our Silkroad private server.')
+@section('meta-keywords', 'Events, Amun Sro Events, Tournaments, Community Events, Silkroad Private Server, ASRO, Battles, Quests, Special Events')
 
 @section('content')
     <!-- Hero Section -->

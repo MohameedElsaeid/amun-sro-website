@@ -1,7 +1,8 @@
 @extends('website.layouts.app')
 
 @section('title', 'Bug Report - ASRO Game')
-@section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
+@section('meta-description', 'Report any bugs or issues you encounter in ASRO Game. Help us improve the experience by providing detailed bug reports with steps to reproduce and optional screenshots.')
+@section('meta-keywords', 'Bug Report, ASRO Bug Report, Report a Bug, ASRO Issues, Gameplay Bug, Technical Problem, Account Bug, ASRO Game')
 
 @section('content')
     <div class="relative py-16 z-20">

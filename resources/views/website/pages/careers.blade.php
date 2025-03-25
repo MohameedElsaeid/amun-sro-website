@@ -2,6 +2,7 @@
 
 @section('title', 'Careers - Amun Sro')
 @section('meta-description', 'Join our team at Amun Sro – help shape the future of our Silkroad private server. View available positions and apply today.')
+@section('meta-keywords', 'Careers, Jobs, Amun Sro Careers, Silkroad Private Server, Job Application, Join Our Team, Work with Us')
 
 @section('content')
     <!-- Hero Section -->

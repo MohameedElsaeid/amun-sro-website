@@ -2,6 +2,7 @@
 
 @section('title', 'Help - ASRO Game')
 @section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
+@section('meta-keywords', 'Help Center, ASRO Support, FAQs, Report a Bug, Contact Support, ASRO Game Help')
 
 @section('content')
     <div class="relative py-16 z-20">
@@ -51,20 +52,17 @@
                     <div class="space-y-4">
                         <div class="p-4 bg-midnight rounded-lg">
                             <h3 class="text-gold font-bold mb-2">Connection Problems</h3>
-                            <p class="text-sand">Check your internet connection and firewall settings. Make sure ports
-                                27015-27020 are open.</p>
+                            <p class="text-sand">Check your internet connection and firewall settings. Make sure ports 27015-27020 are open.</p>
                         </div>
 
                         <div class="p-4 bg-midnight rounded-lg">
                             <h3 class="text-gold font-bold mb-2">Game Crashes</h3>
-                            <p class="text-sand">Update your graphics drivers and DirectX. Verify game files through the
-                                launcher.</p>
+                            <p class="text-sand">Update your graphics drivers and DirectX. Verify game files through the launcher.</p>
                         </div>
 
                         <div class="p-4 bg-midnight rounded-lg">
                             <h3 class="text-gold font-bold mb-2">Account Issues</h3>
-                            <p class="text-sand">Use the password reset feature or contact support for account recovery
-                                assistance.</p>
+                            <p class="text-sand">Use the password reset feature or contact support for account recovery assistance.</p>
                         </div>
                     </div>
                 </div>
