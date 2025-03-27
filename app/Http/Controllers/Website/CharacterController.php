@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Char;
 use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -27,6 +28,9 @@ class CharacterController extends Controller
     {
       
         $user = auth()->user();
+        // $characterIds = Char::pluck('CharID')->toArray();
+        // $user->getShardUser()->sync($characterIds);
+        // dd( $user->getShardUser[0]);
     //    dd($user->getShardUser);
         return view('website.pages.character.index',compact('user'));
     }

@@ -1,95 +1,41 @@
+/**
+ * Initialize character selection
+ */
+export function initCharacterSelection() {
+    const selector = document.getElementById('character-selector');
+    
+    if (!selector) return;
+
+    // Initialize with first character
+    updateCharacter(selector.options[selector.selectedIndex].dataset);
+
+    // Update when selection changes
+    selector.addEventListener('change', () => {
+        const selectedChar = selector.options[selector.selectedIndex].dataset;
+        updateCharacter(selectedChar);
+    });
+}
 
 /**
- * Character selection functionality
+ * Update DOM with character data
  */
+function updateCharacter(charData) {
+    // Update basic fields
+    document.getElementById('char-name').textContent = charData.name || 'Unknown';
+    document.getElementById('char-level').textContent = charData.level || '0';
+    document.getElementById('char-guild').textContent = charData.guild || 'No Guild';
+    document.getElementById('strength').textContent = charData.strength || '0';
+    document.getElementById('intellect').textContent = charData.intellect || '0';
 
-export function initCharacterSelection(state) {
-    const characterSelector = document.querySelector('#character-selector');
-
-    if (!characterSelector) {
-        return;
-    }
-
-    // Set default character
-    state.currentCharacter = characterSelector.value || 'char1';
-
-    // Initialize UI with default character
-    updateCharacterDisplay(state.currentCharacter);
-
-    // Set up change listener
-    characterSelector.addEventListener('change', function() {
-        const selectedCharId = this.value;
-        state.updateCharacter(selectedCharId);
-        updateCharacterDisplay(selectedCharId);
-    });
+    // Update portrait with error handling
+    const portrait = document.getElementById('char-portrait');
+    // if (portrait) {
+    //     portrait.src = `/public/lovable-uploads/${charData.image || 'default.png'}`;
+    //     portrait.onerror = () => {
+    //         portrait.src = '/public/lovable-uploads/default.png';
+    //     };
+    // }
 }
 
-function updateCharacterDisplay(characterId) {
-    // This would fetch character data from an API in a real implementation
-    const mockCharData = {
-        'char1': {
-            name: 'MRmody',
-            level: 100,
-            xpPercent: 75,
-            nextLevel: 101,
-            guild: 'UnitedBroZ',
-            rank: 'Elite',
-            reputation: 'Honored',
-            pvpRank: 'Commander',
-            totalKills: '1,248',
-            playtime: '187 hours',
-            portrait: '00d20ad0-c6a0-4811-a4cf-50337cbd64b2.png'
-        },
-        'char2': {
-            name: 'Bikaaa',
-            level: 85,
-            xpPercent: 60,
-            nextLevel: 86,
-            guild: 'ShadowWalkers',
-            rank: 'Veteran',
-            reputation: 'Respected',
-            pvpRank: 'Sergeant',
-            totalKills: '856',
-            playtime: '142 hours',
-            portrait: '7f1e59dd-2b2a-4e4b-a58a-38e15e614ab4.png'
-        }
-    };
-
-    // Get the data for the selected character
-    const charData = mockCharData[characterId] || mockCharData['char1'];
-
-    // Update UI elements with character data
-    document.querySelectorAll('.char-name').forEach(el => {
-        el.textContent = charData.name;
-    });
-
-    document.querySelectorAll('.char-level').forEach(el => {
-        el.textContent = charData.level;
-    });
-
-    // Update character portrait
-    const portrait = document.querySelector('.character-portrait');
-    if (portrait) {
-        portrait.src = `/public/lovable-uploads/${charData.portrait}`;
-    }
-
-    // Update XP bar
-    const xpBar = document.querySelector('.character-xp-bar');
-    if (xpBar) {
-        xpBar.style.width = `${charData.xpPercent}%`;
-    }
-
-    // Update XP text
-    const xpText = document.querySelector('.character-xp-text');
-    if (xpText) {
-        xpText.textContent = `${charData.xpPercent}% to Level ${charData.nextLevel}`;
-    }
-
-    // Update character details
-    document.querySelector('.char-guild').textContent = charData.guild;
-    document.querySelector('.char-rank').textContent = charData.rank;
-    document.querySelector('.char-reputation').textContent = charData.reputation;
-    document.querySelector('.char-pvp-rank').textContent = charData.pvpRank;
-    document.querySelector('.char-total-kills').textContent = charData.totalKills;
-    document.querySelector('.char-playtime').textContent = charData.playtime;
-}
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initCharacterSelection);
