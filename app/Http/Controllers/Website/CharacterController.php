@@ -31,6 +31,8 @@ class CharacterController extends Controller
         // $characterIds = Char::pluck('CharID')->toArray();
         // $user->getShardUser()->sync($characterIds);
         // dd( $user->getShardUser[0]);
+        // dd( $user->getShardUser[0]->getEquipmentUser[0]->getRefObjCommon->getRefObjItem);
+
     //    dd($user->getShardUser);
         return view('website.pages.character.index',compact('user'));
     }

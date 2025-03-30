@@ -65,6 +65,6 @@ class User extends Model
      */
     public function getSkSilk()
     {
-        return $this->belongsTo(SkSilk::class, 'UserJID', 'JID');
+        return $this->belongsTo(SkSilk::class, 'UserJID');
     }
 }

@@ -25,7 +25,7 @@ class Inventory extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-    protected $connection = 'proxy';
+    protected $connection = 'shard';
 
 
     public function getChar()

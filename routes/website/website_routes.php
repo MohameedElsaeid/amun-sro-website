@@ -19,6 +19,7 @@ use App\Http\Controllers\Website\{AccountController,
     PrivacyController,
     RankingController,
     RulesController,
+    GamificationController,
     SystemController,
     TermsController};
 
@@ -40,28 +41,7 @@ Route::middleware('throttle:60,1')->group(function () {
     Route::get('/update/profile', [AccountController::class, 'viewProfile'])->name('view.profile');
     Route::post('/update', [AccountController::class, 'update'])->name('update.profile');
 
-    Route::get('/character/{id}', function () {
-        $user = Auth::user();
-        $characters = $user->getShardUser->mapWithKeys(function ($char) {
-            return [
-                $char->CharID => [
-                    'name' => $char->CharName16,
-                    'level' => $char->CurLevel,
-                    'xpPercent' => $char->XpPercent ?? 0, // Ensure it exists
-                    'nextLevel' => $char->CurLevel + 1, // Example logic
-                    'guild' => $char->GuildName ?? 'No Guild',
-                    'rank' => $char->Rank ?? 'Member',
-                    'reputation' => $char->Reputation ?? 'Neutral',
-                    'pvpRank' => $char->PvpRank ?? 'Unranked',
-                    'totalKills' => $char->TotalKills ?? '0',
-                    'playtime' => $char->Playtime ?? '0 hours',
-                    'portrait' => $char->Portrait ?? 'default.png', // Make sure to store the image path
-                ]
-            ];
-        });
-    
-        return response()->json($characters);
-    });
+
 //    Route::get('/character', [CharacterController::class, 'index'])->name('character');
 
         Route::get('/blog', [BlogController::class, 'index'])->name('blog');

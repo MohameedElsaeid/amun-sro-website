@@ -40,7 +40,7 @@ class TbUser extends Authenticatable
     protected $hidden = [
         'password'
     ];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -110,7 +110,7 @@ class TbUser extends Authenticatable
      */
     public function getWebUser()
     {
-        return $this->hasOne(User::class, 'jid', 'JID');
+        return $this->hasOne(User::class, 'UserJID');
     }
 
 

@@ -26,7 +26,11 @@ function updateCharacter(charData) {
     document.getElementById('char-guild').textContent = charData.guild || 'No Guild';
     document.getElementById('strength').textContent = charData.strength || '0';
     document.getElementById('intellect').textContent = charData.intellect || '0';
-
+    document.getElementById('HP').textContent = charData.hp || '0';
+    document.getElementById('MP').textContent = charData.mp || '0';
+    document.getElementById('item-points').textContent = charData.items || '0';
+    document.getElementById('silk').textContent = charData.silk || '0';
+    document.getElementById('gsilk').textContent = charData.gsilk || '0';
     // Update portrait with error handling
     const portrait = document.getElementById('char-portrait');
     // if (portrait) {

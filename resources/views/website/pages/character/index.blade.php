@@ -4,7 +4,56 @@
 @section('meta-description',
     'View and manage your character stats, equipment, skills, and progression on ASRO – the
     ultimate Silkroad private server experience. Track your achievements and dominate the game!')
+    <style>
+        .hp-mp-container {
+            width: 220px;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+        }
 
+        .hp-bar-container,
+        .mp-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Space between bar and text */
+        }
+
+        .hp-bar,
+        .mp-bar {
+            width: 100%;
+            /* Adjust width of bar */
+            height: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 2px solid #444;
+            background-color: #222;
+            position: relative;
+        }
+
+        .hp-fill,
+        .mp-fill {
+            width: 100%;
+            /* Always full */
+            height: 100%;
+        }
+
+        .hp-fill {
+            background-color: red;
+        }
+
+        .mp-fill {
+            background-color: blue;
+        }
+
+        .hp-text,
+        .mp-text {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
 @section('meta-tags')
     <meta property="og:title" content="Character Information - ASRO Game | Silkroad Private Server">
     <meta property="og:description"
@@ -51,19 +100,20 @@
                     <select id="character-selector"
                         class="bg-midnight-light text-sand border border-gold/30 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold/50">
                         @foreach ($user->getShardUser as $index => $char)
-                            <option value="{{ $char->CharID }}" 
-                                data-name="{{ $char->CharName16 ?? 'none' }}"
-                                data-level="{{ $char->CurLevel ??'0' }}"
+                            <option value="{{ $char->CharID }}" data-name="{{ $char->CharName16 ?? 'none' }}"
+                                data-level="{{ $char->CurLevel ?? '0' }}"
                                 data-guild="{{ $char->getGuildUser->Name ?? 'No Guild' }}"
                                 data-rank="{{ $char->Rank ?? 'Unknown' }}"
-                                data-reputation="{{ $char->Reputation ?? 'Neutral' }}" 
-                                data-strength="{{ $char->Strength ?? 0 }}"
-                                data-intellect="{{ $char->Intellect ?? 0 }}" 
-                                data-hp="{{ $char->HP ?? 0 }}"
-                                data-mp="{{ $char->MP ?? 0 }}" 
+                                data-reputation="{{ $char->Reputation ?? 'Neutral' }}"
+                                data-strength="{{ $char->Strength ?? 0 }}" data-intellect="{{ $char->Intellect ?? 0 }}"
+                                data-hp="{{ $char->HP ?? 0 }}" data-mp="{{ $char->MP ?? 0 }}"
+                                data-items="{{ $char->ItemPoints ?? 0 }}"
                                 data-total-kills="{{ $char->TotalKills ?? 0 }}"
                                 data-playtime="{{ $char->Playtime ?? '0 hours' }}"
+                                data-silk="{{ $user->getSkSilk->silk_own ?? 0 }}"
+                                data-gsilk="{{ $user->getSkSilk->silk_gift ?? 0 }}"
                                 data-image="{{ asset('public/lovable-uploads/' . ($char->image ?? 'default.png')) }}"
+                               
                                 {{ $index === 0 ? 'selected' : '' }}>
                                 {{ $char->CharName16 }} - Level {{ $char->CurLevel }}
                             </option>
@@ -82,16 +132,30 @@
                                     loading="lazy">
                                 <h2 id="char-name" class="text-3xl font-cinzel font-bold gold-gradient-text char-name">
                                     Character Name</h2>
-                                <p class="text-sand mb-2">Level <span id="char-level">0</span> Warrior</p>
-
-                                <!-- Experience Bar -->
-                                <div class="w-full bg-midnight-light rounded-full h-4 mb-4">
-                                    <div id="char-xp-bar"
-                                        class="character-xp-bar bg-gradient-to-r from-gold-dark to-gold h-4 rounded-full"
-                                        style="width: 0%"></div>
+                                <p class="text-sand mb-2">Level <span id="char-level">0</span> </p>
+                                <p class="text-sand mb-2">Item Points <span id="item-points">0</span> </p>
+                                <p class="text-sand mb-2">Silk <span id="silk">0</span> </p>
+                                <p class="text-sand mb-2">Gift Silk <span id="gsilk">0</span> </p>
+                                <div class="w-full hp-mp-container">
+                                 
+                                    <div class="hp-bar-container">
+                                        <img src="{{asset('images/item_hp_potion.png')}}" alt="MP" class="mp-icon">
+                                        <div class="hp-bar">
+                                            <div class="hp-fill"></div>
+                                        </div>
+                                        <p class="hp-text" id="HP">0</p>
+                                    </div>
+                                    <div class="mp-bar-container">
+                                        <img src="{{asset('images/item_mp_potion.png')}}" alt="MP" class="mp-icon">
+                                        <div class="mp-bar">
+                                            <div class="mp-fill"></div>
+                                        </div>
+                                        <p class="mp-text" id="MP">0</p>
+                                    </div>
                                 </div>
-                                <p id="char-xp-text" class="character-xp-text text-sand-light text-sm mb-4">0% to Level 1
-                                </p>
+
+
+
                             </div>
 
                             <div class="grid grid-cols-2 gap-4 text-left">
@@ -152,21 +216,15 @@
                                 <!-- Primary Stats -->
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 character-stats">
                                     <div class="bg-midnight-light p-4 rounded-lg text-center">
-                                        <p class="text-sand-light text-sm mb-1">Strength</p>
+                                        <p class="text-sand-light text-sm mb-1">STR</p>
                                         <p id="strength" class="text-2xl font-bold text-gold char-strength">325</p>
                                     </div>
+                           
                                     <div class="bg-midnight-light p-4 rounded-lg text-center">
-                                        <p class="text-sand-light text-sm mb-1">Agility</p>
-                                        <p class="text-2xl font-bold text-gold char-agility">210</p>
-                                    </div>
-                                    <div class="bg-midnight-light p-4 rounded-lg text-center">
-                                        <p class="text-sand-light text-sm mb-1">Intelligence</p>
+                                        <p class="text-sand-light text-sm mb-1">INT</p>
                                         <p id="intellect" class="text-2xl font-bold text-gold char-intellect">156</p>
                                     </div>
-                                    <div class="bg-midnight-light p-4 rounded-lg text-center">
-                                        <p class="text-sand-light text-sm mb-1">Vitality</p>
-                                        <p class="text-2xl font-bold text-gold char-vitality">289</p>
-                                    </div>
+                             
                                 </div>
 
                                 <!-- Combat Stats -->
@@ -206,34 +264,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Resistances -->
-                                <h4 class="font-cinzel font-bold text-gold mb-3">Elemental Resistances</h4>
-                                <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
-                                    <div class="bg-midnight-light p-3 rounded-lg text-center">
-                                        <p class="text-sand-light text-xs mb-1">Fire</p>
-                                        <p class="text-lg font-bold resistance-element text-red-500"
-                                            data-resistance="fire">+45%</p>
-                                    </div>
-                                    <div class="bg-midnight-light p-3 rounded-lg text-center">
-                                        <p class="text-sand-light text-xs mb-1">Ice</p>
-                                        <p class="text-lg font-bold resistance-element text-blue-400"
-                                            data-resistance="ice">+22%</p>
-                                    </div>
-                                    <div class="bg-midnight-light p-3 rounded-lg text-center">
-                                        <p class="text-sand-light text-xs mb-1">Lightning</p>
-                                        <p class="text-lg font-bold resistance-element text-yellow-400"
-                                            data-resistance="lightning">+30%</p>
-                                    </div>
-                                    <div class="bg-midnight-light p-3 rounded-lg text-center">
-                                        <p class="text-sand-light text-xs mb-1">Poison</p>
-                                        <p class="text-lg font-bold resistance-element text-green-500"
-                                            data-resistance="poison">+18%</p>
-                                    </div>
-                                    <div class="bg-midnight-light p-3 rounded-lg text-center">
-                                        <p class="text-sand-light text-xs mb-1">Dark</p>
-                                        <p class="text-lg font-bold resistance-element text-purple-500"
-                                            data-resistance="dark">+27%</p>
-                                    </div>
+                        
                                 </div>
                             </div>
 
