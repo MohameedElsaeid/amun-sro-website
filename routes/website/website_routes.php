@@ -2,7 +2,8 @@
 
 
 use App\Http\Controllers\Auth\{LoginController, RegisterController};
-use App\Http\Controllers\Website\{AccountController,
+use App\Http\Controllers\Website\{
+    AccountController,
     AffiliateController,
     BlogController,
     BugReportController,
@@ -21,10 +22,15 @@ use App\Http\Controllers\Website\{AccountController,
     RulesController,
     GamificationController,
     SystemController,
-    TermsController};
+    TermsController
+};
 
 Route::middleware('throttle:60,1')->group(function () {
     Route::group(['as' => 'website.'], function () {
+
+        Route::post('/checkout', [PaymentController::class, 'createCheckoutSession'])->name('checkout.create');
+        Route::get('/checkout/success', [PaymentController::class, 'success'])->name('checkout.success');
+        Route::get('/checkout/cancel', [PaymentController::class, 'cancel'])->name('checkout.cancel');
 
         Route::get('/', [HomeController::class, 'index'])->name('home');
         Route::get('/downloads', [DownloadsController::class, 'index'])->name('downloads');
@@ -36,13 +42,13 @@ Route::middleware('throttle:60,1')->group(function () {
         Route::get('/system', [SystemController::class, 'index'])->name('system');
         Route::get('/account', [AccountController::class, 'index'])->name('account');
         Route::get('/character', [CharacterController::class, 'index'])->name('character');
-    Route::get('/change-password', [AccountController::class, 'viewChangePassword'])->name('view.change.password');
-    Route::post('/change/password', [AccountController::class, 'changePassword'])->name('change.password');
-    Route::get('/update/profile', [AccountController::class, 'viewProfile'])->name('view.profile');
-    Route::post('/update', [AccountController::class, 'update'])->name('update.profile');
+        Route::get('/change-password', [AccountController::class, 'viewChangePassword'])->name('view.change.password');
+        Route::post('/change/password', [AccountController::class, 'changePassword'])->name('change.password');
+        Route::get('/update/profile', [AccountController::class, 'viewProfile'])->name('view.profile');
+        Route::post('/update', [AccountController::class, 'update'])->name('update.profile');
 
 
-//    Route::get('/character', [CharacterController::class, 'index'])->name('character');
+        //    Route::get('/character', [CharacterController::class, 'index'])->name('character');
 
         Route::get('/blog', [BlogController::class, 'index'])->name('blog');
         Route::get('/help', [HelpController::class, 'index'])->name('help');
@@ -53,13 +59,13 @@ Route::middleware('throttle:60,1')->group(function () {
         Route::get('/terms', [TermsController::class, 'index'])->name('terms');
         Route::get('/careers', [CareersController::class, 'index'])->name('careers');
         Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
-//        Route::get('/recharge', [PaymentController::class, 'index'])->name('donate');
+        //        Route::get('/recharge', [PaymentController::class, 'index'])->name('donate');
 
         // Donation routes
         Route::get('/donate', [PaymentController::class, 'index'])->name('donate');
         Route::get('/donate/{currency}', [PaymentController::class, 'currencyPackages'])->name('donate.currency');
         Route::post('/donate/payment-method', [PaymentController::class, 'selectPaymentMethod'])->name('donate.payment-method');
-        Route::post('/donate/process', [PaymentController::class, 'processPayment'])->name('donate.process');
+        // Route::post('/donate/process', [PaymentController::class, 'processPayment'])->name('donate.process');
 
         //AUTH
         Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
