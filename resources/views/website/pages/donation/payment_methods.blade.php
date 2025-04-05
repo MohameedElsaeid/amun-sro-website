@@ -66,7 +66,7 @@
                     <div>
                         <p class="text-midnight-light text-sm">Bonus</p>
                         <p class="text-gold-dark font-bold">
-                            @if($package['bonus'])
+                            @if ($package['bonus'])
                                 +{{ number_format($package['bonus']) }}
                             @else
                                 N/A
@@ -89,18 +89,16 @@
                 <!-- Payment Method Selection Form -->
                 <form id="payment-form">
                     @csrf
-                    <input type="hidden" name="package_id" value="{{ $packageId }}">
-                    <input type="hidden" name="currency" value="{{ $currency }}">
+                    <input type="hidden" id="package_id" name="package_id" value="{{ $packageId }}">
+                    <input type="hidden" id="currency" name="currency" value="{{ $currency }}">
 
                     <div class="grid grid-cols-1 gap-4">
-                        @foreach($paymentMethods as $index => $method)
-                            <div
-                                class="payment-method-option border border-sand rounded-lg p-4 cursor-pointer hover:border-gold transition-colors"
+                        @foreach ($paymentMethods as $index => $method)
+                            <div class="payment-method-option border border-sand rounded-lg p-4 cursor-pointer hover:border-gold transition-colors"
                                 data-method-id="{{ $index }}">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 mr-4">
-                                        <img src="{{ $method['icon'] }}" alt="{{ $method['method'] }}"
-                                             class="h-12 w-12">
+                                        <img src="{{ $method['icon'] }}" alt="{{ $method['method'] }}" class="h-12 w-12">
                                     </div>
                                     <div class="flex-grow">
                                         <h3 class="font-bold text-midnight">{{ $method['method'] }}</h3>
@@ -122,11 +120,11 @@
                     <!-- Submit Button -->
                     <div class="mt-8">
                         <button type="submit" id="submit-payment" disabled
-                                class="w-full bg-gold opacity-50 cursor-not-allowed hover:bg-gold-dark text-midnight-dark font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center">
+                            class="w-full bg-gold opacity-50 cursor-not-allowed hover:bg-gold-dark text-midnight-dark font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
+                                stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                             Complete Purchase
                         </button>
@@ -134,9 +132,9 @@
 
                     <p class="text-center text-sm text-midnight-light mt-4 flex items-center justify-center">
                         <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
+                            stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                         Secure payment processing. Your details are encrypted and protected.
                     </p>
@@ -146,20 +144,20 @@
             <!-- Navigation Links -->
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <a href="{{ route('website.donate.currency', $currency) }}"
-                   class="inline-flex items-center text-midnight hover:text-gold mb-4 md:mb-0">
+                    class="inline-flex items-center text-midnight hover:text-gold mb-4 md:mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+                            d="M11 17l-5-5m0 0l5-5m-5 5h12" />
                     </svg>
                     Return to Packages
                 </a>
 
                 <a href="{{ route('website.donate') }}" class="inline-flex items-center text-midnight hover:text-gold">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                     Change Currency
                 </a>
@@ -178,8 +176,8 @@
                 <h3 class="text-xl font-bold text-midnight" id="payment-modal-title">Complete Payment</h3>
                 <button type="button" id="close-payment-modal" class="text-midnight-light hover:text-midnight">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -201,7 +199,7 @@
                 <p class="text-sm text-midnight-light">If the payment page doesn't load, please click the button
                     below.</p>
                 <a href="#" id="external-payment-link" target="_blank"
-                   class="inline-block mt-2 bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors text-sm">
+                    class="inline-block mt-2 bg-gold hover:bg-gold-dark text-midnight-dark font-bold py-2 px-4 rounded-lg transition-colors text-sm">
                     Open Payment Page
                 </a>
             </div>
@@ -211,7 +209,7 @@
 
 @push('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const paymentForm = document.getElementById('payment-form');
             const paymentMethodOptions = document.querySelectorAll('.payment-method-option');
             const selectedPaymentMethodInput = document.getElementById('selected-payment-method');
@@ -222,10 +220,10 @@
             const paymentModalTitle = document.getElementById('payment-modal-title');
             const transactionIdDisplay = document.getElementById('transaction-id');
             const externalPaymentLink = document.getElementById('external-payment-link');
-
+            console.log(paymentForm);
             // Payment method selection
             paymentMethodOptions.forEach(option => {
-                option.addEventListener('click', function () {
+                option.addEventListener('click', function() {
                     const methodId = this.getAttribute('data-method-id');
 
                     // Update UI
@@ -247,7 +245,7 @@
             });
 
             // Form submission
-            paymentForm.addEventListener('submit', function (e) {
+            paymentForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
                 if (!selectedPaymentMethodInput.value) {
@@ -257,49 +255,44 @@
 
                 // Show loading state
                 const originalButtonText = submitButton.innerHTML;
-                submitButton.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-midnight-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
+                submitButton.innerHTML =
+                    '<svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-midnight-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
                 submitButton.disabled = true;
 
                 // Create form data
                 const formData = new FormData(paymentForm);
-
-                // Submit form
-                fetch('{{ route("website.donate.process") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                })
+                // Submit form to the backend for Stripe session creation
+                fetch('{{ route('website.checkout.create') }}', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                        }
+                    })
                     .then(response => response.json())
                     .then(data => {
-                        if (data.success) {
+
+                        if (data.url) {
                             console.log('Payment processed successfully:', data);
 
-                            // Update payment modal
-                            if (paymentIframe && paymentModal && paymentModalTitle) {
-                                paymentIframe.src = data.iframe_url;
-                                paymentModalTitle.textContent = data.modal_title || 'Complete Payment';
-
-                                if (transactionIdDisplay) {
-                                    transactionIdDisplay.textContent = data.transaction_id || '-';
-                                }
-
-                                if (externalPaymentLink) {
-                                    externalPaymentLink.href = data.iframe_url;
-                                }
-
-                                paymentModal.classList.remove('hidden');
+                            // Redirect to the Stripe Checkout page
+                            if (data.url) {
+                                window.location.href = data.url; // Redirect to Stripe Checkout
+                            } else {
+                                alert('Error: URL not returned');
                             }
                         } else {
                             console.error('Error processing payment:', data);
 
                             if (data.redirect) {
-                                window.location.href = data.redirect;
+                                window.location.href = data
+                                .redirect; // Handle if a redirect is returned
                                 return;
                             }
 
-                            alert(data.message || 'There was an error processing your payment. Please try again.');
+                            alert(data.message ||
+                                'There was an error processing your payment. Please try again.');
                         }
                     })
                     .catch(error => {
@@ -315,7 +308,7 @@
 
             // Close payment modal
             if (closePaymentModal && paymentModal) {
-                closePaymentModal.addEventListener('click', function () {
+                closePaymentModal.addEventListener('click', function() {
                     paymentModal.classList.add('hidden');
                     if (paymentIframe) {
                         paymentIframe.src = 'about:blank';

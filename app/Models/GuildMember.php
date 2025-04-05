@@ -21,6 +21,7 @@ class GuildMember extends Model
     protected $fillable = [
         'GuildID', 'CharID', 'CharName', 'MemberClass', 'CharLevel', 'GP_Donation', 'JoinDate', 'Permission', 'Contribution', 'GuildWarKill', 'GuildWarKilled', 'Nickname', 'RefObjID', 'SiegeAuthority'
     ];
+    protected $connection = 'shard';
 
     protected $casts = [
         'GuildID' => 'integer',
@@ -36,5 +37,11 @@ class GuildMember extends Model
         'RefObjID' => 'integer',
         'SiegeAuthority' => 'integer',
     ];
-    protected $connection = 'proxy';
+
+
+    public function getCharItemPoints()
+    {
+        return $this->belongsTo(Char::class, 'CharID', 'CharID')
+            ->select('CharID', 'ItemPoints');
+    }
 }

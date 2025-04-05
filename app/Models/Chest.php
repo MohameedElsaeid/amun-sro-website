@@ -28,4 +28,9 @@ class Chest extends Model
         'ItemID' => 'integer',
     ];
     protected $connection = 'proxy';
+
+    public function getItem()
+    {
+        return $this->belongsTo(Items::class, 'ItemID', 'ID64');
+    }
 }

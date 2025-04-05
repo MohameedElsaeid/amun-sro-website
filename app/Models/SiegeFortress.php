@@ -34,4 +34,11 @@ class SiegeFortress extends Model
         'IntroductionModificationPermission' => 'integer',
     ];
     protected $connection = 'proxy';
+
+    public function getGuildName()
+    {
+        $query = $this->hasOne(Guild::class, 'ID', 'GuildID');
+        $query->where('ID', '!=', 0);
+        return $query;
+    }
 }

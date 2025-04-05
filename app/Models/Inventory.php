@@ -27,5 +27,27 @@ class Inventory extends Model
         'Slot' => 'integer',
         'ItemID' => 'integer',
     ];
-    protected $connection = 'proxy';
+    protected $connection = 'shard';
+
+
+    public function getChar()
+    {
+        return $this->hasMany(Char::class, 'CharID');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getItem()
+    {
+        return $this->belongsTo(Items::class, 'ItemID', 'ID64');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getSerial64()
+    {
+        return $this->belongsto(Items::class, 'ItemID', 'ID64');
+    }
 }

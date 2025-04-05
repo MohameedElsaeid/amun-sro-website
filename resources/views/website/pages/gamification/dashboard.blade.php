@@ -134,7 +134,7 @@
                                 <p class="text-gold text-xs">+20 points</p>
                             </div>
                         </a>
-                        <a href="#" id="update-profile-btn" class="flex items-center p-3 bg-midnight-light/40 rounded-lg hover:bg-gold/20 transition-colors">
+                        <a href="{{route('website.view.profile')}}" id="update-profile-btn" class="flex items-center p-3 bg-midnight-light/40 rounded-lg hover:bg-gold/20 transition-colors">
                             <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center mr-3">
                                 <span class="text-gold">👤</span>
                             </div>

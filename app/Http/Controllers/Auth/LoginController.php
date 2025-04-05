@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\LoginEventJob;
+use App\Models\TbUser;
 use App\Models\User;
 use Auth;
 use Carbon\Carbon;
@@ -82,7 +83,7 @@ class LoginController extends Controller
                 'em' => $request->user()->Email,
                 'fn' => $request->user()->StrUserID,
             ]))->onQueue('pixel-event');
-
+          
             $this->awardLoginPoints($request->user());
 
             // Determine the redirect URL
@@ -133,7 +134,7 @@ class LoginController extends Controller
     protected function attemptLogin(Request $request)
     {
         // Manually find user and verify credentials
-        $user = User::where('StrUserID', $request->input($this->username()))
+        $user = TbUser::where('StrUserID', $request->input($this->username()))
             ->first();
         if (!$user) {
             return false;
@@ -154,7 +155,7 @@ class LoginController extends Controller
      * @param User $user
      * @return void
      */
-    protected function awardLoginPoints(User $user)
+    protected function awardLoginPoints(TbUser $user)
     {
         $lastLoginDate = $user->last_login_bonus ? Carbon::parse($user->last_login_bonus)->toDateString() : null;
         $today = Carbon::today()->toDateString();

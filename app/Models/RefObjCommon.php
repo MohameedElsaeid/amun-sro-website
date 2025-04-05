@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class RefObjCommon extends Model
 {
+    protected $connection = 'shard';
+
     public $timestamps = false;
     protected $table = '_RefObjCommon';
     protected $fillable = [
@@ -72,5 +74,9 @@ class RefObjCommon extends Model
         'EventID' => 'integer',
         'Link' => 'integer',
     ];
-    protected $connection = 'proxy';
+
+    public function getRefObjItem()
+    {
+        return $this->hasOne(RefObjItem::class, 'ID', 'Link');
+    }
 }
