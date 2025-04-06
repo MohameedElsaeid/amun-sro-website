@@ -110,10 +110,7 @@
                                 data-items="{{ $char->ItemPoints ?? 0 }}"
                                 data-total-kills="{{ $char->TotalKills ?? 0 }}"
                                 data-playtime="{{ $char->Playtime ?? '0 hours' }}"
-                                data-silk="{{ $user->getSkSilk->silk_own ?? 0 }}"
-                                data-gsilk="{{ $user->getSkSilk->silk_gift ?? 0 }}"
                                 data-image="{{ asset('public/lovable-uploads/' . ($char->image ?? 'default.png')) }}"
-                               
                                 {{ $index === 0 ? 'selected' : '' }}>
                                 {{ $char->CharName16 }} - Level {{ $char->CurLevel }}
                             </option>
@@ -134,10 +131,10 @@
                                     Character Name</h2>
                                 <p class="text-sand mb-2">Level <span id="char-level">0</span> </p>
                                 <p class="text-sand mb-2">Item Points <span id="item-points">0</span> </p>
-                                <p class="text-sand mb-2">Silk <span id="silk">0</span> </p>
-                                <p class="text-sand mb-2">Gift Silk <span id="gsilk">0</span> </p>
+                                <p class="text-sand mb-2">Silk <span>{{$silk->silk_own ?? 0}}</span> </p>
+                                <p class="text-sand mb-2">Gift Silk <span >{{$silk->silk_gift ?? 0}}</span> </p>
                                 <div class="w-full hp-mp-container">
-                                 
+
                                     <div class="hp-bar-container">
                                         <img src="{{asset('images/item_hp_potion.png')}}" alt="MP" class="mp-icon">
                                         <div class="hp-bar">
@@ -219,12 +216,12 @@
                                         <p class="text-sand-light text-sm mb-1">STR</p>
                                         <p id="strength" class="text-2xl font-bold text-gold char-strength">325</p>
                                     </div>
-                           
+
                                     <div class="bg-midnight-light p-4 rounded-lg text-center">
                                         <p class="text-sand-light text-sm mb-1">INT</p>
                                         <p id="intellect" class="text-2xl font-bold text-gold char-intellect">156</p>
                                     </div>
-                             
+
                                 </div>
 
                                 <!-- Combat Stats -->
@@ -264,7 +261,7 @@
                                     </div>
                                 </div>
 
-                        
+
                                 </div>
                             </div>
 

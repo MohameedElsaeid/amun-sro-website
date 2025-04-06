@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Char;
+use App\Models\SKSilk;
 use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -26,14 +27,9 @@ class CharacterController extends Controller
      */
     public function index()
     {
-      
         $user = auth()->user();
-        // $characterIds = Char::pluck('CharID')->toArray();
-        // $user->getShardUser()->sync($characterIds);
-        // dd( $user->getShardUser[0]);
-        // dd( $user->getShardUser[0]->getEquipmentUser[0]->getRefObjCommon->getRefObjItem);
-
-    //    dd($user->getShardUser);
-        return view('website.pages.character.index',compact('user'));
+        //'JID', 'silk_own', 'silk_gift', 'silk_point'
+        $silk = SKSilk::where('JID',$user->JID)->first();
+        return view('website.pages.character.index',compact('user','silk'));
     }
 }
