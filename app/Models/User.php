@@ -57,7 +57,7 @@ class User extends Model
      */
     public function getTbUser()
     {
-        return $this->belongsTo(TbUser::class, 'UserJID', 'JID');
+        return $this->belongsTo(TBUser::class, 'UserJID', 'JID');
     }
 
     /**

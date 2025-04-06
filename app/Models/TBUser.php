@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class TbUser extends Authenticatable
+class TBUser extends Authenticatable
 {
     protected $fillable = [
         'JID', 'StrUserID', 'password', 'Status', 'GMrank', 'Name', 'Email', 'sex', 'certificate_num', 'address', 'postcode', 'phone', 'mobile', 'regtime', 'reg_ip', 'Time_log', 'freetime', 'sec_primary', 'sec_content', 'AccPlayTime', 'LatestUpdateTime_ToPlayTime', 'Play123Time'
@@ -30,7 +30,7 @@ class TbUser extends Authenticatable
         'LatestUpdateTime_ToPlayTime' => 'integer',
         'Play123Time' => 'integer',
     ];
-    protected $connection = 'sqlsrv';    
+    protected $connection = 'sqlsrv';
     protected $primaryKey = 'JID';
     /**
      * The attributes that should be hidden for arrays.
