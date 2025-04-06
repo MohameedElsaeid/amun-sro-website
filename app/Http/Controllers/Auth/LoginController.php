@@ -152,7 +152,7 @@ class LoginController extends Controller
     /**
      * Award login points to the user
      *
-     * @param User $user
+     * @param TBUser $user
      * @return void
      */
     protected function awardLoginPoints(TBUser $user)

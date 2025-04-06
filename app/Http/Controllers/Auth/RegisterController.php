@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\CompleteRegistrationJob;
 use App\Models\Referral;
 use App\Models\SKSilk;
+use App\Models\TBUser;
 use App\Models\User;
 use App\Rules\ReservedUsername;
 use Illuminate\Auth\Events\Registered;
@@ -79,10 +80,8 @@ class RegisterController extends Controller
         }
         $referrerId = null;
         if ($request->has('code')) {
-            $referrer = User::where('referral_code', $request->get('code'))->first();
-            if ($referrer) {
-                $referrerId = $referrer->JID;
-            }
+            $referrer = TBUser::where('referral_code', $request->get('code'))->first();
+            $referrerId = $referrer?->JID;
         }
 
         $user->referred_by = $referrerId;
@@ -151,7 +150,7 @@ class RegisterController extends Controller
                 'required',
                 'string',
                 'email',
-                'email:rfc,dns',
+//                'email:rfc,dns',
                 'max:255',
                 'unique:TB_User,Email',
             ],
@@ -189,7 +188,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data, string $registerIp)
     {
-        return User::create([
+        return TBUser::create([
             'StrUserID' => $data['username'],
             'Email' => $data['email'],
             'password' => md5($data['password']),
@@ -204,7 +203,7 @@ class RegisterController extends Controller
     private function createReferralCode()
     {
         $code = strtoupper(Str::random(10));
-        if (!User::where('referral_code', $code)->exists()) {
+        if (!TBUser::where('referral_code', $code)->exists()) {
             return $code;
         }
         return $this->createReferralCode();
@@ -213,10 +212,10 @@ class RegisterController extends Controller
     /**
      * Award registration points to the user
      *
-     * @param User $user
+     * @param TBUser $user
      * @return void
      */
-    protected function awardRegistrationPoints(User $user)
+    protected function awardRegistrationPoints(TBUser $user)
     {
         // Award 50 points for registration
         $user->points = 50;
