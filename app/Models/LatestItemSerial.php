@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LatestItemSerial newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LatestItemSerial newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LatestItemSerial query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LatestItemSerial newModelQuery()
+ * @method static Builder<static>|LatestItemSerial newQuery()
+ * @method static Builder<static>|LatestItemSerial query()
+ * @mixin Eloquent
  */
 class LatestItemSerial extends Model
 {

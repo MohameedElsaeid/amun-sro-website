@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefScrapOfPackageItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefScrapOfPackageItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefScrapOfPackageItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefScrapOfPackageItem newModelQuery()
+ * @method static Builder<static>|RefScrapOfPackageItem newQuery()
+ * @method static Builder<static>|RefScrapOfPackageItem query()
+ * @mixin Eloquent
  */
 class RefScrapOfPackageItem extends Model
 {

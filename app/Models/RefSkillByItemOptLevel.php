@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSkillByItemOptLevel query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSkillByItemOptLevel newModelQuery()
+ * @method static Builder<static>|RefSkillByItemOptLevel newQuery()
+ * @method static Builder<static>|RefSkillByItemOptLevel query()
+ * @mixin Eloquent
  */
 class RefSkillByItemOptLevel extends Model
 {

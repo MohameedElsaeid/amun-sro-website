@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWizard newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWizard newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsWizard query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillsWizard newModelQuery()
+ * @method static Builder<static>|SkillsWizard newQuery()
+ * @method static Builder<static>|SkillsWizard query()
+ * @mixin Eloquent
  */
 class SkillsWizard extends Model
 {

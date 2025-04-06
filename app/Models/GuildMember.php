@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildMember query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|GuildMember newModelQuery()
+ * @method static Builder<static>|GuildMember newQuery()
+ * @method static Builder<static>|GuildMember query()
+ * @mixin Eloquent
  */
 class GuildMember extends Model
 {

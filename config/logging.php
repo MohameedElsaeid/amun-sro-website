@@ -146,6 +146,11 @@ return [
             'path' => storage_path('logs/header.log'),
             'replace_placeholders' => true,
         ],
+        'fb-pixel' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/fb-pixel.log'),
+            'replace_placeholders' => true,
+        ],
 
     ],
 

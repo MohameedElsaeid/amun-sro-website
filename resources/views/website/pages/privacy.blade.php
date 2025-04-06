@@ -2,11 +2,11 @@
 
 @section('title', 'Privacy Policy - ASRO')
 @section('meta-description', 'Learn about how we collect, use, and protect your personal information.')
+@section('meta-keywords', 'Privacy Policy, ASRO Privacy, Data Protection, Personal Information, User Privacy, ASRO Game')
 
 @section('content')
     <!-- Hero Section -->
-    <div class="page-hero"
-         style="background-image: url('{{ asset('icons/feat_5.webp') }}');">
+    <div class="page-hero" style="background-image: url('{{ asset('icons/feat_5.webp') }}');">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gold mb-4">Privacy Policy</h1>
             <p class="text-xl md:text-2xl text-sand-light max-w-3xl mx-auto mb-8">How we protect your privacy</p>
@@ -48,20 +48,17 @@
 
                     <div>
                         <h2 class="text-2xl font-cinzel font-bold text-gold mb-4">3. Information Security</h2>
-                        <p class="mb-4">We implement appropriate security measures to protect your personal information
-                            from unauthorized access or disclosure.</p>
+                        <p class="mb-4">We implement appropriate security measures to protect your personal information from unauthorized access or disclosure.</p>
                     </div>
 
                     <div>
                         <h2 class="text-2xl font-cinzel font-bold text-gold mb-4">4. Data Sharing</h2>
-                        <p class="mb-4">We do not sell or share your personal information with third parties except as
-                            described in this policy.</p>
+                        <p class="mb-4">We do not sell or share your personal information with third parties except as described in this policy.</p>
                     </div>
 
                     <div>
                         <h2 class="text-2xl font-cinzel font-bold text-gold mb-4">5. Your Rights</h2>
-                        <p class="mb-4">You have the right to access, correct, or delete your personal information.
-                            Contact us to exercise these rights.</p>
+                        <p class="mb-4">You have the right to access, correct, or delete your personal information. Contact us to exercise these rights.</p>
                     </div>
                 </div>
             </div>

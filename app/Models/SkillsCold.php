@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsCold newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsCold newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsCold query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillsCold newModelQuery()
+ * @method static Builder<static>|SkillsCold newQuery()
+ * @method static Builder<static>|SkillsCold query()
+ * @mixin Eloquent
  */
 class SkillsCold extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsAllow newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsAllow newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsAllow query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefitemsAllow newModelQuery()
+ * @method static Builder<static>|RefitemsAllow newQuery()
+ * @method static Builder<static>|RefitemsAllow query()
+ * @mixin Eloquent
  */
 class RefitemsAllow extends Model
 {

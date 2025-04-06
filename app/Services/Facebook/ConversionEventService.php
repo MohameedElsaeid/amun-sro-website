@@ -36,7 +36,6 @@ class ConversionEventService
      * @param array $customData Custom event parameters.
      * @param string|null $testEventCode Optional test event code.
      * @return Response
-     * @throws ConnectionException
      */
     public function trackLogin(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -61,34 +60,57 @@ class ConversionEventService
      */
     protected function buildEventPayload(string $eventName, array $userData = [], array $customData = [], ?string $testEventCode = null): array
     {
+        $attributionData = [];
+        if (isset($userData['utm']['utm_campaign_id'])) {
+            $attributionData['campaign_id'] = $userData['utm']['utm_campaign_id'];
+        }
+        if (isset($userData['utm']['utm_adset_id'])) {
+            $attributionData['adset_id'] = $userData['utm']['utm_adset_id'];
+        }
+        if (isset($userData['utm']['utm_ad_id'])) {
+            $attributionData['ad_id'] = $userData['utm']['utm_ad_id'];
+        }
+        if (isset($userData['utm']['visit_time'])) {
+            $attributionData['visit_time'] = $userData['utm']['visit_time'];
+        }
+
+        if (isset($userData['fbclid'])) {
+            unset($attributionData['fbclid']);
+        }
+
+        if (isset($userData['attribution'])) {
+            unset($attributionData['attribution']);
+        }
+
+        if (isset($userData['query'])) {
+            unset($attributionData['query']);
+        }
+
+        if (isset($userData['utm'])) {
+            unset($attributionData['utm']);
+        }
+
+
         $payload = [
             'event_name' => $eventName,
             'event_time' => time(),
             'action_source' => 'website',
             'user_data' => $userData,
             'custom_data' => $customData,
+            'attribution_data' => $attributionData,
+            'original_event_data' => [
+                'event_name' => $eventName,
+                'event_time' => time(),
+            ]
         ];
 
         if ($testEventCode !== null) {
             $payload['test_event_code'] = $testEventCode;
         }
 
-        return $payload;
-    }
+        \Log::channel('facebook')->info(json_encode($payload));
 
-    /**
-     * Retrieve tracking data stored in the session.
-     *
-     * HINT:
-     *  - This method automatically retrieves data stored under the 'fb_tracking' key in the session.
-     *
-     * @return array Array of tracking data.
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     */
-    protected function getTrackingData(): array
-    {
-        return session()->get('fb_tracking', []);
+        return $payload;
     }
 
     /**
@@ -103,7 +125,6 @@ class ConversionEventService
      * @param array $customData
      * @param string|null $testEventCode
      * @return Response
-     * @throws ConnectionException
      */
     public function trackRegister(array $userData = [], array $customData = [], ?string $testEventCode = null): Response
     {
@@ -389,5 +410,20 @@ class ConversionEventService
     {
         $payload = $this->buildEventPayload('Download', $userData, $customData, $testEventCode);
         return $this->facebookService->sendEvent($payload);
+    }
+
+    /**
+     * Retrieve tracking data stored in the session.
+     *
+     * HINT:
+     *  - This method automatically retrieves data stored under the 'fb_tracking' key in the session.
+     *
+     * @return array Array of tracking data.
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
+    protected function getTrackingData(): array
+    {
+        return session()->get('fb_tracking', []);
     }
 }

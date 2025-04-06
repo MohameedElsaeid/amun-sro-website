@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerAction newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerAction newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerAction query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTriggerAction newModelQuery()
+ * @method static Builder<static>|RefTriggerAction newQuery()
+ * @method static Builder<static>|RefTriggerAction query()
+ * @mixin Eloquent
  */
 class RefTriggerAction extends Model
 {

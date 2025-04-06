@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefAlchemyMerit query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefAlchemyMerit newModelQuery()
+ * @method static Builder<static>|RefAlchemyMerit newQuery()
+ * @method static Builder<static>|RefAlchemyMerit query()
+ * @mixin Eloquent
  */
 class RefAlchemyMerit extends Model
 {

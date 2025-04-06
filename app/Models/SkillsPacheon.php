@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsPacheon newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsPacheon newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillsPacheon query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillsPacheon newModelQuery()
+ * @method static Builder<static>|SkillsPacheon newQuery()
+ * @method static Builder<static>|SkillsPacheon query()
+ * @mixin Eloquent
  */
 class SkillsPacheon extends Model
 {

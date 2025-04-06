@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefEventReward query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefEventReward newModelQuery()
+ * @method static Builder<static>|RefEventReward newQuery()
+ * @method static Builder<static>|RefEventReward query()
+ * @mixin Eloquent
  */
 class RefEventReward extends Model
 {

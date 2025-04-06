@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|GuildWar query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|GuildWar newModelQuery()
+ * @method static Builder<static>|GuildWar newQuery()
+ * @method static Builder<static>|GuildWar query()
+ * @mixin Eloquent
  */
 class GuildWar extends Model
 {

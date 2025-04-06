@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopItemStockPeriod newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopItemStockPeriod newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefShopItemStockPeriod query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefShopItemStockPeriod newModelQuery()
+ * @method static Builder<static>|RefShopItemStockPeriod newQuery()
+ * @method static Builder<static>|RefShopItemStockPeriod query()
+ * @mixin Eloquent
  */
 class RefShopItemStockPeriod extends Model
 {

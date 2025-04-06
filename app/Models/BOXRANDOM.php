@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BOXRANDOM newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BOXRANDOM newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BOXRANDOM query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|BOXRANDOM newModelQuery()
+ * @method static Builder<static>|BOXRANDOM newQuery()
+ * @method static Builder<static>|BOXRANDOM query()
+ * @mixin Eloquent
  */
 class BOXRANDOM extends Model
 {

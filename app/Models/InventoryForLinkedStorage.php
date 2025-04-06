@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForLinkedStorage newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForLinkedStorage newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForLinkedStorage query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|InventoryForLinkedStorage newModelQuery()
+ * @method static Builder<static>|InventoryForLinkedStorage newQuery()
+ * @method static Builder<static>|InventoryForLinkedStorage query()
+ * @mixin Eloquent
  */
 class InventoryForLinkedStorage extends Model
 {

@@ -12,6 +12,7 @@ use Psr\Container\NotFoundExceptionInterface;
 class SubscribeNewsLetterEventJob implements ShouldQueue
 {
     use Queueable;
+
     /**
      * Create a new job instance.
      */
@@ -24,8 +25,6 @@ class SubscribeNewsLetterEventJob implements ShouldQueue
      * Execute the job.
      * @param ConversionEventService $conversionService
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function handle(ConversionEventService $conversionService): void
     {

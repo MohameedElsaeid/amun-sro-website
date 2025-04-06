@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TEMPADDITEMEXTERNCHESTLOG query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TEMPADDITEMEXTERNCHESTLOG newModelQuery()
+ * @method static Builder<static>|TEMPADDITEMEXTERNCHESTLOG newQuery()
+ * @method static Builder<static>|TEMPADDITEMEXTERNCHESTLOG query()
+ * @mixin Eloquent
  */
 class TEMPADDITEMEXTERNCHESTLOG extends Model
 {

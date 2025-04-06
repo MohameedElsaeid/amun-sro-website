@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharDefaultSkillMastery newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharDefaultSkillMastery newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharDefaultSkillMastery query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefCharDefaultSkillMastery newModelQuery()
+ * @method static Builder<static>|RefCharDefaultSkillMastery newQuery()
+ * @method static Builder<static>|RefCharDefaultSkillMastery query()
+ * @mixin Eloquent
  */
 class RefCharDefaultSkillMastery extends Model
 {

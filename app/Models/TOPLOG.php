@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TOPLOG query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TOPLOG newModelQuery()
+ * @method static Builder<static>|TOPLOG newQuery()
+ * @method static Builder<static>|TOPLOG query()
+ * @mixin Eloquent
  */
 class TOPLOG extends Model
 {

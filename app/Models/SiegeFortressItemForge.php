@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressItemForge newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressItemForge newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiegeFortressItemForge query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SiegeFortressItemForge newModelQuery()
+ * @method static Builder<static>|SiegeFortressItemForge newQuery()
+ * @method static Builder<static>|SiegeFortressItemForge query()
+ * @mixin Eloquent
  */
 class SiegeFortressItemForge extends Model
 {

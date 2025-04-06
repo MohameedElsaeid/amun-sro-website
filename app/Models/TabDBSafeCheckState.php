@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabDBSafeCheckState newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabDBSafeCheckState newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabDBSafeCheckState query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabDBSafeCheckState newModelQuery()
+ * @method static Builder<static>|TabDBSafeCheckState newQuery()
+ * @method static Builder<static>|TabDBSafeCheckState query()
+ * @mixin Eloquent
  */
 class TabDBSafeCheckState extends Model
 {

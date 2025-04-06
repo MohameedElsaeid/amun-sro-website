@@ -6,8 +6,6 @@ use App\Services\Facebook\ConversionEventService;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Http\Client\ConnectionException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 class LoginEventJob implements ShouldQueue
 {
@@ -25,8 +23,6 @@ class LoginEventJob implements ShouldQueue
      * Execute the job.
      * @param ConversionEventService $conversionService
      * @throws ConnectionException
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function handle(ConversionEventService $conversionService): void
     {

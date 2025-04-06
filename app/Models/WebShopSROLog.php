@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WebShopSROLog query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|WebShopSROLog newModelQuery()
+ * @method static Builder<static>|WebShopSROLog newQuery()
+ * @method static Builder<static>|WebShopSROLog query()
+ * @mixin Eloquent
  */
 class WebShopSROLog extends Model
 {

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForAvatar newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForAvatar newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryForAvatar query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|InventoryForAvatar newModelQuery()
+ * @method static Builder<static>|InventoryForAvatar newQuery()
+ * @method static Builder<static>|InventoryForAvatar query()
+ * @mixin Eloquent
  */
 class InventoryForAvatar extends Model
 {

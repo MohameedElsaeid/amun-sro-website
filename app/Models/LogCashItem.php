@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogCashItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogCashItem newModelQuery()
+ * @method static Builder<static>|LogCashItem newQuery()
+ * @method static Builder<static>|LogCashItem query()
+ * @mixin Eloquent
  */
 class LogCashItem extends Model
 {

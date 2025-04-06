@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefUIStringMt newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefUIStringMt newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefUIStringMt query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefUIStringMt newModelQuery()
+ * @method static Builder<static>|RefUIStringMt newQuery()
+ * @method static Builder<static>|RefUIStringMt query()
+ * @mixin Eloquent
  */
 class RefUIStringMt extends Model
 {

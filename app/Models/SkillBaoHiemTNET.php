@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillBaoHiemTNET newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillBaoHiemTNET newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SkillBaoHiemTNET query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SkillBaoHiemTNET newModelQuery()
+ * @method static Builder<static>|SkillBaoHiemTNET newQuery()
+ * @method static Builder<static>|SkillBaoHiemTNET query()
+ * @mixin Eloquent
  */
 class SkillBaoHiemTNET extends Model
 {

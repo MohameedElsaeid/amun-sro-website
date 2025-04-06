@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UniquesLog query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|UniquesLog newModelQuery()
+ * @method static Builder<static>|UniquesLog newQuery()
+ * @method static Builder<static>|UniquesLog query()
+ * @mixin Eloquent
  */
 class UniquesLog extends Model
 {

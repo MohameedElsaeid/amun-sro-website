@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalCoinLogHunter query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RoyalCoinLogHunter newModelQuery()
+ * @method static Builder<static>|RoyalCoinLogHunter newQuery()
+ * @method static Builder<static>|RoyalCoinLogHunter query()
+ * @mixin Eloquent
  */
 class RoyalCoinLogHunter extends Model
 {

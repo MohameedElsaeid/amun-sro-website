@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Paymentwall newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Paymentwall newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Paymentwall query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Paymentwall newModelQuery()
+ * @method static Builder<static>|Paymentwall newQuery()
+ * @method static Builder<static>|Paymentwall query()
+ * @mixin Eloquent
  */
 class Paymentwall extends Model
 {

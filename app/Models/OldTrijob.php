@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|OldTrijob query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|OldTrijob newModelQuery()
+ * @method static Builder<static>|OldTrijob newQuery()
+ * @method static Builder<static>|OldTrijob query()
+ * @mixin Eloquent
  */
 class OldTrijob extends Model
 {

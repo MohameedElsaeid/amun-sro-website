@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldBindTriggerCategory newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldBindTriggerCategory newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefGameWorldBindTriggerCategory query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefGameWorldBindTriggerCategory newModelQuery()
+ * @method static Builder<static>|RefGameWorldBindTriggerCategory newQuery()
+ * @method static Builder<static>|RefGameWorldBindTriggerCategory query()
+ * @mixin Eloquent
  */
 class RefGameWorldBindTriggerCategory extends Model
 {

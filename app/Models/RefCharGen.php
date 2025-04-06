@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharGen newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharGen newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefCharGen query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefCharGen newModelQuery()
+ * @method static Builder<static>|RefCharGen newQuery()
+ * @method static Builder<static>|RefCharGen query()
+ * @mixin Eloquent
  */
 class RefCharGen extends Model
 {

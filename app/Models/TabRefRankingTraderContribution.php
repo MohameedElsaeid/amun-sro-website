@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingTraderContribution newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingTraderContribution newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TabRefRankingTraderContribution query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|TabRefRankingTraderContribution newModelQuery()
+ * @method static Builder<static>|TabRefRankingTraderContribution newQuery()
+ * @method static Builder<static>|TabRefRankingTraderContribution query()
+ * @mixin Eloquent
  */
 class TabRefRankingTraderContribution extends Model
 {

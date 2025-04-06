@@ -162,7 +162,7 @@ return [
         ],
         'supervisor-2' => [
             'connection' => 'redis',
-            'queue' => ['pixel-event'],
+            'queue' => ['pixel-event', 'visits'],
             'maxProcesses' => 15,
             'maxTime' => 0,
             'maxJobs' => 5,

@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToBuyScrapItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToBuyScrapItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefConditionToBuyScrapItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefConditionToBuyScrapItem newModelQuery()
+ * @method static Builder<static>|RefConditionToBuyScrapItem newQuery()
+ * @method static Builder<static>|RefConditionToBuyScrapItem query()
+ * @mixin Eloquent
  */
 class RefConditionToBuyScrapItem extends Model
 {

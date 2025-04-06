@@ -2,6 +2,7 @@
 
 @section('title', 'Character - Amun Sro')
 @section('meta-description', 'Explore your character information on Amun Sro – view stats, equipment, skills, and progression on our Silkroad private server.')
+@section('meta-keywords', 'Character Information, Amun Sro, Character Stats, Equipment, Skills, Silkroad Private Server, ASRO Game, Gamer Profile, Progression')
 
 @section('content')
     <section class="py-16">

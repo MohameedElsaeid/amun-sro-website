@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ServerEvent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ServerEvent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ServerEvent query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|ServerEvent newModelQuery()
+ * @method static Builder<static>|ServerEvent newQuery()
+ * @method static Builder<static>|ServerEvent query()
+ * @mixin Eloquent
  */
 class ServerEvent extends Model
 {

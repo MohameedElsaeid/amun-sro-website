@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegionBak newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegionBak newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegionBak query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefRegionBak newModelQuery()
+ * @method static Builder<static>|RefRegionBak newQuery()
+ * @method static Builder<static>|RefRegionBak query()
+ * @mixin Eloquent
  */
 class RefRegionBak extends Model
 {

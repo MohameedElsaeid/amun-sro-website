@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSchedule newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSchedule newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSchedule query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogSchedule newModelQuery()
+ * @method static Builder<static>|LogSchedule newQuery()
+ * @method static Builder<static>|LogSchedule query()
+ * @mixin Eloquent
  */
 class LogSchedule extends Model
 {

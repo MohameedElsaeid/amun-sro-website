@@ -1,8 +1,8 @@
-
 @extends('website.layouts.app')
 
 @section('title', 'System - Amun Sro')
 @section('meta-description', 'View system requirements and compatibility information for Amun Sro. Learn what hardware is needed for optimal performance on our Silkroad private server.')
+@section('meta-keywords', 'System Requirements, ASRO System, Hardware Requirements, Software Compatibility, Amun Sro, Silkroad Private Server, PC Specs, Game Performance')
 
 @section('content')
     <!-- Hero Section -->

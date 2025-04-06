@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|LogSEEKNDESTROYITEMFAST query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|LogSEEKNDESTROYITEMFAST newModelQuery()
+ * @method static Builder<static>|LogSEEKNDESTROYITEMFAST newQuery()
+ * @method static Builder<static>|LogSEEKNDESTROYITEMFAST query()
+ * @mixin Eloquent
  */
 class LogSEEKNDESTROYITEMFAST extends Model
 {

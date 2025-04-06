@@ -2,6 +2,7 @@
 
 @section('title', 'Affiliate Program - ASRO')
 @section('meta-description', 'Earn rewards by inviting friends to join ASRO through our affiliate program.')
+@section('meta-keywords', 'Affiliate Program, ASRO Affiliate, Earn Rewards, Invite Friends, ASRO Rewards, ASRO, سيرفر ASRO, برنامج الإحالة')
 
 @section('content')
     <!-- Hero Section -->
@@ -20,8 +21,7 @@
                 <div class="bg-midnight-light rounded-lg border border-gold/30 overflow-hidden shadow-lg mb-8">
                     <div class="p-6">
                         <h2 class="text-2xl font-cinzel font-bold text-gold mb-4">Your Invitation Link</h2>
-                        <p class="text-sand-light mb-4">Share this link with your friends to invite them to join
-                            ASRO.</p>
+                        <p class="text-sand-light mb-4">Share this link with your friends to invite them to join ASRO.</p>
 
                         <div class="flex items-center space-x-2 bg-midnight border border-gold/20 rounded-md p-2 mb-4">
                             <input type="text" value="{{ $invitationLink }}" id="invitation-link" readonly
@@ -64,18 +64,14 @@
 
                         <div class="space-y-4 mb-6">
                             <h3 class="text-xl font-bold text-sand-light">Reward Conditions</h3>
-                            <p class="text-sand-light">To qualify for rewards, users registered through your link must
-                                meet one of the following goals:</p>
+                            <p class="text-sand-light">To qualify for rewards, users registered through your link must meet one of the following goals:</p>
 
                             <ul class="list-disc list-inside text-sand-light pl-4 space-y-1">
-                                <li>Buy Premium Plus</li>
                                 <li>Buy 1k Silk</li>
-                                <li>Reach Level 100</li>
                             </ul>
 
                             <h3 class="text-xl font-bold text-sand-light pt-2">Reward System</h3>
-                            <p class="text-sand-light">For every 16 users who meet the required conditions, you will
-                                earn a cash reward of $100.</p>
+                            <p class="text-sand-light">For every 16 users who meet the required conditions, you will earn a cash reward of 100 Real Silk.</p>
                         </div>
 
                         <!-- Stats Cards -->
@@ -90,7 +86,7 @@
                             </div>
                             <div class="bg-midnight border border-gold/20 rounded-lg p-4 text-center">
                                 <p class="text-sand-light/70 text-sm">Total Earnings</p>
-                                <p class="text-3xl font-bold text-gold">$ {{ $rewardStats['totalEarnings'] }}</p>
+                                <p class="text-3xl font-bold text-gold">Silk {{ $rewardStats['totalEarnings'] }}</p>
                             </div>
                         </div>
 
@@ -132,15 +128,13 @@
                                             <td class="p-3 text-sand-light">{{ $invitedUser['date'] }}</td>
                                             <td class="p-3">
                                                 @if($invitedUser['metConditions'])
-                                                    <span
-                                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                                            Conditions Met
-                                                        </span>
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                        Conditions Met
+                                                    </span>
                                                 @else
-                                                    <span
-                                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                                                            Pending
-                                                        </span>
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                                        Pending
+                                                    </span>
                                                 @endif
                                             </td>
                                         </tr>
@@ -150,8 +144,7 @@
                             </div>
                         @else
                             <div class="text-center py-6">
-                                <p class="text-sand-light">You haven't invited any users yet. Share your invitation link
-                                    to start earning rewards!</p>
+                                <p class="text-sand-light">You haven't invited any users yet. Share your invitation link to start earning rewards!</p>
                             </div>
                         @endif
                     </div>
@@ -164,8 +157,7 @@
                             <h2 class="text-2xl font-cinzel font-bold text-gold mb-4">You Were Invited By</h2>
 
                             <div class="flex items-center space-x-4">
-                                <div
-                                    class="flex-shrink-0 bg-midnight border border-gold/30 rounded-full w-16 h-16 flex items-center justify-center">
+                                <div class="flex-shrink-0 bg-midnight border border-gold/30 rounded-full w-16 h-16 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
                                          viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -192,17 +184,7 @@
 
             document.execCommand('copy');
 
-            // Show notification
-            const event = new CustomEvent('gamification-event', {
-                detail: {
-                    action: 'copy_link',
-                    points: 0,
-                    totalPoints: {{ Auth::user()->points ?? 0 }}
-                }
-            });
-            document.dispatchEvent(event);
-
-            // This would be handled by your notification system
+            // TODO Show notification (this can be replaced with your notification system)
             alert('Invitation link copied to clipboard!');
         }
     </script>

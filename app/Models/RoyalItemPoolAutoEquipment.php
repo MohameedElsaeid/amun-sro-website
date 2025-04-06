@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RoyalItemPoolAutoEquipment query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RoyalItemPoolAutoEquipment newModelQuery()
+ * @method static Builder<static>|RoyalItemPoolAutoEquipment newQuery()
+ * @method static Builder<static>|RoyalItemPoolAutoEquipment query()
+ * @mixin Eloquent
  */
 class RoyalItemPoolAutoEquipment extends Model
 {

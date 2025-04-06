@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeLvlSummonMonster newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeLvlSummonMonster newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefSiegeLvlSummonMonster query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefSiegeLvlSummonMonster newModelQuery()
+ * @method static Builder<static>|RefSiegeLvlSummonMonster newQuery()
+ * @method static Builder<static>|RefSiegeLvlSummonMonster query()
+ * @mixin Eloquent
  */
 class RefSiegeLvlSummonMonster extends Model
 {

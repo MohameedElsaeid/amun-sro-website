@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsBlock newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsBlock newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefitemsBlock query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefitemsBlock newModelQuery()
+ * @method static Builder<static>|RefitemsBlock newQuery()
+ * @method static Builder<static>|RefitemsBlock query()
+ * @mixin Eloquent
  */
 class RefitemsBlock extends Model
 {

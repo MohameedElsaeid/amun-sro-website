@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijob newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijob newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijob query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharTrijob newModelQuery()
+ * @method static Builder<static>|CharTrijob newQuery()
+ * @method static Builder<static>|CharTrijob query()
+ * @mixin Eloquent
  */
 class CharTrijob extends Model
 {

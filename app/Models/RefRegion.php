@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRegion query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefRegion newModelQuery()
+ * @method static Builder<static>|RefRegion newQuery()
+ * @method static Builder<static>|RefRegion query()
+ * @mixin Eloquent
  */
 class RefRegion extends Model
 {

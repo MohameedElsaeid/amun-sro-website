@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Exception;
 use GeoIp2\Database\Reader;
 use Illuminate\Http\Request;
 use Log;
@@ -43,9 +44,7 @@ class CaptureFbTracking
             }
         }
 
-        if ($fbp = $request->query('_fbp')) {
-            $tracking['fbp'] = $fbp;
-        } elseif ($request->hasCookie('_fbp')) {
+        if ($request->hasCookie('_fbp')){
             $tracking['fbp'] = $request->cookie('_fbp');
         }
 
@@ -62,7 +61,7 @@ class CaptureFbTracking
                 $tracking['zp'] = $record->postal->code;
             }
             $tracking['st'] = $record->mostSpecificSubdivision->name;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             // Log the exception for debugging purposes
             Log::error('GeoIP lookup failed: ' . $e->getMessage());
             // In case of any issues, keep the tracking info intact
@@ -93,12 +92,9 @@ class CaptureFbTracking
             return str_starts_with($key, 'utm_');
         }, ARRAY_FILTER_USE_KEY);
         ksort($utmParams);
-        $tracking['utm'] = $utmParams;
-
-        Log::channel('header')->info($tracking);
-//        dd($tracking);
+        $tracking['utm'] = array_merge($utmParams, ['visit_time' => time()]);
+//        VisitsCreationJob::dispatch($tracking)->onQueue('visits');
         session()->put('fb_tracking', $tracking);
-
         return $next($request);
     }
 

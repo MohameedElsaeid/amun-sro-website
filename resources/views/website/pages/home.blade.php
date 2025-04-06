@@ -2,7 +2,7 @@
 
 @section('title', 'Home - ASRO Game')
 @section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
-
+@section('meta-keywords', 'Silk Road Online Private Server, Silk Road Private Server, SRO Private Server, Amun Sro, ASRO Game, Silk Road Online Özel Sunucu, سيرفر خاص سيلك رود اونلاين, Ancient Egyptian Online Game, Top Players, Leaderboards')
 @section('content')
     <div class="hero min-h-screen bg-cover bg-center relative"
          style="background-image: url('{{ asset('icons/diff_conver.webp') }}');">
@@ -13,9 +13,9 @@
                  loading="lazy" width="256" height="256">
             <h1 class="text-4xl md:text-6xl font-cinzel font-bold text-gold mb-4 text-shadow">Enter the World of
                 ASRO</h1>
-            <p class="text-xl md:text-2xl text-sand-light mb-8 max-w-3xl">Embark on an epic journey through the mystical
-                lands of ancient Egypt. Battle legendary creatures, uncover ancient artifacts, and rise to power in this
-                immersive online adventure.</p>
+            <p class="text-xl md:text-2xl text-sand-light mb-8 max-w-3xl">
+                Embark on an epic journey through the mystical lands of ancient Egypt. Battle legendary creatures, uncover ancient artifacts, and rise to power in this immersive online adventure.
+            </p>
             <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
                 @guest
                     <a href="{{ route('website.register') }}" class="play-now-btn">Play Now</a>
@@ -33,8 +33,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Server Status Card -->
-                <div
-                    class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all">
+                <div class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-2xl font-cinzel font-bold text-gold">Server Status</h3>
                         <div class="flex items-center">
@@ -78,8 +77,7 @@
                 </div>
 
                 <!-- Game Features -->
-                <div
-                    class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all col-span-1 lg:col-span-2">
+                <div class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all col-span-1 lg:col-span-2">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-4">Game Features</h3>
 
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
@@ -128,8 +126,7 @@
                                  stroke-linejoin="round" class="text-gold mr-2">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                             </svg>
                             <span class="text-sand-light">CH/EU</span>
                         </div>
@@ -147,13 +144,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="text-gold mr-2">
-                                <path
-                                    d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"/>
-                                <path
-                                    d="m3.09 8.84 12.35-6.61a1.93 1.93 0 0 1 1.81 0l3.65 1.9a2.12 2.12 0 0 1 .1 3.69L8.73 14.75a2 2 0 0 1-1.94 0L3 12.51a2.12 2.12 0 0 1 .09-3.67Z"/>
+                                <path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"/>
+                                <path d="m3.09 8.84 12.35-6.61a1.93 1.93 0 0 1 1.81 0l3.65 1.9a2.12 2.12 0 0 1 .1 3.69L8.73 14.75a2 2 0 0 1-1.94 0L3 12.51a2.12 2.12 0 0 1 .09-3.67Z"/>
                                 <line x1="12" y1="22" x2="12" y2="13"/>
-                                <path
-                                    d="M20 13.5v3.37a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13.5"/>
+                                <path d="M20 13.5v3.37a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13.5"/>
                             </svg>
                             <span class="text-sand-light">Tradegoods Enabled</span>
                         </div>
@@ -286,7 +280,7 @@
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                             </svg>
-                            <span class="text-sand-light">Guild Limit 32</span>
+                            <span class="text-sand-light">Guild Limit 50</span>
                         </div>
                     </div>
                 </div>
@@ -301,22 +295,19 @@
                     <img src="{{ asset('icons/feat_1.webp') }}" alt="Combat Feature"
                          class="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" width="384" height="192">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-4">Dynamic Combat</h3>
-                    <p class="text-sand">Master martial arts, unleash devastating combos, and engage in epic PvP
-                        battles.</p>
+                    <p class="text-sand">Master martial arts, unleash devastating combos, and engage in epic PvP battles.</p>
                 </div>
                 <div class="feature-card">
                     <img src="{{ asset('icons/cover.webp') }}" alt="World Feature"
                          class="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" width="384" height="192">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-4">Vast World</h3>
-                    <p class="text-sand">Explore an immersive world filled with ancient temples, mysterious
-                        dungeons, and hidden treasures.</p>
+                    <p class="text-sand">Explore an immersive world filled with ancient temples, mysterious dungeons, and hidden treasures.</p>
                 </div>
                 <div class="feature-card">
                     <img src="{{ asset('icons/feat_6.webp') }}" alt="Character Feature"
                          class="w-full h-48 object-cover rounded-lg mb-6" loading="lazy" width="384" height="192">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-4">Character Growth</h3>
-                    <p class="text-sand">Customize your character, master unique skills, and become a legendary
-                        warrior.</p>
+                    <p class="text-sand">Customize your character, master unique skills, and become a legendary warrior.</p>
                 </div>
             </div>
         </div>
@@ -335,11 +326,9 @@
                 </div>
 
                 <!-- Vote for Us -->
-                <div
-                    class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all flex flex-col items-center justify-center">
+                <div class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all flex flex-col items-center justify-center">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-6">Vote For Us</h3>
-                    <p class="text-sand-light text-center mb-8">Support our server by voting for us on XtremeTop100.
-                        Every vote helps us grow!</p>
+                    <p class="text-sand-light text-center mb-8">Support our server by voting for us on XtremeTop100. Every vote helps us grow!</p>
                     <!-- XtremeTop100 Widget -->
                     <a href="https://www.xtremetop100.com/in.php?site=1132377058" title="Silkroad Online Server"
                        class="transform hover:scale-105 transition-all" target="_blank" rel="noopener noreferrer">
@@ -349,11 +338,9 @@
                 </div>
 
                 <!-- Join Now Card -->
-                <div
-                    class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all flex flex-col items-center justify-center">
+                <div class="bg-midnight-light p-6 rounded-lg border border-gold/30 hover:border-gold/50 transition-all flex flex-col items-center justify-center">
                     <h3 class="text-2xl font-cinzel font-bold text-gold mb-6">Start Your Adventure</h3>
-                    <p class="text-sand-light text-center mb-8">Join over 1000 players in an epic adventure through
-                        ancient realms. Download the game client now!</p>
+                    <p class="text-sand-light text-center mb-8">Join over 1000 players in an epic adventure through ancient realms. Download the game client now!</p>
                     <div class="flex flex-col space-y-4">
                         <a href="#" class="play-now-btn text-center">Play Now</a>
                         <a href="#" class="download-btn text-center">Download Client</a>
@@ -367,34 +354,28 @@
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-cinzel font-bold text-gold text-center mb-16">Latest News</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
+                <div class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
                     <img src="{{ asset('icons/diff_conver.webp') }}" alt="News Image"
                          class="w-full h-48 object-cover rounded mb-4" loading="lazy" width="384" height="192">
                     <div class="text-gold text-sm mb-2">June 23, 2023</div>
                     <h3 class="text-xl font-cinzel font-bold text-gold mb-3">New Expansion Release</h3>
-                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and
-                        powerful rewards!</p>
+                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and powerful rewards!</p>
                     <a href="#" class="text-gold hover:text-gold-light transition-colors">Read More →</a>
                 </div>
-                <div
-                    class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
+                <div class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
                     <img src="{{ asset('icons/diff_conver.webp') }}" alt="News Image"
                          class="w-full h-48 object-cover rounded mb-4" loading="lazy" width="384" height="192">
                     <div class="text-gold text-sm mb-2">June 23, 2023</div>
                     <h3 class="text-xl font-cinzel font-bold text-gold mb-3">New Expansion Release</h3>
-                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and
-                        powerful rewards!</p>
+                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and powerful rewards!</p>
                     <a href="#" class="text-gold hover:text-gold-light transition-colors">Read More →</a>
                 </div>
-                <div
-                    class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
+                <div class="news-card bg-midnight-dark p-6 rounded-lg hover:shadow-lg transition-all transform hover:scale-105">
                     <img src="{{ asset('icons/diff_conver.webp') }}" alt="News Image"
                          class="w-full h-48 object-cover rounded mb-4" loading="lazy" width="384" height="192">
                     <div class="text-gold text-sm mb-2">June 23, 2023</div>
                     <h3 class="text-xl font-cinzel font-bold text-gold mb-3">New Expansion Release</h3>
-                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and
-                        powerful rewards!</p>
+                    <p class="text-sand mb-4">Explore the new Crimson Temple expansion with challenging dungeons and powerful rewards!</p>
                     <a href="#" class="text-gold hover:text-gold-light transition-colors">Read More →</a>
                 </div>
             </div>

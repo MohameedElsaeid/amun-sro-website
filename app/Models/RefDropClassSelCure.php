@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDropClassSelCure query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefDropClassSelCure newModelQuery()
+ * @method static Builder<static>|RefDropClassSelCure newQuery()
+ * @method static Builder<static>|RefDropClassSelCure query()
+ * @mixin Eloquent
  */
 class RefDropClassSelCure extends Model
 {

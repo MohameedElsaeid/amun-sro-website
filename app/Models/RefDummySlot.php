@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDummySlot newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDummySlot newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefDummySlot query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefDummySlot newModelQuery()
+ * @method static Builder<static>|RefDummySlot newQuery()
+ * @method static Builder<static>|RefDummySlot query()
+ * @mixin Eloquent
  */
 class RefDummySlot extends Model
 {

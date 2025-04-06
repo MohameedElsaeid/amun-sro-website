@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTreatItemOfShop newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTreatItemOfShop newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTreatItemOfShop query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTreatItemOfShop newModelQuery()
+ * @method static Builder<static>|RefTreatItemOfShop newQuery()
+ * @method static Builder<static>|RefTreatItemOfShop query()
+ * @mixin Eloquent
  */
 class RefTreatItemOfShop extends Model
 {

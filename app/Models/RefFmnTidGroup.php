@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefFmnTidGroup newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefFmnTidGroup newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefFmnTidGroup query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefFmnTidGroup newModelQuery()
+ * @method static Builder<static>|RefFmnTidGroup newQuery()
+ * @method static Builder<static>|RefFmnTidGroup query()
+ * @mixin Eloquent
  */
 class RefFmnTidGroup extends Model
 {

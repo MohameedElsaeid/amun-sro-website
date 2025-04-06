@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToSellPackageItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToSellPackageItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefRewardPolicyToSellPackageItem query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefRewardPolicyToSellPackageItem newModelQuery()
+ * @method static Builder<static>|RefRewardPolicyToSellPackageItem newQuery()
+ * @method static Builder<static>|RefRewardPolicyToSellPackageItem query()
+ * @mixin Eloquent
  */
 class RefRewardPolicyToSellPackageItem extends Model
 {

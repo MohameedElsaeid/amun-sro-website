@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Samorray100RW query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|Samorray100RW newModelQuery()
+ * @method static Builder<static>|Samorray100RW newQuery()
+ * @method static Builder<static>|Samorray100RW query()
+ * @mixin Eloquent
  */
 class Samorray100RW extends Model
 {

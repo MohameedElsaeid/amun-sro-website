@@ -1,7 +1,8 @@
 @extends('website.layouts.app')
 
 @section('title', 'Contact Us - ASRO Game')
-@section('meta-description', 'View player rankings for ASRO game. See the top players, leaderboards, and character stats in the ancient Egyptian online world.')
+@section('meta-description', 'Get in touch with the ASRO Game team. Contact us for support, inquiries, and feedback about our ancient Egyptian online world.')
+@section('meta-keywords', 'Contact Us, ASRO Game, Customer Support, Inquiries, Contact Amun Sro, Email, Help, Support')
 
 @section('content')
 

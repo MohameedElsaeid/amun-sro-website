@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerEvent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerEvent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTriggerEvent query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTriggerEvent newModelQuery()
+ * @method static Builder<static>|RefTriggerEvent newQuery()
+ * @method static Builder<static>|RefTriggerEvent query()
+ * @mixin Eloquent
  */
 class RefTriggerEvent extends Model
 {

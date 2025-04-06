@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefTeleport query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|RefTeleport newModelQuery()
+ * @method static Builder<static>|RefTeleport newQuery()
+ * @method static Builder<static>|RefTeleport query()
+ * @mixin Eloquent
  */
 class RefTeleport extends Model
 {

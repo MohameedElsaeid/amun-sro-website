@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AlliedClan newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AlliedClan newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AlliedClan query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|AlliedClan newModelQuery()
+ * @method static Builder<static>|AlliedClan newQuery()
+ * @method static Builder<static>|AlliedClan query()
+ * @mixin Eloquent
  */
 class AlliedClan extends Model
 {

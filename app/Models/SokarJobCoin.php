@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SokarJobCoin newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SokarJobCoin newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SokarJobCoin query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|SokarJobCoin newModelQuery()
+ * @method static Builder<static>|SokarJobCoin newQuery()
+ * @method static Builder<static>|SokarJobCoin query()
+ * @mixin Eloquent
  */
 class SokarJobCoin extends Model
 {

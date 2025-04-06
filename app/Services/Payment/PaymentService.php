@@ -2,13 +2,15 @@
 
 namespace App\Services\Payment;
 
+use Stripe\StripeClient;
+
 class PaymentService
 {
 
     public function stripe()
     {
         $stripeSecretKey = config('payment.stripe.secret_key');
-        $stripe = new \Stripe\StripeClient($stripeSecretKey);
+        $stripe = new StripeClient($stripeSecretKey);
 //        header('Content-Type: application/json');
 
         $YOUR_DOMAIN = 'https://amun-sro-website.test/api/donation/process';

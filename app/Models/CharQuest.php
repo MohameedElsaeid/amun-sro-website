@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharQuest newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharQuest newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharQuest query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharQuest newModelQuery()
+ * @method static Builder<static>|CharQuest newQuery()
+ * @method static Builder<static>|CharQuest query()
+ * @mixin Eloquent
  */
 class CharQuest extends Model
 {

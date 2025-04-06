@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
  *
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CharTrijobSafeTrade query()
- * @mixin \Eloquent
+ *
+ * @method static Builder<static>|CharTrijobSafeTrade newModelQuery()
+ * @method static Builder<static>|CharTrijobSafeTrade newQuery()
+ * @method static Builder<static>|CharTrijobSafeTrade query()
+ * @mixin Eloquent
  */
 class CharTrijobSafeTrade extends Model
 {
