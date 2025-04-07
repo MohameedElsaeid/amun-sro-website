@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\SKSilk;
 use App\Models\StripeUsers;
+use App\Models\TbUser;
 use App\Models\User;
 use App\Services\Payment\PaymentGatewayService;
 use App\Services\Payment\PaymentInformationProvider;
+use Cache;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
@@ -322,6 +325,11 @@ class PaymentController extends Controller
                 'mode' => 'payment',
                 'success_url' => route('website.checkout.success') . '?session_id={CHECKOUT_SESSION_ID}',
                 'cancel_url' => route('website.checkout.cancel'),
+                'metadata' => [
+                    'user_id' => auth()->id(),
+                    'silk' => $package['silk'],
+                    'bonus' => $package['bonus'] ?? 0,
+                ]
             ]);
 
             // Return the URL of the checkout session
@@ -332,10 +340,55 @@ class PaymentController extends Controller
         }
     }
 
-    public function success()
+    public function success(Request $request)
     {
-        return 'Payment successful!';
+        Stripe::setApiKey(config('services.stripe.secret'));
+    
+        $sessionId = $request->get('session_id');
+    
+        // Check if this session_id was already processed
+        if (Cache::has('stripe_session_used_' . $sessionId)) {
+            return redirect()->route('website.checkout.cancel')
+                ->with('error', 'This session has already been used.');
+        }
+    
+        try {
+            $session = Session::retrieve($sessionId);
+            $metadata = $session->metadata;
+    
+            $userId = $metadata->user_id;
+            $silkAmount = (int) $metadata->silk;
+    
+            $user = TbUser::find($userId);
+    
+            if (!$user) {
+                return redirect()->route('website.checkout.cancel')
+                    ->with('error', 'User not found.');
+            }
+    
+            $skSilk = SKSilk::firstOrCreate(
+                ['JID' => $user->JID],
+                [
+                    'silk_own' => 0,
+                    'silk_gift' => 1000,
+                    'silk_point' => 0,
+                ]
+            );
+    
+            // Add silk to silk_own
+            $skSilk->silk_own += $silkAmount;
+            $skSilk->save();
+    
+            // Mark this session as used to prevent reuse
+            Cache::put('stripe_session_used_' . $sessionId, true, now()->addDays(1));
+    
+            return 'Payment successful!';
+        } catch (\Exception $e) {
+            return redirect()->route('website.checkout.cancel')
+                ->with('error', 'There was a problem processing your payment.');
+        }
     }
+    
 
     public function cancel()
     {
