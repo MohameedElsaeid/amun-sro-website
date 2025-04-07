@@ -380,7 +380,7 @@ class PaymentController extends Controller
             $skSilk->save();
     
             // Mark this session as used to prevent reuse
-            Cache::put('stripe_session_used_' . $sessionId, true, now()->addDays(1));
+            Cache::forever('stripe_session_used_' . $sessionId, true);
     
             return 'Payment successful!';
         } catch (\Exception $e) {
